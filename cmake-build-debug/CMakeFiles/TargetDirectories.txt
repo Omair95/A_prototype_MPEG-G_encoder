@@ -1,0 +1,3 @@
+/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o  -o A_prototype_MPEG_G_encoder 
