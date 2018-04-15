@@ -12,7 +12,7 @@ private:
     uint8_t padding;        // number of padding bits added at the end of the encoded payload
     uint32_t block_size;    // size in bytes of the payload
 
-    std::vector<int> descriptor;
+    std::vector<std::string> descriptor;
 
 public:
 
@@ -28,12 +28,12 @@ public:
 
     }
 
-    void insertValue(int value) {
+    void insertValue(std::string value) {
         descriptor.push_back(value);
         block_size += sizeof(int);
     }
 
-    std::vector<int> getPayload() {
+    std::vector<std::string> getPayload() {
         return descriptor;
     }
 

@@ -26,11 +26,11 @@ public:
 
     ~AccessUnit_P() { }
 
-    void insertRlenDescriptor(int value) {
+    void insertRlenDescriptor(std::string value) {
         descriptors[3].insertValue(value);
     }
 
-    void insertPairDescriptor(int value) {
+    void insertPairDescriptor(std::string value) {
         descriptors[4].insertValue(value);
     }
 

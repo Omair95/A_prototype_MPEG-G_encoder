@@ -26,23 +26,23 @@ public:
 
     ~AccessUnit_HM() {}
 
-    void insertPosdescriptor(int value) {
+    void insertPosdescriptor(std::string value) {
         descriptors[0].insertValue(value);
     }
 
-    void insertRcompDescriptor(int value) {
+    void insertRcompDescriptor(std::string value) {
         descriptors[1].insertValue(value);
     }
 
-    void insertFlagsDescriptor(int value) {
+    void insertFlagsDescriptor(std::string value) {
         descriptors[2].insertValue(value);
     }
 
-    void insertRlenDescriptor(int value) {
+    void insertRlenDescriptor(std::string value) {
         descriptors[3].insertValue(value);
     }
 
-    void insertPairDescriptor(int value) {
+    void insertPairDescriptor(std::string value) {
         descriptors[4].insertValue(value);
     }
 };

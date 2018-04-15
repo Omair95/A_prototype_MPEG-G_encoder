@@ -35,15 +35,15 @@ public:
         AU_end_position = endpos;
     }
 
-    void insertPosdescriptor(int value) {
+    void insertPosdescriptor(std::string value) {
         descriptors[0].insertValue(value);
     }
 
-    void insertRcompDescriptor(int value) {
+    void insertRcompDescriptor(std::string value) {
         descriptors[1].insertValue(value);
     }
 
-    void insertFlagsDescriptor(int value) {
+    void insertFlagsDescriptor(std::string value) {
         descriptors[2].insertValue(value);
     }
 

@@ -22,7 +22,7 @@ public:
 
     ~AccessUnit_U() {}
 
-    void insertRlenDescriptor(int value) {
+    void insertRlenDescriptor(std::string value) {
         descriptors[0].insertValue(value);
     }
 };

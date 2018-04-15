@@ -14,39 +14,6 @@
 
 std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
 std::vector<AccessUnit> accessUnits;
-std::ofstream mpeggRecordFile("../Files/9827_2#49.mpegg", std::ofstream::out | std::ofstream::trunc);
-
-std::ofstream posDescriptorClassP("../Files/9827_2#49.mpegg.pos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rcompDescriptorClassP("../Files/9827_2#49.mpegg.rcomp", std::ofstream::out | std::ofstream::trunc);
-std::ofstream flagsDescriptorClassP("../Files/9827_2#49.mpegg.flags", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rlenDescriptorClassP("../Files/9827_2#49.mpegg.rlen", std::ofstream::out | std::ofstream::trunc);
-
-std::ofstream posDescriptorClassN("../Files/9827_2#49.mpegg.npos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rcompDescriptorClassN("../Files/9827_2#49.mpegg.nrcomp", std::ofstream::out | std::ofstream::trunc);
-std::ofstream flagsDescriptorClassN("../Files/9827_2#49.mpegg.nflags", std::ofstream::out | std::ofstream::trunc);
-std::ofstream mmposDescriptorClassN("../Files/9827_2#49.mpegg.nmmpos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rlenDescriptorClassN("../Files/9827_2#49.mpegg.nrlen", std::ofstream::out | std::ofstream::trunc);
-
-std::ofstream posDescriptorClassM("../Files/9827_2#49.mpegg.mpos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rcompDescriptorClassM("../Files/9827_2#49.mpegg.mrcomp", std::ofstream::out | std::ofstream::trunc);
-std::ofstream flagsDescriptorClassM("../Files/9827_2#49.mpegg.mflags", std::ofstream::out | std::ofstream::trunc);
-std::ofstream mmposDescriptorClassM("../Files/9827_2#49.mpegg.mmmpos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream mmtypeDescriptorClassM("../Files/9827_2#49.mpegg.mmmtype", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rlenDescriptorClassM("../Files/9827_2#49.mpegg.mrlen", std::ofstream::out | std::ofstream::trunc);
-
-std::ofstream posDescriptorClassI("../Files/9827_2#49.mpegg.ipos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rcompDescriptorClassI("../Files/9827_2#49.mpegg.ircomp", std::ofstream::out | std::ofstream::trunc);
-std::ofstream flagsDescriptorClassI("../Files/9827_2#49.mpegg.iflags", std::ofstream::out | std::ofstream::trunc);
-std::ofstream mmposDescriptorClassI("../Files/9827_2#49.mpegg.immpos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream mmtypeDescriptorClassI("../Files/9827_2#49.mpegg.immtype", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rlenDescriptorClassI("../Files/9827_2#49.mpegg.irlen", std::ofstream::out | std::ofstream::trunc);
-
-std::ofstream posDescriptorClassHM("../Files/9827_2#49.mpegg.hmpos", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rcompDescriptorClassHM("../Files/9827_2#49.mpegg.hmrcomp", std::ofstream::out | std::ofstream::trunc);
-std::ofstream flagsDescriptorClassHM("../Files/9827_2#49.mpegg.hmflags", std::ofstream::out | std::ofstream::trunc);
-std::ofstream rlenDescriptorClassHM("../Files/9827_2#49.mpegg.hmrlen", std::ofstream::out | std::ofstream::trunc);
-
-std::ofstream rlenDescriptorClassU("../Files/9827_2#49.mpegg.urlen", std::ofstream::out | std::ofstream::trunc);
 
 class Utils {
 
@@ -72,6 +39,10 @@ public:
         return result;
     }
 
+    /** \brief Gets the extended cigar of the read
+     * @param A read
+     * @return The extended cigar
+     */
     std::string getExtendedCigar(BamAlignmentRecord& record) {
         /*
         std::string cigar = getCigar(record.cigar);
@@ -277,48 +248,49 @@ public:
         return false;
     }
 
-
     /** \brief Gets the rcomp descriptor for the read
      *  \param The first read
      *  \return The corresponding int value
      * */
-    int getRcompDescriptor(BamAlignmentRecord& record) {
+    std::string getRcompDescriptor(BamAlignmentRecord& record) {
+        int result;
         if (record.flag & 8) {
-            if (record.flag & 16) return 0;
-            else return 1;
+            if (record.flag & 16) result = 0;
+            else result = 1;
         } else {
             bool pair1 = record.flag & 16;
             bool pair2 = record.flag & 32;
 
-            if (pair1 == 0 and pair2 == 0) return 0;
-            else if (pair1 == 0 and pair2 == 1) return 1;
-            else if (pair1 == 1 and pair2 == 0) return 2;
-            else if (pair1 == 1 and pair2 == 1) return 3;
+            if (pair1 == 0 and pair2 == 0) result = 0;
+            else if (pair1 == 0 and pair2 == 1) result = 1;
+            else if (pair1 == 1 and pair2 == 0) result = 2;
+            else if (pair1 == 1 and pair2 == 1) result = 3;
         }
+        return int_to_hex(result);
     }
 
     /** \brief Gets the flag descriptor for the read
      *  \param The first read
      *  \return The corresponding int value
      * */
-    int getFlagDescriptor(BamAlignmentRecord& record) {
+    std::string getFlagDescriptor(BamAlignmentRecord& record) {
         int flag = record.flag;
         int result = 0;
         if (flag & 1024) result = 1;
         if (flag & 512) result += 2;
         if (not(flag & 8)) result += 4;
-        return result;
+        return int_to_hex(result);
     }
 
     /** \brief Gets the rlen descriptor for the read
      *  \param The first read
      *  \return The corresponding int value
      * */
-    int getRlenDescriptor(BamAlignmentRecord& record) {
+    std::string getRlenDescriptor(BamAlignmentRecord& record) {
         CharString seq = record.seq;
         const char *s1 = toCString(seq);
         std::string str(s1);
-        return str.size();
+        return int_to_hex(str.size());
     }
 
     /** \brief Gets the pair descriptor for the read
@@ -327,26 +299,32 @@ public:
      * */
     std::string getPairDescriptor(BamAlignmentRecord& record) {
         bool firstRead = record.flag & 64;
-        if (record.flag & 8) return (record.flag & 64) ? "8001" : "7fff";
-        if (record.flag & 4) return "8000";
-        if (record.flag & 2048) return int_to_hex(record.rNextId) + int_to_hex(record.beginPos);
+        std::string result;
+        if (record.flag & 8) (record.flag & 64) ? result = "8001" : result = "7fff";
+        if (record.flag & 4) result = "8000";
+        if (record.flag & 2048) result = int_to_hex(record.rNextId) + int_to_hex(record.beginPos);
 
         if (firstRead) {
             if (record.rID == record.rNextId) {
-                return "7ffd" + int_to_hex(record.tLen);
-            } else return "7ffe" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+                result = "7ffd" + int_to_hex(record.tLen);
+            } else {
+                result = "7ffe" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+            }
         } else {
             if (record.rID == record.rNextId) {
-                return "8003" + int_to_hex(record.pNext);
-            } else return "8002" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+                result = "8003" + int_to_hex(record.pNext);
+            } else {
+                result = "8002" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+            }
         }
+        return toLittleEndian(result);
     }
 
     /** \brief Gets the mmpos descriptor for the read
      *  \param The first read
      *  \return List of mismatch positions
      * */
-    std::vector<std::pair<int, std::string> > getmmposDescriptorClass(BamAlignmentRecord& record) {
+    std::vector<std::pair<int, std::string> > getmmposDescriptor(BamAlignmentRecord& record) {
         std::vector<std::pair<int, std::string> > mmpos;
         std::map<int, std::string> mmposread;
         CharString seq = record.seq;
@@ -486,20 +464,20 @@ public:
      *  \param List of mismatches
      *  \return List of type of mismatches
      * */
-    std::vector<int> getmmtypeDescriptorClass(std::vector<std::pair<int, std::string> >& mmpos) {
-        std::vector<int> result;
+    std::vector<std::string> getmmtypeDescriptor(std::vector<std::pair<int, std::string> >& mmpos) {
+        std::vector<std::string> result;
         for (int i = 0; i < mmpos.size(); ++i) {
             if (mmpos[i].second[0] == 'I') {
-                if (mmpos[i].second[1] == 'A') result.push_back(6);
-                else if (mmpos[i].second[1] == 'C') result.push_back(7);
-                else if (mmpos[i].second[1] == 'G') result.push_back(8);
-                else if (mmpos[i].second[1] == 'T') result.push_back(9);
+                if (mmpos[i].second[1] == 'A') result.push_back(int_to_hex(6));
+                else if (mmpos[i].second[1] == 'C') result.push_back(int_to_hex(7));
+                else if (mmpos[i].second[1] == 'G') result.push_back(int_to_hex(8));
+                else if (mmpos[i].second[1] == 'T') result.push_back(int_to_hex(9));
             }
-            else if (mmpos[i].second[0] == 'D') result.push_back(5);
-            else if (mmpos[i].second[0] == 'A') result.push_back(0);
-            else if (mmpos[i].second[0] == 'C') result.push_back(1);
-            else if (mmpos[i].second[0] == 'G') result.push_back(2);
-            else if (mmpos[i].second[0] == 'T') result.push_back(3);
+            else if (mmpos[i].second[0] == 'D') result.push_back(int_to_hex(5));
+            else if (mmpos[i].second[0] == 'A') result.push_back(int_to_hex(0));
+            else if (mmpos[i].second[0] == 'C') result.push_back(int_to_hex(1));
+            else if (mmpos[i].second[0] == 'G') result.push_back(int_to_hex(2));
+            else if (mmpos[i].second[0] == 'T') result.push_back(int_to_hex(3));
         }
         return result;
     }
@@ -510,8 +488,8 @@ public:
      * */
     std::string int_to_hex(int32_t a) {
         std::stringstream stream;
-        stream << std::setfill ('0') << std::setw(sizeof(int32_t)*1)
-               << std::hex << a;
+        stream << std::setfill ('0') << std::setw(sizeof(a)*1)
+                << std::hex << a;
         return stream.str();
     }
 
@@ -564,6 +542,30 @@ public:
         }
     }
 
+    /** Convert a hexadecimal value stored in a string to little endian
+     * @param The hexadecimal value stored in stored
+     * @return The same value but in little endian
+     */
+    std::string toLittleEndian(std::string a) {
+        std::string result = "";
+        if (a.size() % 2 != 0) a = std::string(1, '0').append(a);
+        int j = a.size() - 1;
+        while (j > 0) {
+            result += a[j - 1];
+            result += a[j];
+            j = j - 2;
+        }
+        return result;
+    }
+
+    uint8_t getClassType(BamAlignmentRecord& record) {
+        if (isClassP(record)) return 1;
+        else if (isClassN(record)) return 2;
+        else if (isClassM(record)) return 3;
+        else if (isClassI(record)) return 4;
+        else if (isClassHM(record)) return 5;
+        else return 6;
+    }
 };
 
 #endif
