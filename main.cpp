@@ -1,5 +1,4 @@
 #include "Utils.h"
-#include "MpeggRecord.h"
 #include "AccessUnit_P.h"
 #include "AccessUnit_N.h"
 #include "AccessUnit_M.h"
@@ -16,62 +15,6 @@
 Utils u;
 FileManager f;
 int au_id = -1;
-uint64_t record_id = 0;
-
-void convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record) {
-    result.global_Id = ++record_id;
-    result.read_name = toCString(record.qName);
-    result.class_type = u.getClassType(record);
-    result.seq_Id = (result.class_type == 6) ? 0 : record.rID;
-    result.read1_first = (record.flag & 64) ? 1 : 0;
-    result.flags = record.flag;
-    result.number_of_segments = (record.flag & 8 or (record.flag & 1 and record.flag & 128)) ? 1 : 2;
-    result.number_of_alignments = 1; // just put 1 for now
-
-    CharString seq = record.seq;
-    const char *s1 = toCString(seq);
-    std::string sequence(s1);
-    std::string qv = toCString(record.qual);
-
-    result.read_len.push_back(sequence.size());
-    result.quality_values.push_back(qv);
-    result.sequence.push_back(sequence);
-
-    BamAlignmentRecord second;
-    if (result.number_of_segments > 1) {
-        second = u.getSecondRecord(record);
-        CharString seq = second.seq;
-        const char *s1 = toCString(seq);
-        std::string sequence(s1);
-        std::string qv = toCString(record.qual);
-
-        result.read_len.push_back(sequence.size());
-        result.quality_values.push_back(qv);
-        result.sequence.push_back(sequence);
-    }
-
-    result.mapping_pos.push_back(record.beginPos);
-
-    result.cigar_size.resize(result.number_of_segments);
-    for (int i = 0; i < result.number_of_segments; ++i) result.cigar_size[i].resize(1);
-
-    result.cigar_size.at(0).push_back(u.getCigar(record.cigar).size());
-    if (result.number_of_segments > 1) result.cigar_size.at(1).push_back(u.getCigar(second.cigar).size());
-
-    result.ecigar_string.resize(result.number_of_segments);
-    for (int i = 0; i < result.number_of_segments; ++i) result.ecigar_string[i].resize(1);
-
-    result.ecigar_string.at(0).push_back("POR HACER");
-    if (result.number_of_segments > 1) result.ecigar_string.at(1).push_back("POR HACER");
-
-    result.reverse_comp.resize(result.number_of_segments);
-    for (int i = 0; i < result.number_of_segments; ++i) result.reverse_comp[i].resize(1);
-
-    result.reverse_comp.at(0).push_back((record.flag & 16) ? 0: 1);
-    if (result.number_of_segments > 1) result.reverse_comp.at(1).push_back((second.flag & 16) ? 0: 1);
-}
-
-/*
 
 void generateByteStream() {
     AccessUnit *AU_P, *AU_N, *AU_M, *AU_I, *AU_HM, *AU_U;
@@ -91,8 +34,8 @@ void generateByteStream() {
 
     while (it != end) {
         MpeggRecord a;
-        convertToMpeggRecord(a, it->second.first);
-        writeMpeggToFile(a);
+        u.convertToMpeggRecord(a, it->second.first);
+        f.writeMpeggToFile(a);
 
         if (a.class_type == 1) {
             // update the number of reads in the access unit
@@ -104,32 +47,32 @@ void generateByteStream() {
                 antPosP = a.mapping_pos[0];
                 AU_P->insertPosdescriptor(u.int_to_hex(0));
                 AU_P->setStartPosition(a.mapping_pos[0]);
-                posDescriptorClassP << u.int_to_hex(0);
+                f.insertPosValue(u.int_to_hex(0), 1);
             } else {
                 AU_P->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosP));
-                posDescriptorClassP << " " << u.int_to_hex(a.mapping_pos[0] - antPosP);
+                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosP), 1);
                 antPosP = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
             std::string rcomp = u.getRcompDescriptor(it->second.first);
             AU_P->insertRcompDescriptor(rcomp);
-            rcompDescriptorClassP << rcomp << " ";
+            f.insertRcompValue(rcomp, 1);
 
             // get flags descriptor
             std::string flags = u.getFlagDescriptor(it->second.first);
             AU_P->insertFlagsDescriptor(flags);
-            flagsDescriptorClassP << flags << " ";
+            f.insertFlagsValue(flags, 1);
 
             // get rlen descriptor
             std::string rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_P*> (AU_P)->insertRlenDescriptor(rlen);
-            rlenDescriptorClassP << rlen << " ";
+            f.insertRlenValue(rlen, 1);
 
             // get pair descriptor
             std::string pair = u.getPairDescriptor(it->second.first);
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(pair);
-            pairDescriptorClassP << pair << " ";
+            f.insertPairValue(pair, 1);
 
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == 100000) {
@@ -152,40 +95,40 @@ void generateByteStream() {
                 antPosN = a.mapping_pos[0];
                 AU_N->insertPosdescriptor(u.int_to_hex(0));
                 AU_N->setStartPosition(a.mapping_pos[0]);
-                posDescriptorClassN << u.int_to_hex(0) << " ";
+                f.insertPosValue(u.int_to_hex(0), 2);
             } else {
                 AU_N->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosN));
-                posDescriptorClassN << u.int_to_hex(a.mapping_pos[0] - antPosN) << " ";
+                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosN), 2);
                 antPosN = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
             std::string rcomp = u.getRcompDescriptor(it->second.first);
             AU_N->insertRcompDescriptor(rcomp);
-            rcompDescriptorClassN << rcomp << " ";
+            f.insertRcompValue(rcomp, 2);
 
             // get flags descriptor
             std::string flags = u.getFlagDescriptor(it->second.first);
             AU_N->insertFlagsDescriptor(flags);
-            flagsDescriptorClassN << flags << " ";
+            f.insertFlagsValue(flags, 2);
 
             // get mmpos descriptor
             std::vector<std::pair<int, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
 
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_N*> (AU_N)->insertMmposDescriptor(u.int_to_hex(mmpos[i].first));
-                mmposDescriptorClassN << u.int_to_hex(mmpos[i].first) << " ";
+                f.insertMmposValue(u.int_to_hex(mmpos[i].first), 2);
             }
 
             // get rlen descriptor
             std::string rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_N*> (AU_N)->insertRlenDescriptor(rlen);
-            rlenDescriptorClassN << rlen << " ";
+            f.insertRlenValue(rlen, 2);
 
             // get pair descriptor
             std::string pair = u.getPairDescriptor(it->second.first);
             static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(pair);
-            pairDescriptorClassN << pair << " ";
+            f.insertPairValue(pair, 2);
 
             // create a new access unit in case if the current one is full
             if (AU_N->getReadsCount() == 100000) {
@@ -209,29 +152,29 @@ void generateByteStream() {
                 antPosM = a.mapping_pos[0];
                 AU_M->insertPosdescriptor(u.int_to_hex(0));
                 AU_M->setStartPosition(a.mapping_pos[0]);
-                posDescriptorClassM << u.int_to_hex(0) << " ";
+                f.insertPosValue(u.int_to_hex(0), 3);
             } else {
                 AU_M->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosM));
-                posDescriptorClassM << u.int_to_hex(a.mapping_pos[0] - antPosM) << " ";
+                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosM), 3);
                 antPosM = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
             std::string rcomp = u.getRcompDescriptor(it->second.first);
             AU_M->insertRcompDescriptor(rcomp);
-            rcompDescriptorClassM << rcomp << " ";
+            f.insertRcompValue(rcomp, 3);
 
             // get flags descriptor
             std::string flags = u.getFlagDescriptor(it->second.first);
             AU_M->insertFlagsDescriptor(flags);
-            flagsDescriptorClassM << flags << " ";
+            f.insertFlagsValue(flags, 3);
 
             // get mmpos descriptor
             std::vector<std::pair<int, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
 
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_M*> (AU_M)->insertMmposDescriptor(u.int_to_hex(mmpos[i].first));
-                mmposDescriptorClassM << u.int_to_hex(mmpos[i].first) << " ";
+                f.insertMmposValue(u.int_to_hex(mmpos[i].first), 3);
             }
 
             // get mmtype descriptor
@@ -239,18 +182,18 @@ void generateByteStream() {
 
             for (int i = 0; i < mmtype.size(); ++i) {
                 static_cast<AccessUnit_M*> (AU_M)->insertMmtypeDescriptor(mmtype[i]);
-                mmtypeDescriptorClassM << mmtype[i] << " ";
+                f.insertMmtypeValue(mmtype[i], 3);
             }
 
             // get rlen descriptor
             std::string rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_M*> (AU_M)->insertRlenDescriptor(rlen);
-            rlenDescriptorClassM << rlen << " ";
+            f.insertRlenValue(rlen, 3);
 
             // get pair descriptor
             std::string pair = u.getPairDescriptor(it->second.first);
             static_cast<AccessUnit_M*> (AU_M)->insertPairDescriptor(pair);
-            pairDescriptorClassM << pair << " ";
+            f.insertPairValue(pair, 3);
 
             // create a new access unit in case if the current one is full
             if (AU_M->getReadsCount() == 100000) {
@@ -274,29 +217,29 @@ void generateByteStream() {
                 antPosI = a.mapping_pos[0];
                 AU_I->insertPosdescriptor(u.int_to_hex(0));
                 AU_I->setStartPosition(a.mapping_pos[0]);
-                posDescriptorClassI << u.int_to_hex(0) << " ";
+                f.insertPosValue(u.int_to_hex(0), 4);
             } else {
                 AU_I->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosI));
-                posDescriptorClassI << u.int_to_hex(a.mapping_pos[0] - antPosI) << " ";
+                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosI), 4);
                 antPosI = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
             std::string rcomp = u.getRcompDescriptor(it->second.first);
             AU_I->insertRcompDescriptor(rcomp);
-            rcompDescriptorClassI << rcomp << " ";
+            f.insertRcompValue(rcomp, 4);
 
             // get flags descriptor
             std::string flags = u.getFlagDescriptor(it->second.first);
             AU_I->insertFlagsDescriptor(flags);
-            flagsDescriptorClassI << flags << " ";
+            f.insertFlagsValue(flags, 4);
 
             // get mmpos descriptor
             std::vector<std::pair<int, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
 
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(u.int_to_hex(mmpos[i].first));
-                mmposDescriptorClassI << u.int_to_hex(mmpos[i].first) << " ";
+                f.insertMmposValue(u.int_to_hex(mmpos[i].first), 4);
             }
 
             // get mmtype descriptor
@@ -304,18 +247,18 @@ void generateByteStream() {
 
             for (int i = 0; i < mmtype.size(); ++i) {
                 static_cast<AccessUnit_I*> (AU_I)->insertMmtypeDescriptor(mmtype[i]);
-                mmtypeDescriptorClassI << mmtype[i] << " ";
+                f.insertMmtypeValue(mmtype[i], 4);
             }
 
             // get rlen descriptor
             std::string rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_I*> (AU_I)->insertRlenDescriptor(rlen);
-            rlenDescriptorClassI << rlen << " ";
+            f.insertRlenValue(rlen, 4);
 
             // get pair descriptor
             std::string pair = u.getPairDescriptor(it->second.first);
             static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(pair);
-            pairDescriptorClassI << pair << " ";
+            f.insertPairValue(pair, 4);
 
             // create a new access unit in case if the current one is full
             if (AU_I->getReadsCount() == 100000) {
@@ -339,32 +282,32 @@ void generateByteStream() {
                 antPosHM = a.mapping_pos[0];
                 AU_HM->insertPosdescriptor(u.int_to_hex(0));
                 AU_HM->setStartPosition(a.mapping_pos[0]);
-                posDescriptorClassHM << u.int_to_hex(0) << " ";
+                f.insertPosValue(u.int_to_hex(0), 5);
             } else {
                 AU_HM->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosHM));
-                posDescriptorClassHM << u.int_to_hex(a.mapping_pos[0] - antPosHM) << " ";
+                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosHM), 5);
                 antPosHM = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
             std::string rcomp = u.getRcompDescriptor(it->second.first);
             AU_HM->insertRcompDescriptor(rcomp);
-            rcompDescriptorClassHM << rcomp << " ";
+            f.insertRcompValue(rcomp, 5);
 
             // get flags descriptor
             std::string flags = u.getFlagDescriptor(it->second.first);
             AU_HM->insertFlagsDescriptor(flags);
-            flagsDescriptorClassHM << flags << " ";
+            f.insertFlagsValue(flags, 5);
 
             // get rlen descriptor
             std::string rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_HM*> (AU_HM)->insertRlenDescriptor(rlen);
-            rlenDescriptorClassHM << rlen << " ";
+            f.insertRlenValue(rlen, 5);
 
             // get pair descriptor
             std::string pair = u.getPairDescriptor(it->second.first);
             static_cast<AccessUnit_HM*> (AU_HM)->insertPairDescriptor(pair);
-            pairDescriptorClassHM << pair << " ";
+            f.insertPairValue(pair, 5);
 
             // create a new access unit in case if the current one is full
             if (AU_HM->getReadsCount() == 100000) {
@@ -385,7 +328,7 @@ void generateByteStream() {
             // get rlen descriptor
             std::string rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_U*> (AU_U)->insertRlenDescriptor(rlen);
-            rlenDescriptorClassU << rlen << " ";
+            f.insertRlenValue(rlen, 6);
 
             // create a new access unit in case if the current one is full
             if (AU_U->getReadsCount() == 100000) {
@@ -411,8 +354,6 @@ void generateByteStream() {
     accessUnits.push_back(*AU_U);
 }
 
-*/
-
 int main () {
     CharString fileName = "/home/omair/TFG/Files/9827_2#49.sam";
     BamFileIn bamFileIn(toCString(fileName));
@@ -422,7 +363,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 1000) {
+    while (!atEnd(bamFileIn) and count <= 1000000) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {
@@ -433,7 +374,7 @@ int main () {
         ++count;
     }
 
-    // generateByteStream();
+    generateByteStream();
 
     std::cout << accessUnits.size() << std::endl;
 
@@ -441,7 +382,7 @@ int main () {
         accessUnits[i].write();
     }
 
-    // u.closeFiles();
+    f.closeFiles();
 
     return 0;
 }

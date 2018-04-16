@@ -2,6 +2,7 @@
 #include <sstream>
 #include <ctype.h>
 #include <fstream>
+#include "MpeggRecord.h"
 
 /** \class Utils class
  *  \brief Auxiliary class that contains useful methods from the main class
@@ -14,6 +15,7 @@
 
 std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
 std::vector<AccessUnit> accessUnits;
+uint64_t record_id = 0;
 
 class Utils {
 
@@ -107,6 +109,25 @@ public:
         for (auto it = ret.first; it != ret.second; ++it) {
             if (!s.compare(toCString(it->second.first.qName))) {
                 return it->second.second;
+            }
+        }
+    }
+
+    /** \brief Updates the second read from the pair with a new value
+     *  \param Second read from the pair
+     * */
+    void updateRecord(BamAlignmentRecord& record, int& pos) {
+        typedef std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> >::iterator it;
+        std::pair<it, it> ret;
+        ret = reads.equal_range(pos);
+        std::string s = toCString(record.qName);
+
+        for (auto it = ret.first; it != ret.second; ++it) {
+            if (!s.compare(toCString(it->second.first.qName))) {
+                BamAlignmentRecord first = it->second.first;
+                reads.erase(it);
+                reads.insert(std::make_pair(pos, std::make_pair(first, record)));
+                break;
             }
         }
     }
@@ -248,6 +269,15 @@ public:
         return false;
     }
 
+    uint8_t getClassType(BamAlignmentRecord& record) {
+        if (isClassP(record)) return 1;
+        else if (isClassN(record)) return 2;
+        else if (isClassM(record)) return 3;
+        else if (isClassI(record)) return 4;
+        else if (isClassHM(record)) return 5;
+        else if (isClassU(record)) return 6;
+    }
+
     /** \brief Gets the rcomp descriptor for the read
      *  \param The first read
      *  \return The corresponding int value
@@ -282,48 +312,10 @@ public:
         return int_to_hex(result);
     }
 
-    /** \brief Gets the rlen descriptor for the read
-     *  \param The first read
-     *  \return The corresponding int value
-     * */
-    std::string getRlenDescriptor(BamAlignmentRecord& record) {
-        CharString seq = record.seq;
-        const char *s1 = toCString(seq);
-        std::string str(s1);
-        return int_to_hex(str.size());
-    }
-
-    /** \brief Gets the pair descriptor for the read
-     *  \param The first read
-     *  \return The corresponding value in little endian hexadecimal
-     * */
-    std::string getPairDescriptor(BamAlignmentRecord& record) {
-        bool firstRead = record.flag & 64;
-        std::string result;
-        if (record.flag & 8) (record.flag & 64) ? result = "8001" : result = "7fff";
-        if (record.flag & 4) result = "8000";
-        if (record.flag & 2048) result = int_to_hex(record.rNextId) + int_to_hex(record.beginPos);
-
-        if (firstRead) {
-            if (record.rID == record.rNextId) {
-                result = "7ffd" + int_to_hex(record.tLen);
-            } else {
-                result = "7ffe" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
-            }
-        } else {
-            if (record.rID == record.rNextId) {
-                result = "8003" + int_to_hex(record.pNext);
-            } else {
-                result = "8002" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
-            }
-        }
-        return toLittleEndian(result);
-    }
-
     /** \brief Gets the mmpos descriptor for the read
-     *  \param The first read
-     *  \return List of mismatch positions
-     * */
+    *  \param The first read
+    *  \return List of mismatch positions
+    * */
     std::vector<std::pair<int, std::string> > getmmposDescriptor(BamAlignmentRecord& record) {
         std::vector<std::pair<int, std::string> > mmpos;
         std::map<int, std::string> mmposread;
@@ -482,15 +474,42 @@ public:
         return result;
     }
 
-    /** \brief A simple function that converts a value from a int to a hex
-     *  \param The int value to be converted
-     *  \return The hexadecimal value converted
+    /** \brief Gets the rlen descriptor for the read
+     *  \param The first read
+     *  \return The corresponding int value
      * */
-    std::string int_to_hex(int32_t a) {
-        std::stringstream stream;
-        stream << std::setfill ('0') << std::setw(sizeof(a)*1)
-                << std::hex << a;
-        return stream.str();
+    std::string getRlenDescriptor(BamAlignmentRecord& record) {
+        CharString seq = record.seq;
+        const char *s1 = toCString(seq);
+        std::string str(s1);
+        return int_to_hex(str.size());
+    }
+
+    /** \brief Gets the pair descriptor for the read
+     *  \param The first read
+     *  \return The corresponding value in little endian hexadecimal
+     * */
+    std::string getPairDescriptor(BamAlignmentRecord& record) {
+        bool firstRead = record.flag & 64;
+        std::string result;
+        if (record.flag & 8) (record.flag & 64) ? result = "8001" : result = "7fff";
+        if (record.flag & 4) result = "8000";
+        if (record.flag & 2048) result = int_to_hex(record.rNextId) + int_to_hex(record.beginPos);
+
+        if (firstRead) {
+            if (record.rID == record.rNextId) {
+                result = "7ffd" + int_to_hex(record.tLen);
+            } else {
+                result = "7ffe" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+            }
+        } else {
+            if (record.rID == record.rNextId) {
+                result = "8003" + int_to_hex(record.pNext);
+            } else {
+                result = "8002" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+            }
+        }
+        return toLittleEndian(result);
     }
 
     /** \brief Extracts the value of the NM tag from the read
@@ -523,23 +542,57 @@ public:
         return toCString(tagVal);
     }
 
-    /** \brief Updates the second read from the pair with a new value
-     *  \param Second read from the pair
-     * */
-    void updateRecord(BamAlignmentRecord& record, int& pos) {
-        typedef std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> >::iterator it;
-        std::pair<it, it> ret;
-        ret = reads.equal_range(pos);
-        std::string s = toCString(record.qName);
+    void convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record) {
+        result.global_Id = ++record_id;
+        result.read_name = toCString(record.qName);
+        result.class_type = getClassType(record);
+        result.seq_Id = (result.class_type == 6) ? 0 : record.rID;
+        result.read1_first = (record.flag & 64) ? 1 : 0;
+        result.flags = record.flag;
+        result.number_of_segments = (record.flag & 8 or (record.flag & 1 and record.flag & 128)) ? 1 : 2;
+        result.number_of_alignments = 1; // just put 1 for now
 
-        for (auto it = ret.first; it != ret.second; ++it) {
-            if (!s.compare(toCString(it->second.first.qName))) {
-                BamAlignmentRecord first = it->second.first;
-                reads.erase(it);
-                reads.insert(std::make_pair(pos, std::make_pair(first, record)));
-                break;
-            }
+        CharString seq = record.seq;
+        const char *s1 = toCString(seq);
+        std::string sequence(s1);
+        std::string qv = toCString(record.qual);
+
+        result.read_len.push_back(sequence.size());
+        result.quality_values.push_back(qv);
+        result.sequence.push_back(sequence);
+
+        BamAlignmentRecord second;
+        if (result.number_of_segments > 1) {
+            second = getSecondRecord(record);
+            CharString seq = second.seq;
+            const char *s1 = toCString(seq);
+            std::string sequence(s1);
+            std::string qv = toCString(record.qual);
+
+            result.read_len.push_back(sequence.size());
+            result.quality_values.push_back(qv);
+            result.sequence.push_back(sequence);
         }
+
+        result.mapping_pos.push_back(record.beginPos);
+
+        result.cigar_size.resize(result.number_of_segments);
+        for (int i = 0; i < result.number_of_segments; ++i) result.cigar_size[i].resize(1);
+
+        result.cigar_size.at(0).push_back(getCigar(record.cigar).size());
+        if (result.number_of_segments > 1) result.cigar_size.at(1).push_back(getCigar(second.cigar).size());
+
+        result.ecigar_string.resize(result.number_of_segments);
+        for (int i = 0; i < result.number_of_segments; ++i) result.ecigar_string[i].resize(1);
+
+        result.ecigar_string.at(0).push_back("POR HACER");
+        if (result.number_of_segments > 1) result.ecigar_string.at(1).push_back("POR HACER");
+
+        result.reverse_comp.resize(result.number_of_segments);
+        for (int i = 0; i < result.number_of_segments; ++i) result.reverse_comp[i].resize(1);
+
+        result.reverse_comp.at(0).push_back((record.flag & 16) ? 0: 1);
+        if (result.number_of_segments > 1) result.reverse_comp.at(1).push_back((second.flag & 16) ? 0: 1);
     }
 
     /** Convert a hexadecimal value stored in a string to little endian
@@ -558,13 +611,15 @@ public:
         return result;
     }
 
-    uint8_t getClassType(BamAlignmentRecord& record) {
-        if (isClassP(record)) return 1;
-        else if (isClassN(record)) return 2;
-        else if (isClassM(record)) return 3;
-        else if (isClassI(record)) return 4;
-        else if (isClassHM(record)) return 5;
-        else return 6;
+    /** \brief A simple function that converts a value from a int to a hex
+     *  \param The int value to be converted
+     *  \return The hexadecimal value converted
+     * */
+    std::string int_to_hex(int32_t a) {
+        std::stringstream stream;
+        stream << std::setfill ('0') << std::setw(sizeof(a)*1)
+               << std::hex << a;
+        return stream.str();
     }
 };
 

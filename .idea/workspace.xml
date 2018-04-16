@@ -12,25 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/FileManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnit.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnitBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnitBlock.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnit_HM.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnit_HM.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnit_I.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnit_I.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnit_M.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnit_M.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnit_N.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnit_N.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnit_P.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnit_P.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessUnit_U.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccessUnit_U.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MpeggRecord.h" beforeDir="false" afterPath="$PROJECT_DIR$/MpeggRecord.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -50,22 +38,12 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="210">
+              <caret line="362" selection-start-line="362" selection-end-line="362" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#384#2605#0" />
-                <element signature="e#3729#17570#0" />
+                <element signature="e#295#14140#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MpeggRecord.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -73,12 +51,19 @@
       <file leaf-file-name="FileManager.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FileManager.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+            <state relative-caret-position="390">
+              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
               <folding>
-                <element signature="e#3931#3965#0" />
-                <element signature="e#5408#6660#0" />
-                <element signature="e#3978#5237#0" />
+                <element signature="e#211#241#0" />
+                <element signature="e#371#441#0" />
+                <element signature="e#5626#6121#0" />
+                <element signature="e#6139#6634#0" />
+                <element signature="e#6652#7147#0" />
+                <element signature="e#6990#7485#0" />
+                <element signature="e#7243#7738#0" />
+                <element signature="e#7837#8332#0" />
+                <element signature="e#8345#9597#0" />
+                <element signature="e#9602#10863#0" />
               </folding>
             </state>
           </provider>
@@ -87,10 +72,32 @@
       <file leaf-file-name="Utils.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="565" column="17" selection-start-line="565" selection-start-column="17" selection-end-line="565" selection-end-column="17" />
+            <state relative-caret-position="-1180">
+              <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#4134#4726#0" />
+                <element signature="e#4732#6669#0" />
+                <element signature="e#6675#7301#0" />
+                <element signature="e#3670#4422#0" />
+                <element signature="e#7307#8866#0" />
+                <element signature="e#8872#10194#0" />
+                <element signature="e#10200#11524#0" />
+                <element signature="e#11530#12282#0" />
+                <element signature="e#12288#12643#0" />
+                <element signature="e#12649#12949#0" />
+                <element signature="e#9314#9636#0" />
+                <element signature="e#12955#13669#0" />
+                <element signature="e#13675#14082#0" />
+                <element signature="e#10776#16162#0" />
+                <element signature="e#16168#17351#0" />
+                <element signature="e#14088#14436#0" />
+                <element signature="e#14442#15525#0" />
+                <element signature="e#22497#23017#0" />
+                <element signature="e#23023#23569#0" />
+                <element signature="e#27670#30043#0" />
+                <element signature="e#23019#23521#0" />
+                <element signature="e#23527#23905#0" />
               </folding>
             </state>
           </provider>
@@ -120,6 +127,7 @@
       <find>int_to_hex</find>
       <find>mmtype</find>
       <find>getpair</find>
+      <find>write</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,9 +148,9 @@
         <option value="$PROJECT_DIR$/AccessUnit_I.h" />
         <option value="$PROJECT_DIR$/AccessUnit_HM.h" />
         <option value="$PROJECT_DIR$/AccessUnit.h" />
-        <option value="$PROJECT_DIR$/Utils.h" />
-        <option value="$PROJECT_DIR$/FileManager.h" />
         <option value="$PROJECT_DIR$/MpeggRecord.h" />
+        <option value="$PROJECT_DIR$/FileManager.h" />
+        <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -278,22 +286,23 @@
       <workItem from="1523802127386" duration="7123000" />
       <workItem from="1523814060582" duration="147000" />
       <workItem from="1523815074624" duration="1975000" />
+      <workItem from="1523886649443" duration="3071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243175000" />
+    <option name="totallyTimeSpent" value="247000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.13689604" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.13689604" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.50955415" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5063694" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5063694" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" />
@@ -319,7 +328,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="91" />
+      <option name="time" value="93" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -378,8 +387,7 @@
         <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -404,8 +412,7 @@
           <caret line="23" column="113" selection-start-line="23" selection-start-column="113" selection-end-line="23" selection-end-column="113" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -451,8 +458,7 @@
           <caret line="125" column="49" lean-forward="true" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -462,8 +468,7 @@
         <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -488,8 +493,7 @@
           <caret line="73" column="56" selection-start-line="73" selection-start-column="56" selection-end-line="73" selection-end-column="56" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -499,26 +503,7 @@
         <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -535,8 +520,7 @@
         <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -553,8 +537,24 @@
         <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -572,8 +572,7 @@
           <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -597,8 +596,7 @@
         <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -623,8 +621,7 @@
           <caret line="23" column="113" selection-start-line="23" selection-start-column="113" selection-end-line="23" selection-end-column="113" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>
@@ -729,43 +726,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.h">
+    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="565" column="17" selection-start-line="565" selection-start-column="17" selection-end-line="565" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+        <state relative-caret-position="390">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
           <folding>
-            <element signature="e#3931#3965#0" />
-            <element signature="e#5408#6660#0" />
-            <element signature="e#3978#5237#0" />
+            <element signature="e#211#241#0" />
+            <element signature="e#371#441#0" />
+            <element signature="e#5626#6121#0" />
+            <element signature="e#6139#6634#0" />
+            <element signature="e#6652#7147#0" />
+            <element signature="e#6990#7485#0" />
+            <element signature="e#7243#7738#0" />
+            <element signature="e#7837#8332#0" />
+            <element signature="e#8345#9597#0" />
+            <element signature="e#9602#10863#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
+    <entry file="file://$PROJECT_DIR$/Utils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="-1180">
+          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#4134#4726#0" />
+            <element signature="e#4732#6669#0" />
+            <element signature="e#6675#7301#0" />
+            <element signature="e#3670#4422#0" />
+            <element signature="e#7307#8866#0" />
+            <element signature="e#8872#10194#0" />
+            <element signature="e#10200#11524#0" />
+            <element signature="e#11530#12282#0" />
+            <element signature="e#12288#12643#0" />
+            <element signature="e#12649#12949#0" />
+            <element signature="e#9314#9636#0" />
+            <element signature="e#12955#13669#0" />
+            <element signature="e#13675#14082#0" />
+            <element signature="e#10776#16162#0" />
+            <element signature="e#16168#17351#0" />
+            <element signature="e#14088#14436#0" />
+            <element signature="e#14442#15525#0" />
+            <element signature="e#22497#23017#0" />
+            <element signature="e#23023#23569#0" />
+            <element signature="e#27670#30043#0" />
+            <element signature="e#23019#23521#0" />
+            <element signature="e#23527#23905#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="210">
+          <caret line="362" selection-start-line="362" selection-end-line="362" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#384#2605#0" />
-            <element signature="e#3729#17570#0" />
+            <element signature="e#295#14140#0" />
           </folding>
         </state>
       </provider>

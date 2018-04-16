@@ -2743,12 +2743,12 @@ ctype.h
 -
 fstream
 -
+MpeggRecord.h
+/home/omair/TFG/A_prototype_MPEG-G_encoder/MpeggRecord.h
 
 /home/omair/TFG/A_prototype_MPEG-G_encoder/main.cpp
 Utils.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.h
-MpeggRecord.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/MpeggRecord.h
 AccessUnit_P.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_P.h
 AccessUnit_N.h

@@ -4,9 +4,7 @@
 #ifndef A_PROTOTYPE_MPEG_G_ENCODER_MPEGG_RECORD_H
 #define A_PROTOTYPE_MPEG_G_ENCODER_MPEGG_RECORD_H
 
-class MpeggRecord {
-
-private:
+struct MpeggRecord {
     uint64_t global_Id;                          // unique 64-bit unsigment identifier
     std::string read_name;                       // read identifier
     uint8_t class_type;                          // class type of the read
@@ -26,11 +24,6 @@ private:
     std::vector < std::vector<uint8_t> > reverse_comp;
 
     uint8_t split_aligments;
-
-public:
-
-    MpeggRecord() { }
-
 };
 
 
