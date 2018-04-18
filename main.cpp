@@ -363,7 +363,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 1000000) {
+    while (!atEnd(bamFileIn) and count <= 100) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {
@@ -371,6 +371,7 @@ int main () {
         } else {
             u.updateRecord(record, record.pNext);
         }
+
         ++count;
     }
 

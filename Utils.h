@@ -46,9 +46,9 @@ public:
      * @return The extended cigar
      */
     std::string getExtendedCigar(BamAlignmentRecord& record) {
-        /*
         std::string cigar = getCigar(record.cigar);
         std::string MD = getMDtag(record);
+        std::string result;
         std::map<int, std::string> mmpos;
         int sum = 0;
 
@@ -62,23 +62,21 @@ public:
                     } else if (isdigit(cigar[i - 1])) {
                         b = cigar[i - 1] - '0';
                     }
-                    if (cigar[i] != 'D') sum += a*10 + b;
+                    if (cigar[i] != 'D') sum += a * 10 + b;
                     if (cigar[i] != 'M') {
-                        ++sum;
-                        std::string a;
-                        a += std::to_string(a*10 + b);
-                        a.insert(1, cigar[i]);
-                        mmpos.insert(std::make_pair(sum, a));
+                        std::string c;
+                        c += std::to_string(a * 10 + b);
+                        c += cigar[i];
+                        mmpos.insert(std::make_pair(sum, c));
                     }
                 }
             }
         }
-
         sum = 0;
+
         if (MD != "100") {
             for (int i = 0; i < MD.size(); ++i) {
                 if (not isdigit(MD[i])) {
-                    char d = MD[i];
                     int a = 0, b = 0;
                     if ((i - 2) >= 0 and isdigit(MD[i - 2]) and isdigit(MD[i - 1])) {
                         a = MD[i - 2] - '0';
@@ -86,14 +84,81 @@ public:
                     } else if (isdigit(MD[i - 1])) {
                         b = MD[i - 1] - '0';
                     }
-                    sum += a*10 + b;
-                    ++sum;
-                    mmpos.insert(std::make_pair(sum, MD[i]));
+                    if (MD[i] != 'D') sum += a*10 + b;
+                    if (MD[i] != 'M' and MD[i] != '^') {
+                        ++sum;
+                        std::string c;
+                        c += std::to_string(sum);
+                        c += MD[i];
+                        mmpos.insert(std::make_pair(sum, c));
+                    }
                 }
             }
         }
-        */
-        return "null";
+
+        if (cigar == "100M" and MD == "100") return "100=";
+
+        int ant = 0;
+        auto it = mmpos.begin();
+        auto last = mmpos.end();
+        --last;
+        while (it != mmpos.end()) {
+            if (it->second[it->second.size() - 1] == 'S') {
+                if (ant == 0 and it == last) {
+                    int a = it->second[0] - '0', b = it->second[1] - '0';
+                    result += std::to_string(100 - a*10 - b);
+                    result += '=';
+                }
+                if (ant != 0) {
+                    int a = it->second[0] - '0';
+                    if (isdigit(it->second[1])) {
+                        int b = it->second[1] - '0';
+                        result += std::to_string(it->first - ant - (a * 10 + b));
+                    }
+                    else result += std::to_string(it->first - ant - a);
+                    result += '=';
+                }
+                int a = it->second[0] - '0';
+                if (isdigit(it->second[1])) {
+                    int b = it->second[1] - '0';
+                    result += "(" + std::to_string(a*10 + b) + ")";
+                } else result += "(" + std::to_string(a) + ")";
+                ant = it->first;
+            } else if (it->second[it->second.size() - 1] == 'I' or
+                       it->second[it->second.size() - 1] == 'D') {
+                int a = 0, b = 0;
+                a = it->second[0] - '0';
+                if (isdigit(it->second[1])) {
+                    b = it->second[1] - '0';
+                    result += std::to_string(it->first - ant - (a*10 + b));
+                    result += '=';
+                    if (it->second[it->second.size() - 1] == 'I') result += std::to_string(a*10 + b) + '+';
+                    else result += std::to_string(a*10 + b) + '-';
+                } else {
+                    result += std::to_string(it->first - ant - a);
+                    result += '=';
+                    if (it->second[it->second.size() - 1] == 'I') result += std::to_string(a) + '+';
+                    else result += std::to_string(a) + '-';
+                }
+                ant = it->first;
+            } else {
+                int d = it->first - ant - 1;
+                if (d != 0) {
+                    result += std::to_string(it->first - ant - 1);
+                    result += '=';
+                }
+                result += it->second[it->second.size() - 1];
+                ant = it->first;
+            }
+            ++it;
+        }
+
+        if (last->first != 100) {
+            result += std::to_string(100 - last->first);
+            result += '=';
+        }
+
+        return result;
     }
 
     /** \brief Gets the second read for the pair
@@ -585,8 +650,8 @@ public:
         result.ecigar_string.resize(result.number_of_segments);
         for (int i = 0; i < result.number_of_segments; ++i) result.ecigar_string[i].resize(1);
 
-        result.ecigar_string.at(0).push_back("POR HACER");
-        if (result.number_of_segments > 1) result.ecigar_string.at(1).push_back("POR HACER");
+        result.ecigar_string.at(0).push_back(getExtendedCigar(record));
+        if (result.number_of_segments > 1) result.ecigar_string.at(1).push_back(getExtendedCigar(second));
 
         result.reverse_comp.resize(result.number_of_segments);
         for (int i = 0; i < result.number_of_segments; ++i) result.reverse_comp[i].resize(1);
