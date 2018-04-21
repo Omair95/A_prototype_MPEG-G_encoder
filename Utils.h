@@ -9,7 +9,6 @@
  *  \author Omair Iqbal
  * */
 
-
 #ifndef A_PROTOTYPE_MPEG_G_ENCODER_UTILS_H
 #define A_PROTOTYPE_MPEG_G_ENCODER_UTILS_H
 

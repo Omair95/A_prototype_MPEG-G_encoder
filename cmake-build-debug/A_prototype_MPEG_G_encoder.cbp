@@ -45,7 +45,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include"/>
-					<Add directory="/home/omair/TFG/A_prototype_MPEG-G_encoder/boost_1_66_0"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -70,7 +69,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include"/>
-					<Add directory="/home/omair/TFG/A_prototype_MPEG-G_encoder/boost_1_66_0"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -88,28 +86,55 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit.cpp">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit.h">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnitBlock.cpp">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnitBlock.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.cpp">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.h">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_I.cpp">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_I.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_M.cpp">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_M.h">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_N.cpp">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_N.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_P.cpp">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_P.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.cpp">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.h">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/FileManager.cpp">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/FileManager.h">

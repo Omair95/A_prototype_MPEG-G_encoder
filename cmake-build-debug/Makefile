@@ -123,6 +123,249 @@ A_prototype_MPEG_G_encoder/fast:
 	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/build
 .PHONY : A_prototype_MPEG_G_encoder/fast
 
+AccessUnit.o: AccessUnit.cpp.o
+
+.PHONY : AccessUnit.o
+
+# target to build an object file
+AccessUnit.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit.cpp.o
+.PHONY : AccessUnit.cpp.o
+
+AccessUnit.i: AccessUnit.cpp.i
+
+.PHONY : AccessUnit.i
+
+# target to preprocess a source file
+AccessUnit.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit.cpp.i
+.PHONY : AccessUnit.cpp.i
+
+AccessUnit.s: AccessUnit.cpp.s
+
+.PHONY : AccessUnit.s
+
+# target to generate assembly for a file
+AccessUnit.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit.cpp.s
+.PHONY : AccessUnit.cpp.s
+
+AccessUnitBlock.o: AccessUnitBlock.cpp.o
+
+.PHONY : AccessUnitBlock.o
+
+# target to build an object file
+AccessUnitBlock.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.o
+.PHONY : AccessUnitBlock.cpp.o
+
+AccessUnitBlock.i: AccessUnitBlock.cpp.i
+
+.PHONY : AccessUnitBlock.i
+
+# target to preprocess a source file
+AccessUnitBlock.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.i
+.PHONY : AccessUnitBlock.cpp.i
+
+AccessUnitBlock.s: AccessUnitBlock.cpp.s
+
+.PHONY : AccessUnitBlock.s
+
+# target to generate assembly for a file
+AccessUnitBlock.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.s
+.PHONY : AccessUnitBlock.cpp.s
+
+AccessUnit_HM.o: AccessUnit_HM.cpp.o
+
+.PHONY : AccessUnit_HM.o
+
+# target to build an object file
+AccessUnit_HM.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o
+.PHONY : AccessUnit_HM.cpp.o
+
+AccessUnit_HM.i: AccessUnit_HM.cpp.i
+
+.PHONY : AccessUnit_HM.i
+
+# target to preprocess a source file
+AccessUnit_HM.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.i
+.PHONY : AccessUnit_HM.cpp.i
+
+AccessUnit_HM.s: AccessUnit_HM.cpp.s
+
+.PHONY : AccessUnit_HM.s
+
+# target to generate assembly for a file
+AccessUnit_HM.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.s
+.PHONY : AccessUnit_HM.cpp.s
+
+AccessUnit_I.o: AccessUnit_I.cpp.o
+
+.PHONY : AccessUnit_I.o
+
+# target to build an object file
+AccessUnit_I.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o
+.PHONY : AccessUnit_I.cpp.o
+
+AccessUnit_I.i: AccessUnit_I.cpp.i
+
+.PHONY : AccessUnit_I.i
+
+# target to preprocess a source file
+AccessUnit_I.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.i
+.PHONY : AccessUnit_I.cpp.i
+
+AccessUnit_I.s: AccessUnit_I.cpp.s
+
+.PHONY : AccessUnit_I.s
+
+# target to generate assembly for a file
+AccessUnit_I.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.s
+.PHONY : AccessUnit_I.cpp.s
+
+AccessUnit_M.o: AccessUnit_M.cpp.o
+
+.PHONY : AccessUnit_M.o
+
+# target to build an object file
+AccessUnit_M.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o
+.PHONY : AccessUnit_M.cpp.o
+
+AccessUnit_M.i: AccessUnit_M.cpp.i
+
+.PHONY : AccessUnit_M.i
+
+# target to preprocess a source file
+AccessUnit_M.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.i
+.PHONY : AccessUnit_M.cpp.i
+
+AccessUnit_M.s: AccessUnit_M.cpp.s
+
+.PHONY : AccessUnit_M.s
+
+# target to generate assembly for a file
+AccessUnit_M.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.s
+.PHONY : AccessUnit_M.cpp.s
+
+AccessUnit_N.o: AccessUnit_N.cpp.o
+
+.PHONY : AccessUnit_N.o
+
+# target to build an object file
+AccessUnit_N.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o
+.PHONY : AccessUnit_N.cpp.o
+
+AccessUnit_N.i: AccessUnit_N.cpp.i
+
+.PHONY : AccessUnit_N.i
+
+# target to preprocess a source file
+AccessUnit_N.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.i
+.PHONY : AccessUnit_N.cpp.i
+
+AccessUnit_N.s: AccessUnit_N.cpp.s
+
+.PHONY : AccessUnit_N.s
+
+# target to generate assembly for a file
+AccessUnit_N.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.s
+.PHONY : AccessUnit_N.cpp.s
+
+AccessUnit_P.o: AccessUnit_P.cpp.o
+
+.PHONY : AccessUnit_P.o
+
+# target to build an object file
+AccessUnit_P.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.o
+.PHONY : AccessUnit_P.cpp.o
+
+AccessUnit_P.i: AccessUnit_P.cpp.i
+
+.PHONY : AccessUnit_P.i
+
+# target to preprocess a source file
+AccessUnit_P.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.i
+.PHONY : AccessUnit_P.cpp.i
+
+AccessUnit_P.s: AccessUnit_P.cpp.s
+
+.PHONY : AccessUnit_P.s
+
+# target to generate assembly for a file
+AccessUnit_P.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.s
+.PHONY : AccessUnit_P.cpp.s
+
+AccessUnit_U.o: AccessUnit_U.cpp.o
+
+.PHONY : AccessUnit_U.o
+
+# target to build an object file
+AccessUnit_U.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o
+.PHONY : AccessUnit_U.cpp.o
+
+AccessUnit_U.i: AccessUnit_U.cpp.i
+
+.PHONY : AccessUnit_U.i
+
+# target to preprocess a source file
+AccessUnit_U.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.i
+.PHONY : AccessUnit_U.cpp.i
+
+AccessUnit_U.s: AccessUnit_U.cpp.s
+
+.PHONY : AccessUnit_U.s
+
+# target to generate assembly for a file
+AccessUnit_U.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.s
+.PHONY : AccessUnit_U.cpp.s
+
+FileManager.o: FileManager.cpp.o
+
+.PHONY : FileManager.o
+
+# target to build an object file
+FileManager.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o
+.PHONY : FileManager.cpp.o
+
+FileManager.i: FileManager.cpp.i
+
+.PHONY : FileManager.i
+
+# target to preprocess a source file
+FileManager.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.i
+.PHONY : FileManager.cpp.i
+
+FileManager.s: FileManager.cpp.s
+
+.PHONY : FileManager.s
+
+# target to generate assembly for a file
+FileManager.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.s
+.PHONY : FileManager.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +402,33 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... A_prototype_MPEG_G_encoder"
+	@echo "... AccessUnit.o"
+	@echo "... AccessUnit.i"
+	@echo "... AccessUnit.s"
+	@echo "... AccessUnitBlock.o"
+	@echo "... AccessUnitBlock.i"
+	@echo "... AccessUnitBlock.s"
+	@echo "... AccessUnit_HM.o"
+	@echo "... AccessUnit_HM.i"
+	@echo "... AccessUnit_HM.s"
+	@echo "... AccessUnit_I.o"
+	@echo "... AccessUnit_I.i"
+	@echo "... AccessUnit_I.s"
+	@echo "... AccessUnit_M.o"
+	@echo "... AccessUnit_M.i"
+	@echo "... AccessUnit_M.s"
+	@echo "... AccessUnit_N.o"
+	@echo "... AccessUnit_N.i"
+	@echo "... AccessUnit_N.s"
+	@echo "... AccessUnit_P.o"
+	@echo "... AccessUnit_P.i"
+	@echo "... AccessUnit_P.s"
+	@echo "... AccessUnit_U.o"
+	@echo "... AccessUnit_U.i"
+	@echo "... AccessUnit_U.s"
+	@echo "... FileManager.o"
+	@echo "... FileManager.i"
+	@echo "... FileManager.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

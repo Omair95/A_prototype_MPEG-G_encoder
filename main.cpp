@@ -8,7 +8,6 @@
 #include "FileManager.h"
 #include <time.h>
 #include <algorithm>
-#include <boost/endian/conversion.hpp>
 
 /*! \file */
 
@@ -363,7 +362,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 100) {
+    while (!atEnd(bamFileIn) and count <= 1000) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {

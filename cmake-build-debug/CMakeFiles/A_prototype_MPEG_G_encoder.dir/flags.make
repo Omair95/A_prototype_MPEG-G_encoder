@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include -I/home/omair/TFG/A_prototype_MPEG-G_encoder/boost_1_66_0 
+CXX_INCLUDES = -I/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include 
 
