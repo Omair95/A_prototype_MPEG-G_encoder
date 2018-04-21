@@ -208,9 +208,7 @@ public:
      * \param first is the first read of the pair and \param second is the second read of the pair
      * \return void
      * */
-    void insertRead(BamAlignmentRecord first, BamAlignmentRecord second) {
-        reads.insert(std::make_pair(first.beginPos, std::make_pair(first, second)));
-    }
+    void insertRead(BamAlignmentRecord first, BamAlignmentRecord second);
 };
 
 #endif

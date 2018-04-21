@@ -604,3 +604,7 @@ void Utils::insertAccessUnit(AccessUnit au) {
 void Utils::getAllAccessUnits(std::vector<AccessUnit>& au) {
     au = accessUnits;
 }
+
+void Utils::insertRead(BamAlignmentRecord first, BamAlignmentRecord second) {
+    reads.insert(std::make_pair(first.beginPos, std::make_pair(first, second)));
+}
