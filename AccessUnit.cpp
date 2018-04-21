@@ -40,11 +40,11 @@ void AccessUnit::updateReads() {
     ++reads_count;
 }
 
+uint32_t AccessUnit::getReadsCount() {
+    return reads_count;
+}
+
 void AccessUnit::write() {
     std::cout << "Type : " << unsigned(AU_type) << " ";
     std::cout << "ID = " << access_unit_id << " " << AU_start_position << " " << AU_end_position << " number of reads = " << reads_count << std::endl;
-}
-
-uint32_t AccessUnit::getReadsCount() {
-    return reads_count;
 }

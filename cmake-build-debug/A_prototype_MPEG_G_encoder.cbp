@@ -143,6 +143,9 @@
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/MpeggRecord.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.cpp">
+			<Option target="A_prototype_MPEG_G_encoder"/>
+		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>

@@ -366,6 +366,33 @@ FileManager.cpp.s:
 	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.s
 .PHONY : FileManager.cpp.s
 
+Utils.o: Utils.cpp.o
+
+.PHONY : Utils.o
+
+# target to build an object file
+Utils.cpp.o:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o
+.PHONY : Utils.cpp.o
+
+Utils.i: Utils.cpp.i
+
+.PHONY : Utils.i
+
+# target to preprocess a source file
+Utils.cpp.i:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.i
+.PHONY : Utils.cpp.i
+
+Utils.s: Utils.cpp.s
+
+.PHONY : Utils.s
+
+# target to generate assembly for a file
+Utils.cpp.s:
+	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.s
+.PHONY : Utils.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -429,6 +456,9 @@ help:
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"
+	@echo "... Utils.o"
+	@echo "... Utils.i"
+	@echo "... Utils.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

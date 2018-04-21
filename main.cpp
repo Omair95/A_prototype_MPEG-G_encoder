@@ -9,12 +9,18 @@
 #include <time.h>
 #include <algorithm>
 
-/*! \file */
+/*! \file main.cpp */
 
 Utils u;
 FileManager f;
 int au_id = -1;
 
+/**
+ * \brief This is the main function of the program. It detects the type of data class that a read belongs to
+ *  and generates all the asociated descriptors
+ * \param void
+ * \return void
+ * */
 void generateByteStream() {
     AccessUnit *AU_P, *AU_N, *AU_M, *AU_I, *AU_HM, *AU_U;
     AU_P = new AccessUnit_P(++au_id);
@@ -23,6 +29,8 @@ void generateByteStream() {
     AU_I = new AccessUnit_I(++au_id);
     AU_HM = new AccessUnit_HM(++au_id);
     AU_U = new AccessUnit_U(++au_id);
+    std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
+    u.getAllreads(reads);
 
     auto it = reads.begin();
     const auto end = reads.end();
@@ -76,7 +84,7 @@ void generateByteStream() {
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == 100000) {
                 AU_P->setEndPosition(a.mapping_pos[0]);
-                accessUnits.push_back(*AU_P);
+                u.insertAccessUnit(*AU_P);
                 AU_P = new AccessUnit_P(++au_id);
                 AU_P->setStartPosition(a.mapping_pos[0]);
             }
@@ -133,7 +141,7 @@ void generateByteStream() {
             if (AU_N->getReadsCount() == 100000) {
                 // create a new accessUnit
                 AU_N->setEndPosition(a.mapping_pos[0]);
-                accessUnits.push_back(*AU_N);
+                u.insertAccessUnit(*AU_N);
                 AU_N = new AccessUnit_N(++au_id);
                 AU_N->setStartPosition(a.mapping_pos[0]);
             }
@@ -198,7 +206,7 @@ void generateByteStream() {
             if (AU_M->getReadsCount() == 100000) {
                 // create a new accessUnit
                 AU_M->setEndPosition(a.mapping_pos[0]);
-                accessUnits.push_back(*AU_M);
+                u.insertAccessUnit(*AU_M);
                 AU_M = new AccessUnit_M(++au_id);
                 AU_M->setStartPosition(a.mapping_pos[0]);
             }
@@ -263,7 +271,7 @@ void generateByteStream() {
             if (AU_I->getReadsCount() == 100000) {
                 // create a new accessUnit
                 AU_I->setEndPosition(a.mapping_pos[0]);
-                accessUnits.push_back(*AU_I);
+                u.insertAccessUnit(*AU_I);
                 AU_I = new AccessUnit_I(++au_id);
                 AU_I->setStartPosition(a.mapping_pos[0]);
             }
@@ -312,7 +320,7 @@ void generateByteStream() {
             if (AU_HM->getReadsCount() == 100000) {
                 // create a new accessUnit
                 AU_HM->setEndPosition(a.mapping_pos[0]);
-                accessUnits.push_back(*AU_HM);
+                u.insertAccessUnit(*AU_HM);
                 AU_HM = new AccessUnit_HM(++au_id);
                 AU_HM->setStartPosition(a.mapping_pos[0]);
             }
@@ -333,7 +341,7 @@ void generateByteStream() {
             if (AU_U->getReadsCount() == 100000) {
                 // create a new accessUnit
                 AU_U->setEndPosition(a.mapping_pos[0]);
-                accessUnits.push_back(*AU_U);
+                u.insertAccessUnit(*AU_U);
                 AU_U = new AccessUnit_U(++au_id);
                 AU_U->setStartPosition(a.mapping_pos[0]);
             }
@@ -345,12 +353,12 @@ void generateByteStream() {
     }
 
     // add all incomplete access units
-    accessUnits.push_back(*AU_P);
-    accessUnits.push_back(*AU_N);
-    accessUnits.push_back(*AU_M);
-    accessUnits.push_back(*AU_I);
-    accessUnits.push_back(*AU_HM);
-    accessUnits.push_back(*AU_U);
+    u.insertAccessUnit(*AU_P);
+    u.insertAccessUnit(*AU_N);
+    u.insertAccessUnit(*AU_M);
+    u.insertAccessUnit(*AU_I);
+    u.insertAccessUnit(*AU_HM);
+    u.insertAccessUnit(*AU_U);
 }
 
 int main () {
@@ -366,7 +374,7 @@ int main () {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {
-            reads.insert(std::make_pair(record.beginPos, std::make_pair(record, record)));
+            u.insertRead(record, record);
         } else {
             u.updateRecord(record, record.pNext);
         }
@@ -376,10 +384,13 @@ int main () {
 
     generateByteStream();
 
-    std::cout << accessUnits.size() << std::endl;
+    std::vector<AccessUnit> au;
+    u.getAllAccessUnits(au);
 
-    for (int i = 0; i < accessUnits.size(); ++i) {
-        accessUnits[i].write();
+    std::cout << au.size() << std::endl;
+
+    for (int i = 0; i < au.size(); ++i) {
+        au[i].write();
     }
 
     f.closeFiles();
