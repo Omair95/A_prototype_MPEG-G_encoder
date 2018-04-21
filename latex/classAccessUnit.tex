@@ -2,8 +2,16 @@
 \label{classAccessUnit}\index{Access\+Unit@{Access\+Unit}}
 
 
-Inheritance diagram for Access\+Unit\+:
-\nopagebreak
+Main data structure to be used.  
+
+
+
+
+{\ttfamily \#include $<$Access\+Unit.\+h$>$}
+
+
+
+Inheritance diagram for Access\+Unit\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,50 +21,347 @@ Inheritance diagram for Access\+Unit\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries set\+Start\+Position} (uint32\+\_\+t start)\hypertarget{classAccessUnit_a07baa96e65a985a73efcc6b1e98ab721}{}\label{classAccessUnit_a07baa96e65a985a73efcc6b1e98ab721}
+\hyperlink{classAccessUnit_a5cef01ba22a669b5bd478ac4262c06ee}{Access\+Unit} ()
+\begin{DoxyCompactList}\small\item\em blocks containing descriptors \end{DoxyCompactList}\item 
+\hyperlink{classAccessUnit_ae55b52ce6b71e43aee61b5c6e5c315c5}{$\sim$\+Access\+Unit} ()
+\begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bfseries get\+Type} ()\hypertarget{classAccessUnit_a8eb8ccd6079bf8ce8a8fa27c8e1bee6c}{}\label{classAccessUnit_a8eb8ccd6079bf8ce8a8fa27c8e1bee6c}
 
 \item 
-void {\bfseries get\+Pos\+Descriptor\+Values} ()\hypertarget{classAccessUnit_a7525ca997685655cf1b2feee85e57dec}{}\label{classAccessUnit_a7525ca997685655cf1b2feee85e57dec}
-
-\item 
-void {\bfseries update\+Reads} ()\hypertarget{classAccessUnit_a11ae1270d7bbc62cec47bfb9c6738764}{}\label{classAccessUnit_a11ae1270d7bbc62cec47bfb9c6738764}
-
-\end{DoxyCompactItemize}
+void \hyperlink{classAccessUnit_a07baa96e65a985a73efcc6b1e98ab721}{set\+Start\+Position} (uint32\+\_\+t start)
+\begin{DoxyCompactList}\small\item\em Sets the start position of the access unit. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_a68b44705578142db56f5365390889240}{set\+End\+Position} (uint32\+\_\+t endpos)
+\begin{DoxyCompactList}\small\item\em Sets the end position of the access unit. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_ae9f1cfba908511e901fa2b0810e2d48b}{insert\+Posdescriptor} (std\+::string value)
+\begin{DoxyCompactList}\small\item\em Inserts the pos descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_ab412ffb8efa67c364d6664242842cace}{insert\+Rcomp\+Descriptor} (std\+::string value)
+\begin{DoxyCompactList}\small\item\em Inserts the rcomp descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_a9b0dec206efc4a7f969b8112782f2dec}{insert\+Flags\+Descriptor} (std\+::string value)
+\begin{DoxyCompactList}\small\item\em Inserts the flags descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_a7525ca997685655cf1b2feee85e57dec}{get\+Pos\+Descriptor\+Values} ()
+\begin{DoxyCompactList}\small\item\em Gets all the values of the pos descriptor in the access unit. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f}{get\+Rcomp\+Descriptor\+Values} ()
+\begin{DoxyCompactList}\small\item\em Gets all the values of the rcomp descriptor in the access unit. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_afc99a1cdfe656a307d2851e107a82cdb}{get\+Flags\+Descriptor\+Values} ()
+\begin{DoxyCompactList}\small\item\em Gets all the value of the flags descriptor in the access unit. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_a11ae1270d7bbc62cec47bfb9c6738764}{update\+Reads} ()
+\begin{DoxyCompactList}\small\item\em Updates the numbers of reads stored in the access unit. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classAccessUnit_aecc1cf0d2ed07a7acba1683ca087d06f}{get\+Reads\+Count} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of reads stored in the access unit. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnit_a318a8b10aafc04ce1de0f9ba503d72fd}{write} ()
+\begin{DoxyCompactList}\small\item\em Writes via command line the type of the access unit, the start and end position and the number of reads stored in it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 uint32\+\_\+t {\bfseries access\+\_\+unit\+\_\+id}\hypertarget{classAccessUnit_adcd0cb54e1494339ab0a9e41bb8c8d48}{}\label{classAccessUnit_adcd0cb54e1494339ab0a9e41bb8c8d48}
 
 \item 
-uint8\+\_\+t {\bfseries num\+\_\+blocks}\hypertarget{classAccessUnit_a88f0f1df847d53c2acfa2c71e05bbe80}{}\label{classAccessUnit_a88f0f1df847d53c2acfa2c71e05bbe80}
+uint8\+\_\+t \hyperlink{classAccessUnit_a88f0f1df847d53c2acfa2c71e05bbe80}{num\+\_\+blocks}\hypertarget{classAccessUnit_a88f0f1df847d53c2acfa2c71e05bbe80}{}\label{classAccessUnit_a88f0f1df847d53c2acfa2c71e05bbe80}
 
+\begin{DoxyCompactList}\small\item\em zero-\/base unambiguous identifier, linearly increased by 1 \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}{parameter\+\_\+set\+\_\+id}\hypertarget{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}{}\label{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}
+
+\begin{DoxyCompactList}\small\item\em number of blocks in the Access Unit \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classAccessUnit_af1f7750576bc9a7a5932776435c11194}{A\+U\+\_\+type}\hypertarget{classAccessUnit_af1f7750576bc9a7a5932776435c11194}{}\label{classAccessUnit_af1f7750576bc9a7a5932776435c11194}
+
+\begin{DoxyCompactList}\small\item\em unique identifier of the Parameters Set in the Dataset Group \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classAccessUnit_ae3839f3390652171fad0b28622d4d8c7}{reads\+\_\+count}\hypertarget{classAccessUnit_ae3839f3390652171fad0b28622d4d8c7}{}\label{classAccessUnit_ae3839f3390652171fad0b28622d4d8c7}
+
+\begin{DoxyCompactList}\small\item\em identifies the type of Access Unit and the class of data carried \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classAccessUnit_a2d515312cf26d6bd17783a27db6a2a43}{reference\+\_\+id}\hypertarget{classAccessUnit_a2d515312cf26d6bd17783a27db6a2a43}{}\label{classAccessUnit_a2d515312cf26d6bd17783a27db6a2a43}
+
+\begin{DoxyCompactList}\small\item\em number of genomic sequence reads encoded in the Access Unit \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classAccessUnit_aa1eb6c997589b9298c8d5ffc60bee236}{sequence\+\_\+id}\hypertarget{classAccessUnit_aa1eb6c997589b9298c8d5ffc60bee236}{}\label{classAccessUnit_aa1eb6c997589b9298c8d5ffc60bee236}
+
+\begin{DoxyCompactList}\small\item\em unique identifier of the Raw Reference to be used to decode the Access Uni \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classAccessUnit_a87446578b699ed62962102dd00255dd4}{A\+U\+\_\+start\+\_\+position}\hypertarget{classAccessUnit_a87446578b699ed62962102dd00255dd4}{}\label{classAccessUnit_a87446578b699ed62962102dd00255dd4}
+
+\begin{DoxyCompactList}\small\item\em unique identifier of the Reference Sequence to be used to decode the Access Unit \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classAccessUnit_a238f89a4320054297d5db8f73582080b}{A\+U\+\_\+end\+\_\+position}\hypertarget{classAccessUnit_a238f89a4320054297d5db8f73582080b}{}\label{classAccessUnit_a238f89a4320054297d5db8f73582080b}
+
+\begin{DoxyCompactList}\small\item\em indexing lower information \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classAccessUnitBlock}{Access\+Unit\+Block} $>$ \hyperlink{classAccessUnit_a8b3d5bc109843bab72e3e04efaad580a}{descriptors}\hypertarget{classAccessUnit_a8b3d5bc109843bab72e3e04efaad580a}{}\label{classAccessUnit_a8b3d5bc109843bab72e3e04efaad580a}
+
+\begin{DoxyCompactList}\small\item\em indexing higher information \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main data structure to be used. 
+
+This class implements the access unit structure that contains header information and a number of blocks as a payload.
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Author}
+Omair Iqbal 
+\end{DoxyParagraph}
+
+
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+04/2018 
+\end{DoxyParagraph}
+
+
+Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Access\+Unit@{Access\+Unit}!Access\+Unit@{Access\+Unit}}
+\index{Access\+Unit@{Access\+Unit}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{Access\+Unit()}{AccessUnit()}}]{\setlength{\rightskip}{0pt plus 5cm}Access\+Unit\+::\+Access\+Unit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a5cef01ba22a669b5bd478ac4262c06ee}{}\label{classAccessUnit_a5cef01ba22a669b5bd478ac4262c06ee}
+
+
+blocks containing descriptors 
+
+Constructor method 
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!````~Access\+Unit@{$\sim$\+Access\+Unit}}
+\index{````~Access\+Unit@{$\sim$\+Access\+Unit}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{$\sim$\+Access\+Unit()}{~AccessUnit()}}]{\setlength{\rightskip}{0pt plus 5cm}Access\+Unit\+::$\sim$\+Access\+Unit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_ae55b52ce6b71e43aee61b5c6e5c315c5}{}\label{classAccessUnit_ae55b52ce6b71e43aee61b5c6e5c315c5}
+
+
+Destructor method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{Access\+Unit@{Access\+Unit}!get\+Flags\+Descriptor\+Values@{get\+Flags\+Descriptor\+Values}}
+\index{get\+Flags\+Descriptor\+Values@{get\+Flags\+Descriptor\+Values}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{get\+Flags\+Descriptor\+Values()}{getFlagsDescriptorValues()}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::get\+Flags\+Descriptor\+Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_afc99a1cdfe656a307d2851e107a82cdb}{}\label{classAccessUnit_afc99a1cdfe656a307d2851e107a82cdb}
+
+
+Gets all the value of the flags descriptor in the access unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!get\+Pos\+Descriptor\+Values@{get\+Pos\+Descriptor\+Values}}
+\index{get\+Pos\+Descriptor\+Values@{get\+Pos\+Descriptor\+Values}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{get\+Pos\+Descriptor\+Values()}{getPosDescriptorValues()}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::get\+Pos\+Descriptor\+Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a7525ca997685655cf1b2feee85e57dec}{}\label{classAccessUnit_a7525ca997685655cf1b2feee85e57dec}
+
+
+Gets all the values of the pos descriptor in the access unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!get\+Rcomp\+Descriptor\+Values@{get\+Rcomp\+Descriptor\+Values}}
+\index{get\+Rcomp\+Descriptor\+Values@{get\+Rcomp\+Descriptor\+Values}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{get\+Rcomp\+Descriptor\+Values()}{getRcompDescriptorValues()}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::get\+Rcomp\+Descriptor\+Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f}{}\label{classAccessUnit_a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f}
+
+
+Gets all the values of the rcomp descriptor in the access unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!get\+Reads\+Count@{get\+Reads\+Count}}
+\index{get\+Reads\+Count@{get\+Reads\+Count}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{get\+Reads\+Count()}{getReadsCount()}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Access\+Unit\+::get\+Reads\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_aecc1cf0d2ed07a7acba1683ca087d06f}{}\label{classAccessUnit_aecc1cf0d2ed07a7acba1683ca087d06f}
+
+
+Gets the number of reads stored in the access unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of reads in the access unit 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!insert\+Flags\+Descriptor@{insert\+Flags\+Descriptor}}
+\index{insert\+Flags\+Descriptor@{insert\+Flags\+Descriptor}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{insert\+Flags\+Descriptor(std\+::string value)}{insertFlagsDescriptor(std::string value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::insert\+Flags\+Descriptor (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a9b0dec206efc4a7f969b8112782f2dec}{}\label{classAccessUnit_a9b0dec206efc4a7f969b8112782f2dec}
+
+
+Inserts the flags descriptor value inside the corresponding block in the payload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & an string representing the value in hexadecimal of the flags descriptor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!insert\+Posdescriptor@{insert\+Posdescriptor}}
+\index{insert\+Posdescriptor@{insert\+Posdescriptor}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{insert\+Posdescriptor(std\+::string value)}{insertPosdescriptor(std::string value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::insert\+Posdescriptor (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_ae9f1cfba908511e901fa2b0810e2d48b}{}\label{classAccessUnit_ae9f1cfba908511e901fa2b0810e2d48b}
+
+
+Inserts the pos descriptor value inside the corresponding block in the payload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & an string representing the value in hexadecimal of the pos descriptor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!insert\+Rcomp\+Descriptor@{insert\+Rcomp\+Descriptor}}
+\index{insert\+Rcomp\+Descriptor@{insert\+Rcomp\+Descriptor}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{insert\+Rcomp\+Descriptor(std\+::string value)}{insertRcompDescriptor(std::string value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::insert\+Rcomp\+Descriptor (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_ab412ffb8efa67c364d6664242842cace}{}\label{classAccessUnit_ab412ffb8efa67c364d6664242842cace}
+
+
+Inserts the rcomp descriptor value inside the corresponding block in the payload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & an string representing the value in hexadecimal of the rcomp descriptor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!set\+End\+Position@{set\+End\+Position}}
+\index{set\+End\+Position@{set\+End\+Position}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{set\+End\+Position(uint32\+\_\+t endpos)}{setEndPosition(uint32_t endpos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::set\+End\+Position (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{endpos}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a68b44705578142db56f5365390889240}{}\label{classAccessUnit_a68b44705578142db56f5365390889240}
+
+
+Sets the end position of the access unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em endpos} & an integer representing the end position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!set\+Start\+Position@{set\+Start\+Position}}
+\index{set\+Start\+Position@{set\+Start\+Position}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{set\+Start\+Position(uint32\+\_\+t start)}{setStartPosition(uint32_t start)}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::set\+Start\+Position (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{start}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a07baa96e65a985a73efcc6b1e98ab721}{}\label{classAccessUnit_a07baa96e65a985a73efcc6b1e98ab721}
+
+
+Sets the start position of the access unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & an integer representing the start position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!update\+Reads@{update\+Reads}}
+\index{update\+Reads@{update\+Reads}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{update\+Reads()}{updateReads()}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::update\+Reads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a11ae1270d7bbc62cec47bfb9c6738764}{}\label{classAccessUnit_a11ae1270d7bbc62cec47bfb9c6738764}
+
+
+Updates the numbers of reads stored in the access unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!write@{write}}
+\index{write@{write}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{write()}{write()}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::write (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a318a8b10aafc04ce1de0f9ba503d72fd}{}\label{classAccessUnit_a318a8b10aafc04ce1de0f9ba503d72fd}
+
+
+Writes via command line the type of the access unit, the start and end position and the number of reads stored in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-uint16\+\_\+t {\bfseries parameter\+\_\+set\+\_\+id}\hypertarget{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}{}\label{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}
-
-\item 
-uint8\+\_\+t {\bfseries A\+U\+\_\+type}\hypertarget{classAccessUnit_af1f7750576bc9a7a5932776435c11194}{}\label{classAccessUnit_af1f7750576bc9a7a5932776435c11194}
-
-\item 
-uint32\+\_\+t {\bfseries reads\+\_\+count}\hypertarget{classAccessUnit_ae3839f3390652171fad0b28622d4d8c7}{}\label{classAccessUnit_ae3839f3390652171fad0b28622d4d8c7}
-
-\item 
-uint8\+\_\+t {\bfseries reference\+\_\+id}\hypertarget{classAccessUnit_a2d515312cf26d6bd17783a27db6a2a43}{}\label{classAccessUnit_a2d515312cf26d6bd17783a27db6a2a43}
-
-\item 
-uint16\+\_\+t {\bfseries sequence\+\_\+id}\hypertarget{classAccessUnit_aa1eb6c997589b9298c8d5ffc60bee236}{}\label{classAccessUnit_aa1eb6c997589b9298c8d5ffc60bee236}
-
-\item 
-uint32\+\_\+t {\bfseries A\+U\+\_\+start\+\_\+position}\hypertarget{classAccessUnit_a87446578b699ed62962102dd00255dd4}{}\label{classAccessUnit_a87446578b699ed62962102dd00255dd4}
-
-\item 
-uint32\+\_\+t {\bfseries A\+U\+\_\+end\+\_\+position}\hypertarget{classAccessUnit_a238f89a4320054297d5db8f73582080b}{}\label{classAccessUnit_a238f89a4320054297d5db8f73582080b}
-
-\item 
-std\+::vector$<$ \hyperlink{classAccessUnitBlock}{Access\+Unit\+Block} $>$ {\bfseries descriptors}\hypertarget{classAccessUnit_a8b3d5bc109843bab72e3e04efaad580a}{}\label{classAccessUnit_a8b3d5bc109843bab72e3e04efaad580a}
-
-\end{DoxyCompactItemize}
-
-
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-Access\+Unit.\+h\end{DoxyCompactItemize}
+\hyperlink{AccessUnit_8h}{Access\+Unit.\+h}\item 
+Access\+Unit.\+cpp\end{DoxyCompactItemize}

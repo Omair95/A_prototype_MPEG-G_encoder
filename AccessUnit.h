@@ -48,6 +48,8 @@ public:
     * */
     ~AccessUnit();
 
+    uint8_t getType();
+
     /** \brief Sets the start position of the access unit
     * \param start an integer representing the start position
     * \return void

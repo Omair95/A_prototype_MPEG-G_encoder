@@ -90,27 +90,168 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AccessUnitBlock Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Block data structure of the access unit.  
+ <a href="classAccessUnitBlock.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="AccessUnitBlock_8h_source.html">AccessUnitBlock.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:addf588e7a14ec0342873a51335c256ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addf588e7a14ec0342873a51335c256ec"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AccessUnitBlock</b> (uint8_t descriptorId)</td></tr>
+<tr class="memitem:addf588e7a14ec0342873a51335c256ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnitBlock.html#addf588e7a14ec0342873a51335c256ec">AccessUnitBlock</a> (uint8_t descriptorId)</td></tr>
+<tr class="memdesc:addf588e7a14ec0342873a51335c256ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">the values of the descriptor  <a href="#addf588e7a14ec0342873a51335c256ec">More...</a><br /></td></tr>
 <tr class="separator:addf588e7a14ec0342873a51335c256ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13355d29117aa2d0f9e31697c47f79c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13355d29117aa2d0f9e31697c47f79c8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insertValue</b> (int value)</td></tr>
-<tr class="separator:a13355d29117aa2d0f9e31697c47f79c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbea4efb7f6a01f99b4aa01ba494c008"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbea4efb7f6a01f99b4aa01ba494c008"></a>
-std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPayload</b> ()</td></tr>
-<tr class="separator:adbea4efb7f6a01f99b4aa01ba494c008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42e073ea494362b38750d68a4cad378c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42e073ea494362b38750d68a4cad378c"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>getPayloadSize</b> ()</td></tr>
+<tr class="memitem:ab390571e2efa58707aa8b123ab98727f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab390571e2efa58707aa8b123ab98727f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnitBlock.html#ab390571e2efa58707aa8b123ab98727f">~AccessUnitBlock</a> ()</td></tr>
+<tr class="memdesc:ab390571e2efa58707aa8b123ab98727f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desctructor method. <br /></td></tr>
+<tr class="separator:ab390571e2efa58707aa8b123ab98727f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3754f0b79b3cef201b96c2f0b99c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnitBlock.html#aaa3754f0b79b3cef201b96c2f0b99c31">insertValue</a> (std::string value)</td></tr>
+<tr class="memdesc:aaa3754f0b79b3cef201b96c2f0b99c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a value inside the block.  <a href="#aaa3754f0b79b3cef201b96c2f0b99c31">More...</a><br /></td></tr>
+<tr class="separator:aaa3754f0b79b3cef201b96c2f0b99c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12784529b88ad0607c5c1bbd8331e939"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnitBlock.html#a12784529b88ad0607c5c1bbd8331e939">getPayload</a> ()</td></tr>
+<tr class="memdesc:a12784529b88ad0607c5c1bbd8331e939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the payload of the block, which contains all the values of the descriptor.  <a href="#a12784529b88ad0607c5c1bbd8331e939">More...</a><br /></td></tr>
+<tr class="separator:a12784529b88ad0607c5c1bbd8331e939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e073ea494362b38750d68a4cad378c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnitBlock.html#a42e073ea494362b38750d68a4cad378c">getPayloadSize</a> ()</td></tr>
+<tr class="memdesc:a42e073ea494362b38750d68a4cad378c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the payload of the block.  <a href="#a42e073ea494362b38750d68a4cad378c">More...</a><br /></td></tr>
 <tr class="separator:a42e073ea494362b38750d68a4cad378c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac16351e7f3843e353ed19624f91f4a75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac16351e7f3843e353ed19624f91f4a75"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> ()</td></tr>
+<tr class="memitem:ac16351e7f3843e353ed19624f91f4a75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnitBlock.html#ac16351e7f3843e353ed19624f91f4a75">write</a> ()</td></tr>
+<tr class="memdesc:ac16351e7f3843e353ed19624f91f4a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes via to the commnad line the content of the payload.  <a href="#ac16351e7f3843e353ed19624f91f4a75">More...</a><br /></td></tr>
 <tr class="separator:ac16351e7f3843e353ed19624f91f4a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Block data structure of the access unit. </p>
+<p>This class implements the block data structure that goes inside the access unit. It has some header information and payload.</p>
+<dl class="section author"><dt>Author</dt><dd></dd></dl>
+<dl class="section rcs"><dt>Author</dt><dd>Omair Iqbal </dd></dl>
+<dl class="section date"><dt>Date</dt><dd></dd></dl>
+<dl class="section rcs"><dt>Date</dt><dd>04/2018 </dd></dl>
+<p>Contact: <a href="#" onclick="location.href='mai'+'lto:'+'Oma'+'ir'+'95@'+'pr'+'oto'+'nm'+'ail'+'.c'+'om'; return false;">Omair<span style="display: none;">.nosp@m.</span>95@p<span style="display: none;">.nosp@m.</span>roton<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a> </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="addf588e7a14ec0342873a51335c256ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AccessUnitBlock::AccessUnitBlock </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>descriptorId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the values of the descriptor </p>
+<p>Constructor method </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">descriptorId</td><td>the id of the descriptor to be stored The result is a block with an id and an empty payload </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a12784529b88ad0607c5c1bbd8331e939"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; AccessUnitBlock::getPayload </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the payload of the block, which contains all the values of the descriptor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector containing all the values of the descriptor </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a42e073ea494362b38750d68a4cad378c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AccessUnitBlock::getPayloadSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the size of the payload of the block. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an unsigned 32-bit integer representing the size of the payload </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa3754f0b79b3cef201b96c2f0b99c31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AccessUnitBlock::insertValue </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts a value inside the block. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to be inserted in the block </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac16351e7f3843e353ed19624f91f4a75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AccessUnitBlock::write </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes via to the commnad line the content of the payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="AccessUnitBlock_8h_source.html">AccessUnitBlock.h</a></li>
+<li>AccessUnitBlock.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

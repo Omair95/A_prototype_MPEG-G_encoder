@@ -1,25 +1,154 @@
 \hypertarget{classAccessUnitBlock}{}\section{Access\+Unit\+Block Class Reference}
 \label{classAccessUnitBlock}\index{Access\+Unit\+Block@{Access\+Unit\+Block}}
+
+
+Block data structure of the access unit.  
+
+
+
+
+{\ttfamily \#include $<$Access\+Unit\+Block.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Access\+Unit\+Block} (uint8\+\_\+t descriptor\+Id)\hypertarget{classAccessUnitBlock_addf588e7a14ec0342873a51335c256ec}{}\label{classAccessUnitBlock_addf588e7a14ec0342873a51335c256ec}
+\hyperlink{classAccessUnitBlock_addf588e7a14ec0342873a51335c256ec}{Access\+Unit\+Block} (uint8\+\_\+t descriptor\+Id)
+\begin{DoxyCompactList}\small\item\em the values of the descriptor \end{DoxyCompactList}\item 
+\hyperlink{classAccessUnitBlock_ab390571e2efa58707aa8b123ab98727f}{$\sim$\+Access\+Unit\+Block} ()\hypertarget{classAccessUnitBlock_ab390571e2efa58707aa8b123ab98727f}{}\label{classAccessUnitBlock_ab390571e2efa58707aa8b123ab98727f}
 
+\begin{DoxyCompactList}\small\item\em Desctructor method. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnitBlock_aaa3754f0b79b3cef201b96c2f0b99c31}{insert\+Value} (std\+::string value)
+\begin{DoxyCompactList}\small\item\em Inserts a value inside the block. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classAccessUnitBlock_a12784529b88ad0607c5c1bbd8331e939}{get\+Payload} ()
+\begin{DoxyCompactList}\small\item\em Gets the payload of the block, which contains all the values of the descriptor. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classAccessUnitBlock_a42e073ea494362b38750d68a4cad378c}{get\+Payload\+Size} ()
+\begin{DoxyCompactList}\small\item\em Gets the size of the payload of the block. \end{DoxyCompactList}\item 
+void \hyperlink{classAccessUnitBlock_ac16351e7f3843e353ed19624f91f4a75}{write} ()
+\begin{DoxyCompactList}\small\item\em Writes via to the commnad line the content of the payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Block data structure of the access unit. 
+
+This class implements the block data structure that goes inside the access unit. It has some header information and payload.
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Author}
+Omair Iqbal 
+\end{DoxyParagraph}
+
+
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+04/2018 
+\end{DoxyParagraph}
+
+
+Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Access\+Unit\+Block@{Access\+Unit\+Block}!Access\+Unit\+Block@{Access\+Unit\+Block}}
+\index{Access\+Unit\+Block@{Access\+Unit\+Block}!Access\+Unit\+Block@{Access\+Unit\+Block}}
+\subsubsection[{\texorpdfstring{Access\+Unit\+Block(uint8\+\_\+t descriptor\+Id)}{AccessUnitBlock(uint8_t descriptorId)}}]{\setlength{\rightskip}{0pt plus 5cm}Access\+Unit\+Block\+::\+Access\+Unit\+Block (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{descriptor\+Id}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnitBlock_addf588e7a14ec0342873a51335c256ec}{}\label{classAccessUnitBlock_addf588e7a14ec0342873a51335c256ec}
+
+
+the values of the descriptor 
+
+Constructor method 
+\begin{DoxyParams}{Parameters}
+{\em descriptor\+Id} & the id of the descriptor to be stored The result is a block with an id and an empty payload \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Access\+Unit\+Block@{Access\+Unit\+Block}!get\+Payload@{get\+Payload}}
+\index{get\+Payload@{get\+Payload}!Access\+Unit\+Block@{Access\+Unit\+Block}}
+\subsubsection[{\texorpdfstring{get\+Payload()}{getPayload()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ Access\+Unit\+Block\+::get\+Payload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnitBlock_a12784529b88ad0607c5c1bbd8331e939}{}\label{classAccessUnitBlock_a12784529b88ad0607c5c1bbd8331e939}
+
+
+Gets the payload of the block, which contains all the values of the descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector containing all the values of the descriptor 
+\end{DoxyReturn}
+\index{Access\+Unit\+Block@{Access\+Unit\+Block}!get\+Payload\+Size@{get\+Payload\+Size}}
+\index{get\+Payload\+Size@{get\+Payload\+Size}!Access\+Unit\+Block@{Access\+Unit\+Block}}
+\subsubsection[{\texorpdfstring{get\+Payload\+Size()}{getPayloadSize()}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Access\+Unit\+Block\+::get\+Payload\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnitBlock_a42e073ea494362b38750d68a4cad378c}{}\label{classAccessUnitBlock_a42e073ea494362b38750d68a4cad378c}
+
+
+Gets the size of the payload of the block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an unsigned 32-\/bit integer representing the size of the payload 
+\end{DoxyReturn}
+\index{Access\+Unit\+Block@{Access\+Unit\+Block}!insert\+Value@{insert\+Value}}
+\index{insert\+Value@{insert\+Value}!Access\+Unit\+Block@{Access\+Unit\+Block}}
+\subsubsection[{\texorpdfstring{insert\+Value(std\+::string value)}{insertValue(std::string value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+Block\+::insert\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnitBlock_aaa3754f0b79b3cef201b96c2f0b99c31}{}\label{classAccessUnitBlock_aaa3754f0b79b3cef201b96c2f0b99c31}
+
+
+Inserts a value inside the block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to be inserted in the block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{Access\+Unit\+Block@{Access\+Unit\+Block}!write@{write}}
+\index{write@{write}!Access\+Unit\+Block@{Access\+Unit\+Block}}
+\subsubsection[{\texorpdfstring{write()}{write()}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+Block\+::write (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnitBlock_ac16351e7f3843e353ed19624f91f4a75}{}\label{classAccessUnitBlock_ac16351e7f3843e353ed19624f91f4a75}
+
+
+Writes via to the commnad line the content of the payload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-void {\bfseries insert\+Value} (int value)\hypertarget{classAccessUnitBlock_a13355d29117aa2d0f9e31697c47f79c8}{}\label{classAccessUnitBlock_a13355d29117aa2d0f9e31697c47f79c8}
-
-\item 
-std\+::vector$<$ int $>$ {\bfseries get\+Payload} ()\hypertarget{classAccessUnitBlock_adbea4efb7f6a01f99b4aa01ba494c008}{}\label{classAccessUnitBlock_adbea4efb7f6a01f99b4aa01ba494c008}
-
-\item 
-uint32\+\_\+t {\bfseries get\+Payload\+Size} ()\hypertarget{classAccessUnitBlock_a42e073ea494362b38750d68a4cad378c}{}\label{classAccessUnitBlock_a42e073ea494362b38750d68a4cad378c}
-
-\item 
-void {\bfseries write} ()\hypertarget{classAccessUnitBlock_ac16351e7f3843e353ed19624f91f4a75}{}\label{classAccessUnitBlock_ac16351e7f3843e353ed19624f91f4a75}
-
-\end{DoxyCompactItemize}
-
-
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-Access\+Unit\+Block.\+h\end{DoxyCompactItemize}
+\hyperlink{AccessUnitBlock_8h}{Access\+Unit\+Block.\+h}\item 
+Access\+Unit\+Block.\+cpp\end{DoxyCompactItemize}

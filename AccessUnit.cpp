@@ -4,6 +4,10 @@ AccessUnit::AccessUnit() { }
 
 AccessUnit::~AccessUnit() { }
 
+uint8_t AccessUnit::getType() {
+    return AU_type;
+}
+
 void AccessUnit::setStartPosition(uint32_t start) {
     AU_start_position = start;
 }

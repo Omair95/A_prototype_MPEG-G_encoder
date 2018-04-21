@@ -4,9 +4,17 @@
 #include <fstream>
 #include "MpeggRecord.h"
 
+/*! \file Utils.h */
+
 /** \class Utils class
+ *
  *  \brief Auxiliary class that contains useful methods from the main class
- *  \author Omair Iqbal
+ *
+ * \author $Author: Omair Iqbal $
+ *
+ * \date $Date: 04/2018 $
+ *
+ * Contact: Omair95@protonmail.com
  * */
 
 #ifndef A_PROTOTYPE_MPEG_G_ENCODER_UTILS_H
@@ -21,8 +29,16 @@ private:
 
 public:
 
+    /** \brief Constructor method
+     * \param void
+     * \return void
+     * */
     Utils();
 
+    /** \brief Destructor method
+     * \param void
+     *  \return void
+     * */
     ~Utils();
 
     /** \brief Convert from a string<cigarElement> to a std::string
@@ -164,12 +180,34 @@ public:
      * */
     std::string int_to_hex(int32_t value);
 
+    /** \brief Removes the first read from the list of paired reads
+     * \param void
+     * \return void
+     * */
+    void removeFirstRead();
+
+    /** \brief Gets all the paired reads
+     * \param allReads will contain the value of the paired readss
+     * \return void
+     * */
     void getAllreads(std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> >& allReads);
 
+    /** \brief Inserts a new access unit to the list of access units
+     * \param au is the access unit
+     * \return void
+     * */
     void insertAccessUnit(AccessUnit au);
 
+    /** \brief Gets all the access units stored
+     * \param au will contain the value of all access units
+     * \return void
+     * */
     void getAllAccessUnits(std::vector<AccessUnit>& au);
 
+    /** \brief Inserts a new read pair to the list of paired reads
+     * \param first is the first read of the pair and \param second is the second read of the pair
+     * \return void
+     * */
     void insertRead(BamAlignmentRecord first, BamAlignmentRecord second) {
         reads.insert(std::make_pair(first.beginPos, std::make_pair(first, second)));
     }

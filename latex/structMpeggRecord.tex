@@ -1,44 +1,53 @@
 \hypertarget{structMpeggRecord}{}\section{Mpegg\+Record Struct Reference}
 \label{structMpeggRecord}\index{Mpegg\+Record@{Mpegg\+Record}}
+
+
+Format of the mpegg record.  
+
+
+
+
+{\ttfamily \#include $<$Mpegg\+Record.\+h$>$}
+
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 uint64\+\_\+t {\bfseries global\+\_\+\+Id}\hypertarget{structMpeggRecord_a05257b7c43c4a6ccad7a4ba4bbd923d5}{}\label{structMpeggRecord_a05257b7c43c4a6ccad7a4ba4bbd923d5}
 
 \item 
-std\+::string {\bfseries read\+\_\+name}\hypertarget{structMpeggRecord_a5b1269ff546962bc30d7a060c1954a9c}{}\label{structMpeggRecord_a5b1269ff546962bc30d7a060c1954a9c}
+std\+::string \hyperlink{structMpeggRecord_a5b1269ff546962bc30d7a060c1954a9c}{read\+\_\+name}\hypertarget{structMpeggRecord_a5b1269ff546962bc30d7a060c1954a9c}{}\label{structMpeggRecord_a5b1269ff546962bc30d7a060c1954a9c}
 
-\item 
-uint8\+\_\+t {\bfseries class\+\_\+type}\hypertarget{structMpeggRecord_a10424a46b2cc32c3061c94ef1a71a3e0}{}\label{structMpeggRecord_a10424a46b2cc32c3061c94ef1a71a3e0}
+\begin{DoxyCompactList}\small\item\em unique 64-\/bit unsigment identifier \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{structMpeggRecord_a10424a46b2cc32c3061c94ef1a71a3e0}{class\+\_\+type}\hypertarget{structMpeggRecord_a10424a46b2cc32c3061c94ef1a71a3e0}{}\label{structMpeggRecord_a10424a46b2cc32c3061c94ef1a71a3e0}
 
-\item 
-uint16\+\_\+t {\bfseries seq\+\_\+\+Id}\hypertarget{structMpeggRecord_a106b55e8432a1369b54b745c24e43780}{}\label{structMpeggRecord_a106b55e8432a1369b54b745c24e43780}
+\begin{DoxyCompactList}\small\item\em read identifier \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{structMpeggRecord_a106b55e8432a1369b54b745c24e43780}{seq\+\_\+\+Id}\hypertarget{structMpeggRecord_a106b55e8432a1369b54b745c24e43780}{}\label{structMpeggRecord_a106b55e8432a1369b54b745c24e43780}
 
-\item 
-uint8\+\_\+t {\bfseries read1\+\_\+first}\hypertarget{structMpeggRecord_ad87cf3e1eb0228748270d154bde08cb1}{}\label{structMpeggRecord_ad87cf3e1eb0228748270d154bde08cb1}
+\begin{DoxyCompactList}\small\item\em class type of the read \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{structMpeggRecord_ad87cf3e1eb0228748270d154bde08cb1}{read1\+\_\+first}\hypertarget{structMpeggRecord_ad87cf3e1eb0228748270d154bde08cb1}{}\label{structMpeggRecord_ad87cf3e1eb0228748270d154bde08cb1}
 
-\item 
-uint8\+\_\+t {\bfseries flags}\hypertarget{structMpeggRecord_a9bb5030a2b21af4cc0c3041c5db1015e}{}\label{structMpeggRecord_a9bb5030a2b21af4cc0c3041c5db1015e}
+\begin{DoxyCompactList}\small\item\em sequence identifier of the read \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{structMpeggRecord_a9bb5030a2b21af4cc0c3041c5db1015e}{flags}\hypertarget{structMpeggRecord_a9bb5030a2b21af4cc0c3041c5db1015e}{}\label{structMpeggRecord_a9bb5030a2b21af4cc0c3041c5db1015e}
 
-\item 
-uint8\+\_\+t {\bfseries number\+\_\+of\+\_\+segments}\hypertarget{structMpeggRecord_a19769e489073d18fcac5dff57c067983}{}\label{structMpeggRecord_a19769e489073d18fcac5dff57c067983}
+\begin{DoxyCompactList}\small\item\em flag signaling if read 1 is the left most mapped read in the genomic record \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{structMpeggRecord_a19769e489073d18fcac5dff57c067983}{number\+\_\+of\+\_\+segments}\hypertarget{structMpeggRecord_a19769e489073d18fcac5dff57c067983}{}\label{structMpeggRecord_a19769e489073d18fcac5dff57c067983}
 
-\item 
-uint16\+\_\+t {\bfseries number\+\_\+of\+\_\+alignments}\hypertarget{structMpeggRecord_a16c50a379b687b3b479137ccc1ddf715}{}\label{structMpeggRecord_a16c50a379b687b3b479137ccc1ddf715}
+\begin{DoxyCompactList}\small\item\em unsigned integer obtained by setting the flags \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{structMpeggRecord_a16c50a379b687b3b479137ccc1ddf715}{number\+\_\+of\+\_\+alignments}\hypertarget{structMpeggRecord_a16c50a379b687b3b479137ccc1ddf715}{}\label{structMpeggRecord_a16c50a379b687b3b479137ccc1ddf715}
 
-\item 
-std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries read\+\_\+len}\hypertarget{structMpeggRecord_a5e2e9dab677f48bdf3d2311bab7938b4}{}\label{structMpeggRecord_a5e2e9dab677f48bdf3d2311bab7938b4}
+\begin{DoxyCompactList}\small\item\em numbers of segments of the first read \end{DoxyCompactList}\item 
+std\+::vector$<$ uint32\+\_\+t $>$ \hyperlink{structMpeggRecord_a5e2e9dab677f48bdf3d2311bab7938b4}{read\+\_\+len}\hypertarget{structMpeggRecord_a5e2e9dab677f48bdf3d2311bab7938b4}{}\label{structMpeggRecord_a5e2e9dab677f48bdf3d2311bab7938b4}
 
-\item 
-std\+::vector$<$ std\+::string $>$ {\bfseries quality\+\_\+values}\hypertarget{structMpeggRecord_adf2fcaffb12b704bf578897c3334ff28}{}\label{structMpeggRecord_adf2fcaffb12b704bf578897c3334ff28}
+\begin{DoxyCompactList}\small\item\em number of alignments of the first read \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{structMpeggRecord_adf2fcaffb12b704bf578897c3334ff28}{quality\+\_\+values}\hypertarget{structMpeggRecord_adf2fcaffb12b704bf578897c3334ff28}{}\label{structMpeggRecord_adf2fcaffb12b704bf578897c3334ff28}
 
-\item 
-std\+::vector$<$ std\+::string $>$ {\bfseries sequence}\hypertarget{structMpeggRecord_a854030bfc3261c48679bc3d64f18bd4d}{}\label{structMpeggRecord_a854030bfc3261c48679bc3d64f18bd4d}
+\begin{DoxyCompactList}\small\item\em represents the length of each read in the genomic record expressed as number of nucleoids \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{structMpeggRecord_a854030bfc3261c48679bc3d64f18bd4d}{sequence}\hypertarget{structMpeggRecord_a854030bfc3261c48679bc3d64f18bd4d}{}\label{structMpeggRecord_a854030bfc3261c48679bc3d64f18bd4d}
 
-\item 
-std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries mapping\+\_\+pos}\hypertarget{structMpeggRecord_ae42d36c1ea24cc73bcd7d9b0c9251c3d}{}\label{structMpeggRecord_ae42d36c1ea24cc73bcd7d9b0c9251c3d}
+\begin{DoxyCompactList}\small\item\em Quality Values associated to each nucleotide contained in the sequence vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint32\+\_\+t $>$ \hyperlink{structMpeggRecord_ae42d36c1ea24cc73bcd7d9b0c9251c3d}{mapping\+\_\+pos}\hypertarget{structMpeggRecord_ae42d36c1ea24cc73bcd7d9b0c9251c3d}{}\label{structMpeggRecord_ae42d36c1ea24cc73bcd7d9b0c9251c3d}
 
-\item 
+\begin{DoxyCompactList}\small\item\em A\+S\+C\+II representation of the nucleotides. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ uint16\+\_\+t $>$ $>$ {\bfseries cigar\+\_\+size}\hypertarget{structMpeggRecord_a42eb84c3a24e38346ecedcd5f2bfe08c}{}\label{structMpeggRecord_a42eb84c3a24e38346ecedcd5f2bfe08c}
 
 \item 
@@ -53,6 +62,27 @@ uint8\+\_\+t {\bfseries split\+\_\+aligments}\hypertarget{structMpeggRecord_ab9b
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Format of the mpegg record. 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Author}
+Omair Iqbal 
+\end{DoxyParagraph}
+
+
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+04/2018 
+\end{DoxyParagraph}
+
+
+Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
+
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Mpegg\+Record.\+h\end{DoxyCompactItemize}
+\hyperlink{MpeggRecord_8h}{Mpegg\+Record.\+h}\end{DoxyCompactItemize}

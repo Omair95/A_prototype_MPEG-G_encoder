@@ -1,0 +1,296 @@
+\hypertarget{classFileManager}{}\section{File\+Manager Class Reference}
+\label{classFileManager}\index{File\+Manager@{File\+Manager}}
+
+
+Class to be used to create and write files that contain the output Mpegg format and all the asociated descriptors.  
+
+
+
+
+{\ttfamily \#include $<$File\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFileManager_a8afd512c06be9daf140cc19d71f9b391}{File\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor method. \end{DoxyCompactList}\item 
+\hyperlink{classFileManager_abaed33b5b0c13b8a597db9335a1aacfa}{$\sim$\+File\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_afd71cbd1a0813cc545d9f3b7ba174adb}{insert\+Pos\+Value} (std\+::string value, int class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the pos descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_a372aa0850f9d2710ef22a1eb37214d56}{insert\+Rcomp\+Value} (std\+::string value, int class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the rcomp descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_a0480b8c16cc4f9172c271dd1f16a8760}{insert\+Flags\+Value} (std\+::string value, int class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the flags descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_a4dd86e410554b62d28bf2c72eda388d0}{insert\+Mmpos\+Value} (std\+::string value, int class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the mmpos descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_aaaa439662621981becfe88fd98ed31e6}{insert\+Mmtype\+Value} (std\+::string value, int class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the mmtype descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_a31190b3ab0f967a2dfbfd1f429c9981e}{insert\+Rlen\+Value} (std\+::string value, int class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the rlen descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_a7697e6d34c98e3d4f11fa8d75deadc33}{insert\+Pair\+Value} (std\+::string value, int class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the pair descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_a261e820bc6f8c8d08aa52493d1a840a5}{write\+Mpegg\+To\+File} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&result)
+\begin{DoxyCompactList}\small\item\em Writes the mpegg record of the respective read to a file. \end{DoxyCompactList}\item 
+void \hyperlink{classFileManager_ad0173ee2705241fbbd6b7f1928863256}{close\+Files} ()
+\begin{DoxyCompactList}\small\item\em Closes all the created files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to be used to create and write files that contain the output Mpegg format and all the asociated descriptors. 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Author}
+Omair Iqbal 
+\end{DoxyParagraph}
+
+
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+04/2018 
+\end{DoxyParagraph}
+
+
+Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{File\+Manager@{File\+Manager}!File\+Manager@{File\+Manager}}
+\index{File\+Manager@{File\+Manager}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{File\+Manager()}{FileManager()}}]{\setlength{\rightskip}{0pt plus 5cm}File\+Manager\+::\+File\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a8afd512c06be9daf140cc19d71f9b391}{}\label{classFileManager_a8afd512c06be9daf140cc19d71f9b391}
+
+
+Constructor method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!````~File\+Manager@{$\sim$\+File\+Manager}}
+\index{````~File\+Manager@{$\sim$\+File\+Manager}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{$\sim$\+File\+Manager()}{~FileManager()}}]{\setlength{\rightskip}{0pt plus 5cm}File\+Manager\+::$\sim$\+File\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_abaed33b5b0c13b8a597db9335a1aacfa}{}\label{classFileManager_abaed33b5b0c13b8a597db9335a1aacfa}
+
+
+Destructor method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{File\+Manager@{File\+Manager}!close\+Files@{close\+Files}}
+\index{close\+Files@{close\+Files}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{close\+Files()}{closeFiles()}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::close\+Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_ad0173ee2705241fbbd6b7f1928863256}{}\label{classFileManager_ad0173ee2705241fbbd6b7f1928863256}
+
+
+Closes all the created files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!insert\+Flags\+Value@{insert\+Flags\+Value}}
+\index{insert\+Flags\+Value@{insert\+Flags\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Flags\+Value(std\+::string value, int class\+Type)}{insertFlagsValue(std::string value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Flags\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value, }
+\item[{int}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a0480b8c16cc4f9172c271dd1f16a8760}{}\label{classFileManager_a0480b8c16cc4f9172c271dd1f16a8760}
+
+
+Writes the flags descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value of the flags descriptor and \\
+\hline
+{\em class\+Type} & is the class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!insert\+Mmpos\+Value@{insert\+Mmpos\+Value}}
+\index{insert\+Mmpos\+Value@{insert\+Mmpos\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Mmpos\+Value(std\+::string value, int class\+Type)}{insertMmposValue(std::string value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Mmpos\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value, }
+\item[{int}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a4dd86e410554b62d28bf2c72eda388d0}{}\label{classFileManager_a4dd86e410554b62d28bf2c72eda388d0}
+
+
+Writes the mmpos descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value of the mmpos descriptor and \\
+\hline
+{\em class\+Type} & is the class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!insert\+Mmtype\+Value@{insert\+Mmtype\+Value}}
+\index{insert\+Mmtype\+Value@{insert\+Mmtype\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Mmtype\+Value(std\+::string value, int class\+Type)}{insertMmtypeValue(std::string value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Mmtype\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value, }
+\item[{int}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_aaaa439662621981becfe88fd98ed31e6}{}\label{classFileManager_aaaa439662621981becfe88fd98ed31e6}
+
+
+Writes the mmtype descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value of the mmtype descriptor and \\
+\hline
+{\em class\+Type} & is the class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!insert\+Pair\+Value@{insert\+Pair\+Value}}
+\index{insert\+Pair\+Value@{insert\+Pair\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Pair\+Value(std\+::string value, int class\+Type)}{insertPairValue(std::string value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Pair\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value, }
+\item[{int}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a7697e6d34c98e3d4f11fa8d75deadc33}{}\label{classFileManager_a7697e6d34c98e3d4f11fa8d75deadc33}
+
+
+Writes the pair descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value of the pair descriptor and \\
+\hline
+{\em class\+Type} & is the class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!insert\+Pos\+Value@{insert\+Pos\+Value}}
+\index{insert\+Pos\+Value@{insert\+Pos\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Pos\+Value(std\+::string value, int class\+Type)}{insertPosValue(std::string value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Pos\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value, }
+\item[{int}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_afd71cbd1a0813cc545d9f3b7ba174adb}{}\label{classFileManager_afd71cbd1a0813cc545d9f3b7ba174adb}
+
+
+Writes the pos descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value of the pos descriptor and \\
+\hline
+{\em class\+Type} & is the class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!insert\+Rcomp\+Value@{insert\+Rcomp\+Value}}
+\index{insert\+Rcomp\+Value@{insert\+Rcomp\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Rcomp\+Value(std\+::string value, int class\+Type)}{insertRcompValue(std::string value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Rcomp\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value, }
+\item[{int}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a372aa0850f9d2710ef22a1eb37214d56}{}\label{classFileManager_a372aa0850f9d2710ef22a1eb37214d56}
+
+
+Writes the rcomp descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value of the rcomp descriptor and \\
+\hline
+{\em class\+Type} & is the class type \\
+\hline
+\end{DoxyParams}
+\index{File\+Manager@{File\+Manager}!insert\+Rlen\+Value@{insert\+Rlen\+Value}}
+\index{insert\+Rlen\+Value@{insert\+Rlen\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Rlen\+Value(std\+::string value, int class\+Type)}{insertRlenValue(std::string value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Rlen\+Value (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{value, }
+\item[{int}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a31190b3ab0f967a2dfbfd1f429c9981e}{}\label{classFileManager_a31190b3ab0f967a2dfbfd1f429c9981e}
+
+
+Writes the rlen descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value of the rlen descriptor and \\
+\hline
+{\em class\+Type} & is the class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!write\+Mpegg\+To\+File@{write\+Mpegg\+To\+File}}
+\index{write\+Mpegg\+To\+File@{write\+Mpegg\+To\+File}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{write\+Mpegg\+To\+File(\+Mpegg\+Record \&result)}{writeMpeggToFile(MpeggRecord &result)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::write\+Mpegg\+To\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf Mpegg\+Record} \&}]{result}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a261e820bc6f8c8d08aa52493d1a840a5}{}\label{classFileManager_a261e820bc6f8c8d08aa52493d1a840a5}
+
+
+Writes the mpegg record of the respective read to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & is the mpegg record of the read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{FileManager_8h}{File\+Manager.\+h}\item 
+File\+Manager.\+cpp\end{DoxyCompactItemize}

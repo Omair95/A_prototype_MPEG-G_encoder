@@ -1,7 +1,8 @@
 <map id="AccessUnit" name="AccessUnit">
-<area shape="rect" id="node2" href="$classAccessUnit__HM.html" title="AccessUnit_HM" alt="" coords="5,80,124,107"/>
-<area shape="rect" id="node3" href="$classAccessUnit__I.html" title="AccessUnit_I" alt="" coords="149,80,250,107"/>
-<area shape="rect" id="node4" href="$classAccessUnit__M.html" title="AccessUnit_M" alt="" coords="275,80,383,107"/>
-<area shape="rect" id="node5" href="$classAccessUnit__N.html" title="AccessUnit_N" alt="" coords="407,80,514,107"/>
-<area shape="rect" id="node6" href="$classAccessUnit__P.html" title="AccessUnit_P" alt="" coords="538,80,645,107"/>
+<area shape="rect" id="node2" href="$classAccessUnit__HM.html" title="Access unit of type HM: Half&#45;mapped pairs where only one read is mapped. " alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node3" href="$classAccessUnit__I.html" title="Access unit of type I: reads containing at least one insertion, deletion or clipped base..." alt="" coords="149,80,250,107"/>
+<area shape="rect" id="node4" href="$classAccessUnit__M.html" title="Access unit of type M: reads containing at least one substitution, and optionally unknown bases..." alt="" coords="275,80,383,107"/>
+<area shape="rect" id="node5" href="$classAccessUnit__N.html" title="Access unit of type N: reads containing mismatches which are unknown bases only. " alt="" coords="407,80,514,107"/>
+<area shape="rect" id="node6" href="$classAccessUnit__P.html" title="Access unit of type P: reads perfectly matching to the reference sequence. " alt="" coords="538,80,645,107"/>
+<area shape="rect" id="node7" href="$classAccessUnit__U.html" title="Access unit of type U: Unmapped reads. " alt="" coords="669,80,775,107"/>
 </map>

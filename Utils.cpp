@@ -5,7 +5,7 @@ Utils::Utils() {
 }
 
 Utils::~Utils() {
-    
+
 }
 
 std::string Utils::getCigar(String <CigarElement<> >& rCigar) {
@@ -586,6 +586,11 @@ std::string Utils::int_to_hex(int32_t value) {
     stream << std::setfill ('0') << std::setw(sizeof(value)*1)
            << std::hex << value;
     return stream.str();
+}
+
+void Utils::removeFirstRead() {
+    auto it = reads.begin();
+    reads.erase(it++);
 }
 
 void Utils::getAllreads(std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> >& allReads) {

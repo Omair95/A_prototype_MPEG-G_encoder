@@ -6,14 +6,13 @@
 #include "AccessUnit_HM.h"
 #include "AccessUnit_U.h"
 #include "FileManager.h"
-#include <time.h>
-#include <algorithm>
 
 /*! \file main.cpp */
 
 Utils u;
 FileManager f;
 int au_id = -1;
+#define ACCESS_UNIT_SIZE 100000
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -82,7 +81,7 @@ void generateByteStream() {
             f.insertPairValue(pair, 1);
 
             // create a new access unit in case if the current one is full
-            if (AU_P->getReadsCount() == 100000) {
+            if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
                 AU_P->setEndPosition(a.mapping_pos[0]);
                 u.insertAccessUnit(*AU_P);
                 AU_P = new AccessUnit_P(++au_id);
@@ -91,6 +90,7 @@ void generateByteStream() {
 
             // erase the read after using it
             reads.erase(it++);
+            u.removeFirstRead();
 
         } else if (a.class_type == 2) {
             // update the number of reads in the access unit
@@ -138,7 +138,7 @@ void generateByteStream() {
             f.insertPairValue(pair, 2);
 
             // create a new access unit in case if the current one is full
-            if (AU_N->getReadsCount() == 100000) {
+            if (AU_N->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
                 AU_N->setEndPosition(a.mapping_pos[0]);
                 u.insertAccessUnit(*AU_N);
@@ -148,6 +148,7 @@ void generateByteStream() {
 
             // erase the read after using it
             reads.erase(it++);
+            u.removeFirstRead();
 
         } else if (a.class_type == 3) {
             // update the number of reads in the access unit
@@ -203,7 +204,7 @@ void generateByteStream() {
             f.insertPairValue(pair, 3);
 
             // create a new access unit in case if the current one is full
-            if (AU_M->getReadsCount() == 100000) {
+            if (AU_M->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
                 AU_M->setEndPosition(a.mapping_pos[0]);
                 u.insertAccessUnit(*AU_M);
@@ -213,6 +214,7 @@ void generateByteStream() {
 
             // erase read after using it
             reads.erase(it++);
+            u.removeFirstRead();
 
         } else if (a.class_type == 4) {
             // update the number of reads in the access unit
@@ -268,7 +270,7 @@ void generateByteStream() {
             f.insertPairValue(pair, 4);
 
             // create a new access unit in case if the current one is full
-            if (AU_I->getReadsCount() == 100000) {
+            if (AU_I->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
                 AU_I->setEndPosition(a.mapping_pos[0]);
                 u.insertAccessUnit(*AU_I);
@@ -278,6 +280,7 @@ void generateByteStream() {
 
             // erase the read after using it
             reads.erase(it++);
+            u.removeFirstRead();
 
         } else if (a.class_type == 5) {
             // update the number of reads in the access unit
@@ -317,7 +320,7 @@ void generateByteStream() {
             f.insertPairValue(pair, 5);
 
             // create a new access unit in case if the current one is full
-            if (AU_HM->getReadsCount() == 100000) {
+            if (AU_HM->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
                 AU_HM->setEndPosition(a.mapping_pos[0]);
                 u.insertAccessUnit(*AU_HM);
@@ -327,6 +330,7 @@ void generateByteStream() {
 
             // erase the read after using it
             reads.erase(it++);
+            u.removeFirstRead();
 
         } else if (a.class_type == 6) {
             // update the number of reads in the access unit
@@ -338,7 +342,7 @@ void generateByteStream() {
             f.insertRlenValue(rlen, 6);
 
             // create a new access unit in case if the current one is full
-            if (AU_U->getReadsCount() == 100000) {
+            if (AU_U->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
                 AU_U->setEndPosition(a.mapping_pos[0]);
                 u.insertAccessUnit(*AU_U);
@@ -348,8 +352,10 @@ void generateByteStream() {
 
             // erase the read after using it
             reads.erase(it++);
+            u.removeFirstRead();
 
         } else ++it;
+
     }
 
     // add all incomplete access units
@@ -364,13 +370,12 @@ void generateByteStream() {
 int main () {
     CharString fileName = "/home/omair/TFG/Files/9827_2#49.sam";
     BamFileIn bamFileIn(toCString(fileName));
-
     BamHeader header;
     readHeader(header, bamFileIn);
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 1000) {
+    while (!atEnd(bamFileIn) and count <= 10000) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {
@@ -386,8 +391,6 @@ int main () {
 
     std::vector<AccessUnit> au;
     u.getAllAccessUnits(au);
-
-    std::cout << au.size() << std::endl;
 
     for (int i = 0; i < au.size(); ++i) {
         au[i].write();

@@ -90,6 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">MpeggRecord Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Format of the mpegg record.  
+ <a href="structMpeggRecord.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="MpeggRecord_8h_source.html">MpeggRecord.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -97,37 +102,48 @@ Public Attributes</h2></td></tr>
 uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>global_Id</b></td></tr>
 <tr class="separator:a05257b7c43c4a6ccad7a4ba4bbd923d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b1269ff546962bc30d7a060c1954a9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b1269ff546962bc30d7a060c1954a9c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>read_name</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a5b1269ff546962bc30d7a060c1954a9c">read_name</a></td></tr>
+<tr class="memdesc:a5b1269ff546962bc30d7a060c1954a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">unique 64-bit unsigment identifier <br /></td></tr>
 <tr class="separator:a5b1269ff546962bc30d7a060c1954a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10424a46b2cc32c3061c94ef1a71a3e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10424a46b2cc32c3061c94ef1a71a3e0"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>class_type</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a10424a46b2cc32c3061c94ef1a71a3e0">class_type</a></td></tr>
+<tr class="memdesc:a10424a46b2cc32c3061c94ef1a71a3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">read identifier <br /></td></tr>
 <tr class="separator:a10424a46b2cc32c3061c94ef1a71a3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a106b55e8432a1369b54b745c24e43780"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a106b55e8432a1369b54b745c24e43780"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>seq_Id</b></td></tr>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a106b55e8432a1369b54b745c24e43780">seq_Id</a></td></tr>
+<tr class="memdesc:a106b55e8432a1369b54b745c24e43780"><td class="mdescLeft">&#160;</td><td class="mdescRight">class type of the read <br /></td></tr>
 <tr class="separator:a106b55e8432a1369b54b745c24e43780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad87cf3e1eb0228748270d154bde08cb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad87cf3e1eb0228748270d154bde08cb1"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>read1_first</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#ad87cf3e1eb0228748270d154bde08cb1">read1_first</a></td></tr>
+<tr class="memdesc:ad87cf3e1eb0228748270d154bde08cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sequence identifier of the read <br /></td></tr>
 <tr class="separator:ad87cf3e1eb0228748270d154bde08cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bb5030a2b21af4cc0c3041c5db1015e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bb5030a2b21af4cc0c3041c5db1015e"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a9bb5030a2b21af4cc0c3041c5db1015e">flags</a></td></tr>
+<tr class="memdesc:a9bb5030a2b21af4cc0c3041c5db1015e"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag signaling if read 1 is the left most mapped read in the genomic record <br /></td></tr>
 <tr class="separator:a9bb5030a2b21af4cc0c3041c5db1015e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19769e489073d18fcac5dff57c067983"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19769e489073d18fcac5dff57c067983"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>number_of_segments</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a19769e489073d18fcac5dff57c067983">number_of_segments</a></td></tr>
+<tr class="memdesc:a19769e489073d18fcac5dff57c067983"><td class="mdescLeft">&#160;</td><td class="mdescRight">unsigned integer obtained by setting the flags <br /></td></tr>
 <tr class="separator:a19769e489073d18fcac5dff57c067983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16c50a379b687b3b479137ccc1ddf715"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16c50a379b687b3b479137ccc1ddf715"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>number_of_alignments</b></td></tr>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a16c50a379b687b3b479137ccc1ddf715">number_of_alignments</a></td></tr>
+<tr class="memdesc:a16c50a379b687b3b479137ccc1ddf715"><td class="mdescLeft">&#160;</td><td class="mdescRight">numbers of segments of the first read <br /></td></tr>
 <tr class="separator:a16c50a379b687b3b479137ccc1ddf715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e2e9dab677f48bdf3d2311bab7938b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e2e9dab677f48bdf3d2311bab7938b4"></a>
-std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>read_len</b></td></tr>
+std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a5e2e9dab677f48bdf3d2311bab7938b4">read_len</a></td></tr>
+<tr class="memdesc:a5e2e9dab677f48bdf3d2311bab7938b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of alignments of the first read <br /></td></tr>
 <tr class="separator:a5e2e9dab677f48bdf3d2311bab7938b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf2fcaffb12b704bf578897c3334ff28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf2fcaffb12b704bf578897c3334ff28"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>quality_values</b></td></tr>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#adf2fcaffb12b704bf578897c3334ff28">quality_values</a></td></tr>
+<tr class="memdesc:adf2fcaffb12b704bf578897c3334ff28"><td class="mdescLeft">&#160;</td><td class="mdescRight">represents the length of each read in the genomic record expressed as number of nucleoids <br /></td></tr>
 <tr class="separator:adf2fcaffb12b704bf578897c3334ff28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a854030bfc3261c48679bc3d64f18bd4d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a854030bfc3261c48679bc3d64f18bd4d"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sequence</b></td></tr>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#a854030bfc3261c48679bc3d64f18bd4d">sequence</a></td></tr>
+<tr class="memdesc:a854030bfc3261c48679bc3d64f18bd4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quality Values associated to each nucleotide contained in the sequence vectors. <br /></td></tr>
 <tr class="separator:a854030bfc3261c48679bc3d64f18bd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae42d36c1ea24cc73bcd7d9b0c9251c3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae42d36c1ea24cc73bcd7d9b0c9251c3d"></a>
-std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mapping_pos</b></td></tr>
+std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMpeggRecord.html#ae42d36c1ea24cc73bcd7d9b0c9251c3d">mapping_pos</a></td></tr>
+<tr class="memdesc:ae42d36c1ea24cc73bcd7d9b0c9251c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ASCII representation of the nucleotides. <br /></td></tr>
 <tr class="separator:ae42d36c1ea24cc73bcd7d9b0c9251c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42eb84c3a24e38346ecedcd5f2bfe08c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42eb84c3a24e38346ecedcd5f2bfe08c"></a>
 std::vector&lt; std::vector&lt; uint16_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cigar_size</b></td></tr>
@@ -142,7 +158,14 @@ std::vector&lt; std::vector&lt; uint8_t &gt; &gt;&#160;</td><td class="memItemRi
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>split_aligments</b></td></tr>
 <tr class="separator:ab9bf656dab6b03be05bc54bd07685727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Format of the mpegg record. </p>
+<dl class="section author"><dt>Author</dt><dd></dd></dl>
+<dl class="section rcs"><dt>Author</dt><dd>Omair Iqbal </dd></dl>
+<dl class="section date"><dt>Date</dt><dd></dd></dl>
+<dl class="section rcs"><dt>Date</dt><dd>04/2018 </dd></dl>
+<p>Contact: <a href="#" onclick="location.href='mai'+'lto:'+'Oma'+'ir'+'95@'+'pr'+'oto'+'nm'+'ail'+'.c'+'om'; return false;">Omair<span style="display: none;">.nosp@m.</span>95@p<span style="display: none;">.nosp@m.</span>roton<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a> </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="MpeggRecord_8h_source.html">MpeggRecord.h</a></li>
 </ul>
 </div><!-- contents -->
