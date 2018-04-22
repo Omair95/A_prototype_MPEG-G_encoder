@@ -368,14 +368,14 @@ void generateByteStream() {
 }
 
 int main () {
-    CharString fileName = "/home/omair/TFG/Files/9827_2#49.sam";
+    CharString fileName = "../../TestFiles/9827_2#49.bam";
     BamFileIn bamFileIn(toCString(fileName));
     BamHeader header;
     readHeader(header, bamFileIn);
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 10000) {
+    while (!atEnd(bamFileIn) and count <= 100) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {

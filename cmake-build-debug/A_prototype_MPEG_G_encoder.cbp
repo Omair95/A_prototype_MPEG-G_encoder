@@ -5,7 +5,7 @@
 		<Option title="A_prototype_MPEG_G_encoder"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\seqan\;CMake Files\seqan\util\;CMake Files\seqan\util\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug"/>
@@ -44,6 +44,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-D_LARGEFILE_SOURCE"/>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-DSEQAN_HAS_EXECINFO=1"/>
+					<Add option="-DSEQAN_HAS_ZLIB=1"/>
 					<Add directory="/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -68,6 +72,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-D_LARGEFILE_SOURCE"/>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-DSEQAN_HAS_EXECINFO=1"/>
+					<Add option="-DSEQAN_HAS_ZLIB=1"/>
 					<Add directory="/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -154,6 +162,12 @@
 		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/util/cmake/FindSeqAn.cmake">
+			<Option virtualFolder="CMake Files\seqan\util\cmake\"/>
+		</Unit>
+		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/util/cmake/seqan-config.cmake">
+			<Option virtualFolder="CMake Files\seqan\util\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

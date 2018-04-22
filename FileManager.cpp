@@ -159,6 +159,7 @@ void FileManager::writeMpeggToFile(MpeggRecord& result) {
         }
     }
     mpeggRecordFile << std::endl;
+    mpeggRecordFile << std::endl;
 }
 
 void FileManager::closeFiles() {

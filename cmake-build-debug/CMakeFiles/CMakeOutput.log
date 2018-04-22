@@ -1232,3 +1232,35 @@ make[1]: Leaving directory '/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-bui
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing C++ SOURCE FILE Test CXX14_BUILTIN succeeded with the following output:
+Change Dir: /home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ade23/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ade23.dir/build.make CMakeFiles/cmTC_ade23.dir/build
+make[1]: Entering directory '/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ade23.dir/src.cxx.o
+/usr/bin/c++    -std=c++14 -DCXX14_BUILTIN   -o CMakeFiles/cmTC_ade23.dir/src.cxx.o -c /home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_ade23
+/home/omair/Programs/clion-2017.3.4/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ade23.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++14 -DCXX14_BUILTIN    -rdynamic CMakeFiles/cmTC_ade23.dir/src.cxx.o  -o cmTC_ade23 
+make[1]: Leaving directory '/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Source file was:
+#if !defined(__cplusplus) || (__cplusplus < 201300L)
+    #error NOCXX14
+    #endif
+    int main() {}
+Determining if the include file execinfo.h exists passed with the following output:
+Change Dir: /home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c07fb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c07fb.dir/build.make CMakeFiles/cmTC_c07fb.dir/build
+make[1]: Entering directory '/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c07fb.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++    -std=c++14    -o CMakeFiles/cmTC_c07fb.dir/CheckIncludeFile.cxx.o -c /home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+Linking CXX executable cmTC_c07fb
+/home/omair/Programs/clion-2017.3.4/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c07fb.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++14     -rdynamic CMakeFiles/cmTC_c07fb.dir/CheckIncludeFile.cxx.o  -o cmTC_c07fb 
+make[1]: Leaving directory '/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+

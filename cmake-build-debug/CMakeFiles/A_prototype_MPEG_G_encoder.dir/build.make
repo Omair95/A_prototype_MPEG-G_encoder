@@ -350,6 +350,7 @@ A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make
+A_prototype_MPEG_G_encoder: /usr/lib/x86_64-linux-gnu/libz.so
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable A_prototype_MPEG_G_encoder"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt --verbose=$(VERBOSE)
