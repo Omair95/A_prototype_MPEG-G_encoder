@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flags',['flags',['../structMpeggRecord.html#a9bb5030a2b21af4cc0c3041c5db1015e',1,'MpeggRecord']]]
+  ['ecigar_5fstring',['ecigar_string',['../structMpeggRecord.html#a9806aace198b155080fca7940d5dcf68',1,'MpeggRecord']]]
 ];

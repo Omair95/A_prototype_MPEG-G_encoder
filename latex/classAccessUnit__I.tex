@@ -11,7 +11,8 @@ Access unit of type I\+: reads containing at least one insertion, deletion or cl
 
 
 
-Inheritance diagram for Access\+Unit\+\_\+I\+:\nopagebreak
+Inheritance diagram for Access\+Unit\+\_\+I\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Access\+Unit\+\_\+I\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Access\+Unit\+\_\+I\+:\nopagebreak
+Collaboration diagram for Access\+Unit\+\_\+I\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,13 +37,13 @@ Collaboration diagram for Access\+Unit\+\_\+I\+:\nopagebreak
 \hyperlink{classAccessUnit__I_a2e7f3017a1ddab582512d00ae1336dac}{$\sim$\+Access\+Unit\+\_\+I} ()
 \begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit__I_a26c4275c51e40c5dcec6ce1d1b3c87e5}{insert\+Mmpos\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the mmpos descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the mmpos descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit__I_a2ff3adf211de97d3a5cf631ff53edf7f}{insert\+Mmtype\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the mmtype descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the mmtype descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit__I_a1a7e5251c8b74ee0ba938922ef2c786b}{insert\+Rlen\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the rlen descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the rlen descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit__I_a3ce9bf4a7f73e16a515613ff6436c13e}{insert\+Pair\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the pair descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Inserts the pair descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -49,21 +51,11 @@ void \hyperlink{classAccessUnit__I_a3ce9bf4a7f73e16a515613ff6436c13e}{insert\+Pa
 Access unit of type I\+: reads containing at least one insertion, deletion or clipped base, and optionally unknown bases or substitutions. 
 
 \begin{DoxyAuthor}{Author}
-
+Omair Iqbal
 \end{DoxyAuthor}
-\begin{DoxyParagraph}{Author}
-Omair Iqbal 
-\end{DoxyParagraph}
-
-
 \begin{DoxyDate}{Date}
-
+04/2018
 \end{DoxyDate}
-\begin{DoxyParagraph}{Date}
-04/2018 
-\end{DoxyParagraph}
-
-
 Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -80,7 +72,7 @@ Constructor method.
 
 
 \begin{DoxyParams}{Parameters}
-{\em id} & the id of the access unit of type M (3) \\
+{\em id} & identifier of the access unit of type I (4) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -117,11 +109,11 @@ void
 )}\hypertarget{classAccessUnit__I_a26c4275c51e40c5dcec6ce1d1b3c87e5}{}\label{classAccessUnit__I_a26c4275c51e40c5dcec6ce1d1b3c87e5}
 
 
-Inserts the mmpos descriptor value inside the corresponding block in the payload. 
+Inserts the mmpos descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the mmpos descriptor \\
+{\em value} & string representing the value of the mmpos descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -136,11 +128,11 @@ void
 )}\hypertarget{classAccessUnit__I_a2ff3adf211de97d3a5cf631ff53edf7f}{}\label{classAccessUnit__I_a2ff3adf211de97d3a5cf631ff53edf7f}
 
 
-Inserts the mmtype descriptor value inside the corresponding block in the payload. 
+Inserts the mmtype descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the mmtype descriptor \\
+{\em value} & string representing the value of the mmtype descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -155,11 +147,11 @@ void
 )}\hypertarget{classAccessUnit__I_a3ce9bf4a7f73e16a515613ff6436c13e}{}\label{classAccessUnit__I_a3ce9bf4a7f73e16a515613ff6436c13e}
 
 
-Inserts the pair descriptor value inside the corresponding block in the payload. 
+Inserts the pair descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the pair descriptor \\
+{\em value} & string representing the value of the pair descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -174,11 +166,11 @@ void
 )}\hypertarget{classAccessUnit__I_a1a7e5251c8b74ee0ba938922ef2c786b}{}\label{classAccessUnit__I_a1a7e5251c8b74ee0ba938922ef2c786b}
 
 
-Inserts the rlen descriptor value inside the corresponding block in the payload. 
+Inserts the rlen descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the rlen descriptor \\
+{\em value} & string representing the value of the rlen descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

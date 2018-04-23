@@ -9,9 +9,20 @@
 
 /*! \file main.cpp */
 
+/** Auxiliary class to be used that contains several useful methods for the main class
+ * */
 Utils u;
+
+/** Auxiliary class to be used that allows to create and write into files
+ * */
 FileManager f;
+
+/** Identifier of the access units
+ * */
 int au_id = -1;
+
+/** Size of each access unit
+ * */
 #define ACCESS_UNIT_SIZE 100000
 
 /**
@@ -368,8 +379,10 @@ void generateByteStream() {
 }
 
 int main () {
-    CharString fileName = "../../TestFiles/9827_2#49.bam";
-    BamFileIn bamFileIn(toCString(fileName));
+    std::string fileName = "9827_2#49.bam";
+    std::string filePath = "../../TestFiles/" + fileName;
+    BamFileIn bamFileIn(toCString(filePath));
+    std::cout << toCString(fileName) << " " << toCString(filePath) << std::endl;
     BamHeader header;
     readHeader(header, bamFileIn);
 
@@ -400,5 +413,3 @@ int main () {
 
     return 0;
 }
-
-// 23020 bam.pos

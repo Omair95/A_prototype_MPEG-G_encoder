@@ -6,9 +6,9 @@
  * \class AccessUnit_P
  * \brief Access unit of type P: reads perfectly matching to the reference sequence.
  *
- * \author $Author: Omair Iqbal $
+ * \author Omair Iqbal
  *
- * \date $Date: 04/2018 $
+ * \date 04/2018
  *
  * Contact: Omair95@protonmail.com
  * */
@@ -20,7 +20,7 @@ class AccessUnit_P : public AccessUnit {
 
 public:
     /** \brief Constructor method
-    * \param id the id of the access unit of type P (1)
+    * \param id identifier of the access unit of type P (1)
     * \return void
     * */
     AccessUnit_P(uint32_t id);
@@ -31,14 +31,14 @@ public:
     * */
     ~AccessUnit_P();
 
-    /** \brief Inserts the rlen descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the rlen descriptor
+    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the rlen descriptor
     * \return void
     * */
     void insertRlenDescriptor(std::string value);
 
-    /** \brief Inserts the pair descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the pair descriptor
+    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the pair descriptor
     * \return void
     * */
     void insertPairDescriptor(std::string value);

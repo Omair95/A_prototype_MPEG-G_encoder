@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['seq_5fid',['seq_Id',['../structMpeggRecord.html#a106b55e8432a1369b54b745c24e43780',1,'MpeggRecord']]],
-  ['sequence',['sequence',['../structMpeggRecord.html#a854030bfc3261c48679bc3d64f18bd4d',1,'MpeggRecord']]],
-  ['sequence_5fid',['sequence_id',['../classAccessUnit.html#aa1eb6c997589b9298c8d5ffc60bee236',1,'AccessUnit']]],
-  ['setendposition',['setEndPosition',['../classAccessUnit.html#a68b44705578142db56f5365390889240',1,'AccessUnit']]],
-  ['setstartposition',['setStartPosition',['../classAccessUnit.html#a07baa96e65a985a73efcc6b1e98ab721',1,'AccessUnit']]]
+  ['readme',['README',['../md_README.html',1,'']]],
+  ['read1_5ffirst',['read1_first',['../structMpeggRecord.html#ad87cf3e1eb0228748270d154bde08cb1',1,'MpeggRecord']]],
+  ['read_5flen',['read_len',['../structMpeggRecord.html#a5e2e9dab677f48bdf3d2311bab7938b4',1,'MpeggRecord']]],
+  ['read_5fname',['read_name',['../structMpeggRecord.html#a5b1269ff546962bc30d7a060c1954a9c',1,'MpeggRecord']]],
+  ['reads_5fcount',['reads_count',['../classAccessUnit.html#ae3839f3390652171fad0b28622d4d8c7',1,'AccessUnit']]],
+  ['reference_5fid',['reference_id',['../classAccessUnit.html#a2d515312cf26d6bd17783a27db6a2a43',1,'AccessUnit']]],
+  ['removefirstread',['removeFirstRead',['../classUtils.html#abddd37adce88799fc8a66f7779c407bb',1,'Utils']]],
+  ['reverse_5fcomp',['reverse_comp',['../structMpeggRecord.html#abbe495faacdf88320a21ccf8a95579af',1,'MpeggRecord']]]
 ];

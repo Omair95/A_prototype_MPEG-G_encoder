@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['insertaccessunit',['insertAccessUnit',['../classUtils.html#a20d62b8e6495536108e7bfe1b955355a',1,'Utils']]],
   ['insertflagsdescriptor',['insertFlagsDescriptor',['../classAccessUnit.html#a9b0dec206efc4a7f969b8112782f2dec',1,'AccessUnit']]],
   ['insertflagsvalue',['insertFlagsValue',['../classFileManager.html#a0480b8c16cc4f9172c271dd1f16a8760',1,'FileManager']]],
   ['insertmmposdescriptor',['insertMmposDescriptor',['../classAccessUnit__I.html#a26c4275c51e40c5dcec6ce1d1b3c87e5',1,'AccessUnit_I::insertMmposDescriptor()'],['../classAccessUnit__M.html#aad0b9306d44cb496a5649b2c39d1c17a',1,'AccessUnit_M::insertMmposDescriptor()'],['../classAccessUnit__N.html#adb0c2552e36e15d747eaa7b90cc9a8cb',1,'AccessUnit_N::insertMmposDescriptor()']]],
@@ -12,6 +13,7 @@ var searchData=
   ['insertposvalue',['insertPosValue',['../classFileManager.html#afd71cbd1a0813cc545d9f3b7ba174adb',1,'FileManager']]],
   ['insertrcompdescriptor',['insertRcompDescriptor',['../classAccessUnit.html#ab412ffb8efa67c364d6664242842cace',1,'AccessUnit']]],
   ['insertrcompvalue',['insertRcompValue',['../classFileManager.html#a372aa0850f9d2710ef22a1eb37214d56',1,'FileManager']]],
+  ['insertread',['insertRead',['../classUtils.html#aa2bffe3dfec78617ebdf207ff0fa0820',1,'Utils']]],
   ['insertrlendescriptor',['insertRlenDescriptor',['../classAccessUnit__HM.html#aead437775cd09d5b8e1e520d19ab1435',1,'AccessUnit_HM::insertRlenDescriptor()'],['../classAccessUnit__I.html#a1a7e5251c8b74ee0ba938922ef2c786b',1,'AccessUnit_I::insertRlenDescriptor()'],['../classAccessUnit__M.html#a51ba179107d8cd299b61815140cc6f57',1,'AccessUnit_M::insertRlenDescriptor()'],['../classAccessUnit__N.html#a4ff055cf615f7e89bbab40cc8826d22f',1,'AccessUnit_N::insertRlenDescriptor()'],['../classAccessUnit__P.html#af6ca4854308358fb7730ebfe8c51ae59',1,'AccessUnit_P::insertRlenDescriptor()'],['../classAccessUnit__U.html#a807006fb5de95688c0c0d81eff56acba',1,'AccessUnit_U::insertRlenDescriptor()']]],
   ['insertrlenvalue',['insertRlenValue',['../classFileManager.html#a31190b3ab0f967a2dfbfd1f429c9981e',1,'FileManager']]],
   ['insertvalue',['insertValue',['../classAccessUnitBlock.html#aaa3754f0b79b3cef201b96c2f0b99c31',1,'AccessUnitBlock']]],

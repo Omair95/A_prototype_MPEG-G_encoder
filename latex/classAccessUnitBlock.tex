@@ -16,7 +16,7 @@ Block data structure of the access unit.
 \begin{DoxyCompactList}\small\item\em the values of the descriptor \end{DoxyCompactList}\item 
 \hyperlink{classAccessUnitBlock_ab390571e2efa58707aa8b123ab98727f}{$\sim$\+Access\+Unit\+Block} ()\hypertarget{classAccessUnitBlock_ab390571e2efa58707aa8b123ab98727f}{}\label{classAccessUnitBlock_ab390571e2efa58707aa8b123ab98727f}
 
-\begin{DoxyCompactList}\small\item\em Desctructor method. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnitBlock_aaa3754f0b79b3cef201b96c2f0b99c31}{insert\+Value} (std\+::string value)
 \begin{DoxyCompactList}\small\item\em Inserts a value inside the block. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \hyperlink{classAccessUnitBlock_a12784529b88ad0607c5c1bbd8331e939}{get\+Payload} ()
@@ -33,21 +33,11 @@ Block data structure of the access unit.
 This class implements the block data structure that goes inside the access unit. It has some header information and payload.
 
 \begin{DoxyAuthor}{Author}
-
+Omair Iqbal
 \end{DoxyAuthor}
-\begin{DoxyParagraph}{Author}
-Omair Iqbal 
-\end{DoxyParagraph}
-
-
 \begin{DoxyDate}{Date}
-
+04/2018
 \end{DoxyDate}
-\begin{DoxyParagraph}{Date}
-04/2018 
-\end{DoxyParagraph}
-
-
 Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -64,7 +54,7 @@ the values of the descriptor
 
 Constructor method 
 \begin{DoxyParams}{Parameters}
-{\em descriptor\+Id} & the id of the descriptor to be stored The result is a block with an id and an empty payload \\
+{\em descriptor\+Id} & identifier of the descriptor to be stored The result is a block with an id and an empty payload \\
 \hline
 \end{DoxyParams}
 
@@ -87,7 +77,7 @@ Gets the payload of the block, which contains all the values of the descriptor.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-vector containing all the values of the descriptor 
+vector containing all the values of the block descriptor 
 \end{DoxyReturn}
 \index{Access\+Unit\+Block@{Access\+Unit\+Block}!get\+Payload\+Size@{get\+Payload\+Size}}
 \index{get\+Payload\+Size@{get\+Payload\+Size}!Access\+Unit\+Block@{Access\+Unit\+Block}}
@@ -121,7 +111,7 @@ Inserts a value inside the block.
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & the value to be inserted in the block \\
+{\em value} & value to be inserted in the block \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

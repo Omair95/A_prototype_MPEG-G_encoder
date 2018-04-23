@@ -2,7 +2,7 @@
 \label{classAccessUnit}\index{Access\+Unit@{Access\+Unit}}
 
 
-Main data structure to be used.  
+Main data structure that contains a coded representation of information to facilitate the bit stream access and manipulation.  
 
 
 
@@ -25,19 +25,18 @@ Inheritance diagram for Access\+Unit\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em blocks containing descriptors \end{DoxyCompactList}\item 
 \hyperlink{classAccessUnit_ae55b52ce6b71e43aee61b5c6e5c315c5}{$\sim$\+Access\+Unit} ()
 \begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
-uint8\+\_\+t {\bfseries get\+Type} ()\hypertarget{classAccessUnit_a8eb8ccd6079bf8ce8a8fa27c8e1bee6c}{}\label{classAccessUnit_a8eb8ccd6079bf8ce8a8fa27c8e1bee6c}
-
-\item 
+uint8\+\_\+t \hyperlink{classAccessUnit_a8eb8ccd6079bf8ce8a8fa27c8e1bee6c}{get\+Type} ()
+\begin{DoxyCompactList}\small\item\em gets the type of access unit \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit_a07baa96e65a985a73efcc6b1e98ab721}{set\+Start\+Position} (uint32\+\_\+t start)
 \begin{DoxyCompactList}\small\item\em Sets the start position of the access unit. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit_a68b44705578142db56f5365390889240}{set\+End\+Position} (uint32\+\_\+t endpos)
 \begin{DoxyCompactList}\small\item\em Sets the end position of the access unit. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit_ae9f1cfba908511e901fa2b0810e2d48b}{insert\+Posdescriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the pos descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the pos descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit_ab412ffb8efa67c364d6664242842cace}{insert\+Rcomp\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the rcomp descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the rcomp descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit_a9b0dec206efc4a7f969b8112782f2dec}{insert\+Flags\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the flags descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the flags descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit_a7525ca997685655cf1b2feee85e57dec}{get\+Pos\+Descriptor\+Values} ()
 \begin{DoxyCompactList}\small\item\em Gets all the values of the pos descriptor in the access unit. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit_a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f}{get\+Rcomp\+Descriptor\+Values} ()
@@ -61,7 +60,7 @@ uint8\+\_\+t \hyperlink{classAccessUnit_a88f0f1df847d53c2acfa2c71e05bbe80}{num\+
 \begin{DoxyCompactList}\small\item\em zero-\/base unambiguous identifier, linearly increased by 1 \end{DoxyCompactList}\item 
 uint16\+\_\+t \hyperlink{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}{parameter\+\_\+set\+\_\+id}\hypertarget{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}{}\label{classAccessUnit_ac6b002ab87c4a26e5161738c30213422}
 
-\begin{DoxyCompactList}\small\item\em number of blocks in the Access Unit \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em number of blocks in the access unit \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{classAccessUnit_af1f7750576bc9a7a5932776435c11194}{A\+U\+\_\+type}\hypertarget{classAccessUnit_af1f7750576bc9a7a5932776435c11194}{}\label{classAccessUnit_af1f7750576bc9a7a5932776435c11194}
 
 \begin{DoxyCompactList}\small\item\em unique identifier of the Parameters Set in the Dataset Group \end{DoxyCompactList}\item 
@@ -86,26 +85,14 @@ std\+::vector$<$ \hyperlink{classAccessUnitBlock}{Access\+Unit\+Block} $>$ \hype
 
 
 \subsection{Detailed Description}
-Main data structure to be used. 
-
-This class implements the access unit structure that contains header information and a number of blocks as a payload.
+Main data structure that contains a coded representation of information to facilitate the bit stream access and manipulation. 
 
 \begin{DoxyAuthor}{Author}
-
+Omair Iqbal
 \end{DoxyAuthor}
-\begin{DoxyParagraph}{Author}
-Omair Iqbal 
-\end{DoxyParagraph}
-
-
 \begin{DoxyDate}{Date}
-
+04/2018
 \end{DoxyDate}
-\begin{DoxyParagraph}{Date}
-04/2018 
-\end{DoxyParagraph}
-
-
 Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -226,6 +213,25 @@ Gets the number of reads stored in the access unit.
 \begin{DoxyReturn}{Returns}
 the number of reads in the access unit 
 \end{DoxyReturn}
+\index{Access\+Unit@{Access\+Unit}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Access\+Unit@{Access\+Unit}}
+\subsubsection[{\texorpdfstring{get\+Type()}{getType()}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Access\+Unit\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAccessUnit_a8eb8ccd6079bf8ce8a8fa27c8e1bee6c}{}\label{classAccessUnit_a8eb8ccd6079bf8ce8a8fa27c8e1bee6c}
+
+
+gets the type of access unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer representing the type of access unit 
+\end{DoxyReturn}
 \index{Access\+Unit@{Access\+Unit}!insert\+Flags\+Descriptor@{insert\+Flags\+Descriptor}}
 \index{insert\+Flags\+Descriptor@{insert\+Flags\+Descriptor}!Access\+Unit@{Access\+Unit}}
 \subsubsection[{\texorpdfstring{insert\+Flags\+Descriptor(std\+::string value)}{insertFlagsDescriptor(std::string value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Access\+Unit\+::insert\+Flags\+Descriptor (
@@ -235,11 +241,11 @@ the number of reads in the access unit
 )}\hypertarget{classAccessUnit_a9b0dec206efc4a7f969b8112782f2dec}{}\label{classAccessUnit_a9b0dec206efc4a7f969b8112782f2dec}
 
 
-Inserts the flags descriptor value inside the corresponding block in the payload. 
+Inserts the flags descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the flags descriptor \\
+{\em value} & string representing the value of the flags descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -254,11 +260,11 @@ void
 )}\hypertarget{classAccessUnit_ae9f1cfba908511e901fa2b0810e2d48b}{}\label{classAccessUnit_ae9f1cfba908511e901fa2b0810e2d48b}
 
 
-Inserts the pos descriptor value inside the corresponding block in the payload. 
+Inserts the pos descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the pos descriptor \\
+{\em value} & string representing the value of the pos descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -273,11 +279,11 @@ void
 )}\hypertarget{classAccessUnit_ab412ffb8efa67c364d6664242842cace}{}\label{classAccessUnit_ab412ffb8efa67c364d6664242842cace}
 
 
-Inserts the rcomp descriptor value inside the corresponding block in the payload. 
+Inserts the rcomp descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the rcomp descriptor \\
+{\em value} & string representing the value of the rcomp descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -296,7 +302,7 @@ Sets the end position of the access unit.
 
 
 \begin{DoxyParams}{Parameters}
-{\em endpos} & an integer representing the end position \\
+{\em endpos} & integer representing the end position of the access unit in the reference sequence \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -315,7 +321,7 @@ Sets the start position of the access unit.
 
 
 \begin{DoxyParams}{Parameters}
-{\em start} & an integer representing the start position \\
+{\em start} & integer representing the start position of the access unit in the reference sequence \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

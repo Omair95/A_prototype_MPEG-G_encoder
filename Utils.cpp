@@ -468,16 +468,16 @@ std::vector<std::string> Utils::getmmtypeDescriptor(std::vector<std::pair<int, s
     std::vector<std::string> result;
     for (int i = 0; i < mmpos.size(); ++i) {
         if (mmpos[i].second[0] == 'I') {
-            if (mmpos[i].second[1] == 'A') result.push_back(int_to_hex(6));
-            else if (mmpos[i].second[1] == 'C') result.push_back(int_to_hex(7));
-            else if (mmpos[i].second[1] == 'G') result.push_back(int_to_hex(8));
-            else if (mmpos[i].second[1] == 'T') result.push_back(int_to_hex(9));
+            if (mmpos[i].second[1] == 'A') result.push_back(std::to_string(6));
+            else if (mmpos[i].second[1] == 'C') result.push_back(std::to_string(7));
+            else if (mmpos[i].second[1] == 'G') result.push_back(std::to_string(8));
+            else if (mmpos[i].second[1] == 'T') result.push_back(std::to_string(9));
         }
-        else if (mmpos[i].second[0] == 'D') result.push_back(int_to_hex(5));
-        else if (mmpos[i].second[0] == 'A') result.push_back(int_to_hex(0));
-        else if (mmpos[i].second[0] == 'C') result.push_back(int_to_hex(1));
-        else if (mmpos[i].second[0] == 'G') result.push_back(int_to_hex(2));
-        else if (mmpos[i].second[0] == 'T') result.push_back(int_to_hex(3));
+        else if (mmpos[i].second[0] == 'D') result.push_back(std::to_string(5));
+        else if (mmpos[i].second[0] == 'A') result.push_back(std::to_string(0));
+        else if (mmpos[i].second[0] == 'C') result.push_back(std::to_string(1));
+        else if (mmpos[i].second[0] == 'G') result.push_back(std::to_string(2));
+        else if (mmpos[i].second[0] == 'T') result.push_back(std::to_string(3));
     }
     return result;
 }

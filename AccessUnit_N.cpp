@@ -10,6 +10,8 @@ AccessUnit_N::AccessUnit_N(uint32_t id) {
     sequence_id = 0;
     AU_start_position = 0;
     AU_end_position = 0;
+    mm_threshold = 0;
+    mm_count = 0;
 
     descriptors.push_back(AccessUnitBlock(0)); // pos descriptor
     descriptors.push_back(AccessUnitBlock(1)); // rcomp descriptor
@@ -23,6 +25,7 @@ AccessUnit_N::~AccessUnit_N() { }
 
 void AccessUnit_N::insertMmposDescriptor(std::string value) {
     descriptors[3].insertValue(value);
+    ++mm_threshold;
 }
 
 void AccessUnit_N::insertRlenDescriptor(std::string value) {

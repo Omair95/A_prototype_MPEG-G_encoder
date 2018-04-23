@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['num_5fblocks',['num_blocks',['../classAccessUnit.html#a88f0f1df847d53c2acfa2c71e05bbe80',1,'AccessUnit']]],
-  ['number_5fof_5falignments',['number_of_alignments',['../structMpeggRecord.html#a16c50a379b687b3b479137ccc1ddf715',1,'MpeggRecord']]],
-  ['number_5fof_5fsegments',['number_of_segments',['../structMpeggRecord.html#a19769e489073d18fcac5dff57c067983',1,'MpeggRecord']]]
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mapping_5fpos',['mapping_pos',['../structMpeggRecord.html#ae42d36c1ea24cc73bcd7d9b0c9251c3d',1,'MpeggRecord']]],
+  ['mpeggrecord',['MpeggRecord',['../structMpeggRecord.html',1,'']]],
+  ['mpeggrecord_2eh',['MpeggRecord.h',['../MpeggRecord_8h.html',1,'']]]
 ];

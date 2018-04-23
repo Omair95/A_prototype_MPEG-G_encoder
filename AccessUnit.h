@@ -4,14 +4,12 @@
 
 /**
  * \class AccessUnit
- * \brief Main data structure to be used
+ * \brief Main data structure that contains a coded representation of information to facilitate the bit stream
+ *        access and manipulation
  *
- * This class implements the access unit structure that contains header information
- * and a number of blocks as a payload.
+ * \author  Omair Iqbal
  *
- * \author $Author: Omair Iqbal $
- *
- * \date $Date: 04/2018 $
+ * \date 04/2018
  *
  * Contact: Omair95@protonmail.com
  * */
@@ -24,7 +22,7 @@ class AccessUnit {
 protected:
 
     uint32_t access_unit_id;                    /// zero-base unambiguous identifier, linearly increased by 1
-    uint8_t num_blocks;                         /// number of blocks in the Access Unit
+    uint8_t num_blocks;                         /// number of blocks in the access unit
     uint16_t parameter_set_id;                  /// unique identifier of the Parameters Set in the Dataset Group
     uint8_t AU_type;                            /// identifies the type of Access Unit and the class of data carried
     uint32_t reads_count;                       /// number of genomic sequence reads encoded in the Access Unit
@@ -48,34 +46,38 @@ public:
     * */
     ~AccessUnit();
 
+    /** \brief gets the type of access unit
+     * \param void
+     * \return integer representing the type of access unit
+     * */
     uint8_t getType();
 
     /** \brief Sets the start position of the access unit
-    * \param start an integer representing the start position
+    * \param start integer representing the start position of the access unit in the reference sequence
     * \return void
     * */
     void setStartPosition(uint32_t start);
 
     /** \brief Sets the end position of the access unit
-    * \param endpos an integer representing the end position
+    * \param endpos integer representing the end position of the access unit in the reference sequence
     * \return void
     * */
     void setEndPosition(uint32_t endpos);
 
-    /** \brief Inserts the pos descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the pos descriptor
+    /** \brief Inserts the pos descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the pos descriptor
     * \return void
     * */
     void insertPosdescriptor(std::string value);
 
-    /** \brief Inserts the rcomp descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the rcomp descriptor
+    /** \brief Inserts the rcomp descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the rcomp descriptor
     * \return void
     * */
     void insertRcompDescriptor(std::string value);
 
-    /** \brief Inserts the flags descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the flags descriptor
+    /** \brief Inserts the flags descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the flags descriptor
     * \return void
     * */
     void insertFlagsDescriptor(std::string value);

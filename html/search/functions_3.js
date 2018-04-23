@@ -1,6 +1,8 @@
 var searchData=
 [
   ['generatebytestream',['generateByteStream',['../main_8cpp.html#af069b537362d4cd928303b086fe1f7ed',1,'main.cpp']]],
+  ['getallaccessunits',['getAllAccessUnits',['../classUtils.html#a1f13b160cd02b1fdf44e6ff8ba2c2406',1,'Utils']]],
+  ['getallreads',['getAllreads',['../classUtils.html#a23ce2e6de05c4574f2296353f03fc9db',1,'Utils']]],
   ['getcigar',['getCigar',['../classUtils.html#a61182e6d5c700eedfaff392b51826af3',1,'Utils']]],
   ['getclasstype',['getClassType',['../classUtils.html#a75b0e41bc884a3fcebb4f55c45855d82',1,'Utils']]],
   ['getextendedcigar',['getExtendedCigar',['../classUtils.html#a612bb61872bc69a806c0159dcd3da28c',1,'Utils']]],
@@ -18,5 +20,6 @@ var searchData=
   ['getrcompdescriptorvalues',['getRcompDescriptorValues',['../classAccessUnit.html#a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f',1,'AccessUnit']]],
   ['getreadscount',['getReadsCount',['../classAccessUnit.html#aecc1cf0d2ed07a7acba1683ca087d06f',1,'AccessUnit']]],
   ['getrlendescriptor',['getRlenDescriptor',['../classUtils.html#ab7280ddfb7ef67f93490328f8bdd7564',1,'Utils']]],
-  ['getsecondrecord',['getSecondRecord',['../classUtils.html#acba7464c0972dceade69f1f1aef4e5f4',1,'Utils']]]
+  ['getsecondrecord',['getSecondRecord',['../classUtils.html#acba7464c0972dceade69f1f1aef4e5f4',1,'Utils']]],
+  ['gettype',['getType',['../classAccessUnit.html#a8eb8ccd6079bf8ce8a8fa27c8e1bee6c',1,'AccessUnit']]]
 ];

@@ -11,7 +11,8 @@ Access unit of type HM\+: Half-\/mapped pairs where only one read is mapped.
 
 
 
-Inheritance diagram for Access\+Unit\+\_\+\+HM\+:\nopagebreak
+Inheritance diagram for Access\+Unit\+\_\+\+HM\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Access\+Unit\+\_\+\+HM\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Access\+Unit\+\_\+\+HM\+:\nopagebreak
+Collaboration diagram for Access\+Unit\+\_\+\+HM\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,9 +37,9 @@ Collaboration diagram for Access\+Unit\+\_\+\+HM\+:\nopagebreak
 \hyperlink{classAccessUnit__HM_a69b600e135843c126f93813257157520}{$\sim$\+Access\+Unit\+\_\+\+HM} ()
 \begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit__HM_aead437775cd09d5b8e1e520d19ab1435}{insert\+Rlen\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the rlen descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the rlen descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit__HM_a81641868d00425d0bcb14aacc6659087}{insert\+Pair\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the pair descriptor value inside the corresponding block in the payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Inserts the pair descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -45,21 +47,11 @@ void \hyperlink{classAccessUnit__HM_a81641868d00425d0bcb14aacc6659087}{insert\+P
 Access unit of type HM\+: Half-\/mapped pairs where only one read is mapped. 
 
 \begin{DoxyAuthor}{Author}
-
+Omair Iqbal
 \end{DoxyAuthor}
-\begin{DoxyParagraph}{Author}
-Omair Iqbal 
-\end{DoxyParagraph}
-
-
 \begin{DoxyDate}{Date}
-
+04/2018
 \end{DoxyDate}
-\begin{DoxyParagraph}{Date}
-04/2018 
-\end{DoxyParagraph}
-
-
 Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -76,7 +68,7 @@ Constructor method.
 
 
 \begin{DoxyParams}{Parameters}
-{\em id} & the id of the access unit of type M (3) \\
+{\em id} & identifier of the access unit of type HM (5) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -113,11 +105,11 @@ void
 )}\hypertarget{classAccessUnit__HM_a81641868d00425d0bcb14aacc6659087}{}\label{classAccessUnit__HM_a81641868d00425d0bcb14aacc6659087}
 
 
-Inserts the pair descriptor value inside the corresponding block in the payload. 
+Inserts the pair descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the pair descriptor \\
+{\em value} & string representing the value in hexadecimal of the pair descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -132,11 +124,11 @@ void
 )}\hypertarget{classAccessUnit__HM_aead437775cd09d5b8e1e520d19ab1435}{}\label{classAccessUnit__HM_aead437775cd09d5b8e1e520d19ab1435}
 
 
-Inserts the rlen descriptor value inside the corresponding block in the payload. 
+Inserts the rlen descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & an string representing the value in hexadecimal of the rlen descriptor \\
+{\em value} & string representing the value of the rlen descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

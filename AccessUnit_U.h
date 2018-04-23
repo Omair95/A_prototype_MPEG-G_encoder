@@ -6,9 +6,9 @@
  * \class AccessUnit_U
  * \brief Access unit of type U: Unmapped reads.
  *
- * \author $Author: Omair Iqbal $
+ * \author Omair Iqbal
  *
- * \date $Date: 04/2018 $
+ * \date 04/2018
  *
  * Contact: Omair95@protonmail.com
  * */
@@ -20,7 +20,7 @@ class AccessUnit_U : public AccessUnit {
 
 public:
     /** \brief Constructor method
-    * \param id the id of the access unit of type M (3)
+    * \param id identifier of the access unit of type M (3)
     * \return void
     * */
     AccessUnit_U(uint32_t id);
@@ -32,7 +32,7 @@ public:
     ~AccessUnit_U();
 
     /** \brief Inserts the rlen descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the rlen descriptor
+    * \param value string representing the value of the rlen descriptor
     * \return void
     * */
     void insertRlenDescriptor(std::string value);

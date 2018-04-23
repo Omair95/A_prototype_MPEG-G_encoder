@@ -7,9 +7,9 @@
  * \brief Access unit of type M: reads containing at least one substitution, and optionally unknown bases,
  *  but no insertions, no deletions and no clipped bases.
  *
- * \author $Author: Omair Iqbal $
+ * \author Omair Iqbal
  *
- * \date $Date: 04/2018 $
+ * \date 04/2018
  *
  * Contact: Omair95@protonmail.com
  * */
@@ -19,9 +19,13 @@
 
 class AccessUnit_M : public AccessUnit {
 
+private:
+    uint16_t mm_threshold;  /// number of mismatches in a read
+    uint16_t mm_count;      /// represents the number reads encoded in the Access Unit which are below the specified threshold
+
 public:
     /** \brief Constructor method
-    * \param id the id of the access unit of type M (3)
+    * \param id identifier of the access unit of type M (3)
     * \return void
     * */
     AccessUnit_M(uint32_t id);
@@ -32,26 +36,26 @@ public:
     * */
     ~AccessUnit_M();
 
-    /** \brief Inserts the mmpos descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the mmpos descriptor
+    /** \brief Inserts the mmpos descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value in hexadecimal of the mmpos descriptor
     * \return void
     * */
     void insertMmposDescriptor(std::string value);
 
-    /** \brief Inserts the mmtype descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the mmtype descriptor
+    /** \brief Inserts the mmtype descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value in hexadecimal of the mmtype descriptor
     * \return void
     * */
     void insertMmtypeDescriptor(std::string value);
 
-    /** \brief Inserts the rlen descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the rlen descriptor
+    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value in hexadecimal of the rlen descriptor
     * \return void
     * */
     void insertRlenDescriptor(std::string value);
 
-    /** \brief Inserts the pair descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the pair descriptor
+    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value in hexadecimal of the pair descriptor
     * \return void
     * */
     void insertPairDescriptor(std::string value);

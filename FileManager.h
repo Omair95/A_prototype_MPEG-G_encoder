@@ -6,11 +6,11 @@
 /**
  * \class FileManager
  * \brief Class to be used to create and write files that contain the output Mpegg format and
- *        all the asociated descriptors
+ *        all the associated descriptors
  *
- * \author $Author: Omair Iqbal $
+ * \author Omair Iqbal
  *
- * \date $Date: 04/2018 $
+ * \date 04/2018
  *
  * Contact: Omair95@protonmail.com
  * */
@@ -75,61 +75,61 @@ public:
 
     /** \brief Writes the pos descriptor value to the respective file
      *         according to the class type
-     *  \param value is the value of the pos descriptor and \param classType is the
-     *   class type
+     *  \param value value of the pos descriptor
+     *  \param classType class type
      *   \return void
      * */
     void insertPosValue(std::string value, int classType);
 
     /** \brief Writes the rcomp descriptor value to the respective file
      *         according to the class type
-     *  \param value is the value of the rcomp descriptor and \param classType is the
-     *   class type
+     *  \param value value of the rcomp descriptor
+     *  \param classType class type
      * */
     void insertRcompValue(std::string value, int classType);
 
     /** \brief Writes the flags descriptor value to the respective file
      *         according to the class type
-     *  \param value is the value of the flags descriptor and \param classType is the
-     *   class type
+     *  \param value value of the flags descriptor
+     *  \param classType class type
      *   \return void
      * */
     void insertFlagsValue(std::string value, int classType);
 
     /** \brief Writes the mmpos descriptor value to the respective file
      *         according to the class type
-     *  \param value is the value of the mmpos descriptor and \param classType is the
-     *   class type
+     *  \param value value of the mmpos descriptor
+     *  \param classType class type
      *   \return void
      * */
     void insertMmposValue(std::string value, int classType);
 
     /** \brief Writes the mmtype descriptor value to the respective file
      *         according to the class type
-     *  \param value is the value of the mmtype descriptor and \param classType is the
-     *   class type
+     *  \param value value of the mmtype descriptor
+     *  \param classType class type
      *   \return void
      * */
     void insertMmtypeValue(std::string value, int classType);
 
     /** \brief Writes the rlen descriptor value to the respective file
      *         according to the class type
-     *  \param value is the value of the rlen descriptor and \param classType is the
-     *   class type
+     *  \param value value of the rlen descriptor
+     *  \param classType class type
      *   \return void
      * */
     void insertRlenValue(std::string value, int classType);
 
     /** \brief Writes the pair descriptor value to the respective file
      *         according to the class type
-     *  \param value is the value of the pair descriptor and \param classType is the
-     *   class type
+     *  \param value value of the pair descriptor
+     *  \param classType class type
      *  \return void
      * */
     void insertPairValue(std::string value, int classType);
 
     /** \brief Writes the mpegg record of the respective read to a file
-     *  \param result is the mpegg record of the read
+     *  \param result mpegg record format of the read
      *  \return void
      * */
     void writeMpeggToFile(MpeggRecord& result);

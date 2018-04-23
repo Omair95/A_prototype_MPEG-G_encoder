@@ -10,9 +10,9 @@ using namespace seqan;
  * This class implements the block data structure that goes inside
  * the access unit. It has some header information and payload.
  *
- * \author $Author: Omair Iqbal $
+ * \author Omair Iqbal
  *
- * \date $Date: 04/2018 $
+ * \date 04/2018
  *
  * Contact: Omair95@protonmail.com
  * */
@@ -32,17 +32,17 @@ private:
 public:
 
     /** \brief Constructor method
-     *  \param descriptorId the id of the descriptor to be stored
+     *  \param descriptorId identifier of the descriptor to be stored
      *  The result is a block with an id and an empty payload
      * */
     AccessUnitBlock(uint8_t descriptorId);
 
-    /** \brief Desctructor method
+    /** \brief Destructor method
      * */
     ~AccessUnitBlock();
 
     /** \brief Inserts a value inside the block
-     * \param value the value to be inserted in the block
+     * \param value value to be inserted in the block
      * \return void
      * */
     void insertValue(std::string value);
@@ -50,7 +50,7 @@ public:
     /** \brief Gets the payload of the block, which contains
      * all the values of the descriptor
      * \param void
-     * \return vector containing all the values of the descriptor
+     * \return vector containing all the values of the block descriptor
      * */
     std::vector<std::string> getPayload();
 

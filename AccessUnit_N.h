@@ -6,9 +6,9 @@
  * \class AccessUnit_N
  * \brief Access unit of type N: reads containing mismatches which are unknown bases only.
  *
- * \author $Author: Omair Iqbal $
+ * \author Omair Iqbal
  *
- * \date $Date: 04/2018 $
+ * \date 04/2018
  *
  * Contact: Omair95@protonmail.com
  * */
@@ -24,7 +24,7 @@ private:
 
 public:
     /** \brief Constructor method
-    * \param id the id of the access unit of type N (2)
+    * \param id identifier of the access unit of type N (2)
     * \return void
     * */
     AccessUnit_N(uint32_t id);
@@ -35,20 +35,20 @@ public:
     * */
     ~AccessUnit_N();
 
-    /** \brief Inserts the mmpos descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the mmpos descriptor
+    /** \brief Inserts the mmpos descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the mmpos descriptor
     * \return void
     * */
     void insertMmposDescriptor(std::string value);
 
-    /** \brief Inserts the rlen descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the rlen descriptor
+    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the rlen descriptor
     * \return void
     * */
     void insertRlenDescriptor(std::string value);
 
-    /** \brief Inserts the pair descriptor value inside the corresponding block in the payload
-    * \param value an string representing the value in hexadecimal of the pair descriptor
+    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the pair descriptor
     * \return void
     * */
     void insertPairDescriptor(std::string value);
