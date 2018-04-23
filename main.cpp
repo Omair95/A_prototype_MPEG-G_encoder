@@ -53,10 +53,10 @@ void generateByteStream() {
                 antPosP = a.mapping_pos[0];
                 AU_P->insertPosdescriptor(u.int_to_hex(0));
                 AU_P->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(u.int_to_hex(0), 1);
+                f.insertPosValue(std::to_string(0), 1);
             } else {
-                AU_P->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosP));
-                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosP), 1);
+                AU_P->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosP));
+                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosP), 1);
                 antPosP = a.mapping_pos[0];
             }
 
@@ -102,10 +102,10 @@ void generateByteStream() {
                 antPosN = a.mapping_pos[0];
                 AU_N->insertPosdescriptor(u.int_to_hex(0));
                 AU_N->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(u.int_to_hex(0), 2);
+                f.insertPosValue(std::to_string(0), 2);
             } else {
-                AU_N->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosN));
-                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosN), 2);
+                AU_N->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosN));
+                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosN), 2);
                 antPosN = a.mapping_pos[0];
             }
 
@@ -160,10 +160,10 @@ void generateByteStream() {
                 antPosM = a.mapping_pos[0];
                 AU_M->insertPosdescriptor(u.int_to_hex(0));
                 AU_M->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(u.int_to_hex(0), 3);
+                f.insertPosValue(std::to_string(0), 3);
             } else {
-                AU_M->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosM));
-                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosM), 3);
+                AU_M->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosM));
+                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosM), 3);
                 antPosM = a.mapping_pos[0];
             }
 
@@ -226,10 +226,10 @@ void generateByteStream() {
                 antPosI = a.mapping_pos[0];
                 AU_I->insertPosdescriptor(u.int_to_hex(0));
                 AU_I->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(u.int_to_hex(0), 4);
+                f.insertPosValue(std::to_string(0), 4);
             } else {
-                AU_I->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosI));
-                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosI), 4);
+                AU_I->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosI));
+                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosI), 4);
                 antPosI = a.mapping_pos[0];
             }
 
@@ -292,10 +292,10 @@ void generateByteStream() {
                 antPosHM = a.mapping_pos[0];
                 AU_HM->insertPosdescriptor(u.int_to_hex(0));
                 AU_HM->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(u.int_to_hex(0), 5);
+                f.insertPosValue(std::to_string(0), 5);
             } else {
-                AU_HM->insertPosdescriptor(u.int_to_hex(a.mapping_pos[0] - antPosHM));
-                f.insertPosValue(u.int_to_hex(a.mapping_pos[0] - antPosHM), 5);
+                AU_HM->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosHM));
+                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosHM), 5);
                 antPosHM = a.mapping_pos[0];
             }
 
@@ -375,7 +375,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 100) {
+    while (!atEnd(bamFileIn) and count <= 1000) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {

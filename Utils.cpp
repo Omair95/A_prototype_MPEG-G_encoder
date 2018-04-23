@@ -298,7 +298,7 @@ std::string Utils::getRcompDescriptor(BamAlignmentRecord& record) {
         else if (pair1 == 1 and pair2 == 0) result = 2;
         else if (pair1 == 1 and pair2 == 1) result = 3;
     }
-    return int_to_hex(result);
+    return std::to_string(result);
 }
 
 std::string Utils::getFlagDescriptor(BamAlignmentRecord& record) {
@@ -307,7 +307,7 @@ std::string Utils::getFlagDescriptor(BamAlignmentRecord& record) {
     if (flag & 1024) result = 1;
     if (flag & 512) result += 2;
     if (not(flag & 8)) result += 4;
-    return int_to_hex(result);
+    return std::to_string(result);
 }
 
 std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignmentRecord& record) {
@@ -319,15 +319,16 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
     std::string cigarRead1 = getCigar(record.cigar);
     std::string MD = getMDtag(record);
     int sum = 0, lastMismatch = 0;
+    bool firstMismatch = true;
 
     if (cigarRead1 != "100M") {
         for (int i = 0; i < cigarRead1.size(); ++i) {
             if (not isdigit(cigarRead1[i])) {
                 int a = 0, b = 0;
-                if ((i-2) >= 0 and isdigit(cigarRead1[i-2])) {
+                if ((i-2) >= 0 and isdigit(cigarRead1[i-2]) and isdigit(cigarRead1[i-1])) {
                     a = cigarRead1[i-2] - '0';
                     b = cigarRead1[i-1] - '0';
-                } else {
+                } else if (isdigit(cigarRead1[i-1])) {
                     b = cigarRead1[i-1] - '0';
                 }
                 sum += a*10 + b;
@@ -340,9 +341,13 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
                             std::string a = "I";
                             a.insert(a.size(), 1, c);
                             mmposread.insert(std::make_pair(sum - b, a));
-                        } else mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead1[i])));
+                        } else {
+                            mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead1[i])));
+                        }
                     }
-                    if (sum >= lastMismatch) lastMismatch = sum;
+                    if (sum >= lastMismatch) {
+                        lastMismatch = sum;
+                    }
                 }
             }
         }
@@ -367,9 +372,16 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
             }
         }
     }
-
+    int ant = 0;
     for (auto it = mmposread.begin(); it != mmposread.end(); ++it) {
-        mmpos.push_back(std::make_pair(it->first, it->second));
+        if (firstMismatch) {
+            ant = it->first;
+            mmpos.push_back(std::make_pair(it->first, it->second));
+            firstMismatch = false;
+        } else {
+            mmpos.push_back(std::make_pair(it->first - ant, it->second));
+            ant = it->first;
+        }
     }
     mmposread.clear();
 
@@ -386,10 +398,10 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
         for (int i = 0; i < cigarRead2.size(); ++i) {
             if (not isdigit(cigarRead2[i])) {
                 int a = 0, b = 0;
-                if ((i-2) >= 0 and isdigit(cigarRead2[i-2])) {
+                if ((i-2) >= 0 and isdigit(cigarRead2[i-1]) and isdigit(cigarRead2[i-2])) {
                     a = cigarRead2[i-2] - '0';
                     b = cigarRead2[i-1] - '0';
-                } else {
+                } else if (isdigit(cigarRead2[i-1])) {
                     b = cigarRead2[i-1] - '0';
                 }
                 sum += a*10 + b;
@@ -402,7 +414,9 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
                             std::string a = "I";
                             a.insert(a.size(), 1, c);
                             mmposread.insert(std::make_pair(sum - b, a));
-                        } else mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead2[i])));
+                        } else {
+                            mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead2[i])));
+                        }
                     }
                 }
             }
@@ -415,7 +429,7 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
         for (int i = 0; i < MD2.size(); ++i) {
             if (not isdigit(MD2[i])) {
                 int a = 0, b = 0;
-                if ((i-2) >= 0 and isdigit(MD2[i-2]) and isdigit(MD2[i-1])) {
+                if ((i-2) >= 0 and isdigit(MD2[i-1]) and isdigit(MD2[i-2])) {
                     a = MD2[i-2] - '0';
                     b = MD2[i-1] - '0';
                 } else if (isdigit(MD2[i-1])) {
@@ -429,17 +443,21 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
     }
 
     bool first = true;
+    ant = 0;
     for (auto it = mmposread.begin(); it != mmposread.end(); ++it) {
         if (first) {
-            if (lastMismatch > 100) {
+            if (lastMismatch != 0) {
+                mmpos.push_back(std::make_pair(100 - lastMismatch + it->first, it->second));
+                ant = it->first;
+            } else {
                 mmpos.push_back(std::make_pair(100 + it->first, it->second));
-            }
-            else {
-                mmpos.push_back(std::make_pair((100 - lastMismatch) + it->first, it->second));
+                ant = it->first;
             }
             first = false;
+        } else {
+            mmpos.push_back(std::make_pair(it->first - ant, it->second));
+            ant = it->first;
         }
-        mmpos.push_back(std::make_pair(it->first, it->second));
     }
     mmposread.clear();
 
@@ -468,7 +486,7 @@ std::string Utils::getRlenDescriptor(BamAlignmentRecord& record) {
     CharString seq = record.seq;
     const char *s1 = toCString(seq);
     std::string str(s1);
-    return int_to_hex(str.size());
+    return std::to_string(str.size());
 }
 
 std::string Utils::getPairDescriptor(BamAlignmentRecord& record) {
