@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++14   -fno-omit-frame-pointer -pthread -g   -std=gnu++14
 
 CXX_DEFINES = -DSEQAN_HAS_EXECINFO=1 -DSEQAN_HAS_ZLIB=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
 
-CXX_INCLUDES = -I/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include 
+CXX_INCLUDES = -I/home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include -I/home/omair/TFG/A_prototype_MPEG-G_encoder/boost_1_66_0 
 

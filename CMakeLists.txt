@@ -46,6 +46,8 @@ endif ()
 # Add include directories set by find_package (SeqAn).
 set(SEQAN_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/seqan/include")
 include_directories (${SEQAN_INCLUDE_DIRS})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}//boost_1_66_0)
+
 message("SEQAN_INCLUDE_DIRS = ${SEQAN_INCLUDE_DIRS}")
 
 # Add definitions set by find_package (SeqAn).

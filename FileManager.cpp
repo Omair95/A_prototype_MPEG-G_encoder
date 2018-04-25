@@ -43,93 +43,93 @@ FileManager::FileManager() {
 
 FileManager::~FileManager() { }
 
-void FileManager::insertPosValue(std::string value, int classType) {
+void FileManager::insertPosValue(uint32_t value, int classType) {
     if (classType == 1) {
-        posDescriptorClassP << value << " ";
+        posDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 2) {
-        posDescriptorClassN << value << " ";
+        posDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 3) {
-        posDescriptorClassM << value << " ";
+        posDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 4) {
-        posDescriptorClassI << value << " ";
+        posDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 5) {
-        posDescriptorClassHM << value << " ";
+        posDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     }
 }
 
-void FileManager::insertRcompValue(std::string value, int classType) {
+void FileManager::insertRcompValue(uint8_t value, int classType) {
     if (classType == 1) {
-        rcompDescriptorClassP << value << " ";
+        rcompDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 2) {
-        rcompDescriptorClassN << value << " ";
+        rcompDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 3) {
-        rcompDescriptorClassM << value << " ";
+        rcompDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 4) {
-        rcompDescriptorClassI << value << " ";
+        rcompDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 5) {
-        rcompDescriptorClassHM << value << " ";
+        rcompDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     }
 }
 
-void FileManager::insertFlagsValue(std::string value, int classType) {
+void FileManager::insertFlagsValue(uint8_t value, int classType) {
     if (classType == 1) {
-        flagsDescriptorClassP << value << " ";
+        flagsDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 2) {
-        flagsDescriptorClassN << value << " ";
+        flagsDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 3) {
-        flagsDescriptorClassM << value << " ";
+        flagsDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 4) {
-        flagsDescriptorClassI << value << " ";
+        flagsDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 5) {
-        flagsDescriptorClassHM << value << " ";
+        flagsDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     }
 }
 
-void FileManager::insertMmposValue(std::string value, int classType) {
+void FileManager::insertMmposValue(uint16_t value, int classType) {
     if (classType == 2) {
-        mmposDescriptorClassN << value << " ";
+        mmposDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 3) {
-        mmposDescriptorClassM << value << " ";
+        mmposDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 4) {
-        mmposDescriptorClassI << value << " ";
+        mmposDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
     }
 }
 
-void FileManager::insertMmtypeValue(std::string value, int classType) {
+void FileManager::insertMmtypeValue(uint8_t value, int classType) {
     if (classType == 3) {
-        mmtypeDescriptorClassM << value << " ";
+        mmtypeDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 4) {
-        mmtypeDescriptorClassI << value << " ";
+        mmtypeDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
     }
 }
 
-void FileManager::insertRlenValue(std::string value, int classType) {
+void FileManager::insertRlenValue(uint8_t value, int classType) {
     if (classType == 1) {
-        rlenDescriptorClassP << value << " ";
+        rlenDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 2) {
-        rlenDescriptorClassN << value << " ";
+        rlenDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 3) {
-        rlenDescriptorClassM << value << " ";
+        rlenDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 4) {
-        rlenDescriptorClassI << value << " ";
+        rlenDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 5) {
-        rlenDescriptorClassHM << value << " ";
+        rlenDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 6) {
-        rlenDescriptorClassU << value << " ";
+        rlenDescriptorClassU.write(reinterpret_cast<const char *>(&value), sizeof(value));
     }
 }
 
 void FileManager::insertPairValue(std::string value, int classType) {
     if (classType == 1) {
-        pairDescriptorClassP << value << " ";
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 2) {
-        pairDescriptorClassN << value << " ";
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 3) {
-        pairDescriptorClassM << value << " ";
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 4) {
-        pairDescriptorClassI << value << " ";
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
     } else if (classType == 5) {
-        pairDescriptorClassHM << value << " ";
+        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
     }
 }
 

@@ -6,6 +6,7 @@
 #include "AccessUnit_HM.h"
 #include "AccessUnit_U.h"
 #include "FileManager.h"
+#include <boost/endian/conversion.hpp>
 
 /*! \file main.cpp */
 
@@ -64,10 +65,10 @@ void generateByteStream() {
                 antPosP = a.mapping_pos[0];
                 AU_P->insertPosdescriptor(u.int_to_hex(0));
                 AU_P->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(std::to_string(0), 1);
+                f.insertPosValue(0, 1);
             } else {
                 AU_P->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosP));
-                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosP), 1);
+                f.insertPosValue(a.mapping_pos[0] - antPosP, 1);
                 antPosP = a.mapping_pos[0];
             }
 
@@ -113,10 +114,10 @@ void generateByteStream() {
                 antPosN = a.mapping_pos[0];
                 AU_N->insertPosdescriptor(u.int_to_hex(0));
                 AU_N->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(std::to_string(0), 2);
+                f.insertPosValue(0, 2);
             } else {
                 AU_N->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosN));
-                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosN), 2);
+                f.insertPosValue(a.mapping_pos[0] - antPosN, 2);
                 antPosN = a.mapping_pos[0];
             }
 
@@ -171,10 +172,10 @@ void generateByteStream() {
                 antPosM = a.mapping_pos[0];
                 AU_M->insertPosdescriptor(u.int_to_hex(0));
                 AU_M->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(std::to_string(0), 3);
+                f.insertPosValue(0, 3);
             } else {
                 AU_M->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosM));
-                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosM), 3);
+                f.insertPosValue(a.mapping_pos[0] - antPosM, 3);
                 antPosM = a.mapping_pos[0];
             }
 
@@ -237,10 +238,10 @@ void generateByteStream() {
                 antPosI = a.mapping_pos[0];
                 AU_I->insertPosdescriptor(u.int_to_hex(0));
                 AU_I->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(std::to_string(0), 4);
+                f.insertPosValue(0, 4);
             } else {
                 AU_I->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosI));
-                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosI), 4);
+                f.insertPosValue(a.mapping_pos[0] - antPosI, 4);
                 antPosI = a.mapping_pos[0];
             }
 
@@ -257,10 +258,14 @@ void generateByteStream() {
             // get mmpos descriptor
             std::vector<std::pair<int, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
 
+            std::cout << it->second.first.qName << " " << u.getCigar(it->second.first.cigar) << " "  << u.getMDtag(it->second.first) << std::endl;
+            std::cout << it->second.second.qName << " " << u.getCigar(it->second.second.cigar) << " " << u.getMDtag(it->second.second) << std::endl;
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(u.int_to_hex(mmpos[i].first));
+                std::cout << mmpos[i].first << " ";
                 f.insertMmposValue(u.int_to_hex(mmpos[i].first), 4);
             }
+            std::cout << std::endl;
 
             // get mmtype descriptor
             std::vector<std::string> mmtype = u.getmmtypeDescriptor(mmpos);
@@ -303,10 +308,10 @@ void generateByteStream() {
                 antPosHM = a.mapping_pos[0];
                 AU_HM->insertPosdescriptor(u.int_to_hex(0));
                 AU_HM->setStartPosition(a.mapping_pos[0]);
-                f.insertPosValue(std::to_string(0), 5);
+                f.insertPosValue(0, 5);
             } else {
                 AU_HM->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosHM));
-                f.insertPosValue(std::to_string(a.mapping_pos[0] - antPosHM), 5);
+                f.insertPosValue(a.mapping_pos[0] - antPosHM, 5);
                 antPosHM = a.mapping_pos[0];
             }
 

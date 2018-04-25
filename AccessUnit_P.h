@@ -35,13 +35,13 @@ public:
     * \param value string representing the value of the rlen descriptor
     * \return void
     * */
-    void insertRlenDescriptor(std::string value);
+    void insertRlenDescriptor(int value);
 
     /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
     * \param value string representing the value of the pair descriptor
     * \return void
     * */
-    void insertPairDescriptor(std::string value);
+    void insertPairDescriptor(int value);
 
 };
 

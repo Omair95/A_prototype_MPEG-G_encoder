@@ -79,14 +79,14 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    void insertPosValue(std::string value, int classType);
+    void insertPosValue(uint32_t value, int classType);
 
     /** \brief Writes the rcomp descriptor value to the respective file
      *         according to the class type
      *  \param value value of the rcomp descriptor
      *  \param classType class type
      * */
-    void insertRcompValue(std::string value, int classType);
+    void insertRcompValue(uint8_t value, int classType);
 
     /** \brief Writes the flags descriptor value to the respective file
      *         according to the class type
@@ -94,7 +94,7 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    void insertFlagsValue(std::string value, int classType);
+    void insertFlagsValue(uint8_t value, int classType);
 
     /** \brief Writes the mmpos descriptor value to the respective file
      *         according to the class type
@@ -102,7 +102,7 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    void insertMmposValue(std::string value, int classType);
+    void insertMmposValue(uint16_t value, int classType);
 
     /** \brief Writes the mmtype descriptor value to the respective file
      *         according to the class type
@@ -110,7 +110,7 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    void insertMmtypeValue(std::string value, int classType);
+    void insertMmtypeValue(uint8_t value, int classType);
 
     /** \brief Writes the rlen descriptor value to the respective file
      *         according to the class type
@@ -118,7 +118,7 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    void insertRlenValue(std::string value, int classType);
+    void insertRlenValue(uint8_t value, int classType);
 
     /** \brief Writes the pair descriptor value to the respective file
      *         according to the class type

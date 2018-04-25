@@ -320,6 +320,7 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
     std::string MD = getMDtag(record);
     int sum = 0, lastMismatch = 0;
     bool firstMismatch = true;
+    int insertions = 0;
 
     if (cigarRead1 != "100M") {
         for (int i = 0; i < cigarRead1.size(); ++i) {
@@ -340,7 +341,8 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
                             char c = str1[sum - 1];
                             std::string a = "I";
                             a.insert(a.size(), 1, c);
-                            mmposread.insert(std::make_pair(sum - b, a));
+                            ++insertions;
+                            mmposread.insert(std::make_pair(sum - b - 1, a));
                         } else {
                             mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead1[i])));
                         }
@@ -368,7 +370,7 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
                 sum += a*10 + b;
                 ++sum;
                 if (sum >= lastMismatch) lastMismatch = sum;
-                mmposread.insert(std::make_pair(sum, std::string(1, MD[i])));
+                mmposread.insert(std::make_pair(sum + insertions, std::string(1, MD[i])));
             }
         }
     }
@@ -394,6 +396,8 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
     std::string cigarRead2 = getCigar(second.cigar);
     std::string MD2 = getMDtag(second);
     sum = 0;
+    insertions = 0;
+
     if (cigarRead2 != "100M") {
         for (int i = 0; i < cigarRead2.size(); ++i) {
             if (not isdigit(cigarRead2[i])) {
@@ -413,7 +417,8 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
                             char c = str2[sum - 1];
                             std::string a = "I";
                             a.insert(a.size(), 1, c);
-                            mmposread.insert(std::make_pair(sum - b, a));
+                            ++insertions;
+                            mmposread.insert(std::make_pair(sum - b - 1, a));
                         } else {
                             mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead2[i])));
                         }
@@ -437,7 +442,7 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
                 }
                 sum += a*10 + b;
                 ++sum;
-                mmposread.insert(std::make_pair(sum, std::string(1, MD2[i])));
+                mmposread.insert(std::make_pair(sum + insertions, std::string(1, MD2[i])));
             }
         }
     }
@@ -489,27 +494,49 @@ std::string Utils::getRlenDescriptor(BamAlignmentRecord& record) {
     return std::to_string(str.size());
 }
 
+// 3661
 std::string Utils::getPairDescriptor(BamAlignmentRecord& record) {
-    bool firstRead = record.flag & 64;
     std::string result;
-    if (record.flag & 8) (record.flag & 64) ? result = "8001" : result = "7fff";
-    if (record.flag & 4) result = "8000";
+    bool firstRead = record.flag & 64;
+
+    if (record.flag & 4) {
+        result = "8000"; // read unmapped
+        return result;
+    }
+    if (record.flag & 8) {
+        if (firstRead) result = "8001"; // read2 unpaired
+        else result = "7fff";           // read1 unpaired
+    }
+
     if (record.flag & 2048) result = int_to_hex(record.rNextId) + int_to_hex(record.beginPos);
 
     if (firstRead) {
         if (record.rID == record.rNextId) {
-            result = "7ffd" + int_to_hex(record.tLen);
+            result = "7ffd" + int_to_hex(reads_distance(record.pNext)); // read2 in pair is on the same reference but coded separately
         } else {
-            result = "7ffe" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+            result = "7ffe" + int_to_hex(record.rNextId) + int_to_hex(record.pNext); // read2 is on a diferent reference
         }
     } else {
         if (record.rID == record.rNextId) {
-            result = "8003" + int_to_hex(record.pNext);
+            result = "8003" + int_to_hex(reads_distance(record.pNext)); // read1 in pair is on the same reference but coded separately
         } else {
-            result = "8002" + int_to_hex(record.rNextId) + int_to_hex(record.pNext);
+            result = "8002" + int_to_hex(record.rNextId) + int_to_hex(record.pNext); // read1 is on a diferente reference
         }
     }
-    return toLittleEndian(result);
+    return toLittleEndian_hex(result);
+}
+
+uint16_t Utils::reads_distance(BamAlignmentRecord& record) {
+    int distance = record.tLen;
+    int sign;
+    if (distance < 0) {
+        sign = 1;
+        distance = distance * (-1);
+    } else sign = 0;
+
+    distance = distance << 1;
+    distance |= sign;
+    return distance;
 }
 
 int Utils::getNMtag(BamAlignmentRecord& record) {
@@ -587,7 +614,7 @@ void Utils::convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record
     if (result.number_of_segments > 1) result.reverse_comp.at(1).push_back((second.flag & 16) ? 0: 1);
 }
 
-std::string Utils::toLittleEndian(std::string value) {
+std::string Utils::toLittleEndian_hex(std::string value) {
     std::string result = "";
     if (value.size() % 2 != 0) value = std::string(1, '0').append(value);
     int j = value.size() - 1;
@@ -599,12 +626,22 @@ std::string Utils::toLittleEndian(std::string value) {
     return result;
 }
 
+uint32_t Utils::hex_to_int(std::string value) {
+    uint32_t x;
+    std::stringstream ss;
+    ss << std::hex << value;
+    ss >> x;
+    return x;
+}
+
 std::string Utils::int_to_hex(int32_t value) {
     std::stringstream stream;
     stream << std::setfill ('0') << std::setw(sizeof(value)*1)
            << std::hex << value;
     return stream.str();
 }
+
+
 
 void Utils::removeFirstRead() {
     auto it = reads.begin();

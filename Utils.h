@@ -150,6 +150,8 @@ public:
      * */
     std::string getPairDescriptor(BamAlignmentRecord& record);
 
+    uint16_t reads_distance(BamAlignmentRecord& record);
+
     /** \brief Extracts the value of the NM tag from the read
      *  \param record read to be treated
      *  \return integer containing the value of the NM tag
@@ -172,7 +174,9 @@ public:
      * \param value hexadecimal value
      * \return value but in little endian
      */
-    std::string toLittleEndian(std::string value);
+    std::string toLittleEndian_hex(std::string value);
+
+    uint32_t hex_to_int(std::string value);
 
     /** \brief A simple function that converts a value from a int to a hex
      *  \param value int value to be converted
