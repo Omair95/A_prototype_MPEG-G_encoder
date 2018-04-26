@@ -14,17 +14,20 @@
  * */
 Utils u;
 
-/** Auxiliary class to be used that allows to create and write into files
- * */
-FileManager f;
-
 /** Identifier of the access units
  * */
 int au_id = -1;
 
+// Bam file to read
+std::string fileName = "9827_2#49";
+
+/** Auxiliary class to be used that allows to create and write into files
+ * */
+FileManager f(fileName);
+
 /** Size of each access unit
  * */
-#define ACCESS_UNIT_SIZE 100000
+#define ACCESS_UNIT_SIZE 10000
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -98,6 +101,7 @@ void generateByteStream() {
                 u.insertAccessUnit(*AU_P);
                 AU_P = new AccessUnit_P(++au_id);
                 AU_P->setStartPosition(a.mapping_pos[0]);
+                firstP = true;
             }
 
             // erase the read after using it
@@ -156,6 +160,7 @@ void generateByteStream() {
                 u.insertAccessUnit(*AU_N);
                 AU_N = new AccessUnit_N(++au_id);
                 AU_N->setStartPosition(a.mapping_pos[0]);
+                firstN = true;
             }
 
             // erase the read after using it
@@ -222,6 +227,7 @@ void generateByteStream() {
                 u.insertAccessUnit(*AU_M);
                 AU_M = new AccessUnit_M(++au_id);
                 AU_M->setStartPosition(a.mapping_pos[0]);
+                firstM = true;
             }
 
             // erase read after using it
@@ -288,6 +294,7 @@ void generateByteStream() {
                 u.insertAccessUnit(*AU_I);
                 AU_I = new AccessUnit_I(++au_id);
                 AU_I->setStartPosition(a.mapping_pos[0]);
+                firstI = true;
             }
 
             // erase the read after using it
@@ -338,6 +345,7 @@ void generateByteStream() {
                 u.insertAccessUnit(*AU_HM);
                 AU_HM = new AccessUnit_HM(++au_id);
                 AU_HM->setStartPosition(a.mapping_pos[0]);
+                firstHM = true;
             }
 
             // erase the read after using it
@@ -380,15 +388,14 @@ void generateByteStream() {
 }
 
 int main () {
-    std::string fileName = "9827_2#49.bam";
-    std::string filePath = "../../TestFiles/" + fileName;
+    std::string filePath = "../../TestFiles/" + fileName + ".bam";
     BamFileIn bamFileIn(toCString(filePath));
     BamHeader header;
     readHeader(header, bamFileIn);
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 1000) {
+    while (!atEnd(bamFileIn) and count <= 100) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {

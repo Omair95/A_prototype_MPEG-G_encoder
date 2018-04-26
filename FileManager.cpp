@@ -1,44 +1,44 @@
 #include "FileManager.h"
 
-FileManager::FileManager() {
-    mpeggRecordFile.open("../Files/9827_2#49.mpegg", std::ofstream::out | std::ofstream::trunc);
+FileManager::FileManager(std::string fileName) {
+    mpeggRecordFile.open("../Files/" + fileName + ".mpegg", std::ofstream::out | std::ofstream::trunc);
 
-    posDescriptorClassP.open("../Files/9827_2#49.mpegg.pos", std::ofstream::out | std::ofstream::trunc);
-    rcompDescriptorClassP.open("../Files/9827_2#49.mpegg.rcomp", std::ofstream::out | std::ofstream::trunc);
-    flagsDescriptorClassP.open("../Files/9827_2#49.mpegg.flags", std::ofstream::out | std::ofstream::trunc);
-    rlenDescriptorClassP.open("../Files/9827_2#49.mpegg.rlen", std::ofstream::out | std::ofstream::trunc);
-    pairDescriptorClassP.open("../Files/9827_2#49.mpegg.pair", std::ofstream::out | std::ofstream::trunc);
+    posDescriptorClassP.open("../Files/" + fileName + ".mpegg.pos", std::ofstream::out | std::ofstream::trunc);
+    rcompDescriptorClassP.open("../Files/" + fileName + ".mpegg.rcomp", std::ofstream::out | std::ofstream::trunc);
+    flagsDescriptorClassP.open("../Files/" + fileName + ".mpegg.flags", std::ofstream::out | std::ofstream::trunc);
+    rlenDescriptorClassP.open("../Files/" + fileName + ".mpegg.rlen", std::ofstream::out | std::ofstream::trunc);
+    pairDescriptorClassP.open("../Files/" + fileName + ".mpegg.pair", std::ofstream::out | std::ofstream::trunc);
 
-    posDescriptorClassN.open("../Files/9827_2#49.mpegg.npos", std::ofstream::out | std::ofstream::trunc);
-    rcompDescriptorClassN.open("../Files/9827_2#49.mpegg.nrcomp", std::ofstream::out | std::ofstream::trunc);
-    flagsDescriptorClassN.open("../Files/9827_2#49.mpegg.nflags", std::ofstream::out | std::ofstream::trunc);
-    mmposDescriptorClassN.open("../Files/9827_2#49.mpegg.nmmpos", std::ofstream::out | std::ofstream::trunc);
-    rlenDescriptorClassN.open("../Files/9827_2#49.mpegg.nrlen", std::ofstream::out | std::ofstream::trunc);
-    pairDescriptorClassN.open("../Files/9827_2#49.mpegg.npair", std::ofstream::out | std::ofstream::trunc);
+    posDescriptorClassN.open("../Files/" + fileName + ".mpegg.npos", std::ofstream::out | std::ofstream::trunc);
+    rcompDescriptorClassN.open("../Files/" + fileName + ".mpegg.nrcomp", std::ofstream::out | std::ofstream::trunc);
+    flagsDescriptorClassN.open("../Files/" + fileName + ".mpegg.nflags", std::ofstream::out | std::ofstream::trunc);
+    mmposDescriptorClassN.open("../Files/" + fileName + ".mpegg.nmmpos", std::ofstream::out | std::ofstream::trunc);
+    rlenDescriptorClassN.open("../Files/" + fileName + ".mpegg.nrlen", std::ofstream::out | std::ofstream::trunc);
+    pairDescriptorClassN.open("../Files/" + fileName + ".mpegg.npair", std::ofstream::out | std::ofstream::trunc);
 
-    posDescriptorClassM.open("../Files/9827_2#49.mpegg.mpos", std::ofstream::out | std::ofstream::trunc);
-    rcompDescriptorClassM.open("../Files/9827_2#49.mpegg.mrcomp", std::ofstream::out | std::ofstream::trunc);
-    flagsDescriptorClassM.open("../Files/9827_2#49.mpegg.mflags", std::ofstream::out | std::ofstream::trunc);
-    mmposDescriptorClassM.open("../Files/9827_2#49.mpegg.mmmpos", std::ofstream::out | std::ofstream::trunc);
-    mmtypeDescriptorClassM.open("../Files/9827_2#49.mpegg.mmmtype", std::ofstream::out | std::ofstream::trunc);
-    rlenDescriptorClassM.open("../Files/9827_2#49.mpegg.mrlen", std::ofstream::out | std::ofstream::trunc);
-    pairDescriptorClassM.open("../Files/9827_2#49.mpegg.mpair", std::ofstream::out | std::ofstream::trunc);
+    posDescriptorClassM.open("../Files/" + fileName + ".mpegg.mpos", std::ofstream::out | std::ofstream::trunc);
+    rcompDescriptorClassM.open("../Files/" + fileName + ".mpegg.mrcomp", std::ofstream::out | std::ofstream::trunc);
+    flagsDescriptorClassM.open("../Files/" + fileName + ".mpegg.mflags", std::ofstream::out | std::ofstream::trunc);
+    mmposDescriptorClassM.open("../Files/"+ fileName + ".mpegg.mmmpos", std::ofstream::out | std::ofstream::trunc);
+    mmtypeDescriptorClassM.open("../Files/" + fileName + ".mpegg.mmmtype", std::ofstream::out | std::ofstream::trunc);
+    rlenDescriptorClassM.open("../Files/" + fileName + ".mpegg.mrlen", std::ofstream::out | std::ofstream::trunc);
+    pairDescriptorClassM.open("../Files/" + fileName + ".mpegg.mpair", std::ofstream::out | std::ofstream::trunc);
 
-    posDescriptorClassI.open("../Files/9827_2#49.mpegg.ipos", std::ofstream::out | std::ofstream::trunc);
-    rcompDescriptorClassI.open("../Files/9827_2#49.mpegg.ircomp", std::ofstream::out | std::ofstream::trunc);
-    flagsDescriptorClassI.open("../Files/9827_2#49.mpegg.iflags", std::ofstream::out | std::ofstream::trunc);
-    mmposDescriptorClassI.open("../Files/9827_2#49.mpegg.immpos", std::ofstream::out | std::ofstream::trunc);
-    mmtypeDescriptorClassI.open("../Files/9827_2#49.mpegg.immtype", std::ofstream::out | std::ofstream::trunc);
-    rlenDescriptorClassI.open("../Files/9827_2#49.mpegg.irlen", std::ofstream::out | std::ofstream::trunc);
-    pairDescriptorClassI.open("../Files/9827_2#49.mpegg.ipair", std::ofstream::out | std::ofstream::trunc);
+    posDescriptorClassI.open("../Files/" + fileName + ".mpegg.ipos", std::ofstream::out | std::ofstream::trunc);
+    rcompDescriptorClassI.open("../Files/" + fileName + ".mpegg.ircomp", std::ofstream::out | std::ofstream::trunc);
+    flagsDescriptorClassI.open("../Files/" + fileName + ".mpegg.iflags", std::ofstream::out | std::ofstream::trunc);
+    mmposDescriptorClassI.open("../Files/" + fileName + ".mpegg.immpos", std::ofstream::out | std::ofstream::trunc);
+    mmtypeDescriptorClassI.open("../Files/" + fileName + ".mpegg.immtype", std::ofstream::out | std::ofstream::trunc);
+    rlenDescriptorClassI.open("../Files/" + fileName + ".mpegg.irlen", std::ofstream::out | std::ofstream::trunc);
+    pairDescriptorClassI.open("../Files/" + fileName + ".mpegg.ipair", std::ofstream::out | std::ofstream::trunc);
 
-    posDescriptorClassHM.open("../Files/9827_2#49.mpegg.hmpos", std::ofstream::out | std::ofstream::trunc);
-    rcompDescriptorClassHM.open("../Files/9827_2#49.mpegg.hmrcomp", std::ofstream::out | std::ofstream::trunc);
-    flagsDescriptorClassHM.open("../Files/9827_2#49.mpegg.hmflags", std::ofstream::out | std::ofstream::trunc);
-    rlenDescriptorClassHM.open("../Files/9827_2#49.mpegg.hmrlen", std::ofstream::out | std::ofstream::trunc);
-    pairDescriptorClassHM.open("../Files/9827_2#49.mpegg.hmpair", std::ofstream::out | std::ofstream::trunc);
+    posDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmpos", std::ofstream::out | std::ofstream::trunc);
+    rcompDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmrcomp", std::ofstream::out | std::ofstream::trunc);
+    flagsDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmflags", std::ofstream::out | std::ofstream::trunc);
+    rlenDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmrlen", std::ofstream::out | std::ofstream::trunc);
+    pairDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmpair", std::ofstream::out | std::ofstream::trunc);
 
-    rlenDescriptorClassU.open("../Files/9827_2#49.mpegg.urlen", std::ofstream::out | std::ofstream::trunc);
+    rlenDescriptorClassU.open("../Files/" + fileName + ".mpegg.urlen", std::ofstream::out | std::ofstream::trunc);
 }
 
 FileManager::~FileManager() { }

@@ -67,7 +67,7 @@ public:
      * \param void
      * \return void
      * */
-    FileManager();
+    FileManager(std::string FileName);
 
     /** \brief Destructor method
      * \param void
