@@ -20,8 +20,8 @@ AccessUnit_HM::AccessUnit_HM(uint32_t id) {
 
 AccessUnit_HM::~AccessUnit_HM() {}
 
-void AccessUnit_HM::insertRlenDescriptor(std::string value) {
-    descriptors[3].insertValue(value);
+void AccessUnit_HM::insertRlenDescriptor(uint8_t value) {
+    descriptors[3].insertValue(std::to_string(value));
 }
 
 void AccessUnit_HM::insertPairDescriptor(std::string value) {

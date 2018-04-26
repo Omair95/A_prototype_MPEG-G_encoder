@@ -63,27 +63,27 @@ void generateByteStream() {
             if (firstP) {
                 firstP = false;
                 antPosP = a.mapping_pos[0];
-                AU_P->insertPosdescriptor(u.int_to_hex(0));
+                AU_P->insertPosdescriptor(0);
                 AU_P->setStartPosition(a.mapping_pos[0]);
                 f.insertPosValue(0, 1);
             } else {
-                AU_P->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosP));
+                AU_P->insertPosdescriptor(a.mapping_pos[0] - antPosP);
                 f.insertPosValue(a.mapping_pos[0] - antPosP, 1);
                 antPosP = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            std::string rcomp = u.getRcompDescriptor(it->second.first);
+            uint8_t rcomp = u.getRcompDescriptor(it->second.first);
             AU_P->insertRcompDescriptor(rcomp);
             f.insertRcompValue(rcomp, 1);
 
             // get flags descriptor
-            std::string flags = u.getFlagDescriptor(it->second.first);
+            uint8_t flags = u.getFlagDescriptor(it->second.first);
             AU_P->insertFlagsDescriptor(flags);
             f.insertFlagsValue(flags, 1);
 
             // get rlen descriptor
-            std::string rlen = u.getRlenDescriptor(it->second.first);
+            uint8_t rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_P*> (AU_P)->insertRlenDescriptor(rlen);
             f.insertRlenValue(rlen, 1);
 
@@ -112,35 +112,35 @@ void generateByteStream() {
             if (firstN) {
                 firstN = false;
                 antPosN = a.mapping_pos[0];
-                AU_N->insertPosdescriptor(u.int_to_hex(0));
+                AU_N->insertPosdescriptor(0);
                 AU_N->setStartPosition(a.mapping_pos[0]);
                 f.insertPosValue(0, 2);
             } else {
-                AU_N->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosN));
+                AU_N->insertPosdescriptor(a.mapping_pos[0] - antPosN);
                 f.insertPosValue(a.mapping_pos[0] - antPosN, 2);
                 antPosN = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            std::string rcomp = u.getRcompDescriptor(it->second.first);
+            uint8_t rcomp = u.getRcompDescriptor(it->second.first);
             AU_N->insertRcompDescriptor(rcomp);
             f.insertRcompValue(rcomp, 2);
 
             // get flags descriptor
-            std::string flags = u.getFlagDescriptor(it->second.first);
+            uint8_t flags = u.getFlagDescriptor(it->second.first);
             AU_N->insertFlagsDescriptor(flags);
             f.insertFlagsValue(flags, 2);
 
             // get mmpos descriptor
-            std::vector<std::pair<int, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
+            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
 
             for (int i = 0; i < mmpos.size(); ++i) {
-                static_cast<AccessUnit_N*> (AU_N)->insertMmposDescriptor(u.int_to_hex(mmpos[i].first));
-                f.insertMmposValue(u.int_to_hex(mmpos[i].first), 2);
+                static_cast<AccessUnit_N*> (AU_N)->insertMmposDescriptor(mmpos[i].first);
+                f.insertMmposValue(mmpos[i].first, 2);
             }
 
             // get rlen descriptor
-            std::string rlen = u.getRlenDescriptor(it->second.first);
+            uint8_t rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_N*> (AU_N)->insertRlenDescriptor(rlen);
             f.insertRlenValue(rlen, 2);
 
@@ -170,35 +170,35 @@ void generateByteStream() {
             if (firstM) {
                 firstM = false;
                 antPosM = a.mapping_pos[0];
-                AU_M->insertPosdescriptor(u.int_to_hex(0));
+                AU_M->insertPosdescriptor(0);
                 AU_M->setStartPosition(a.mapping_pos[0]);
                 f.insertPosValue(0, 3);
             } else {
-                AU_M->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosM));
+                AU_M->insertPosdescriptor(a.mapping_pos[0] - antPosM);
                 f.insertPosValue(a.mapping_pos[0] - antPosM, 3);
                 antPosM = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            std::string rcomp = u.getRcompDescriptor(it->second.first);
+            uint8_t rcomp = u.getRcompDescriptor(it->second.first);
             AU_M->insertRcompDescriptor(rcomp);
             f.insertRcompValue(rcomp, 3);
 
             // get flags descriptor
-            std::string flags = u.getFlagDescriptor(it->second.first);
+            uint8_t flags = u.getFlagDescriptor(it->second.first);
             AU_M->insertFlagsDescriptor(flags);
             f.insertFlagsValue(flags, 3);
 
             // get mmpos descriptor
-            std::vector<std::pair<int, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
+            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
 
             for (int i = 0; i < mmpos.size(); ++i) {
-                static_cast<AccessUnit_M*> (AU_M)->insertMmposDescriptor(u.int_to_hex(mmpos[i].first));
-                f.insertMmposValue(u.int_to_hex(mmpos[i].first), 3);
+                static_cast<AccessUnit_M*> (AU_M)->insertMmposDescriptor(mmpos[i].first);
+                f.insertMmposValue(mmpos[i].first, 3);
             }
 
             // get mmtype descriptor
-            std::vector<std::string> mmtype = u.getmmtypeDescriptor(mmpos);
+            std::vector<uint8_t> mmtype = u.getmmtypeDescriptor(mmpos);
 
             for (int i = 0; i < mmtype.size(); ++i) {
                 static_cast<AccessUnit_M*> (AU_M)->insertMmtypeDescriptor(mmtype[i]);
@@ -206,7 +206,7 @@ void generateByteStream() {
             }
 
             // get rlen descriptor
-            std::string rlen = u.getRlenDescriptor(it->second.first);
+            uint8_t rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_M*> (AU_M)->insertRlenDescriptor(rlen);
             f.insertRlenValue(rlen, 3);
 
@@ -236,39 +236,35 @@ void generateByteStream() {
             if (firstI) {
                 firstI = false;
                 antPosI = a.mapping_pos[0];
-                AU_I->insertPosdescriptor(u.int_to_hex(0));
+                AU_I->insertPosdescriptor(0);
                 AU_I->setStartPosition(a.mapping_pos[0]);
                 f.insertPosValue(0, 4);
             } else {
-                AU_I->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosI));
+                AU_I->insertPosdescriptor(a.mapping_pos[0] - antPosI);
                 f.insertPosValue(a.mapping_pos[0] - antPosI, 4);
                 antPosI = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            std::string rcomp = u.getRcompDescriptor(it->second.first);
+            uint8_t rcomp = u.getRcompDescriptor(it->second.first);
             AU_I->insertRcompDescriptor(rcomp);
             f.insertRcompValue(rcomp, 4);
 
             // get flags descriptor
-            std::string flags = u.getFlagDescriptor(it->second.first);
+            uint8_t flags = u.getFlagDescriptor(it->second.first);
             AU_I->insertFlagsDescriptor(flags);
             f.insertFlagsValue(flags, 4);
 
             // get mmpos descriptor
-            std::vector<std::pair<int, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
+            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getmmposDescriptor(it->second.first);
 
-            std::cout << it->second.first.qName << " " << u.getCigar(it->second.first.cigar) << " "  << u.getMDtag(it->second.first) << std::endl;
-            std::cout << it->second.second.qName << " " << u.getCigar(it->second.second.cigar) << " " << u.getMDtag(it->second.second) << std::endl;
             for (int i = 0; i < mmpos.size(); ++i) {
-                static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(u.int_to_hex(mmpos[i].first));
-                std::cout << mmpos[i].first << " ";
-                f.insertMmposValue(u.int_to_hex(mmpos[i].first), 4);
+                static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(mmpos[i].first);
+                f.insertMmposValue(mmpos[i].first, 4);
             }
-            std::cout << std::endl;
 
             // get mmtype descriptor
-            std::vector<std::string> mmtype = u.getmmtypeDescriptor(mmpos);
+            std::vector<uint8_t> mmtype = u.getmmtypeDescriptor(mmpos);
 
             for (int i = 0; i < mmtype.size(); ++i) {
                 static_cast<AccessUnit_I*> (AU_I)->insertMmtypeDescriptor(mmtype[i]);
@@ -276,7 +272,7 @@ void generateByteStream() {
             }
 
             // get rlen descriptor
-            std::string rlen = u.getRlenDescriptor(it->second.first);
+            uint8_t rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_I*> (AU_I)->insertRlenDescriptor(rlen);
             f.insertRlenValue(rlen, 4);
 
@@ -306,27 +302,27 @@ void generateByteStream() {
             if (firstHM) {
                 firstHM = false;
                 antPosHM = a.mapping_pos[0];
-                AU_HM->insertPosdescriptor(u.int_to_hex(0));
+                AU_HM->insertPosdescriptor(0);
                 AU_HM->setStartPosition(a.mapping_pos[0]);
                 f.insertPosValue(0, 5);
             } else {
-                AU_HM->insertPosdescriptor(std::to_string(a.mapping_pos[0] - antPosHM));
+                AU_HM->insertPosdescriptor(a.mapping_pos[0] - antPosHM);
                 f.insertPosValue(a.mapping_pos[0] - antPosHM, 5);
                 antPosHM = a.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            std::string rcomp = u.getRcompDescriptor(it->second.first);
+            uint8_t rcomp = u.getRcompDescriptor(it->second.first);
             AU_HM->insertRcompDescriptor(rcomp);
             f.insertRcompValue(rcomp, 5);
 
             // get flags descriptor
-            std::string flags = u.getFlagDescriptor(it->second.first);
+            uint8_t flags = u.getFlagDescriptor(it->second.first);
             AU_HM->insertFlagsDescriptor(flags);
             f.insertFlagsValue(flags, 5);
 
             // get rlen descriptor
-            std::string rlen = u.getRlenDescriptor(it->second.first);
+            uint8_t rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_HM*> (AU_HM)->insertRlenDescriptor(rlen);
             f.insertRlenValue(rlen, 5);
 
@@ -353,7 +349,7 @@ void generateByteStream() {
             AU_U->updateReads();
 
             // get rlen descriptor
-            std::string rlen = u.getRlenDescriptor(it->second.first);
+            uint8_t rlen = u.getRlenDescriptor(it->second.first);
             static_cast<AccessUnit_U*> (AU_U)->insertRlenDescriptor(rlen);
             f.insertRlenValue(rlen, 6);
 
@@ -387,7 +383,6 @@ int main () {
     std::string fileName = "9827_2#49.bam";
     std::string filePath = "../../TestFiles/" + fileName;
     BamFileIn bamFileIn(toCString(filePath));
-    std::cout << toCString(fileName) << " " << toCString(filePath) << std::endl;
     BamHeader header;
     readHeader(header, bamFileIn);
 

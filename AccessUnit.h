@@ -68,19 +68,19 @@ public:
     * \param value string representing the value of the pos descriptor
     * \return void
     * */
-    void insertPosdescriptor(std::string value);
+    void insertPosdescriptor(uint32_t value);
 
     /** \brief Inserts the rcomp descriptor value inside the corresponding block in the access unit's payload
     * \param value string representing the value of the rcomp descriptor
     * \return void
     * */
-    void insertRcompDescriptor(std::string value);
+    void insertRcompDescriptor(uint8_t value);
 
     /** \brief Inserts the flags descriptor value inside the corresponding block in the access unit's payload
     * \param value string representing the value of the flags descriptor
     * \return void
     * */
-    void insertFlagsDescriptor(std::string value);
+    void insertFlagsDescriptor(uint8_t value);
 
     /** \brief Gets all the values of the pos descriptor in the access unit
     * \param void

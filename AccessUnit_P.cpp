@@ -20,10 +20,10 @@ AccessUnit_P::AccessUnit_P(uint32_t id) {
 
 AccessUnit_P::~AccessUnit_P() { }
 
-void AccessUnit_P::insertRlenDescriptor(int value) {
-    descriptors[3].insertValue(value);
+void AccessUnit_P::insertRlenDescriptor(uint8_t value) {
+    descriptors[3].insertValue(std::to_string(value));
 }
 
-void AccessUnit_P::insertPairDescriptor(int value) {
+void AccessUnit_P::insertPairDescriptor(std::string value) {
     descriptors[4].insertValue(value);
 }

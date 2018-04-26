@@ -1,4 +1,6 @@
 #include <fstream>
+#include <boost/endian/conversion.hpp>
+#include "Utils.h"
 #include "MpeggRecord.h"
 
 /*! \file FileManager.h */

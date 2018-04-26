@@ -36,19 +36,19 @@ public:
     * \param value string representing the value of the mmpos descriptor
     * \return void
     * */
-    void insertMmposDescriptor(std::string value);
+    void insertMmposDescriptor(uint16_t value);
 
     /** \brief Inserts the mmtype descriptor value inside the corresponding block in the access unit's payload
     * \param value string representing the value of the mmtype descriptor
     * \return void
     * */
-    void insertMmtypeDescriptor(std::string value);
+    void insertMmtypeDescriptor(uint8_t value);
 
     /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
     * \param value string representing the value of the rlen descriptor
     * \return void
     * */
-    void insertRlenDescriptor(std::string value);
+    void insertRlenDescriptor(uint8_t value);
 
     /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
     * \param value string representing the value of the pair descriptor

@@ -22,16 +22,16 @@ AccessUnit_I::AccessUnit_I(uint32_t id) {
 
 AccessUnit_I::~AccessUnit_I() { }
 
-void AccessUnit_I::insertMmposDescriptor(std::string value) {
-    descriptors[3].insertValue(value);
+void AccessUnit_I::insertMmposDescriptor(uint16_t value) {
+    descriptors[3].insertValue(std::to_string(value));
 }
 
-void AccessUnit_I::insertMmtypeDescriptor(std::string value) {
-    descriptors[4].insertValue(value);
+void AccessUnit_I::insertMmtypeDescriptor(uint8_t value) {
+    descriptors[4].insertValue(std::to_string(value));
 }
 
-void AccessUnit_I::insertRlenDescriptor(std::string value) {
-    descriptors[5].insertValue(value);
+void AccessUnit_I::insertRlenDescriptor(uint8_t value) {
+    descriptors[5].insertValue(std::to_string(value));
 }
 
 void AccessUnit_I::insertPairDescriptor(std::string value) {

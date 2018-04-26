@@ -16,16 +16,16 @@ void AccessUnit::setEndPosition(uint32_t endpos) {
     AU_end_position = endpos;
 }
 
-void AccessUnit::insertPosdescriptor(std::string value) {
-    descriptors[0].insertValue(value);
+void AccessUnit::insertPosdescriptor(uint32_t value) {
+    descriptors[0].insertValue(std::to_string(value));
 }
 
-void AccessUnit::insertRcompDescriptor(std::string value) {
-    descriptors[1].insertValue(value);
+void AccessUnit::insertRcompDescriptor(uint8_t value) {
+    descriptors[1].insertValue(std::to_string(value));
 }
 
-void AccessUnit::insertFlagsDescriptor(std::string value) {
-    descriptors[2].insertValue(value);
+void AccessUnit::insertFlagsDescriptor(uint8_t value) {
+    descriptors[2].insertValue(std::to_string(value));
 }
 
 void AccessUnit::getPosDescriptorValues() {

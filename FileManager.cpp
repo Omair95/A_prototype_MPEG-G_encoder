@@ -44,92 +44,100 @@ FileManager::FileManager() {
 FileManager::~FileManager() { }
 
 void FileManager::insertPosValue(uint32_t value, int classType) {
+    uint32_t littleEndianValue = boost::endian::native_to_little(value);
     if (classType == 1) {
-        posDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        posDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 2) {
-        posDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        posDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 3) {
-        posDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        posDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
-        posDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        posDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 5) {
-        posDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        posDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
 void FileManager::insertRcompValue(uint8_t value, int classType) {
+    uint8_t littleEndianValue = boost::endian::native_to_little(value);
     if (classType == 1) {
-        rcompDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rcompDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 2) {
-        rcompDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rcompDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 3) {
-        rcompDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rcompDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
-        rcompDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rcompDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 5) {
-        rcompDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rcompDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
 void FileManager::insertFlagsValue(uint8_t value, int classType) {
+    uint8_t littleEndianValue = boost::endian::native_to_little(value);
     if (classType == 1) {
-        flagsDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        flagsDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 2) {
-        flagsDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        flagsDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 3) {
-        flagsDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        flagsDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
-        flagsDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        flagsDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 5) {
-        flagsDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        flagsDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
 void FileManager::insertMmposValue(uint16_t value, int classType) {
+    uint16_t littleEndianValue = boost::endian::native_to_little(value);
     if (classType == 2) {
-        mmposDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        mmposDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 3) {
-        mmposDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        mmposDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
-        mmposDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        mmposDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
 void FileManager::insertMmtypeValue(uint8_t value, int classType) {
+    uint8_t littleEndianValue = boost::endian::native_to_little(value);
     if (classType == 3) {
-        mmtypeDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        mmtypeDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
-        mmtypeDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        mmtypeDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
 void FileManager::insertRlenValue(uint8_t value, int classType) {
+    uint8_t littleEndianValue = boost::endian::native_to_little(value);
     if (classType == 1) {
-        rlenDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rlenDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 2) {
-        rlenDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rlenDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 3) {
-        rlenDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rlenDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
-        rlenDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rlenDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 5) {
-        rlenDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rlenDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 6) {
-        rlenDescriptorClassU.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        rlenDescriptorClassU.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
 void FileManager::insertPairValue(std::string value, int classType) {
+    auto intValue = Utils::hex_to_int(value);
+    auto littleEndianValue = boost::endian::native_to_little(intValue);
     if (classType == 1) {
-        pairDescriptorClassP.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 2) {
-        pairDescriptorClassN.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 3) {
-        pairDescriptorClassM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
-        pairDescriptorClassI.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&value), sizeof(value));
+        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 

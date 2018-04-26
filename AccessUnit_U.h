@@ -35,7 +35,7 @@ public:
     * \param value string representing the value of the rlen descriptor
     * \return void
     * */
-    void insertRlenDescriptor(std::string value);
+    void insertRlenDescriptor(uint8_t value);
 };
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_ACCESSUNIT_U_H

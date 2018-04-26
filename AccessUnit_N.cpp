@@ -23,13 +23,13 @@ AccessUnit_N::AccessUnit_N(uint32_t id) {
 
 AccessUnit_N::~AccessUnit_N() { }
 
-void AccessUnit_N::insertMmposDescriptor(std::string value) {
-    descriptors[3].insertValue(value);
+void AccessUnit_N::insertMmposDescriptor(uint16_t value) {
+    descriptors[3].insertValue(std::to_string(value));
     ++mm_threshold;
 }
 
-void AccessUnit_N::insertRlenDescriptor(std::string value) {
-    descriptors[4].insertValue(value);
+void AccessUnit_N::insertRlenDescriptor(uint8_t value) {
+    descriptors[4].insertValue(std::to_string(value));
 }
 
 void AccessUnit_N::insertPairDescriptor(std::string value) {

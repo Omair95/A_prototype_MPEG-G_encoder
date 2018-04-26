@@ -16,7 +16,7 @@ AccessUnit_U::AccessUnit_U(uint32_t id) {
 
 AccessUnit_U::~AccessUnit_U() {}
 
-void AccessUnit_U::insertRlenDescriptor(std::string value) {
-    descriptors[0].insertValue(value);
+void AccessUnit_U::insertRlenDescriptor(uint8_t value) {
+    descriptors[0].insertValue(std::to_string(value));
 }
 

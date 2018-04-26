@@ -24,17 +24,17 @@ AccessUnit_M::AccessUnit_M(uint32_t id) {
 
 AccessUnit_M::~AccessUnit_M() { }
 
-void AccessUnit_M::insertMmposDescriptor(std::string value) {
-    descriptors[3].insertValue(value);
+void AccessUnit_M::insertMmposDescriptor(uint16_t value) {
+    descriptors[3].insertValue(std::to_string(value));
     ++mm_threshold;
 }
 
-void AccessUnit_M::insertMmtypeDescriptor(std::string value) {
-    descriptors[4].insertValue(value);
+void AccessUnit_M::insertMmtypeDescriptor(uint8_t value) {
+    descriptors[4].insertValue(std::to_string(value));
 }
 
-void AccessUnit_M::insertRlenDescriptor(std::string value) {
-    descriptors[5].insertValue(value);
+void AccessUnit_M::insertRlenDescriptor(uint8_t value) {
+    descriptors[5].insertValue(std::to_string(value));
 }
 
 void AccessUnit_M::insertPairDescriptor(std::string value) {

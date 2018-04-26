@@ -284,8 +284,8 @@ uint8_t Utils::getClassType(BamAlignmentRecord& record) {
     else if (isClassU(record)) return 6;
 }
 
-std::string Utils::getRcompDescriptor(BamAlignmentRecord& record) {
-    int result;
+uint8_t Utils::getRcompDescriptor(BamAlignmentRecord& record) {
+    uint8_t result = 0;
     if (record.flag & 8) {
         if (record.flag & 16) result = 0;
         else result = 1;
@@ -298,20 +298,20 @@ std::string Utils::getRcompDescriptor(BamAlignmentRecord& record) {
         else if (pair1 == 1 and pair2 == 0) result = 2;
         else if (pair1 == 1 and pair2 == 1) result = 3;
     }
-    return std::to_string(result);
+    return result;
 }
 
-std::string Utils::getFlagDescriptor(BamAlignmentRecord& record) {
+uint8_t Utils::getFlagDescriptor(BamAlignmentRecord& record) {
     int flag = record.flag;
-    int result = 0;
+    uint8_t result = 0;
     if (flag & 1024) result = 1;
     if (flag & 512) result += 2;
     if (not(flag & 8)) result += 4;
-    return std::to_string(result);
+    return result;
 }
 
-std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignmentRecord& record) {
-    std::vector<std::pair<int, std::string> > mmpos;
+std::vector<std::pair<uint16_t, std::string> > Utils::getmmposDescriptor(BamAlignmentRecord& record) {
+    std::vector<std::pair<uint16_t, std::string> > mmpos;
     std::map<int, std::string> mmposread;
     CharString seq = record.seq;
     const char *s1 = toCString(seq);
@@ -469,29 +469,29 @@ std::vector<std::pair<int, std::string> > Utils::getmmposDescriptor(BamAlignment
     return mmpos;
 }
 
-std::vector<std::string> Utils::getmmtypeDescriptor(std::vector<std::pair<int, std::string> >& mmpos) {
-    std::vector<std::string> result;
+std::vector<uint8_t> Utils::getmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos) {
+    std::vector<uint8_t > result;
     for (int i = 0; i < mmpos.size(); ++i) {
         if (mmpos[i].second[0] == 'I') {
-            if (mmpos[i].second[1] == 'A') result.push_back(std::to_string(6));
-            else if (mmpos[i].second[1] == 'C') result.push_back(std::to_string(7));
-            else if (mmpos[i].second[1] == 'G') result.push_back(std::to_string(8));
-            else if (mmpos[i].second[1] == 'T') result.push_back(std::to_string(9));
+            if (mmpos[i].second[1] == 'A') result.push_back(6);
+            else if (mmpos[i].second[1] == 'C') result.push_back(7);
+            else if (mmpos[i].second[1] == 'G') result.push_back(8);
+            else if (mmpos[i].second[1] == 'T') result.push_back(9);
         }
-        else if (mmpos[i].second[0] == 'D') result.push_back(std::to_string(5));
-        else if (mmpos[i].second[0] == 'A') result.push_back(std::to_string(0));
-        else if (mmpos[i].second[0] == 'C') result.push_back(std::to_string(1));
-        else if (mmpos[i].second[0] == 'G') result.push_back(std::to_string(2));
-        else if (mmpos[i].second[0] == 'T') result.push_back(std::to_string(3));
+        else if (mmpos[i].second[0] == 'D') result.push_back(5);
+        else if (mmpos[i].second[0] == 'A') result.push_back(0);
+        else if (mmpos[i].second[0] == 'C') result.push_back(1);
+        else if (mmpos[i].second[0] == 'G') result.push_back(2);
+        else if (mmpos[i].second[0] == 'T') result.push_back(3);
     }
     return result;
 }
 
-std::string Utils::getRlenDescriptor(BamAlignmentRecord& record) {
+uint8_t Utils::getRlenDescriptor(BamAlignmentRecord& record) {
     CharString seq = record.seq;
     const char *s1 = toCString(seq);
     std::string str(s1);
-    return std::to_string(str.size());
+    return str.size();
 }
 
 // 3661
@@ -506,24 +506,27 @@ std::string Utils::getPairDescriptor(BamAlignmentRecord& record) {
     if (record.flag & 8) {
         if (firstRead) result = "8001"; // read2 unpaired
         else result = "7fff";           // read1 unpaired
+        return result;
     }
 
-    if (record.flag & 2048) result = int_to_hex(record.rNextId) + int_to_hex(record.beginPos);
+    if (record.flag & 2048) result = int16_to_hex(record.rNextId) + int32_to_hex(record.beginPos);
 
     if (firstRead) {
         if (record.rID == record.rNextId) {
-            result = "7ffd" + int_to_hex(reads_distance(record.pNext)); // read2 in pair is on the same reference but coded separately
+            result = "7ffd" + int32_to_hex(reads_distance(record)); // read2 in pair is on the same reference but coded separately
         } else {
-            result = "7ffe" + int_to_hex(record.rNextId) + int_to_hex(record.pNext); // read2 is on a diferent reference
+            uint16_t referenceID = record.rNextId;
+            uint32_t pos = record.pNext;
+            result = "7ffe" + int16_to_hex(referenceID) + int32_to_hex(pos); // read2 is on a diferent reference
         }
     } else {
         if (record.rID == record.rNextId) {
-            result = "8003" + int_to_hex(reads_distance(record.pNext)); // read1 in pair is on the same reference but coded separately
+            result = "8003" + int32_to_hex(reads_distance(record)); // read1 in pair is on the same reference but coded separately
         } else {
-            result = "8002" + int_to_hex(record.rNextId) + int_to_hex(record.pNext); // read1 is on a diferente reference
+            result = "8002" + int16_to_hex(record.rNextId) + int32_to_hex(record.pNext); // read1 is on a diferente reference
         }
     }
-    return toLittleEndian_hex(result);
+    return result;
 }
 
 uint16_t Utils::reads_distance(BamAlignmentRecord& record) {
@@ -634,12 +637,20 @@ uint32_t Utils::hex_to_int(std::string value) {
     return x;
 }
 
-std::string Utils::int_to_hex(int32_t value) {
+std::string Utils::int32_to_hex(int32_t value) {
     std::stringstream stream;
-    stream << std::setfill ('0') << std::setw(sizeof(value)*1)
+    stream << std::setfill ('0') << std::setw(sizeof(value)*2)
            << std::hex << value;
     return stream.str();
 }
+
+std::string Utils::int16_to_hex(int16_t value) {
+    std::stringstream stream;
+    stream << std::setfill ('0') << std::setw(sizeof(value)*2)
+           << std::hex << value;
+    return stream.str();
+}
+
 
 
 

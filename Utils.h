@@ -118,37 +118,38 @@ public:
      *  \param record first read from the pair
      *  \return value of the rcomp descriptor of the read
      * */
-    std::string getRcompDescriptor(BamAlignmentRecord& record);
+    uint8_t getRcompDescriptor(BamAlignmentRecord& record);
 
     /** \brief Gets the flags descriptor for the read
      *  \param record is the first read from the pair
      *  \return value of the flags descriptor of the read
      * */
-    std::string getFlagDescriptor(BamAlignmentRecord& record);
+    uint8_t getFlagDescriptor(BamAlignmentRecord& record);
 
     /** \brief Gets the mmpos descriptor for the read
      *  \param record is the first read from the pair
      *  \return vector with all the mismatches of the read with the reference sequence
      * */
-    std::vector<std::pair<int, std::string> > getmmposDescriptor(BamAlignmentRecord& record);
+    std::vector<std::pair<uint16_t, std::string> > getmmposDescriptor(BamAlignmentRecord& record);
 
     /** \brief Gets the mmtype descriptor for the read using alphabet 0
      *  \param mmpos contains all the mismatches of the read
      *  \return vector containing the type of mismatches
      * */
-    std::vector<std::string> getmmtypeDescriptor(std::vector<std::pair<int, std::string> >& mmpos);
+    std::vector<uint8_t> getmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos);
 
     /** \brief Gets the rlen descriptor for the read
      *  \param record first read from the pair
      *  \return value of the rlen descriptor of the read
      * */
-    std::string getRlenDescriptor(BamAlignmentRecord& record);
+    uint8_t getRlenDescriptor(BamAlignmentRecord& record);
 
     /** \brief Gets the pair descriptor for the read
      *  \param record first read from the pair
      *  \return value of the pair descriptor of the read
      * */
     std::string getPairDescriptor(BamAlignmentRecord& record);
+
 
     uint16_t reads_distance(BamAlignmentRecord& record);
 
@@ -176,13 +177,15 @@ public:
      */
     std::string toLittleEndian_hex(std::string value);
 
-    uint32_t hex_to_int(std::string value);
+    static uint32_t hex_to_int(std::string value);
 
     /** \brief A simple function that converts a value from a int to a hex
      *  \param value int value to be converted
      *  \return hexadecimal value converted
      * */
-    std::string int_to_hex(int32_t value);
+    std::string int32_to_hex(int32_t value);
+
+    std::string int16_to_hex(int16_t value);
 
     /** \brief Removes the first read from the list of paired reads
      * \param void
