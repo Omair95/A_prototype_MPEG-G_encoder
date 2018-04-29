@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classUtils-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Utils Class Reference</div>  </div>
@@ -93,6 +94,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Auxiliary class that contains useful methods from the main class.  
  <a href="classUtils.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for Utils:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUtils__inherit__graph.png" border="0" usemap="#Utils_inherit__map" alt="Inheritance graph"/></div>
+<map name="Utils_inherit__map" id="Utils_inherit__map">
+<area shape="rect" id="node2" href="classFileManager.html" title="Class to be used to create and write files that contain the output Mpegg format and all the associate..." alt="" coords="5,5,99,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Utils:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUtils__coll__graph.png" border="0" usemap="#Utils_coll__map" alt="Collaboration graph"/></div>
+<map name="Utils_coll__map" id="Utils_coll__map">
+<area shape="rect" id="node2" href="classFileManager.html" title="Class to be used to create and write files that contain the output Mpegg format and all the associate..." alt="" coords="5,5,99,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -135,24 +152,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a75b0e41bc884a3fcebb4f55c45855d82"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a75b0e41bc884a3fcebb4f55c45855d82">getClassType</a> (BamAlignmentRecord &amp;record)</td></tr>
 <tr class="memdesc:a75b0e41bc884a3fcebb4f55c45855d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">To determine the data class where a read belongs to.  <a href="#a75b0e41bc884a3fcebb4f55c45855d82">More...</a><br /></td></tr>
 <tr class="separator:a75b0e41bc884a3fcebb4f55c45855d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dd3247d15f9e2a599652d0e0e63e410"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a5dd3247d15f9e2a599652d0e0e63e410">getRcompDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
-<tr class="memdesc:a5dd3247d15f9e2a599652d0e0e63e410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rcomp descriptor for the read.  <a href="#a5dd3247d15f9e2a599652d0e0e63e410">More...</a><br /></td></tr>
-<tr class="separator:a5dd3247d15f9e2a599652d0e0e63e410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a230cd86a0e7cd7f820ec70635c1f9c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a5a230cd86a0e7cd7f820ec70635c1f9c">getFlagDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
-<tr class="memdesc:a5a230cd86a0e7cd7f820ec70635c1f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the flags descriptor for the read.  <a href="#a5a230cd86a0e7cd7f820ec70635c1f9c">More...</a><br /></td></tr>
-<tr class="separator:a5a230cd86a0e7cd7f820ec70635c1f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add93923b197600ed122a099b1f6b7ae0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#add93923b197600ed122a099b1f6b7ae0">getmmposDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
-<tr class="memdesc:add93923b197600ed122a099b1f6b7ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mmpos descriptor for the read.  <a href="#add93923b197600ed122a099b1f6b7ae0">More...</a><br /></td></tr>
-<tr class="separator:add93923b197600ed122a099b1f6b7ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ac812652097f076f88f9daf178df0e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a09ac812652097f076f88f9daf178df0e">getmmtypeDescriptor</a> (std::vector&lt; std::pair&lt; int, std::string &gt; &gt; &amp;mmpos)</td></tr>
-<tr class="memdesc:a09ac812652097f076f88f9daf178df0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mmtype descriptor for the read using alphabet 0.  <a href="#a09ac812652097f076f88f9daf178df0e">More...</a><br /></td></tr>
-<tr class="separator:a09ac812652097f076f88f9daf178df0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7280ddfb7ef67f93490328f8bdd7564"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#ab7280ddfb7ef67f93490328f8bdd7564">getRlenDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
-<tr class="memdesc:ab7280ddfb7ef67f93490328f8bdd7564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rlen descriptor for the read.  <a href="#ab7280ddfb7ef67f93490328f8bdd7564">More...</a><br /></td></tr>
-<tr class="separator:ab7280ddfb7ef67f93490328f8bdd7564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2021002b739a022e914533b6b95145fe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a2021002b739a022e914533b6b95145fe">getRcompDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
+<tr class="memdesc:a2021002b739a022e914533b6b95145fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rcomp descriptor for the read.  <a href="#a2021002b739a022e914533b6b95145fe">More...</a><br /></td></tr>
+<tr class="separator:a2021002b739a022e914533b6b95145fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f019bd3209c61dc69a44aabf96224ff"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a6f019bd3209c61dc69a44aabf96224ff">getFlagDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
+<tr class="memdesc:a6f019bd3209c61dc69a44aabf96224ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the flags descriptor for the read.  <a href="#a6f019bd3209c61dc69a44aabf96224ff">More...</a><br /></td></tr>
+<tr class="separator:a6f019bd3209c61dc69a44aabf96224ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a85c76bffd7906456485f1b0d3826cb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; uint16_t, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a3a85c76bffd7906456485f1b0d3826cb">getmmposDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
+<tr class="memdesc:a3a85c76bffd7906456485f1b0d3826cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mmpos descriptor for the read.  <a href="#a3a85c76bffd7906456485f1b0d3826cb">More...</a><br /></td></tr>
+<tr class="separator:a3a85c76bffd7906456485f1b0d3826cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c58f81f7c60bbd9e557105abf43c34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#ac5c58f81f7c60bbd9e557105abf43c34">getmmtypeDescriptor</a> (std::vector&lt; std::pair&lt; uint16_t, std::string &gt; &gt; &amp;mmpos)</td></tr>
+<tr class="memdesc:ac5c58f81f7c60bbd9e557105abf43c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mmtype descriptor for the read using alphabet 0.  <a href="#ac5c58f81f7c60bbd9e557105abf43c34">More...</a><br /></td></tr>
+<tr class="separator:ac5c58f81f7c60bbd9e557105abf43c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208c512bbb56f81188acb4ed443356fa"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a208c512bbb56f81188acb4ed443356fa">getRlenDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
+<tr class="memdesc:a208c512bbb56f81188acb4ed443356fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rlen descriptor for the read.  <a href="#a208c512bbb56f81188acb4ed443356fa">More...</a><br /></td></tr>
+<tr class="separator:a208c512bbb56f81188acb4ed443356fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb9a7be0b59fcdc844c62a8f54da6ba0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#abb9a7be0b59fcdc844c62a8f54da6ba0">getPairDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
 <tr class="memdesc:abb9a7be0b59fcdc844c62a8f54da6ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pair descriptor for the read.  <a href="#abb9a7be0b59fcdc844c62a8f54da6ba0">More...</a><br /></td></tr>
 <tr class="separator:abb9a7be0b59fcdc844c62a8f54da6ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d521d4d7cecbe20acab176d08b7857"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02d521d4d7cecbe20acab176d08b7857"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>reads_distance</b> (BamAlignmentRecord &amp;record)</td></tr>
+<tr class="separator:a02d521d4d7cecbe20acab176d08b7857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e6b1fddcaa2740687c8c787e8d1e9cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a5e6b1fddcaa2740687c8c787e8d1e9cb">getNMtag</a> (BamAlignmentRecord &amp;record)</td></tr>
 <tr class="memdesc:a5e6b1fddcaa2740687c8c787e8d1e9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the value of the NM tag from the read.  <a href="#a5e6b1fddcaa2740687c8c787e8d1e9cb">More...</a><br /></td></tr>
 <tr class="separator:a5e6b1fddcaa2740687c8c787e8d1e9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,12 +182,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a62399a8bb675cc0d41846a2e38cfc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a5a62399a8bb675cc0d41846a2e38cfc5">convertToMpeggRecord</a> (<a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;result, BamAlignmentRecord &amp;record)</td></tr>
 <tr class="memdesc:a5a62399a8bb675cc0d41846a2e38cfc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the read or paired read to the mpegg output format.  <a href="#a5a62399a8bb675cc0d41846a2e38cfc5">More...</a><br /></td></tr>
 <tr class="separator:a5a62399a8bb675cc0d41846a2e38cfc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67253b270ce7e71cc21c69bfdbfe2a8e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a67253b270ce7e71cc21c69bfdbfe2a8e">toLittleEndian</a> (std::string value)</td></tr>
-<tr class="memdesc:a67253b270ce7e71cc21c69bfdbfe2a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal value stored in a string to little endian.  <a href="#a67253b270ce7e71cc21c69bfdbfe2a8e">More...</a><br /></td></tr>
-<tr class="separator:a67253b270ce7e71cc21c69bfdbfe2a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a134ebe02e9660b604626271d03b66dde"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a134ebe02e9660b604626271d03b66dde">int_to_hex</a> (int32_t value)</td></tr>
-<tr class="memdesc:a134ebe02e9660b604626271d03b66dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple function that converts a value from a int to a hex.  <a href="#a134ebe02e9660b604626271d03b66dde">More...</a><br /></td></tr>
-<tr class="separator:a134ebe02e9660b604626271d03b66dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa7f96ad4509fde05d3e6cc520f698a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#aaaa7f96ad4509fde05d3e6cc520f698a">toLittleEndian_hex</a> (std::string value)</td></tr>
+<tr class="memdesc:aaaa7f96ad4509fde05d3e6cc520f698a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a hexadecimal value stored in a string to little endian.  <a href="#aaaa7f96ad4509fde05d3e6cc520f698a">More...</a><br /></td></tr>
+<tr class="separator:aaaa7f96ad4509fde05d3e6cc520f698a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbd0c6160115aea411d926e4c66fdb2d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#acbd0c6160115aea411d926e4c66fdb2d">int32_to_hex</a> (int32_t value)</td></tr>
+<tr class="memdesc:acbd0c6160115aea411d926e4c66fdb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple function that converts a value from a int to a hex.  <a href="#acbd0c6160115aea411d926e4c66fdb2d">More...</a><br /></td></tr>
+<tr class="separator:acbd0c6160115aea411d926e4c66fdb2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b2c28fa49f1048d6af6f8b768490df6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b2c28fa49f1048d6af6f8b768490df6"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>int16_to_hex</b> (int16_t value)</td></tr>
+<tr class="separator:a1b2c28fa49f1048d6af6f8b768490df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc2dff4d8e3b3fca88c584b95481015"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadc2dff4d8e3b3fca88c584b95481015"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getClipsDescriptor</b> (<a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;record)</td></tr>
+<tr class="separator:aadc2dff4d8e3b3fca88c584b95481015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abddd37adce88799fc8a66f7779c407bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#abddd37adce88799fc8a66f7779c407bb">removeFirstRead</a> ()</td></tr>
 <tr class="memdesc:abddd37adce88799fc8a66f7779c407bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first read from the list of paired reads.  <a href="#abddd37adce88799fc8a66f7779c407bb">More...</a><br /></td></tr>
 <tr class="separator:abddd37adce88799fc8a66f7779c407bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,6 +209,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa2bffe3dfec78617ebdf207ff0fa0820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#aa2bffe3dfec78617ebdf207ff0fa0820">insertRead</a> (BamAlignmentRecord first, BamAlignmentRecord second)</td></tr>
 <tr class="memdesc:aa2bffe3dfec78617ebdf207ff0fa0820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new read pair to the list of paired reads.  <a href="#aa2bffe3dfec78617ebdf207ff0fa0820">More...</a><br /></td></tr>
 <tr class="separator:aa2bffe3dfec78617ebdf207ff0fa0820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aaccbd9f6e04b06c6c95617ec36709f96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaccbd9f6e04b06c6c95617ec36709f96"></a>
+static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>hex_to_int</b> (std::string value)</td></tr>
+<tr class="separator:aaccbd9f6e04b06c6c95617ec36709f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Auxiliary class that contains useful methods from the main class. </p>
@@ -399,12 +431,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5a230cd86a0e7cd7f820ec70635c1f9c"></a>
+<a class="anchor" id="a6f019bd3209c61dc69a44aabf96224ff"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Utils::getFlagDescriptor </td>
+          <td class="memname">uint8_t Utils::getFlagDescriptor </td>
           <td>(</td>
           <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
           <td class="paramname"><em>record</em></td><td>)</td>
@@ -449,12 +481,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="add93923b197600ed122a099b1f6b7ae0"></a>
+<a class="anchor" id="a3a85c76bffd7906456485f1b0d3826cb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::pair&lt; int, std::string &gt; &gt; Utils::getmmposDescriptor </td>
+          <td class="memname">std::vector&lt; std::pair&lt; uint16_t, std::string &gt; &gt; Utils::getmmposDescriptor </td>
           <td>(</td>
           <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
           <td class="paramname"><em>record</em></td><td>)</td>
@@ -474,14 +506,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a09ac812652097f076f88f9daf178df0e"></a>
+<a class="anchor" id="ac5c58f81f7c60bbd9e557105abf43c34"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; Utils::getmmtypeDescriptor </td>
+          <td class="memname">std::vector&lt; uint8_t &gt; Utils::getmmtypeDescriptor </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::pair&lt; int, std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; uint16_t, std::string &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>mmpos</em></td><td>)</td>
           <td></td>
         </tr>
@@ -549,12 +581,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5dd3247d15f9e2a599652d0e0e63e410"></a>
+<a class="anchor" id="a2021002b739a022e914533b6b95145fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Utils::getRcompDescriptor </td>
+          <td class="memname">uint8_t Utils::getRcompDescriptor </td>
           <td>(</td>
           <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
           <td class="paramname"><em>record</em></td><td>)</td>
@@ -574,12 +606,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab7280ddfb7ef67f93490328f8bdd7564"></a>
+<a class="anchor" id="a208c512bbb56f81188acb4ed443356fa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Utils::getRlenDescriptor </td>
+          <td class="memname">uint8_t Utils::getRlenDescriptor </td>
           <td>(</td>
           <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
           <td class="paramname"><em>record</em></td><td>)</td>
@@ -685,12 +717,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a134ebe02e9660b604626271d03b66dde"></a>
+<a class="anchor" id="acbd0c6160115aea411d926e4c66fdb2d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Utils::int_to_hex </td>
+          <td class="memname">std::string Utils::int32_to_hex </td>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -884,12 +916,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a67253b270ce7e71cc21c69bfdbfe2a8e"></a>
+<a class="anchor" id="aaaa7f96ad4509fde05d3e6cc520f698a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Utils::toLittleEndian </td>
+          <td class="memname">std::string Utils::toLittleEndian_hex </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>

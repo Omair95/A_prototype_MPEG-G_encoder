@@ -1,8 +1,7 @@
 #include "AccessUnit.h"
 #include <sstream>
 #include <ctype.h>
-#include <fstream>
-#include "MpeggRecord.h"
+#include "FileManager.h"
 
 /*! \file Utils.h */
 
@@ -20,7 +19,7 @@
 #ifndef A_PROTOTYPE_MPEG_G_ENCODER_UTILS_H
 #define A_PROTOTYPE_MPEG_G_ENCODER_UTILS_H
 
-class Utils {
+class Utils : FileManager {
 
 private:
     std::vector<AccessUnit> accessUnits;                                            /// contains all kind of access units
@@ -148,7 +147,7 @@ public:
      *  \param record first read from the pair
      *  \return value of the pair descriptor of the read
      * */
-    std::string getPairDescriptor(BamAlignmentRecord& record);
+    std::string insertPairDescriptor(BamAlignmentRecord& record, uint8_t classType);
 
 
     uint16_t reads_distance(BamAlignmentRecord& record);

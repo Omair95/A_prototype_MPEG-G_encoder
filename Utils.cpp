@@ -505,38 +505,140 @@ uint8_t Utils::getRlenDescriptor(BamAlignmentRecord& record) {
 }
 
 // 3661
-std::string Utils::getPairDescriptor(BamAlignmentRecord& record) {
-    std::string result;
+std::string Utils::insertPairDescriptor(BamAlignmentRecord& record, uint8_t classType) {
     bool firstRead = record.flag & 64;
+    uint16_t result;
 
-    if (record.flag & 4) {
-        result = "8000"; // read unmapped
-        return result;
-    }
     if (record.flag & 8) {
-        if (firstRead) result = "8001"; // read2 unpaired
-        else result = "7fff";           // read1 unpaired
-        return result;
-    }
+        if (firstRead) result = 0x8001; // read2 unpaired
+        else result = 0x7fff;           // read1 unpaired
+        uint16_t littleEndianResult = boost::endian::native_to_little(result);
 
-    if (record.flag & 2048) result = int16_to_hex(record.rNextId) + int32_to_hex(record.beginPos);
+        if (classType == 1) {
+            pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+        } else if (classType == 2) {
+            pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+        } else if (classType == 3) {
+            pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+        } else if (classType == 4) {
+            pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+        } else if (classType == 5) {
+            pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+        }
+        return int16_to_hex(result);
+    }
 
     if (firstRead) {
-        if (record.rID == record.rNextId) {
-            result = "7ffd" + int32_to_hex(reads_distance(record)); // read2 in pair is on the same reference but coded separately
-        } else {
+        if (record.rID == record.rNextId) { // read2 in pair is on the same reference but coded separately
+            result = 0x7ffd;
+            uint32_t distance = reads_distance(record);
+            uint16_t littleEndianResult = boost::endian::native_to_little(result);
+            uint32_t littleEndiandistance = boost::endian::native_to_little(distance);
+
+            if (classType == 1) {
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 2) {
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 3) {
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 4) {
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 5) {
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            }
+
+        } else {  // read2 is on a diferent reference
+            result = 0x7ffe;
             uint16_t referenceID = record.rNextId;
             uint32_t pos = record.pNext;
-            result = "7ffe" + int16_to_hex(referenceID) + int32_to_hex(pos); // read2 is on a diferent reference
+
+            uint16_t littleEndianResult = boost::endian::native_to_little(result);
+            uint16_t littleEndianRiD = boost::endian::native_to_little(referenceID);
+            uint32_t littleEndianPos = boost::endian::native_to_little(pos);
+
+            if (classType == 1) {
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 2) {
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 3) {
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 4) {
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 5) {
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            }
         }
     } else {
-        if (record.rID == record.rNextId) {
-            result = "8003" + int32_to_hex(reads_distance(record)); // read1 in pair is on the same reference but coded separately
-        } else {
-            result = "8002" + int16_to_hex(record.rNextId) + int32_to_hex(record.pNext); // read1 is on a diferente reference
+        if (record.rID == record.rNextId) { // read1 in pair is on the same reference but coded separately
+            result = 0x8003;
+            uint32_t distance = reads_distance(record);
+            uint16_t littleEndianResult = boost::endian::native_to_little(result);
+            uint32_t littleEndiandistance = boost::endian::native_to_little(distance);
+
+            if (classType == 1) {
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 2) {
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 3) {
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 4) {
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            } else if (classType == 5) {
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndiandistance), sizeof(littleEndiandistance));
+            }
+
+        } else {    // read1 is on a diferente reference
+            result = 0x8002;
+            uint16_t referenceID = record.rNextId;
+            uint32_t pos = record.pNext;
+
+            uint16_t littleEndianResult = boost::endian::native_to_little(result);
+            uint16_t littleEndianRiD = boost::endian::native_to_little(referenceID);
+            uint32_t littleEndianPos = boost::endian::native_to_little(pos);
+
+            if (classType == 1) {
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 2) {
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 3) {
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 4) {
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            } else if (classType == 5) {
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianRiD), sizeof(littleEndianRiD));
+                pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianPos), sizeof(littleEndianPos));
+            }
         }
     }
-    return result;
 }
 
 uint16_t Utils::reads_distance(BamAlignmentRecord& record) {
@@ -663,25 +765,28 @@ std::string Utils::int16_to_hex(int16_t value) {
 
 std::vector<std::string> Utils::getClipsDescriptor(MpeggRecord& record) {
     std::vector <std::string> clips_descriptor;
-    std::string cigar = record.ecigar_string[0][1];
-    std::string sequence = record.sequence[0];
+    std::string read1_cigar = record.ecigar_string[0][1];
+    std::string read1_sequence = record.sequence[0];
 
-    auto n = std::count(cigar.begin(), cigar.end(), '(');
+    auto n = std::count(read1_cigar.begin(), read1_cigar.end(), '(');
 
     for (int i = 0; i < n; ++i) {
         std::string result;
         uint32_t id = record.global_Id;
+        uint32_t littleEndianID = boost::endian::native_to_little(id);
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianID), sizeof(littleEndianID));
+
         result += std::to_string(id);           // id
 
         if (i == 0) {
             result += "00";                     // position
-            auto pos = cigar.find('(');
-            result += sequence.substr(0, cigar[pos + 1] - '0');  // M bases
+            auto pos = read1_cigar.find('(');
+            result += read1_sequence.substr(0, read1_cigar[pos + 1] - '0');  // M bases
             if (n > 1) result += "fe";          // soft clips terminator
         } else {
             result += "01";
-            auto posL = sequence.size() - (cigar[cigar.size() - 2] - '0');
-            result += sequence.substr(posL, cigar.size() - 1);
+            auto posL = read1_sequence.size() - (read1_cigar[read1_cigar.size() - 2] - '0');
+            result += read1_sequence.substr(posL, read1_cigar.size() - 1);
         }
         if (i == (n - 1)) result += "ff";
         clips_descriptor.push_back(result);

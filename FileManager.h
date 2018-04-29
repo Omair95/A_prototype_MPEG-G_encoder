@@ -22,7 +22,7 @@
 
 class FileManager {
 
-private:
+protected:
     std::ofstream mpeggRecordFile;
 
     std::ofstream posDescriptorClassP;
@@ -51,6 +51,7 @@ private:
     std::ofstream flagsDescriptorClassI;
     std::ofstream mmposDescriptorClassI;
     std::ofstream mmtypeDescriptorClassI;
+    std::ofstream clipsDescriptorClassI;
     std::ofstream rlenDescriptorClassI;
     std::ofstream pairDescriptorClassI;
 
@@ -113,6 +114,8 @@ public:
      *   \return void
      * */
     void insertMmtypeValue(uint8_t value, int classType);
+
+    void insertClipsValue(uint32_t id, uint8_t pos, std::string bases, uint8_t terminator, uint8_t final_terminator);
 
     /** \brief Writes the rlen descriptor value to the respective file
      *         according to the class type

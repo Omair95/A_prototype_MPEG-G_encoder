@@ -5,8 +5,6 @@
 #include "AccessUnit_I.h"
 #include "AccessUnit_HM.h"
 #include "AccessUnit_U.h"
-#include "FileManager.h"
-#include <boost/endian/conversion.hpp>
 
 /*! \file main.cpp */
 
@@ -31,7 +29,7 @@ FileManager f(fileName);
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
- *  and generates all the asociated descriptors
+ *  and generates all the associated descriptors
  * \param void
  * \return void
  * */
@@ -91,10 +89,8 @@ void generateByteStream() {
             f.insertRlenValue(rlen, 1);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(it->second.first);
-
+            std::string pair = u.insertPairDescriptor(it->second.first, 1);
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(pair);
-            f.insertPairValue(pair, 1);
 
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -150,9 +146,8 @@ void generateByteStream() {
             f.insertRlenValue(rlen, 2);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(it->second.first);
+            std::string pair = u.insertPairDescriptor(it->second.first, 1);
             static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(pair);
-            f.insertPairValue(pair, 2);
 
             // create a new access unit in case if the current one is full
             if (AU_N->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -217,9 +212,8 @@ void generateByteStream() {
             f.insertRlenValue(rlen, 3);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(it->second.first);
+            std::string pair = u.insertPairDescriptor(it->second.first, 1);
             static_cast<AccessUnit_M*> (AU_M)->insertPairDescriptor(pair);
-            f.insertPairValue(pair, 3);
 
             // create a new access unit in case if the current one is full
             if (AU_M->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -238,6 +232,8 @@ void generateByteStream() {
         } else if (record.class_type == 4) {
             // update the number of reads in the access unit
             AU_I->updateReads();
+
+            std::cout << it->second.first.qName << " " << u.getCigar(it->second.first.cigar) << std::endl;
 
             // get pos descriptor
             if (firstI) {
@@ -284,11 +280,11 @@ void generateByteStream() {
             f.insertRlenValue(rlen, 4);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(it->second.first);
+            std::string pair = u.insertPairDescriptor(it->second.first, 1);
             static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(pair);
-            f.insertPairValue(pair, 4);
 
             // get clips descriptor
+            /*
             std::string cigar = u.getCigar(it->second.first.cigar);
             if (cigar.find('S') != std::string::npos) {
                 std::cout << it->second.first.qName << " " << cigar << " ";
@@ -297,7 +293,7 @@ void generateByteStream() {
                     std::cout << clips[i] << " ";
                 }
                 std::cout << std::endl;
-            }
+            }*/
 
             // create a new access unit in case if the current one is full
             if (AU_I->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -346,9 +342,8 @@ void generateByteStream() {
             f.insertRlenValue(rlen, 5);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(it->second.first);
+            std::string pair = u.insertPairDescriptor(it->second.first, 1);
             static_cast<AccessUnit_HM*> (AU_HM)->insertPairDescriptor(pair);
-            f.insertPairValue(pair, 5);
 
             // create a new access unit in case if the current one is full
             if (AU_HM->getReadsCount() == ACCESS_UNIT_SIZE) {

@@ -7,7 +7,6 @@
 {\ttfamily \#include \char`\"{}Access\+Unit\+\_\+\+I.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Access\+Unit\+\_\+\+H\+M.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Access\+Unit\+\_\+\+U.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}File\+Manager.\+h\char`\"{}}\\*
 Include dependency graph for main.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -25,7 +24,7 @@ Include dependency graph for main.\+cpp\+:
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{main_8cpp_af069b537362d4cd928303b086fe1f7ed}{generate\+Byte\+Stream} ()
-\begin{DoxyCompactList}\small\item\em This is the main function of the program. It detects the type of data class that a read belongs to and generates all the asociated descriptors. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This is the main function of the program. It detects the type of data class that a read belongs to and generates all the associated descriptors. \end{DoxyCompactList}\item 
 int {\bfseries main} ()\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
 
 \end{DoxyCompactItemize}
@@ -34,9 +33,12 @@ int {\bfseries main} ()\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
 \item 
 \hyperlink{classUtils}{Utils} \hyperlink{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}{u}
 \item 
-\hyperlink{classFileManager}{File\+Manager} \hyperlink{main_8cpp_a76a162819658b2367692ef5549335d2c}{f}
-\item 
 int \hyperlink{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}{au\+\_\+id} = -\/1
+\item 
+std\+::string {\bfseries file\+Name} = \char`\"{}9827\+\_\+2\#49\char`\"{}\hypertarget{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}{}\label{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}
+
+\item 
+\hyperlink{classFileManager}{File\+Manager} \hyperlink{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}{f} (file\+Name)
 \end{DoxyCompactItemize}
 
 
@@ -56,7 +58,7 @@ Size of each access unit
 )}\hypertarget{main_8cpp_af069b537362d4cd928303b086fe1f7ed}{}\label{main_8cpp_af069b537362d4cd928303b086fe1f7ed}
 
 
-This is the main function of the program. It detects the type of data class that a read belongs to and generates all the asociated descriptors. 
+This is the main function of the program. It detects the type of data class that a read belongs to and generates all the associated descriptors. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -74,7 +76,7 @@ void
 \subsubsection[{\texorpdfstring{au\+\_\+id}{au_id}}]{\setlength{\rightskip}{0pt plus 5cm}int au\+\_\+id = -\/1}\hypertarget{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}{}\label{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}
 Identifier of the access units \index{main.\+cpp@{main.\+cpp}!f@{f}}
 \index{f@{f}!main.\+cpp@{main.\+cpp}}
-\subsubsection[{\texorpdfstring{f}{f}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\+Manager} f}\hypertarget{main_8cpp_a76a162819658b2367692ef5549335d2c}{}\label{main_8cpp_a76a162819658b2367692ef5549335d2c}
+\subsubsection[{\texorpdfstring{f}{f}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\+Manager} f(file\+Name)}\hypertarget{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}{}\label{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}
 Auxiliary class to be used that allows to create and write into files \index{main.\+cpp@{main.\+cpp}!u@{u}}
 \index{u@{u}!main.\+cpp@{main.\+cpp}}
 \subsubsection[{\texorpdfstring{u}{u}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utils} u}\hypertarget{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}{}\label{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}

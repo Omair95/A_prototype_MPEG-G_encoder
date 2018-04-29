@@ -1,4 +1,5 @@
 #include "FileManager.h"
+#include "Utils.h"
 
 FileManager::FileManager(std::string fileName) {
     mpeggRecordFile.open("../Files/" + fileName + ".mpegg", std::ofstream::out | std::ofstream::trunc);
@@ -29,6 +30,7 @@ FileManager::FileManager(std::string fileName) {
     flagsDescriptorClassI.open("../Files/" + fileName + ".mpegg.iflags", std::ofstream::out | std::ofstream::trunc);
     mmposDescriptorClassI.open("../Files/" + fileName + ".mpegg.immpos", std::ofstream::out | std::ofstream::trunc);
     mmtypeDescriptorClassI.open("../Files/" + fileName + ".mpegg.immtype", std::ofstream::out | std::ofstream::trunc);
+    clipsDescriptorClassI.open("../Files/" + fileName + ".mpegg.iclips", std::ofstream::out | std::ofstream::trunc);
     rlenDescriptorClassI.open("../Files/" + fileName + ".mpegg.irlen", std::ofstream::out | std::ofstream::trunc);
     pairDescriptorClassI.open("../Files/" + fileName + ".mpegg.ipair", std::ofstream::out | std::ofstream::trunc);
 
@@ -106,6 +108,10 @@ void FileManager::insertMmtypeValue(uint8_t value, int classType) {
     } else if (classType == 4) {
         mmtypeDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
+}
+
+void FileManager::insertClipsValue(uint32_t id, uint8_t pos, std::string bases, uint8_t terminator, uint8_t final_terminator) {
+
 }
 
 void FileManager::insertRlenValue(uint8_t value, int classType) {

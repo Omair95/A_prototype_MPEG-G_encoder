@@ -14,6 +14,7 @@
     <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" afterDir="false" />
@@ -42,10 +43,126 @@
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit__HM_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit__HM_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit__I_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit__I_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit__M_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit__M_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit__N_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit__N_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit__P_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit__P_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit__U_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit__U_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__HM-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__HM-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__HM.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__HM.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__I-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__I-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__I.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__I.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__M-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__M-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__M.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__M.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__N-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__N-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__N.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__N.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__P-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__P-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__P.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__P.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__U-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__U-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classAccessUnit__U.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classAccessUnit__U.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classFileManager-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classFileManager-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classFileManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classFileManager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classUtils-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classUtils-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classUtils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions_func.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions_func.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/globals.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/globals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/globals_vars.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/globals_vars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/hierarchy.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/hierarchy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherit_graph_2.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherit_graph_2.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherit_graph_2.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherit_graph_2.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherit_graph_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherit_graph_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherits.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherits.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_10.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_10.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_d.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_d.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_f.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_f.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_8.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_9.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_9.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/searchdata.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/searchdata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/variables_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/variables_4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnitBlock_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnitBlock_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnit_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnit_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/MpeggRecord_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/MpeggRecord_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classAccessUnit.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classAccessUnit.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classAccessUnit__HM.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classAccessUnit__HM.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classAccessUnit__I.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classAccessUnit__I.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classAccessUnit__M.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classAccessUnit__M.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classAccessUnit__N.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classAccessUnit__N.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classAccessUnit__P.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classAccessUnit__P.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classAccessUnit__U.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classAccessUnit__U.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classFileManager.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classFileManager.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classUtils.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classUtils.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/hierarchy.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/hierarchy.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/main_8cpp.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/main_8cpp.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/main_8cpp__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/main_8cpp__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/main_8cpp__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/main_8cpp__incl.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -65,8 +182,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="255">
+              <caret line="286" column="14" selection-start-line="286" selection-start-column="14" selection-end-line="286" selection-end-column="14" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -77,17 +194,32 @@
       <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Utils.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="672" column="39" lean-forward="true" selection-start-line="672" selection-start-column="39" selection-end-line="672" selection-end-column="39" />
+            <state relative-caret-position="59">
+              <caret line="767" column="57" lean-forward="true" selection-start-line="767" selection-start-column="57" selection-end-line="767" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils.h">
+      <file leaf-file-name="FileManager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FileManager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="189" column="68" selection-start-line="189" selection-start-column="68" selection-end-line="189" selection-end-column="68" />
+            <state relative-caret-position="360">
+              <caret line="154" column="9" selection-start-line="144" selection-start-column="8" selection-end-line="154" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManager.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FileManager.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,10 +228,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>8002</find>
-      <find>HS25_09827:2:2314:17167:19250#49</find>
-      <find>D</find>
-      <find>rcomp</find>
       <find>rlen</find>
       <find>flags</find>
       <find>flag</find>
@@ -112,7 +240,6 @@
       <find>getmmpos</find>
       <find>int_to_hex</find>
       <find>tolittle</find>
-      <find>getr</find>
       <find>int_to</find>
       <find>insertrcom</find>
       <find>insertrcomp</find>
@@ -122,10 +249,15 @@
       <find>getrcomp</find>
       <find>insertpairva</find>
       <find>hex_to</find>
-      <find>getpair</find>
       <find>hex_to_</find>
       <find>std::cout</find>
       <find>convert</find>
+      <find>getcli</find>
+      <find>mpeggRecordFile</find>
+      <find>getr</find>
+      <find>getpair</find>
+      <find>int16_to_hex</find>
+      <find>getclips</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,7 +271,6 @@
         <option value="$PROJECT_DIR$/GlobalVariables.h" />
         <option value="$PROJECT_DIR$/AccessUnitBlock.cpp" />
         <option value="$PROJECT_DIR$/AccessUnitBlock.h" />
-        <option value="$PROJECT_DIR$/MpeggRecord.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/AccessUnit.cpp" />
         <option value="$PROJECT_DIR$/AccessUnit.h" />
@@ -156,9 +287,10 @@
         <option value="$PROJECT_DIR$/AccessUnit_U.h" />
         <option value="$PROJECT_DIR$/AccessUnit_U.cpp" />
         <option value="$PROJECT_DIR$/FileManager.h" />
+        <option value="$PROJECT_DIR$/MpeggRecord.h" />
         <option value="$PROJECT_DIR$/FileManager.cpp" />
-        <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/Utils.cpp" />
+        <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -183,7 +315,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,6 +330,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,32 +470,35 @@
       <workItem from="1524921697561" duration="4607000" />
       <workItem from="1524995423641" duration="4527000" />
       <workItem from="1525002699154" duration="1117000" />
-      <workItem from="1525008806320" duration="2842000" />
+      <workItem from="1525008806320" duration="3660000" />
+      <workItem from="1525013861487" duration="4770000" />
+      <workItem from="1525019459873" duration="2693000" />
+      <workItem from="1525022764890" duration="2116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323590000" />
+    <option name="totallyTimeSpent" value="333987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.13689604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.13689604" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.50955415" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.30254778" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5063694" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5063694" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289256" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6576433" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.13689604" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6576433" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.50955415" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32961783" />
@@ -377,13 +512,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>59</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -587,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="36" column="181" selection-start-line="36" selection-start-column="181" selection-end-line="36" selection-end-column="181" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seqan/include/seqan/bam_io/bam_alignment_record.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -713,41 +834,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FileManager.cpp">
+    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+        <state relative-caret-position="45">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="344">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FileManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="154" column="9" selection-start-line="144" selection-start-column="8" selection-end-line="154" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Utils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="189" column="68" selection-start-line="189" selection-start-column="68" selection-end-line="189" selection-end-column="68" />
+        <state relative-caret-position="209">
+          <caret line="149" column="82" selection-start-line="149" selection-start-column="82" selection-end-line="149" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="286" column="14" selection-start-line="286" selection-start-column="14" selection-end-line="286" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="672" column="39" lean-forward="true" selection-start-line="672" selection-start-column="39" selection-end-line="672" selection-end-column="39" />
+        <state relative-caret-position="59">
+          <caret line="767" column="57" lean-forward="true" selection-start-line="767" selection-start-column="57" selection-end-line="767" selection-end-column="57" />
         </state>
       </provider>
     </entry>

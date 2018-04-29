@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['tolittleendian',['toLittleEndian',['../classUtils.html#a67253b270ce7e71cc21c69bfdbfe2a8e',1,'Utils']]]
+  ['updatereads',['updateReads',['../classAccessUnit.html#a11ae1270d7bbc62cec47bfb9c6738764',1,'AccessUnit']]],
+  ['updaterecord',['updateRecord',['../classUtils.html#a6e24ee791d9ce74a9e8991c8bf7cecdf',1,'Utils']]],
+  ['utils',['Utils',['../classUtils.html#a452e78692c87ed5c7c993b6c6ac4981a',1,'Utils']]]
 ];
