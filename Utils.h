@@ -177,7 +177,7 @@ public:
      */
     std::string toLittleEndian_hex(std::string value);
 
-    static uint32_t hex_to_int(std::string value);
+    static uint64_t hex_to_int(std::string value);
 
     /** \brief A simple function that converts a value from a int to a hex
      *  \param value int value to be converted

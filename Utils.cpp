@@ -286,17 +286,27 @@ uint8_t Utils::getClassType(BamAlignmentRecord& record) {
 
 uint8_t Utils::getRcompDescriptor(BamAlignmentRecord& record) {
     uint8_t result = 0;
-    if (record.flag & 8) {
-        if (record.flag & 16) result = 0;
-        else result = 1;
-    } else {
-        bool pair1 = record.flag & 16;
-        bool pair2 = record.flag & 32;
+    bool pair1 = record.flag & 16;
 
-        if (pair1 == 0 and pair2 == 0) result = 0;
-        else if (pair1 == 0 and pair2 == 1) result = 1;
-        else if (pair1 == 1 and pair2 == 0) result = 2;
-        else if (pair1 == 1 and pair2 == 1) result = 3;
+    if (record.flag & 8) {
+        if (pair1) result = 0;
+        else result = 1;
+    }
+    else {
+        bool pair2 = record.flag & 32;
+        bool firstRead = record.flag & 64;
+
+        if (firstRead) {
+            if (not pair1 and not pair2) result = 3;  // both reads on forward
+            else if (pair1 and pair2) result = 0;     // both reads on reverse
+            else if (not pair1 and pair2) result = 1; // first read on forward, 2nd on reverse
+            else if (pair1 and not pair2) result = 2; // first read on reverse, 2nd on forward
+        } else {
+            if (not pair1 and not pair2) result = 3;  // both reads on forward
+            else if (pair1 and pair2) result = 0;     // both reads on reverse
+            else if (not pair1 and pair2) result = 2; // second on forward and 1st on reverse
+            else if (pair1 and not pair2) result = 1; // second on reverse and 1st on forward
+        }
     }
     return result;
 }
@@ -629,8 +639,8 @@ std::string Utils::toLittleEndian_hex(std::string value) {
     return result;
 }
 
-uint32_t Utils::hex_to_int(std::string value) {
-    uint32_t x;
+uint64_t Utils::hex_to_int(std::string value) {
+    uint64_t x;
     std::stringstream ss;
     ss << std::hex << value;
     ss >> x;
@@ -650,8 +660,6 @@ std::string Utils::int16_to_hex(int16_t value) {
            << std::hex << value;
     return stream.str();
 }
-
-
 
 
 void Utils::removeFirstRead() {

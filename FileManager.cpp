@@ -126,18 +126,44 @@ void FileManager::insertRlenValue(uint8_t value, int classType) {
 }
 
 void FileManager::insertPairValue(std::string value, int classType) {
-    auto intValue = Utils::hex_to_int(value);
-    auto littleEndianValue = boost::endian::native_to_little(intValue);
-    if (classType == 1) {
-        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 2) {
-        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 3) {
-        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 4) {
-        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    uint64_t intValue = Utils::hex_to_int(value);
+
+    if (value.find("7fff") != std::string::npos or
+        value.find("8001") != std::string::npos or
+        value.find("8000") != std::string::npos) {
+
+        uint16_t littleEndianValue = 0;
+        uint16_t value16bit = intValue;
+        littleEndianValue = boost::endian::native_to_little(value16bit);
+
+        if (classType == 1) {
+            pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 2) {
+            pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 3) {
+            pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 4) {
+            pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 5) {
+            pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        }
+    } else {
+
+        uint64_t littleEndianValue = 0;
+        uint64_t value64bit = intValue;
+        littleEndianValue = boost::endian::native_to_little(value64bit);
+
+        if (classType == 1) {
+            pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 2) {
+            pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 3) {
+            pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 4) {
+            pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        } else if (classType == 5) {
+            pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        }
     }
 }
 

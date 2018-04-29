@@ -27,7 +27,7 @@ FileManager f(fileName);
 
 /** Size of each access unit
  * */
-#define ACCESS_UNIT_SIZE 10000
+#define ACCESS_UNIT_SIZE 100000
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -92,6 +92,8 @@ void generateByteStream() {
 
             // get pair descriptor
             std::string pair = u.getPairDescriptor(it->second.first);
+            std::cout << it->second.first.qName << " " << pair << " " << sizeof(pair) << std::endl;
+
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(pair);
             f.insertPairValue(pair, 1);
 
@@ -395,7 +397,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 100) {
+    while (!atEnd(bamFileIn) and count <= 1000) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {
