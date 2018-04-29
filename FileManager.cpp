@@ -128,9 +128,9 @@ void FileManager::insertRlenValue(uint8_t value, int classType) {
 void FileManager::insertPairValue(std::string value, int classType) {
     uint64_t intValue = Utils::hex_to_int(value);
 
-    if (value.find("7fff") != std::string::npos or
-        value.find("8001") != std::string::npos or
-        value.find("8000") != std::string::npos) {
+    if (value.substr(0,4).find("7fff") != std::string::npos or
+        value.substr(0,4).find("8001") != std::string::npos or
+        value.substr(0,4).find("8000") != std::string::npos) {
 
         uint16_t littleEndianValue = 0;
         uint16_t value16bit = intValue;

@@ -40,9 +40,6 @@
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/classP_pair.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/classP_pos.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/classP_rcomp.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
@@ -65,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
+            <state relative-caret-position="54">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -77,11 +74,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileManager.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FileManager.cpp">
+      <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Utils.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="127" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="228">
+              <caret line="672" column="39" lean-forward="true" selection-start-line="672" selection-start-column="39" selection-end-line="672" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="395">
+              <caret line="189" column="68" selection-start-line="189" selection-start-column="68" selection-end-line="189" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -90,7 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>HS25_09827:2:2110:13843:97992#49</find>
       <find>8002</find>
       <find>HS25_09827:2:2314:17167:19250#49</find>
       <find>D</find>
@@ -114,12 +119,13 @@
       <find>getrc</find>
       <find>hex</find>
       <find>getmm</find>
-      <find>std::cout</find>
       <find>getrcomp</find>
       <find>insertpairva</find>
       <find>hex_to</find>
       <find>getpair</find>
       <find>hex_to_</find>
+      <find>std::cout</find>
+      <find>convert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,10 +156,10 @@
         <option value="$PROJECT_DIR$/AccessUnit_U.h" />
         <option value="$PROJECT_DIR$/AccessUnit_U.cpp" />
         <option value="$PROJECT_DIR$/FileManager.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/FileManager.cpp" />
         <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/Utils.cpp" />
-        <option value="$PROJECT_DIR$/FileManager.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -330,12 +336,14 @@
       <workItem from="1524914332525" duration="1000" />
       <workItem from="1524914377899" duration="4228000" />
       <workItem from="1524921697561" duration="4607000" />
-      <workItem from="1524995423641" duration="4261000" />
+      <workItem from="1524995423641" duration="4527000" />
+      <workItem from="1525002699154" duration="1117000" />
+      <workItem from="1525008806320" duration="2842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319365000" />
+    <option name="totallyTimeSpent" value="323590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
@@ -346,12 +354,12 @@
       <window_info anchor="bottom" id="Messages" order="7" weight="0.50955415" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.30254778" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5063694" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289256" />
-      <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.13689604" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6576433" />
+      <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.13689604" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -369,10 +377,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>59</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="106" />
+      <option name="time" value="109" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -698,6 +713,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FileManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -705,34 +727,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Utils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="179" column="11" lean-forward="true" selection-start-line="179" selection-start-column="11" selection-end-line="179" selection-end-column="19" />
+        <state relative-caret-position="395">
+          <caret line="189" column="68" selection-start-line="189" selection-start-column="68" selection-end-line="189" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="641" column="8" selection-start-line="641" selection-start-column="8" selection-end-line="641" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="228">
+          <caret line="672" column="39" lean-forward="true" selection-start-line="672" selection-start-column="39" selection-end-line="672" selection-end-column="39" />
         </state>
       </provider>
     </entry>

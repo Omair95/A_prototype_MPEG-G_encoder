@@ -581,7 +581,7 @@ void Utils::convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record
     result.seq_Id = (result.class_type == 6) ? 0 : record.rID;
     result.read1_first = (record.flag & 64) ? 1 : 0;
     result.flags = record.flag;
-    result.number_of_segments = (record.flag & 8 or (record.flag & 1 and record.flag & 128)) ? 1 : 2;
+    result.number_of_segments = (record.flag & 8) ? 1 : 2;
     result.number_of_alignments = 1; // just put 1 for now
 
     CharString seq = record.seq;
@@ -659,6 +659,35 @@ std::string Utils::int16_to_hex(int16_t value) {
     stream << std::setfill ('0') << std::setw(sizeof(value)*2)
            << std::hex << value;
     return stream.str();
+}
+
+std::vector<std::string> Utils::getClipsDescriptor(MpeggRecord& record) {
+    std::vector <std::string> clips_descriptor;
+    std::string cigar = record.ecigar_string[0][1];
+    std::string sequence = record.sequence[0];
+
+    auto n = std::count(cigar.begin(), cigar.end(), '(');
+
+    for (int i = 0; i < n; ++i) {
+        std::string result;
+        uint32_t id = record.global_Id;
+        result += std::to_string(id);           // id
+
+        if (i == 0) {
+            result += "00";                     // position
+            auto pos = cigar.find('(');
+            result += sequence.substr(0, cigar[pos + 1] - '0');  // M bases
+            if (n > 1) result += "fe";          // soft clips terminator
+        } else {
+            result += "01";
+            auto posL = sequence.size() - (cigar[cigar.size() - 2] - '0');
+            result += sequence.substr(posL, cigar.size() - 1);
+        }
+        if (i == (n - 1)) result += "ff";
+        clips_descriptor.push_back(result);
+    }
+
+    return clips_descriptor;
 }
 
 

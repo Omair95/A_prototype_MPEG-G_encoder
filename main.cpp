@@ -54,25 +54,25 @@ void generateByteStream() {
     int antPosI = 0, antPosHM = 0;
 
     while (it != end) {
-        MpeggRecord a;
-        u.convertToMpeggRecord(a, it->second.first);
-        f.writeMpeggToFile(a);
+        MpeggRecord record;
+        u.convertToMpeggRecord(record, it->second.first);
+        f.writeMpeggToFile(record);
 
-        if (a.class_type == 1) {
+        if (record.class_type == 1) {
             // update the number of reads in the access unit
             AU_P->updateReads();
 
             // get pos descriptor
             if (firstP) {
                 firstP = false;
-                antPosP = a.mapping_pos[0];
+                antPosP = record.mapping_pos[0];
                 AU_P->insertPosdescriptor(0);
-                AU_P->setStartPosition(a.mapping_pos[0]);
+                AU_P->setStartPosition(record.mapping_pos[0]);
                 f.insertPosValue(0, 1);
             } else {
-                AU_P->insertPosdescriptor(a.mapping_pos[0] - antPosP);
-                f.insertPosValue(a.mapping_pos[0] - antPosP, 1);
-                antPosP = a.mapping_pos[0];
+                AU_P->insertPosdescriptor(record.mapping_pos[0] - antPosP);
+                f.insertPosValue(record.mapping_pos[0] - antPosP, 1);
+                antPosP = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
@@ -92,17 +92,16 @@ void generateByteStream() {
 
             // get pair descriptor
             std::string pair = u.getPairDescriptor(it->second.first);
-            std::cout << it->second.first.qName << " " << pair << " " << sizeof(pair) << std::endl;
 
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(pair);
             f.insertPairValue(pair, 1);
 
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
-                AU_P->setEndPosition(a.mapping_pos[0]);
+                AU_P->setEndPosition(record.mapping_pos[0]);
                 u.insertAccessUnit(*AU_P);
                 AU_P = new AccessUnit_P(++au_id);
-                AU_P->setStartPosition(a.mapping_pos[0]);
+                AU_P->setStartPosition(record.mapping_pos[0]);
                 firstP = true;
             }
 
@@ -110,21 +109,21 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (a.class_type == 2) {
+        } else if (record.class_type == 2) {
             // update the number of reads in the access unit
             AU_N->updateReads();
 
             // get pos descriptor
             if (firstN) {
                 firstN = false;
-                antPosN = a.mapping_pos[0];
+                antPosN = record.mapping_pos[0];
                 AU_N->insertPosdescriptor(0);
-                AU_N->setStartPosition(a.mapping_pos[0]);
+                AU_N->setStartPosition(record.mapping_pos[0]);
                 f.insertPosValue(0, 2);
             } else {
-                AU_N->insertPosdescriptor(a.mapping_pos[0] - antPosN);
-                f.insertPosValue(a.mapping_pos[0] - antPosN, 2);
-                antPosN = a.mapping_pos[0];
+                AU_N->insertPosdescriptor(record.mapping_pos[0] - antPosN);
+                f.insertPosValue(record.mapping_pos[0] - antPosN, 2);
+                antPosN = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
@@ -158,10 +157,10 @@ void generateByteStream() {
             // create a new access unit in case if the current one is full
             if (AU_N->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
-                AU_N->setEndPosition(a.mapping_pos[0]);
+                AU_N->setEndPosition(record.mapping_pos[0]);
                 u.insertAccessUnit(*AU_N);
                 AU_N = new AccessUnit_N(++au_id);
-                AU_N->setStartPosition(a.mapping_pos[0]);
+                AU_N->setStartPosition(record.mapping_pos[0]);
                 firstN = true;
             }
 
@@ -169,21 +168,21 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (a.class_type == 3) {
+        } else if (record.class_type == 3) {
             // update the number of reads in the access unit
             AU_M->updateReads();
 
             // get pos descriptor
             if (firstM) {
                 firstM = false;
-                antPosM = a.mapping_pos[0];
+                antPosM = record.mapping_pos[0];
                 AU_M->insertPosdescriptor(0);
-                AU_M->setStartPosition(a.mapping_pos[0]);
+                AU_M->setStartPosition(record.mapping_pos[0]);
                 f.insertPosValue(0, 3);
             } else {
-                AU_M->insertPosdescriptor(a.mapping_pos[0] - antPosM);
-                f.insertPosValue(a.mapping_pos[0] - antPosM, 3);
-                antPosM = a.mapping_pos[0];
+                AU_M->insertPosdescriptor(record.mapping_pos[0] - antPosM);
+                f.insertPosValue(record.mapping_pos[0] - antPosM, 3);
+                antPosM = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
@@ -225,10 +224,10 @@ void generateByteStream() {
             // create a new access unit in case if the current one is full
             if (AU_M->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
-                AU_M->setEndPosition(a.mapping_pos[0]);
+                AU_M->setEndPosition(record.mapping_pos[0]);
                 u.insertAccessUnit(*AU_M);
                 AU_M = new AccessUnit_M(++au_id);
-                AU_M->setStartPosition(a.mapping_pos[0]);
+                AU_M->setStartPosition(record.mapping_pos[0]);
                 firstM = true;
             }
 
@@ -236,21 +235,21 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (a.class_type == 4) {
+        } else if (record.class_type == 4) {
             // update the number of reads in the access unit
             AU_I->updateReads();
 
             // get pos descriptor
             if (firstI) {
                 firstI = false;
-                antPosI = a.mapping_pos[0];
+                antPosI = record.mapping_pos[0];
                 AU_I->insertPosdescriptor(0);
-                AU_I->setStartPosition(a.mapping_pos[0]);
+                AU_I->setStartPosition(record.mapping_pos[0]);
                 f.insertPosValue(0, 4);
             } else {
-                AU_I->insertPosdescriptor(a.mapping_pos[0] - antPosI);
-                f.insertPosValue(a.mapping_pos[0] - antPosI, 4);
-                antPosI = a.mapping_pos[0];
+                AU_I->insertPosdescriptor(record.mapping_pos[0] - antPosI);
+                f.insertPosValue(record.mapping_pos[0] - antPosI, 4);
+                antPosI = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
@@ -289,13 +288,24 @@ void generateByteStream() {
             static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(pair);
             f.insertPairValue(pair, 4);
 
+            // get clips descriptor
+            std::string cigar = u.getCigar(it->second.first.cigar);
+            if (cigar.find('S') != std::string::npos) {
+                std::cout << it->second.first.qName << " " << cigar << " ";
+                std::vector<std::string> clips = u.getClipsDescriptor(record);
+                for (int i = 0; i < clips.size(); ++i) {
+                    std::cout << clips[i] << " ";
+                }
+                std::cout << std::endl;
+            }
+
             // create a new access unit in case if the current one is full
             if (AU_I->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
-                AU_I->setEndPosition(a.mapping_pos[0]);
+                AU_I->setEndPosition(record.mapping_pos[0]);
                 u.insertAccessUnit(*AU_I);
                 AU_I = new AccessUnit_I(++au_id);
-                AU_I->setStartPosition(a.mapping_pos[0]);
+                AU_I->setStartPosition(record.mapping_pos[0]);
                 firstI = true;
             }
 
@@ -303,21 +313,21 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (a.class_type == 5) {
+        } else if (record.class_type == 5) {
             // update the number of reads in the access unit
             AU_HM->updateReads();
 
             // get pos descriptor
             if (firstHM) {
                 firstHM = false;
-                antPosHM = a.mapping_pos[0];
+                antPosHM = record.mapping_pos[0];
                 AU_HM->insertPosdescriptor(0);
-                AU_HM->setStartPosition(a.mapping_pos[0]);
+                AU_HM->setStartPosition(record.mapping_pos[0]);
                 f.insertPosValue(0, 5);
             } else {
-                AU_HM->insertPosdescriptor(a.mapping_pos[0] - antPosHM);
-                f.insertPosValue(a.mapping_pos[0] - antPosHM, 5);
-                antPosHM = a.mapping_pos[0];
+                AU_HM->insertPosdescriptor(record.mapping_pos[0] - antPosHM);
+                f.insertPosValue(record.mapping_pos[0] - antPosHM, 5);
+                antPosHM = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
@@ -343,10 +353,10 @@ void generateByteStream() {
             // create a new access unit in case if the current one is full
             if (AU_HM->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
-                AU_HM->setEndPosition(a.mapping_pos[0]);
+                AU_HM->setEndPosition(record.mapping_pos[0]);
                 u.insertAccessUnit(*AU_HM);
                 AU_HM = new AccessUnit_HM(++au_id);
-                AU_HM->setStartPosition(a.mapping_pos[0]);
+                AU_HM->setStartPosition(record.mapping_pos[0]);
                 firstHM = true;
             }
 
@@ -354,7 +364,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (a.class_type == 6) {
+        } else if (record.class_type == 6) {
             // update the number of reads in the access unit
             AU_U->updateReads();
 
@@ -366,10 +376,10 @@ void generateByteStream() {
             // create a new access unit in case if the current one is full
             if (AU_U->getReadsCount() == ACCESS_UNIT_SIZE) {
                 // create a new accessUnit
-                AU_U->setEndPosition(a.mapping_pos[0]);
+                AU_U->setEndPosition(record.mapping_pos[0]);
                 u.insertAccessUnit(*AU_U);
                 AU_U = new AccessUnit_U(++au_id);
-                AU_U->setStartPosition(a.mapping_pos[0]);
+                AU_U->setStartPosition(record.mapping_pos[0]);
             }
 
             // erase the read after using it

@@ -187,6 +187,8 @@ public:
 
     std::string int16_to_hex(int16_t value);
 
+    std::vector<std::string> getClipsDescriptor(MpeggRecord& record);
+
     /** \brief Removes the first read from the list of paired reads
      * \param void
      * \return void
