@@ -167,9 +167,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a208c512bbb56f81188acb4ed443356fa"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a208c512bbb56f81188acb4ed443356fa">getRlenDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
 <tr class="memdesc:a208c512bbb56f81188acb4ed443356fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rlen descriptor for the read.  <a href="#a208c512bbb56f81188acb4ed443356fa">More...</a><br /></td></tr>
 <tr class="separator:a208c512bbb56f81188acb4ed443356fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb9a7be0b59fcdc844c62a8f54da6ba0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#abb9a7be0b59fcdc844c62a8f54da6ba0">getPairDescriptor</a> (BamAlignmentRecord &amp;record)</td></tr>
-<tr class="memdesc:abb9a7be0b59fcdc844c62a8f54da6ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pair descriptor for the read.  <a href="#abb9a7be0b59fcdc844c62a8f54da6ba0">More...</a><br /></td></tr>
-<tr class="separator:abb9a7be0b59fcdc844c62a8f54da6ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa3cca3eb2b97a1caf03981dbe202b6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a3aa3cca3eb2b97a1caf03981dbe202b6">insertPairDescriptor</a> (BamAlignmentRecord &amp;record, uint8_t classType)</td></tr>
+<tr class="memdesc:a3aa3cca3eb2b97a1caf03981dbe202b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pair descriptor for the read.  <a href="#a3aa3cca3eb2b97a1caf03981dbe202b6">More...</a><br /></td></tr>
+<tr class="separator:a3aa3cca3eb2b97a1caf03981dbe202b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d521d4d7cecbe20acab176d08b7857"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02d521d4d7cecbe20acab176d08b7857"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>reads_distance</b> (BamAlignmentRecord &amp;record)</td></tr>
 <tr class="separator:a02d521d4d7cecbe20acab176d08b7857"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -556,31 +556,6 @@ static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>hex_to_int
 
 </div>
 </div>
-<a class="anchor" id="abb9a7be0b59fcdc844c62a8f54da6ba0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Utils::getPairDescriptor </td>
-          <td>(</td>
-          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
-          <td class="paramname"><em>record</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the pair descriptor for the read. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">record</td><td>first read from the pair </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>value of the pair descriptor of the read </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a2021002b739a022e914533b6b95145fe"></a>
 <div class="memitem">
 <div class="memproto">
@@ -678,6 +653,41 @@ static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>hex_to_int
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3aa3cca3eb2b97a1caf03981dbe202b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Utils::insertPairDescriptor </td>
+          <td>(</td>
+          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
+          <td class="paramname"><em>record</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>classType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the pair descriptor for the read. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">record</td><td>first read from the pair </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value of the pair descriptor of the read </dd></dl>
 
 </div>
 </div>

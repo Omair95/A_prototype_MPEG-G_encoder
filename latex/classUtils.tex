@@ -7,7 +7,8 @@ Auxiliary class that contains useful methods from the main class.
 
 
 
-Inheritance diagram for Utils\+:\nopagebreak
+Inheritance diagram for Utils\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,7 +17,8 @@ Inheritance diagram for Utils\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Utils\+:\nopagebreak
+Collaboration diagram for Utils\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -62,7 +64,7 @@ std\+::vector$<$ uint8\+\_\+t $>$ \hyperlink{classUtils_ac5c58f81f7c60bbd9e55710
 \begin{DoxyCompactList}\small\item\em Gets the mmtype descriptor for the read using alphabet 0. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{classUtils_a208c512bbb56f81188acb4ed443356fa}{get\+Rlen\+Descriptor} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em Gets the rlen descriptor for the read. \end{DoxyCompactList}\item 
-std\+::string \hyperlink{classUtils_abb9a7be0b59fcdc844c62a8f54da6ba0}{get\+Pair\+Descriptor} (Bam\+Alignment\+Record \&record)
+std\+::string \hyperlink{classUtils_a3aa3cca3eb2b97a1caf03981dbe202b6}{insert\+Pair\+Descriptor} (Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)
 \begin{DoxyCompactList}\small\item\em Gets the pair descriptor for the read. \end{DoxyCompactList}\item 
 uint16\+\_\+t {\bfseries reads\+\_\+distance} (Bam\+Alignment\+Record \&record)\hypertarget{classUtils_a02d521d4d7cecbe20acab176d08b7857}{}\label{classUtils_a02d521d4d7cecbe20acab176d08b7857}
 
@@ -364,25 +366,6 @@ Extracts the value of the NM tag from the read.
 \begin{DoxyReturn}{Returns}
 integer containing the value of the NM tag 
 \end{DoxyReturn}
-\index{Utils@{Utils}!get\+Pair\+Descriptor@{get\+Pair\+Descriptor}}
-\index{get\+Pair\+Descriptor@{get\+Pair\+Descriptor}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Pair\+Descriptor(\+Bam\+Alignment\+Record \&record)}{getPairDescriptor(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::get\+Pair\+Descriptor (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_abb9a7be0b59fcdc844c62a8f54da6ba0}{}\label{classUtils_abb9a7be0b59fcdc844c62a8f54da6ba0}
-
-
-Gets the pair descriptor for the read. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-value of the pair descriptor of the read 
-\end{DoxyReturn}
 \index{Utils@{Utils}!get\+Rcomp\+Descriptor@{get\+Rcomp\+Descriptor}}
 \index{get\+Rcomp\+Descriptor@{get\+Rcomp\+Descriptor}!Utils@{Utils}}
 \subsubsection[{\texorpdfstring{get\+Rcomp\+Descriptor(\+Bam\+Alignment\+Record \&record)}{getRcompDescriptor(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Utils\+::get\+Rcomp\+Descriptor (
@@ -458,6 +441,26 @@ Inserts a new access unit to the list of access units.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 void 
+\end{DoxyReturn}
+\index{Utils@{Utils}!insert\+Pair\+Descriptor@{insert\+Pair\+Descriptor}}
+\index{insert\+Pair\+Descriptor@{insert\+Pair\+Descriptor}!Utils@{Utils}}
+\subsubsection[{\texorpdfstring{insert\+Pair\+Descriptor(\+Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)}{insertPairDescriptor(BamAlignmentRecord &record, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::insert\+Pair\+Descriptor (
+\begin{DoxyParamCaption}
+\item[{Bam\+Alignment\+Record \&}]{record, }
+\item[{uint8\+\_\+t}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classUtils_a3aa3cca3eb2b97a1caf03981dbe202b6}{}\label{classUtils_a3aa3cca3eb2b97a1caf03981dbe202b6}
+
+
+Gets the pair descriptor for the read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em record} & first read from the pair \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of the pair descriptor of the read 
 \end{DoxyReturn}
 \index{Utils@{Utils}!insert\+Read@{insert\+Read}}
 \index{insert\+Read@{insert\+Read}!Utils@{Utils}}

@@ -2765,10 +2765,12 @@ fstream
 -
 boost/endian/conversion.hpp
 -
-Utils.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.h
 MpeggRecord.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/MpeggRecord.h
+Utils.h
+/home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.h
+seqan/bam_io.h
+-
 
 /home/omair/TFG/A_prototype_MPEG-G_encoder/MpeggRecord.h
 iostream
@@ -2783,14 +2785,12 @@ Utils.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.h
 AccessUnit.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit.h
+MpeggRecord.h
+/home/omair/TFG/A_prototype_MPEG-G_encoder/MpeggRecord.h
 sstream
 -
 ctype.h
 -
-fstream
--
-MpeggRecord.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/MpeggRecord.h
 
 /home/omair/TFG/A_prototype_MPEG-G_encoder/main.cpp
 Utils.h
@@ -2809,6 +2809,4 @@ AccessUnit_U.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.h
 FileManager.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/FileManager.h
-boost/endian/conversion.hpp
--
 

@@ -1,7 +1,9 @@
 #include <fstream>
 #include <boost/endian/conversion.hpp>
-#include "Utils.h"
 #include "MpeggRecord.h"
+#include "Utils.h"
+#include <seqan/bam_io.h>
+using namespace seqan;
 
 /*! \file FileManager.h */
 
@@ -22,7 +24,7 @@
 
 class FileManager {
 
-protected:
+private:
     std::ofstream mpeggRecordFile;
 
     std::ofstream posDescriptorClassP;
@@ -68,7 +70,7 @@ public:
      * \param void
      * \return void
      * */
-    FileManager(std::string FileName);
+    explicit FileManager(std::string FileName);
 
     /** \brief Destructor method
      * \param void
@@ -82,30 +84,42 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    void insertPosValue(uint32_t value, int classType);
+    void insertPosValue(uint32_t value, uint8_t classType);
 
-    /** \brief Writes the rcomp descriptor value to the respective file
-     *         according to the class type
+    /** \brief calculates and writes the rcomp descriptor value  of the read
+     *          to the respective file according to the class type
      *  \param value value of the rcomp descriptor
      *  \param classType class type
+     *  \return Rcomp descriptor value of the read
      * */
-    void insertRcompValue(uint8_t value, int classType);
+    uint8_t insertRcompValue(BamAlignmentRecord& record, uint8_t classType);
 
     /** \brief Writes the flags descriptor value to the respective file
      *         according to the class type
      *  \param value value of the flags descriptor
      *  \param classType class type
-     *   \return void
+     *   \return Flags descriptor value of the read
      * */
-    void insertFlagsValue(uint8_t value, int classType);
+    uint8_t insertFlagsValue(BamAlignmentRecord& record, uint8_t classType);
 
-    /** \brief Writes the mmpos descriptor value to the respective file
+    /** \brief Writes the rlen descriptor value to the respective file
      *         according to the class type
-     *  \param value value of the mmpos descriptor
+     *  \param value value of the rlen descriptor
      *  \param classType class type
-     *   \return void
+     *   \return Rlen descriptor value of the read
      * */
-    void insertMmposValue(uint16_t value, int classType);
+    uint8_t insertRlenValue(BamAlignmentRecord& record, uint8_t classType);
+
+    /** \brief Writes the pair descriptor value to the respective file
+     *         according to the class type
+     *  \param value value of the rlen descriptor
+     *  \param classType class type
+     *   \return Rlen descriptor value of the read
+     * */
+    uint16_t insertPairValue(BamAlignmentRecord& record, uint8_t classType);
+
+
+    void insertMmposValue(uint16_t pos, uint8_t classType);
 
     /** \brief Writes the mmtype descriptor value to the respective file
      *         according to the class type
@@ -113,25 +127,9 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    void insertMmtypeValue(uint8_t value, int classType);
+    std::vector<uint8_t> insertmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos, uint8_t classType);
 
-    void insertClipsValue(uint32_t id, uint8_t pos, std::string bases, uint8_t terminator, uint8_t final_terminator);
-
-    /** \brief Writes the rlen descriptor value to the respective file
-     *         according to the class type
-     *  \param value value of the rlen descriptor
-     *  \param classType class type
-     *   \return void
-     * */
-    void insertRlenValue(uint8_t value, int classType);
-
-    /** \brief Writes the pair descriptor value to the respective file
-     *         according to the class type
-     *  \param value value of the pair descriptor
-     *  \param classType class type
-     *  \return void
-     * */
-    void insertPairValue(std::string value, int classType);
+    std::vector<std::string> insertClipsDescriptor(MpeggRecord& record);
 
     /** \brief Writes the mpegg record of the respective read to a file
      *  \param result mpegg record format of the read

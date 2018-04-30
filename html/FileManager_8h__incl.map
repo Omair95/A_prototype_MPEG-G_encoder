@@ -1,6 +1,3 @@
 <map id="FileManager.h" name="FileManager.h">
-<area shape="rect" id="node4" href="$Utils_8h.html" title="Utils.h" alt="" coords="309,80,369,107"/>
-<area shape="rect" id="node10" href="$MpeggRecord_8h.html" title="MpeggRecord.h" alt="" coords="429,80,544,107"/>
-<area shape="rect" id="node5" href="$AccessUnit_8h.html" title="AccessUnit.h" alt="" coords="141,155,243,181"/>
-<area shape="rect" id="node6" href="$AccessUnitBlock_8h.html" title="AccessUnitBlock.h" alt="" coords="125,229,259,256"/>
+<area shape="rect" id="node4" href="$MpeggRecord_8h.html" title="MpeggRecord.h" alt="" coords="309,80,424,107"/>
 </map>

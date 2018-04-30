@@ -1,7 +1,7 @@
 #include "AccessUnit.h"
+#include "MpeggRecord.h"
 #include <sstream>
 #include <ctype.h>
-#include "FileManager.h"
 
 /*! \file Utils.h */
 
@@ -19,7 +19,7 @@
 #ifndef A_PROTOTYPE_MPEG_G_ENCODER_UTILS_H
 #define A_PROTOTYPE_MPEG_G_ENCODER_UTILS_H
 
-class Utils : FileManager {
+class Utils {
 
 private:
     std::vector<AccessUnit> accessUnits;                                            /// contains all kind of access units
@@ -44,7 +44,7 @@ public:
      *  \param rCigar value to be converted
      *  \return converted value
      * */
-    std::string getCigar(String <CigarElement<> >& rCigar);
+    static std::string getCigar(String <CigarElement<> >& rCigar);
 
     /** \brief Gets the extended cigar of the read
      * \param record read to be treated
@@ -113,44 +113,8 @@ public:
      * */
     uint8_t getClassType(BamAlignmentRecord& record);
 
-    /** \brief Gets the rcomp descriptor for the read
-     *  \param record first read from the pair
-     *  \return value of the rcomp descriptor of the read
-     * */
-    uint8_t getRcompDescriptor(BamAlignmentRecord& record);
 
-    /** \brief Gets the flags descriptor for the read
-     *  \param record is the first read from the pair
-     *  \return value of the flags descriptor of the read
-     * */
-    uint8_t getFlagDescriptor(BamAlignmentRecord& record);
-
-    /** \brief Gets the mmpos descriptor for the read
-     *  \param record is the first read from the pair
-     *  \return vector with all the mismatches of the read with the reference sequence
-     * */
-    std::vector<std::pair<uint16_t, std::string> > getmmposDescriptor(BamAlignmentRecord& record);
-
-    /** \brief Gets the mmtype descriptor for the read using alphabet 0
-     *  \param mmpos contains all the mismatches of the read
-     *  \return vector containing the type of mismatches
-     * */
-    std::vector<uint8_t> getmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos);
-
-    /** \brief Gets the rlen descriptor for the read
-     *  \param record first read from the pair
-     *  \return value of the rlen descriptor of the read
-     * */
-    uint8_t getRlenDescriptor(BamAlignmentRecord& record);
-
-    /** \brief Gets the pair descriptor for the read
-     *  \param record first read from the pair
-     *  \return value of the pair descriptor of the read
-     * */
-    std::string insertPairDescriptor(BamAlignmentRecord& record, uint8_t classType);
-
-
-    uint16_t reads_distance(BamAlignmentRecord& record);
+    static uint16_t reads_distance(BamAlignmentRecord& record);
 
     /** \brief Extracts the value of the NM tag from the read
      *  \param record read to be treated
@@ -162,7 +126,7 @@ public:
      *  \param record read to be treated
      *  \return string containing the value of the MD tag
      * */
-    std::string getMDtag(BamAlignmentRecord& record);
+    static std::string getMDtag(BamAlignmentRecord& record);
 
     /** \brief Converts the read or paired read to the mpegg output format
      *  \param record first read from the pair
@@ -170,11 +134,14 @@ public:
      * */
     void convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record);
 
-    /** \brief Convert a hexadecimal value stored in a string to little endian
-     * \param value hexadecimal value
-     * \return value but in little endian
-     */
-    std::string toLittleEndian_hex(std::string value);
+
+    /** \brief Writes the mmpos descriptor value to the respective file
+     *         according to the class type
+     *  \param value value of the mmpos descriptor
+     *  \param classType class type
+     *   \return void
+     * */
+    std::vector<std::pair<uint16_t, std::string> > getMmposValue(BamAlignmentRecord& record);
 
     static uint64_t hex_to_int(std::string value);
 
@@ -184,9 +151,7 @@ public:
      * */
     std::string int32_to_hex(int32_t value);
 
-    std::string int16_to_hex(int16_t value);
-
-    std::vector<std::string> getClipsDescriptor(MpeggRecord& record);
+    static std::string int16_to_hex(int16_t value);
 
     /** \brief Removes the first read from the list of paired reads
      * \param void
