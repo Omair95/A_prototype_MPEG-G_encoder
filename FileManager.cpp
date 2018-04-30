@@ -294,7 +294,7 @@ void FileManager::insertMmposValue(uint16_t pos, uint8_t classType) {
     }
 }
 
-std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record) {
+std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record, uint32_t id) {
     std::vector <std::string> clips_descriptor;
     std::string read1_cigar = record.ecigar_string[0][1], read2_cigar;
     std::string read1_sequence = record.sequence[0], read2_sequence;
@@ -305,7 +305,7 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record)
         std::string result;
 
         // get and write id to file
-        uint32_t id = record.global_Id;
+        uint32_t id = id;
         uint32_t littleEndianID = boost::endian::native_to_little(id);
         clipsDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianID), sizeof(littleEndianID));
         result += std::to_string(id);

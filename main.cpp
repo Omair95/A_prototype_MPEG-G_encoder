@@ -268,10 +268,10 @@ void generateByteStream() {
 
             std::string cigar = u.getCigar(it->second.first.cigar);
             if (cigar.find('S') != std::string::npos) {
+                std::vector<std::string> clips = f.insertClipsDescriptor(record, AU_I->getReadsCount());
                 std::cout << it->second.first.qName << " " << cigar << " " << u.getCigar(it->second.second.cigar) << " ";
-                std::vector<std::string> clips = f.insertClipsDescriptor(record);
                 for (int i = 0; i < clips.size(); ++i) {
-                    std::cout << clips[i] << " ";
+                     std::cout << clips[i] << " ";
                 }
                 std::cout << std::endl;
             }
@@ -379,7 +379,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 1000) {
+    while (!atEnd(bamFileIn) and count <= 1000000) {
         readRecord(record, bamFileIn);
         if (record.beginPos <= record.pNext) {
             u.insertRead(record, record);

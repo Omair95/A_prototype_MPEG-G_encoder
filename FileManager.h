@@ -129,7 +129,7 @@ public:
      * */
     std::vector<uint8_t> insertmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos, uint8_t classType);
 
-    std::vector<std::string> insertClipsDescriptor(MpeggRecord& record);
+    std::vector<std::string> insertClipsDescriptor(MpeggRecord& record, uint32_t id);
 
     /** \brief Writes the mpegg record of the respective read to a file
      *  \param result mpegg record format of the read
