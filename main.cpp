@@ -381,14 +381,17 @@ int main () {
     BamAlignmentRecord record;
     while (!atEnd(bamFileIn) and count <= 100) {
         readRecord(record, bamFileIn);
+
+        std::cout << record.qName << " " << u.getCigar(record.cigar) << " " << u.getMDtag(record) << " " << u.getExtendedCigar(record) << std::endl;
+        /*
         if (record.beginPos <= record.pNext) {
             u.insertRead(record, record);
         } else {
             u.updateRecord(record, record.pNext);
-        }
+        }*/
         ++count;
     }
-
+    /*
     generateByteStream();
     std::vector<AccessUnit> au;
     u.getAllAccessUnits(au);
@@ -396,6 +399,6 @@ int main () {
     for (int i = 0; i < au.size(); ++i) {
         au[i].write();
     }
-    f.closeFiles();
+    f.closeFiles(); */
     return 0;
 }

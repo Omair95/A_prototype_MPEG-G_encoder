@@ -29,7 +29,7 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
     std::string MD = getMDtag(record);
     std::string result;
     std::map<int, std::string> mmpos;
-    int sum = 0;
+    int sum = 0, insertions = 0;
 
     if (cigar != "100M") {
         for (int i = 0; i < cigar.size(); ++i) {
@@ -41,17 +41,18 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
                 } else if (isdigit(cigar[i - 1])) {
                     b = cigar[i - 1] - '0';
                 }
-                if (cigar[i] != 'D') sum += a * 10 + b;
+                if (cigar[i] != 'D' and cigar[i] != 'S') sum += a * 10 + b;
                 if (cigar[i] != 'M') {
                     std::string c;
                     c += std::to_string(a * 10 + b);
                     c += cigar[i];
                     mmpos.insert(std::make_pair(sum, c));
+                    if (cigar[i] == 'I') insertions += a*10 + b;
                 }
             }
         }
     }
-    sum = 0;
+    sum = insertions;
 
     if (MD != "100") {
         for (int i = 0; i < MD.size(); ++i) {
@@ -94,7 +95,7 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
                     int b = it->second[1] - '0';
                     result += std::to_string(it->first - ant - (a * 10 + b));
                 }
-                else result += std::to_string(it->first - ant - a);
+                else result += std::to_string(it->first - ant);
                 result += '=';
             }
             int a = it->second[0] - '0';
@@ -103,6 +104,7 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
                 result += "(" + std::to_string(a*10 + b) + ")";
             } else result += "(" + std::to_string(a) + ")";
             ant = it->first;
+            if (it != mmpos.begin()) return result;
         } else if (it->second[it->second.size() - 1] == 'I' or
                    it->second[it->second.size() - 1] == 'D') {
             int a = 0, b = 0;
@@ -121,7 +123,7 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
             }
             ant = it->first;
         } else {
-            int d = it->first - ant - 1;
+            int d = it->first - ant;
             if (d != 0) {
                 result += std::to_string(it->first - ant - 1);
                 result += '=';
