@@ -298,17 +298,16 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record,
     std::vector <std::string> clips_descriptor;
     std::string read1_cigar = record.ecigar_string[0][1], read2_cigar;
     std::string read1_sequence = record.sequence[0], read2_sequence;
-
     auto n = std::count(read1_cigar.begin(), read1_cigar.end(), '(');
 
     for (int i = 0; i < n; ++i) {
         std::string result;
 
         // get and write id to file
-        uint32_t id = id;
-        uint32_t littleEndianID = boost::endian::native_to_little(id);
+        uint32_t idclip = id;
+        uint32_t littleEndianID = boost::endian::native_to_little(idclip);
         clipsDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianID), sizeof(littleEndianID));
-        result += std::to_string(id);
+        result += std::to_string(idclip);
 
         // get and write pos of the soft clip
         uint8_t flagPos;
@@ -324,12 +323,24 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record,
 
         // get and write base sequences
         if (flagPos == 0x00) {
-            int f = read1_cigar[pos + 1] - '0';
+            int a = 0, b = 0, f;
+
+            if (isdigit(read1_cigar[pos + 1]) and
+                isdigit(read1_cigar[pos + 2])) {
+                a = read1_cigar[pos+1] - '0';
+                b = read1_cigar[pos+2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read1_cigar[pos + 1])) {
+                a = read1_cigar[pos+1] - '0';
+                f = a;
+            }
+
             for (int i = 0; i < f; ++i) {
-                uint8_t c = read1_sequence[f];
+                uint8_t c = read1_sequence[i];
                 clipsDescriptorClassI.write(reinterpret_cast<const char *>(&c), sizeof(c));
             }
-            result += read1_sequence.substr(0, read1_cigar[pos + 1] - '0');  // M bases
+            result += read1_sequence.substr(0, f);  // M bases
 
             if (n > 1) {
                 uint8_t terminator = 0xfe;
@@ -337,15 +348,28 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record,
                 result += std::to_string(terminator);
             }
         } else if (flagPos == 0x01) {
-            int f = read1_sequence.size() - (read1_cigar[read1_cigar.size() - 2] - '0');
-            for (f ; f < read1_cigar.size() - 1; ++f) {
-                uint8_t c = read1_sequence[f];
+            int a = 0, b = 0, f;
+
+            if (isdigit(read1_cigar[read1_cigar.size() - 2]) and
+                isdigit(read1_cigar[read1_cigar.size() - 3])) {
+                a = read1_cigar[read1_cigar.size() - 3] - '0';
+                b = read1_cigar[read1_cigar.size() - 2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read1_cigar[read1_cigar.size() - 2])) {
+                b = read1_cigar[read1_cigar.size() - 2] - '0';
+                f = b;
+            }
+
+            for (int i = read1_sequence.size() - 1 - f; i < read1_sequence.size() - 1; ++i) {
+                uint8_t c = read1_sequence[i];
                 clipsDescriptorClassI.write(reinterpret_cast<const char *>(&c), sizeof(c));
             }
-            result += read1_sequence.substr(f, read1_cigar.size() - 1);
+            result += read1_sequence.substr(read1_sequence.size() - f, read1_sequence.size() - 1);
         }
         clips_descriptor.push_back(result);
     }
+
     if (record.number_of_segments == 1) {
         uint8_t terminator = 0xff;
         clipsDescriptorClassI.write(reinterpret_cast<const char *>(&terminator), sizeof(terminator));
@@ -370,10 +394,10 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record,
         std::string result;
 
         // get and write id to file
-        uint32_t id = record.global_Id;
-        uint32_t littleEndianID = boost::endian::native_to_little(id);
+        uint32_t idclip = id;
+        uint32_t littleEndianID = boost::endian::native_to_little(idclip);
         clipsDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianID), sizeof(littleEndianID));
-        result += std::to_string(id);
+        result += std::to_string(idclip);
 
         // get and write pos of the soft clip
         uint8_t flagPos;
@@ -389,33 +413,56 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record,
 
         // get and write base sequences
         if (flagPos == 0x02) {
-            int f = read1_cigar[pos + 1] - '0';
+            int a = 0, b = 0, f;
+            if (isdigit(read2_cigar[pos + 1]) and
+                isdigit(read2_cigar[pos + 2])) {
+                a = read2_cigar[pos + 1] - '0';
+                b = read2_cigar[pos + 2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read2_cigar[pos + 1])) {
+                a = read2_cigar[pos + 1] - '0';
+                f = a;
+            }
+
             for (int i = 0; i < f; ++i) {
-                uint8_t c = read1_sequence[f];
+                uint8_t c = read1_sequence[i];
                 clipsDescriptorClassI.write(reinterpret_cast<const char *>(&c), sizeof(c));
             }
-            result += read1_sequence.substr(0, read2_cigar[pos + 1] - '0');  // M bases
+            result += read1_sequence.substr(0, f);  // M bases
+            uint8_t terminator;
 
-            if (n > 1) {
-                uint8_t terminator = 0xfe;
-                clipsDescriptorClassI.write(reinterpret_cast<const char *>(&terminator), sizeof(terminator));
-                result += std::to_string(terminator);
-            }
+            if (k > 1) terminator = 0xfe;
+            else terminator = 0xff;
+            clipsDescriptorClassI.write(reinterpret_cast<const char *>(&terminator), sizeof(terminator));
+            result += std::to_string(terminator);
+
         } else if (flagPos == 0x03) {
-            int f = read2_sequence.size() - (read2_cigar[read1_cigar.size() - 2] - '0');
+            int a = 0, b = 0, f;
+
+            if (isdigit(read2_cigar[read2_cigar.size() - 3])) {
+                a = read2_cigar[read2_cigar.size() - 3] - '0';
+                b = read2_cigar[read2_cigar.size() - 2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read2_cigar[read2_cigar.size() - 2])) {
+                b = read2_cigar[read2_cigar.size() - 2];
+                f = b;
+            }
+
             for (f ; f < read1_cigar.size() - 1; ++f) {
                 uint8_t c = read1_sequence[f];
                 clipsDescriptorClassI.write(reinterpret_cast<const char *>(&c), sizeof(c));
             }
-            result += read1_sequence.substr(f, read2_cigar.size() - 1);
-
+            result += read1_sequence.substr(f, read2_sequence.size() - 1);
             uint8_t terminator = 0xff;
             clipsDescriptorClassI.write(reinterpret_cast<const char *>(&terminator), sizeof(terminator));
+            result += std::to_string(terminator);
         }
         clips_descriptor.push_back(result);
     }
 
-    return clips_descriptor;
+    return  clips_descriptor;
 }
 
 std::vector<uint8_t> FileManager::insertmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos, uint8_t classType) {
