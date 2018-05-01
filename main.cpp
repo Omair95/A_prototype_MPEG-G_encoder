@@ -265,12 +265,11 @@ void generateByteStream() {
             uint16_t pair = f.insertPairValue(it->second.first, 4);
             static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(std::to_string(pair));
             // get clips descriptor
-
-            std::string cigar = u.getCigar(it->second.first.cigar);
-            if (cigar.find('S') != std::string::npos) {
-                std::cout << "NUMBER OF READS IN THE ACCESS UNIT = " << AU_I->getReadsCount() << std::endl;
-                std::vector<std::string> clips = f.insertClipsDescriptor(record, AU_I->getReadsCount());
-                std::cout << it->second.first.qName << " " << cigar << " " << u.getCigar(it->second.second.cigar) << " ";
+            std::string read1_cigar = u.getCigar(it->second.first.cigar);
+            std::string read2_cigar = u.getCigar(it->second.second.cigar);
+            if (read1_cigar.find('S') != std::string::npos or read2_cigar.find('S') != std::string::npos) {
+                std::vector<std::string> clips = f.insertClipsDescriptor(record, AU_I->getReadsCount() - 1);
+                std::cout << it->second.first.qName << " " << read1_cigar << " " << read2_cigar << " ";
                 for (int i = 0; i < clips.size(); ++i) {
                      std::cout << clips[i] << " ";
                 }
