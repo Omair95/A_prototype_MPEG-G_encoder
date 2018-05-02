@@ -85,7 +85,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classFileManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">FileManager Class Reference</div>  </div>
@@ -96,14 +95,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classFileManager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="FileManager_8h_source.html">FileManager.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for FileManager:</div>
-<div class="dyncontent">
-<div class="center"><img src="classFileManager__inherit__graph.png" border="0" usemap="#FileManager_inherit__map" alt="Inheritance graph"/></div>
-<map name="FileManager_inherit__map" id="FileManager_inherit__map">
-<area shape="rect" id="node2" href="classUtils.html" title="Auxiliary class that contains useful methods from the main class. " alt="" coords="27,80,77,107"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -113,135 +104,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abaed33b5b0c13b8a597db9335a1aacfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#abaed33b5b0c13b8a597db9335a1aacfa">~FileManager</a> ()</td></tr>
 <tr class="memdesc:abaed33b5b0c13b8a597db9335a1aacfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor method.  <a href="#abaed33b5b0c13b8a597db9335a1aacfa">More...</a><br /></td></tr>
 <tr class="separator:abaed33b5b0c13b8a597db9335a1aacfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec62a3da1d11d7d832b294b4fb70b0cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#aec62a3da1d11d7d832b294b4fb70b0cc">insertPosValue</a> (uint32_t value, int classType)</td></tr>
-<tr class="memdesc:aec62a3da1d11d7d832b294b4fb70b0cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the pos descriptor value to the respective file according to the class type.  <a href="#aec62a3da1d11d7d832b294b4fb70b0cc">More...</a><br /></td></tr>
-<tr class="separator:aec62a3da1d11d7d832b294b4fb70b0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dd7d533d9aae0c19077be7828d20260"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a6dd7d533d9aae0c19077be7828d20260">insertRcompValue</a> (uint8_t value, int classType)</td></tr>
-<tr class="memdesc:a6dd7d533d9aae0c19077be7828d20260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the rcomp descriptor value to the respective file according to the class type.  <a href="#a6dd7d533d9aae0c19077be7828d20260">More...</a><br /></td></tr>
-<tr class="separator:a6dd7d533d9aae0c19077be7828d20260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ab1aebcb58f268bdb03fd98dd3202da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a3ab1aebcb58f268bdb03fd98dd3202da">insertFlagsValue</a> (uint8_t value, int classType)</td></tr>
-<tr class="memdesc:a3ab1aebcb58f268bdb03fd98dd3202da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the flags descriptor value to the respective file according to the class type.  <a href="#a3ab1aebcb58f268bdb03fd98dd3202da">More...</a><br /></td></tr>
-<tr class="separator:a3ab1aebcb58f268bdb03fd98dd3202da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce4167c88dffc1321a110adcf195cfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a6ce4167c88dffc1321a110adcf195cfe">insertMmposValue</a> (uint16_t value, int classType)</td></tr>
-<tr class="memdesc:a6ce4167c88dffc1321a110adcf195cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mmpos descriptor value to the respective file according to the class type.  <a href="#a6ce4167c88dffc1321a110adcf195cfe">More...</a><br /></td></tr>
-<tr class="separator:a6ce4167c88dffc1321a110adcf195cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41c3937aa2e60ac323cd70444a24bf7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a41c3937aa2e60ac323cd70444a24bf7a">insertMmtypeValue</a> (uint8_t value, int classType)</td></tr>
-<tr class="memdesc:a41c3937aa2e60ac323cd70444a24bf7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mmtype descriptor value to the respective file according to the class type.  <a href="#a41c3937aa2e60ac323cd70444a24bf7a">More...</a><br /></td></tr>
-<tr class="separator:a41c3937aa2e60ac323cd70444a24bf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4a33b4b3142769792c8d557002b01eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4a33b4b3142769792c8d557002b01eb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insertClipsValue</b> (uint32_t id, uint8_t pos, std::string bases, uint8_t terminator, uint8_t final_terminator)</td></tr>
-<tr class="separator:ab4a33b4b3142769792c8d557002b01eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16890f19ed236ad5f76fe817e37d63fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a16890f19ed236ad5f76fe817e37d63fb">insertRlenValue</a> (uint8_t value, int classType)</td></tr>
-<tr class="memdesc:a16890f19ed236ad5f76fe817e37d63fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the rlen descriptor value to the respective file according to the class type.  <a href="#a16890f19ed236ad5f76fe817e37d63fb">More...</a><br /></td></tr>
-<tr class="separator:a16890f19ed236ad5f76fe817e37d63fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e12983c4d731b8efd5a475b9704572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#ae4e12983c4d731b8efd5a475b9704572">insertPosValue</a> (uint32_t value, uint8_t classType)</td></tr>
+<tr class="memdesc:ae4e12983c4d731b8efd5a475b9704572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the pos descriptor value to the respective file according to the class type.  <a href="#ae4e12983c4d731b8efd5a475b9704572">More...</a><br /></td></tr>
+<tr class="separator:ae4e12983c4d731b8efd5a475b9704572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6894cae33f3cdde6206a67f260ab3f1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#af6894cae33f3cdde6206a67f260ab3f1">insertRcompValue</a> (BamAlignmentRecord &amp;record, uint8_t classType)</td></tr>
+<tr class="memdesc:af6894cae33f3cdde6206a67f260ab3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates and writes the rcomp descriptor value of the read to the respective file according to the class type  <a href="#af6894cae33f3cdde6206a67f260ab3f1">More...</a><br /></td></tr>
+<tr class="separator:af6894cae33f3cdde6206a67f260ab3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749517da172c0374f668121a090e1046"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a749517da172c0374f668121a090e1046">insertFlagsValue</a> (BamAlignmentRecord &amp;record, uint8_t classType)</td></tr>
+<tr class="memdesc:a749517da172c0374f668121a090e1046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the flags descriptor value to the respective file according to the class type.  <a href="#a749517da172c0374f668121a090e1046">More...</a><br /></td></tr>
+<tr class="separator:a749517da172c0374f668121a090e1046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a9c467af917d1f9ad0d066d1058104"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a72a9c467af917d1f9ad0d066d1058104">insertRlenValue</a> (BamAlignmentRecord &amp;record, uint8_t classType)</td></tr>
+<tr class="memdesc:a72a9c467af917d1f9ad0d066d1058104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the rlen descriptor value to the respective file according to the class type.  <a href="#a72a9c467af917d1f9ad0d066d1058104">More...</a><br /></td></tr>
+<tr class="separator:a72a9c467af917d1f9ad0d066d1058104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3fb2385a3d0e4d3b214d98bbf34248"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a2e3fb2385a3d0e4d3b214d98bbf34248">insertPairValue</a> (BamAlignmentRecord &amp;record, uint8_t classType)</td></tr>
+<tr class="memdesc:a2e3fb2385a3d0e4d3b214d98bbf34248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the pair descriptor value to the respective file according to the class type.  <a href="#a2e3fb2385a3d0e4d3b214d98bbf34248">More...</a><br /></td></tr>
+<tr class="separator:a2e3fb2385a3d0e4d3b214d98bbf34248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4111b01499b3821831cd7142cdcc79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e4111b01499b3821831cd7142cdcc79"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>insertMmposValue</b> (uint16_t pos, uint8_t classType)</td></tr>
+<tr class="separator:a2e4111b01499b3821831cd7142cdcc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af204ff60c18d99de4e45453598dae332"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#af204ff60c18d99de4e45453598dae332">insertmmtypeDescriptor</a> (std::vector&lt; std::pair&lt; uint16_t, std::string &gt; &gt; &amp;mmpos, uint8_t classType)</td></tr>
+<tr class="memdesc:af204ff60c18d99de4e45453598dae332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mmtype descriptor value to the respective file according to the class type.  <a href="#af204ff60c18d99de4e45453598dae332">More...</a><br /></td></tr>
+<tr class="separator:af204ff60c18d99de4e45453598dae332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a4dba449ff5fb6df09487bee0d815da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a4dba449ff5fb6df09487bee0d815da"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>insertClipsDescriptor</b> (<a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;record, uint32_t id)</td></tr>
+<tr class="separator:a5a4dba449ff5fb6df09487bee0d815da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a261e820bc6f8c8d08aa52493d1a840a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a261e820bc6f8c8d08aa52493d1a840a5">writeMpeggToFile</a> (<a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;result)</td></tr>
 <tr class="memdesc:a261e820bc6f8c8d08aa52493d1a840a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mpegg record of the respective read to a file.  <a href="#a261e820bc6f8c8d08aa52493d1a840a5">More...</a><br /></td></tr>
 <tr class="separator:a261e820bc6f8c8d08aa52493d1a840a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0173ee2705241fbbd6b7f1928863256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#ad0173ee2705241fbbd6b7f1928863256">closeFiles</a> ()</td></tr>
 <tr class="memdesc:ad0173ee2705241fbbd6b7f1928863256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes all the created files.  <a href="#ad0173ee2705241fbbd6b7f1928863256">More...</a><br /></td></tr>
 <tr class="separator:ad0173ee2705241fbbd6b7f1928863256"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ad95a9648dfc3541578a150d76af55e63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad95a9648dfc3541578a150d76af55e63"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>mpeggRecordFile</b></td></tr>
-<tr class="separator:ad95a9648dfc3541578a150d76af55e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae522b8b9c1ba631fc5504fa7fa26437"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae522b8b9c1ba631fc5504fa7fa26437"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>posDescriptorClassP</b></td></tr>
-<tr class="separator:aae522b8b9c1ba631fc5504fa7fa26437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5c73753c5cc78dde3b191945e5955e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5c73753c5cc78dde3b191945e5955e3"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rcompDescriptorClassP</b></td></tr>
-<tr class="separator:ae5c73753c5cc78dde3b191945e5955e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cbace55656eca929e5d73118c5f7aaf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9cbace55656eca929e5d73118c5f7aaf"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>flagsDescriptorClassP</b></td></tr>
-<tr class="separator:a9cbace55656eca929e5d73118c5f7aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f7bd0e816434ede0bfb31d6851dc1be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f7bd0e816434ede0bfb31d6851dc1be"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescriptorClassP</b></td></tr>
-<tr class="separator:a7f7bd0e816434ede0bfb31d6851dc1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bb3eb7428c5964da397cb420aac5b59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bb3eb7428c5964da397cb420aac5b59"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>pairDescriptorClassP</b></td></tr>
-<tr class="separator:a0bb3eb7428c5964da397cb420aac5b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abed47e96ba80b492e05a3bf7e2b523e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abed47e96ba80b492e05a3bf7e2b523e2"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>posDescriptorClassN</b></td></tr>
-<tr class="separator:abed47e96ba80b492e05a3bf7e2b523e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f1eddd1f0f36c172a495bb3a02dca9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34f1eddd1f0f36c172a495bb3a02dca9"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rcompDescriptorClassN</b></td></tr>
-<tr class="separator:a34f1eddd1f0f36c172a495bb3a02dca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac544ab46ec7cb3102710f53b39f1c373"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac544ab46ec7cb3102710f53b39f1c373"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>flagsDescriptorClassN</b></td></tr>
-<tr class="separator:ac544ab46ec7cb3102710f53b39f1c373"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6d2fcc21a81a0095617b08666242a3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6d2fcc21a81a0095617b08666242a3b"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>mmposDescriptorClassN</b></td></tr>
-<tr class="separator:ae6d2fcc21a81a0095617b08666242a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa327bde55dc2d27c06cc0b61587a208"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa327bde55dc2d27c06cc0b61587a208"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescriptorClassN</b></td></tr>
-<tr class="separator:afa327bde55dc2d27c06cc0b61587a208"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44465b04f9de21f03914387d28444c31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44465b04f9de21f03914387d28444c31"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>pairDescriptorClassN</b></td></tr>
-<tr class="separator:a44465b04f9de21f03914387d28444c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dbec0f68274aeebfaaae24256f86f2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dbec0f68274aeebfaaae24256f86f2a"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>posDescriptorClassM</b></td></tr>
-<tr class="separator:a1dbec0f68274aeebfaaae24256f86f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb0bbd9c0216d2d26c4a17ea3c8146cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb0bbd9c0216d2d26c4a17ea3c8146cb"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rcompDescriptorClassM</b></td></tr>
-<tr class="separator:aeb0bbd9c0216d2d26c4a17ea3c8146cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0ba8387e2e89f4a9e199fd92f613614"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0ba8387e2e89f4a9e199fd92f613614"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>flagsDescriptorClassM</b></td></tr>
-<tr class="separator:af0ba8387e2e89f4a9e199fd92f613614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07dc68fd95669eee3701c4553d344596"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07dc68fd95669eee3701c4553d344596"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>mmposDescriptorClassM</b></td></tr>
-<tr class="separator:a07dc68fd95669eee3701c4553d344596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed8224ddcfb010614637e8a8e35da413"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed8224ddcfb010614637e8a8e35da413"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>mmtypeDescriptorClassM</b></td></tr>
-<tr class="separator:aed8224ddcfb010614637e8a8e35da413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa4e192e337fec0410c08042fc298ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefa4e192e337fec0410c08042fc298ff"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescriptorClassM</b></td></tr>
-<tr class="separator:aefa4e192e337fec0410c08042fc298ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e51ce9fcb6599ae9cbc6dd1512de469"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e51ce9fcb6599ae9cbc6dd1512de469"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>pairDescriptorClassM</b></td></tr>
-<tr class="separator:a7e51ce9fcb6599ae9cbc6dd1512de469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa828a40e06a2e722f0e3e57804b6feb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa828a40e06a2e722f0e3e57804b6feb1"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>posDescriptorClassI</b></td></tr>
-<tr class="separator:aa828a40e06a2e722f0e3e57804b6feb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d6e1e8ee48df2718581467dd2ff5367"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d6e1e8ee48df2718581467dd2ff5367"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rcompDescriptorClassI</b></td></tr>
-<tr class="separator:a7d6e1e8ee48df2718581467dd2ff5367"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9baafb96879834399e7c6cfb8f20501d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9baafb96879834399e7c6cfb8f20501d"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>flagsDescriptorClassI</b></td></tr>
-<tr class="separator:a9baafb96879834399e7c6cfb8f20501d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03c7404f03e589767b08c1e7932d7f9e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03c7404f03e589767b08c1e7932d7f9e"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>mmposDescriptorClassI</b></td></tr>
-<tr class="separator:a03c7404f03e589767b08c1e7932d7f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48c0003e8c48cf700d4e624f2e316eeb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48c0003e8c48cf700d4e624f2e316eeb"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>mmtypeDescriptorClassI</b></td></tr>
-<tr class="separator:a48c0003e8c48cf700d4e624f2e316eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af84ef42e8469bc639d03d86b615d1310"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af84ef42e8469bc639d03d86b615d1310"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>clipsDescriptorClassI</b></td></tr>
-<tr class="separator:af84ef42e8469bc639d03d86b615d1310"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1c0769f7859d6d0367a3cb5702fabcb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1c0769f7859d6d0367a3cb5702fabcb"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescriptorClassI</b></td></tr>
-<tr class="separator:ad1c0769f7859d6d0367a3cb5702fabcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96d07ac911f5042814b61f9b3229642d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96d07ac911f5042814b61f9b3229642d"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>pairDescriptorClassI</b></td></tr>
-<tr class="separator:a96d07ac911f5042814b61f9b3229642d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7646dbd72d0d18d2400fa59eb0e5bfa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7646dbd72d0d18d2400fa59eb0e5bfa"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>posDescriptorClassHM</b></td></tr>
-<tr class="separator:ad7646dbd72d0d18d2400fa59eb0e5bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae42a395f11d41d96c54cd6fa3fbb14df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae42a395f11d41d96c54cd6fa3fbb14df"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rcompDescriptorClassHM</b></td></tr>
-<tr class="separator:ae42a395f11d41d96c54cd6fa3fbb14df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed4c66fb024bd6b71bbb710ad8776085"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed4c66fb024bd6b71bbb710ad8776085"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>flagsDescriptorClassHM</b></td></tr>
-<tr class="separator:aed4c66fb024bd6b71bbb710ad8776085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3a9bf5fca8a6797f481bf458378f29c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3a9bf5fca8a6797f481bf458378f29c"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescriptorClassHM</b></td></tr>
-<tr class="separator:aa3a9bf5fca8a6797f481bf458378f29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31803f00b6d248d0281c0e861d52fee7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31803f00b6d248d0281c0e861d52fee7"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>pairDescriptorClassHM</b></td></tr>
-<tr class="separator:a31803f00b6d248d0281c0e861d52fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a906055054a2191265793a92fcc8f9a38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a906055054a2191265793a92fcc8f9a38"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescriptorClassU</b></td></tr>
-<tr class="separator:a906055054a2191265793a92fcc8f9a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to be used to create and write files that contain the output Mpegg format and all the associated descriptors. </p>
@@ -252,6 +144,9 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
 <a class="anchor" id="a343a21742b8d4da805b11a5ed41f4b17"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">FileManager::FileManager </td>
@@ -261,6 +156,11 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructor method. </p>
@@ -323,20 +223,20 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
 
 </div>
 </div>
-<a class="anchor" id="a3ab1aebcb58f268bdb03fd98dd3202da"></a>
+<a class="anchor" id="a749517da172c0374f668121a090e1046"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void FileManager::insertFlagsValue </td>
+          <td class="memname">uint8_t FileManager::insertFlagsValue </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
+          <td class="paramname"><em>record</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>classType</em>&#160;</td>
         </tr>
         <tr>
@@ -355,60 +255,24 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Flags descriptor value of the read </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6ce4167c88dffc1321a110adcf195cfe"></a>
+<a class="anchor" id="af204ff60c18d99de4e45453598dae332"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void FileManager::insertMmposValue </td>
+          <td class="memname">std::vector&lt; uint8_t &gt; FileManager::insertmmtypeDescriptor </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; uint16_t, std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mmpos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>classType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Writes the mmpos descriptor value to the respective file according to the class type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>value of the mmpos descriptor </td></tr>
-    <tr><td class="paramname">classType</td><td>class type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a41c3937aa2e60ac323cd70444a24bf7a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void FileManager::insertMmtypeValue </td>
-          <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>classType</em>&#160;</td>
         </tr>
         <tr>
@@ -431,7 +295,43 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
 
 </div>
 </div>
-<a class="anchor" id="aec62a3da1d11d7d832b294b4fb70b0cc"></a>
+<a class="anchor" id="a2e3fb2385a3d0e4d3b214d98bbf34248"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FileManager::insertPairValue </td>
+          <td>(</td>
+          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
+          <td class="paramname"><em>record</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>classType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the pair descriptor value to the respective file according to the class type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>value of the rlen descriptor </td></tr>
+    <tr><td class="paramname">classType</td><td>class type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Rlen descriptor value of the read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae4e12983c4d731b8efd5a475b9704572"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -444,7 +344,7 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>classType</em>&#160;</td>
         </tr>
         <tr>
@@ -467,20 +367,20 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
 
 </div>
 </div>
-<a class="anchor" id="a6dd7d533d9aae0c19077be7828d20260"></a>
+<a class="anchor" id="af6894cae33f3cdde6206a67f260ab3f1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void FileManager::insertRcompValue </td>
+          <td class="memname">uint8_t FileManager::insertRcompValue </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
+          <td class="paramname"><em>record</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>classType</em>&#160;</td>
         </tr>
         <tr>
@@ -491,7 +391,7 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
       </table>
 </div><div class="memdoc">
 
-<p>Writes the rcomp descriptor value to the respective file according to the class type. </p>
+<p>calculates and writes the rcomp descriptor value of the read to the respective file according to the class type </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>value of the rcomp descriptor </td></tr>
@@ -499,23 +399,24 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Rcomp descriptor value of the read </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a16890f19ed236ad5f76fe817e37d63fb"></a>
+<a class="anchor" id="a72a9c467af917d1f9ad0d066d1058104"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void FileManager::insertRlenValue </td>
+          <td class="memname">uint8_t FileManager::insertRlenValue </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
+          <td class="paramname"><em>record</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>classType</em>&#160;</td>
         </tr>
         <tr>
@@ -534,7 +435,7 @@ std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>rlenDescript
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Rlen descriptor value of the read </dd></dl>
 
 </div>
 </div>

@@ -5,26 +5,6 @@
 Auxiliary class that contains useful methods from the main class.  
 
 
-
-
-Inheritance diagram for Utils\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=150pt]{classUtils__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for Utils\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=150pt]{classUtils__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,8 +12,6 @@ Collaboration diagram for Utils\+:
 \begin{DoxyCompactList}\small\item\em identifier of the genomic record in the output mpegg format \end{DoxyCompactList}\item 
 \hyperlink{classUtils_afa5e70facffc286607498e7edb639b8a}{$\sim$\+Utils} ()
 \begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
-std\+::string \hyperlink{classUtils_a61182e6d5c700eedfaff392b51826af3}{get\+Cigar} (String$<$ Cigar\+Element$<$$>$ $>$ \&r\+Cigar)
-\begin{DoxyCompactList}\small\item\em Convert from a string$<$cigar\+Element$>$ to a std\+::string. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classUtils_a612bb61872bc69a806c0159dcd3da28c}{get\+Extended\+Cigar} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em Gets the extended cigar of the read. \end{DoxyCompactList}\item 
 Bam\+Alignment\+Record \hyperlink{classUtils_acba7464c0972dceade69f1f1aef4e5f4}{get\+Second\+Record} (Bam\+Alignment\+Record \&record)
@@ -54,37 +32,14 @@ bool \hyperlink{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}{is\+ClassU} (Bam\+
 \begin{DoxyCompactList}\small\item\em To determine if the read belongs to class U, unmapped reads only. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{classUtils_a75b0e41bc884a3fcebb4f55c45855d82}{get\+Class\+Type} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em To determine the data class where a read belongs to. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{classUtils_a2021002b739a022e914533b6b95145fe}{get\+Rcomp\+Descriptor} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Gets the rcomp descriptor for the read. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{classUtils_a6f019bd3209c61dc69a44aabf96224ff}{get\+Flag\+Descriptor} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Gets the flags descriptor for the read. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \hyperlink{classUtils_a3a85c76bffd7906456485f1b0d3826cb}{getmmpos\+Descriptor} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Gets the mmpos descriptor for the read. \end{DoxyCompactList}\item 
-std\+::vector$<$ uint8\+\_\+t $>$ \hyperlink{classUtils_ac5c58f81f7c60bbd9e557105abf43c34}{getmmtype\+Descriptor} (std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&mmpos)
-\begin{DoxyCompactList}\small\item\em Gets the mmtype descriptor for the read using alphabet 0. \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{classUtils_a208c512bbb56f81188acb4ed443356fa}{get\+Rlen\+Descriptor} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Gets the rlen descriptor for the read. \end{DoxyCompactList}\item 
-std\+::string \hyperlink{classUtils_a3aa3cca3eb2b97a1caf03981dbe202b6}{insert\+Pair\+Descriptor} (Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)
-\begin{DoxyCompactList}\small\item\em Gets the pair descriptor for the read. \end{DoxyCompactList}\item 
-uint16\+\_\+t {\bfseries reads\+\_\+distance} (Bam\+Alignment\+Record \&record)\hypertarget{classUtils_a02d521d4d7cecbe20acab176d08b7857}{}\label{classUtils_a02d521d4d7cecbe20acab176d08b7857}
-
-\item 
 int \hyperlink{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}{get\+N\+Mtag} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em Extracts the value of the NM tag from the read. \end{DoxyCompactList}\item 
-std\+::string \hyperlink{classUtils_a58dcdc1dd071936078799ee35d5f2502}{get\+M\+Dtag} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Extracts the value of the MD tag from the read. \end{DoxyCompactList}\item 
 void \hyperlink{classUtils_a5a62399a8bb675cc0d41846a2e38cfc5}{convert\+To\+Mpegg\+Record} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&result, Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em Converts the read or paired read to the mpegg output format. \end{DoxyCompactList}\item 
-std\+::string \hyperlink{classUtils_aaaa7f96ad4509fde05d3e6cc520f698a}{to\+Little\+Endian\+\_\+hex} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Convert a hexadecimal value stored in a string to little endian. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \hyperlink{classUtils_ad8cf76e464dc733abda80738709740e5}{get\+Mmpos\+Value} (Bam\+Alignment\+Record \&record)
+\begin{DoxyCompactList}\small\item\em Writes the mmpos descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classUtils_acbd0c6160115aea411d926e4c66fdb2d}{int32\+\_\+to\+\_\+hex} (int32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em A simple function that converts a value from a int to a hex. \end{DoxyCompactList}\item 
-std\+::string {\bfseries int16\+\_\+to\+\_\+hex} (int16\+\_\+t value)\hypertarget{classUtils_a1b2c28fa49f1048d6af6f8b768490df6}{}\label{classUtils_a1b2c28fa49f1048d6af6f8b768490df6}
-
-\item 
-std\+::vector$<$ std\+::string $>$ {\bfseries get\+Clips\+Descriptor} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&record)\hypertarget{classUtils_aadc2dff4d8e3b3fca88c584b95481015}{}\label{classUtils_aadc2dff4d8e3b3fca88c584b95481015}
-
-\item 
 void \hyperlink{classUtils_abddd37adce88799fc8a66f7779c407bb}{remove\+First\+Read} ()
 \begin{DoxyCompactList}\small\item\em Removes the first read from the list of paired reads. \end{DoxyCompactList}\item 
 void \hyperlink{classUtils_a23ce2e6de05c4574f2296353f03fc9db}{get\+Allreads} (std\+::multimap$<$ int, std\+::pair$<$ Bam\+Alignment\+Record, Bam\+Alignment\+Record $>$ $>$ \&all\+Reads)
@@ -98,7 +53,17 @@ void \hyperlink{classUtils_aa2bffe3dfec78617ebdf207ff0fa0820}{insert\+Read} (Bam
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+static std\+::string \hyperlink{classUtils_a61182e6d5c700eedfaff392b51826af3}{get\+Cigar} (String$<$ Cigar\+Element$<$$>$ $>$ \&r\+Cigar)
+\begin{DoxyCompactList}\small\item\em Convert from a string$<$cigar\+Element$>$ to a std\+::string. \end{DoxyCompactList}\item 
+static uint16\+\_\+t {\bfseries reads\+\_\+distance} (Bam\+Alignment\+Record \&record)\hypertarget{classUtils_a02d521d4d7cecbe20acab176d08b7857}{}\label{classUtils_a02d521d4d7cecbe20acab176d08b7857}
+
+\item 
+static std\+::string \hyperlink{classUtils_a58dcdc1dd071936078799ee35d5f2502}{get\+M\+Dtag} (Bam\+Alignment\+Record \&record)
+\begin{DoxyCompactList}\small\item\em Extracts the value of the MD tag from the read. \end{DoxyCompactList}\item 
 static uint64\+\_\+t {\bfseries hex\+\_\+to\+\_\+int} (std\+::string value)\hypertarget{classUtils_aaccbd9f6e04b06c6c95617ec36709f96}{}\label{classUtils_aaccbd9f6e04b06c6c95617ec36709f96}
+
+\item 
+static std\+::string {\bfseries int16\+\_\+to\+\_\+hex} (int16\+\_\+t value)\hypertarget{classUtils_a1b2c28fa49f1048d6af6f8b768490df6}{}\label{classUtils_a1b2c28fa49f1048d6af6f8b768490df6}
 
 \end{DoxyCompactItemize}
 
@@ -220,7 +185,7 @@ void
 \begin{DoxyParamCaption}
 \item[{String$<$ Cigar\+Element$<$$>$ $>$ \&}]{r\+Cigar}
 \end{DoxyParamCaption}
-)}\hypertarget{classUtils_a61182e6d5c700eedfaff392b51826af3}{}\label{classUtils_a61182e6d5c700eedfaff392b51826af3}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classUtils_a61182e6d5c700eedfaff392b51826af3}{}\label{classUtils_a61182e6d5c700eedfaff392b51826af3}
 
 
 Convert from a string$<$cigar\+Element$>$ to a std\+::string. 
@@ -271,32 +236,13 @@ Gets the extended cigar of the read.
 \begin{DoxyReturn}{Returns}
 Extended cigar of the read 
 \end{DoxyReturn}
-\index{Utils@{Utils}!get\+Flag\+Descriptor@{get\+Flag\+Descriptor}}
-\index{get\+Flag\+Descriptor@{get\+Flag\+Descriptor}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Flag\+Descriptor(\+Bam\+Alignment\+Record \&record)}{getFlagDescriptor(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Utils\+::get\+Flag\+Descriptor (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a6f019bd3209c61dc69a44aabf96224ff}{}\label{classUtils_a6f019bd3209c61dc69a44aabf96224ff}
-
-
-Gets the flags descriptor for the read. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & is the first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-value of the flags descriptor of the read 
-\end{DoxyReturn}
 \index{Utils@{Utils}!get\+M\+Dtag@{get\+M\+Dtag}}
 \index{get\+M\+Dtag@{get\+M\+Dtag}!Utils@{Utils}}
 \subsubsection[{\texorpdfstring{get\+M\+Dtag(\+Bam\+Alignment\+Record \&record)}{getMDtag(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::get\+M\+Dtag (
 \begin{DoxyParamCaption}
 \item[{Bam\+Alignment\+Record \&}]{record}
 \end{DoxyParamCaption}
-)}\hypertarget{classUtils_a58dcdc1dd071936078799ee35d5f2502}{}\label{classUtils_a58dcdc1dd071936078799ee35d5f2502}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classUtils_a58dcdc1dd071936078799ee35d5f2502}{}\label{classUtils_a58dcdc1dd071936078799ee35d5f2502}
 
 
 Extracts the value of the MD tag from the read. 
@@ -309,43 +255,26 @@ Extracts the value of the MD tag from the read.
 \begin{DoxyReturn}{Returns}
 string containing the value of the MD tag 
 \end{DoxyReturn}
-\index{Utils@{Utils}!getmmpos\+Descriptor@{getmmpos\+Descriptor}}
-\index{getmmpos\+Descriptor@{getmmpos\+Descriptor}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{getmmpos\+Descriptor(\+Bam\+Alignment\+Record \&record)}{getmmposDescriptor(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ Utils\+::getmmpos\+Descriptor (
+\index{Utils@{Utils}!get\+Mmpos\+Value@{get\+Mmpos\+Value}}
+\index{get\+Mmpos\+Value@{get\+Mmpos\+Value}!Utils@{Utils}}
+\subsubsection[{\texorpdfstring{get\+Mmpos\+Value(\+Bam\+Alignment\+Record \&record)}{getMmposValue(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ Utils\+::get\+Mmpos\+Value (
 \begin{DoxyParamCaption}
 \item[{Bam\+Alignment\+Record \&}]{record}
 \end{DoxyParamCaption}
-)}\hypertarget{classUtils_a3a85c76bffd7906456485f1b0d3826cb}{}\label{classUtils_a3a85c76bffd7906456485f1b0d3826cb}
+)}\hypertarget{classUtils_ad8cf76e464dc733abda80738709740e5}{}\label{classUtils_ad8cf76e464dc733abda80738709740e5}
 
 
-Gets the mmpos descriptor for the read. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & is the first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-vector with all the mismatches of the read with the reference sequence 
-\end{DoxyReturn}
-\index{Utils@{Utils}!getmmtype\+Descriptor@{getmmtype\+Descriptor}}
-\index{getmmtype\+Descriptor@{getmmtype\+Descriptor}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{getmmtype\+Descriptor(std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&mmpos)}{getmmtypeDescriptor(std::vector< std::pair< uint16_t, std::string > > &mmpos)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ uint8\+\_\+t $>$ Utils\+::getmmtype\+Descriptor (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&}]{mmpos}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_ac5c58f81f7c60bbd9e557105abf43c34}{}\label{classUtils_ac5c58f81f7c60bbd9e557105abf43c34}
-
-
-Gets the mmtype descriptor for the read using alphabet 0. 
+Writes the mmpos descriptor value to the respective file according to the class type. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em mmpos} & contains all the mismatches of the read \\
+{\em value} & value of the mmpos descriptor \\
+\hline
+{\em class\+Type} & class type \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-vector containing the type of mismatches 
+void 
 \end{DoxyReturn}
 \index{Utils@{Utils}!get\+N\+Mtag@{get\+N\+Mtag}}
 \index{get\+N\+Mtag@{get\+N\+Mtag}!Utils@{Utils}}
@@ -365,44 +294,6 @@ Extracts the value of the NM tag from the read.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 integer containing the value of the NM tag 
-\end{DoxyReturn}
-\index{Utils@{Utils}!get\+Rcomp\+Descriptor@{get\+Rcomp\+Descriptor}}
-\index{get\+Rcomp\+Descriptor@{get\+Rcomp\+Descriptor}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Rcomp\+Descriptor(\+Bam\+Alignment\+Record \&record)}{getRcompDescriptor(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Utils\+::get\+Rcomp\+Descriptor (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a2021002b739a022e914533b6b95145fe}{}\label{classUtils_a2021002b739a022e914533b6b95145fe}
-
-
-Gets the rcomp descriptor for the read. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-value of the rcomp descriptor of the read 
-\end{DoxyReturn}
-\index{Utils@{Utils}!get\+Rlen\+Descriptor@{get\+Rlen\+Descriptor}}
-\index{get\+Rlen\+Descriptor@{get\+Rlen\+Descriptor}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Rlen\+Descriptor(\+Bam\+Alignment\+Record \&record)}{getRlenDescriptor(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Utils\+::get\+Rlen\+Descriptor (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a208c512bbb56f81188acb4ed443356fa}{}\label{classUtils_a208c512bbb56f81188acb4ed443356fa}
-
-
-Gets the rlen descriptor for the read. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-value of the rlen descriptor of the read 
 \end{DoxyReturn}
 \index{Utils@{Utils}!get\+Second\+Record@{get\+Second\+Record}}
 \index{get\+Second\+Record@{get\+Second\+Record}!Utils@{Utils}}
@@ -441,26 +332,6 @@ Inserts a new access unit to the list of access units.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 void 
-\end{DoxyReturn}
-\index{Utils@{Utils}!insert\+Pair\+Descriptor@{insert\+Pair\+Descriptor}}
-\index{insert\+Pair\+Descriptor@{insert\+Pair\+Descriptor}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{insert\+Pair\+Descriptor(\+Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)}{insertPairDescriptor(BamAlignmentRecord &record, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::insert\+Pair\+Descriptor (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record, }
-\item[{uint8\+\_\+t}]{class\+Type}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a3aa3cca3eb2b97a1caf03981dbe202b6}{}\label{classUtils_a3aa3cca3eb2b97a1caf03981dbe202b6}
-
-
-Gets the pair descriptor for the read. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-value of the pair descriptor of the read 
 \end{DoxyReturn}
 \index{Utils@{Utils}!insert\+Read@{insert\+Read}}
 \index{insert\+Read@{insert\+Read}!Utils@{Utils}}
@@ -635,25 +506,6 @@ Removes the first read from the list of paired reads.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 void 
-\end{DoxyReturn}
-\index{Utils@{Utils}!to\+Little\+Endian\+\_\+hex@{to\+Little\+Endian\+\_\+hex}}
-\index{to\+Little\+Endian\+\_\+hex@{to\+Little\+Endian\+\_\+hex}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{to\+Little\+Endian\+\_\+hex(std\+::string value)}{toLittleEndian_hex(std::string value)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::to\+Little\+Endian\+\_\+hex (
-\begin{DoxyParamCaption}
-\item[{std\+::string}]{value}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_aaaa7f96ad4509fde05d3e6cc520f698a}{}\label{classUtils_aaaa7f96ad4509fde05d3e6cc520f698a}
-
-
-Convert a hexadecimal value stored in a string to little endian. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em value} & hexadecimal value \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-value but in little endian 
 \end{DoxyReturn}
 \index{Utils@{Utils}!update\+Record@{update\+Record}}
 \index{update\+Record@{update\+Record}!Utils@{Utils}}

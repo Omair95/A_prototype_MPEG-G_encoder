@@ -13,31 +13,91 @@
   <component name="ChangeListManager">
     <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immpos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immtype" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immtype" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipair" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ircomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ircomp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.irlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.irlen" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mflags" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmpos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmtype" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmtype" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpair" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnitBlock_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/AccessUnit_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/MpeggRecord_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__dep__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__dep__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__dep__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__dep__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Utils_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Utils_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classFileManager-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classFileManager-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classFileManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classFileManager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classUtils-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classUtils-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classUtils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions_func.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions_func.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/globals.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/globals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/globals_vars.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/globals_vars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/hierarchy.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/hierarchy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherit_graph_2.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherit_graph_2.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherit_graph_2.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherit_graph_2.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherit_graph_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherit_graph_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/inherits.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/inherits.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp__incl.map" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp__incl.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp__incl.png" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp__incl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_d.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_d.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_e.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_e.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_f.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_f.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_8.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_9.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_9.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/searchdata.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/searchdata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/variables_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/variables_0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnitBlock_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/AccessUnit_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/FileManager_8h__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/FileManager_8h__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/MpeggRecord_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/MpeggRecord_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/MpeggRecord_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__dep__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/Utils_8h__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/Utils_8h__incl.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classFileManager.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classFileManager.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classUtils.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classUtils.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/hierarchy.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/hierarchy.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/main_8cpp.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/main_8cpp.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/main_8cpp__incl.md5" beforeDir="false" afterPath="$PROJECT_DIR$/latex/main_8cpp__incl.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/main_8cpp__incl.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/latex/main_8cpp__incl.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -54,23 +114,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="383" selection-start-line="383" selection-end-line="383" />
+            <state relative-caret-position="5400">
+              <caret line="360" column="20" selection-start-line="360" selection-start-column="20" selection-end-line="360" selection-end-column="20" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Utils.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -79,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getmm</find>
       <find>insertpairva</find>
       <find>hex_to</find>
       <find>hex_to_</find>
@@ -106,9 +156,10 @@
       <find>read2_cigar</find>
       <find>std::cout</find>
       <find>insertcli</find>
-      <find>getextended</find>
       <find>HS25_09827:2:1209:9304:17097#4</find>
       <find>HS25_09827:2:2109:17221:31733#49</find>
+      <find>HS25_09827:2:1209:9304:17097#49</find>
+      <find>getextended</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,8 +192,8 @@
         <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/FileManager.h" />
         <option value="$PROJECT_DIR$/FileManager.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Utils.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -166,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,11 +232,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
   </component>
   <component name="RunDashboard">
@@ -334,12 +385,17 @@
       <workItem from="1525167159088" duration="25000" />
       <workItem from="1525167235828" duration="13000" />
       <workItem from="1525167302821" duration="3209000" />
-      <workItem from="1525174927344" duration="17699000" />
+      <workItem from="1525174927344" duration="17777000" />
+      <workItem from="1525260309133" duration="2465000" />
+      <workItem from="1525263883773" duration="4567000" />
+      <workItem from="1525273252885" duration="136000" />
+      <workItem from="1525277773552" duration="1774000" />
+      <workItem from="1525281918824" duration="2041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="375421000" />
+    <option name="totallyTimeSpent" value="386482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
@@ -349,12 +405,12 @@
       <window_info anchor="bottom" id="Messages" order="7" weight="0.50955415" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.30254778" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5063694" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5063694" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289256" />
-      <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.13689604" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6576433" />
+      <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.13689604" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -378,16 +434,11 @@
           <line>455</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Utils.cpp</url>
-          <line>79</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="123" />
+      <option name="time" value="124" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -728,9 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="131" column="83" selection-start-line="131" selection-start-column="83" selection-end-line="131" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,20 +789,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/Utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="383" selection-start-line="383" selection-end-line="383" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1771">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        <state relative-caret-position="5400">
+          <caret line="360" column="20" selection-start-line="360" selection-start-column="20" selection-end-line="360" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

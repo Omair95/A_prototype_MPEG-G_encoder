@@ -9,16 +9,6 @@ Class to be used to create and write files that contain the output Mpegg format 
 
 {\ttfamily \#include $<$File\+Manager.\+h$>$}
 
-
-
-Inheritance diagram for File\+Manager\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=150pt]{classFileManager__inherit__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,127 +16,28 @@ Inheritance diagram for File\+Manager\+:
 \begin{DoxyCompactList}\small\item\em Constructor method. \end{DoxyCompactList}\item 
 \hyperlink{classFileManager_abaed33b5b0c13b8a597db9335a1aacfa}{$\sim$\+File\+Manager} ()
 \begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
-void \hyperlink{classFileManager_aec62a3da1d11d7d832b294b4fb70b0cc}{insert\+Pos\+Value} (uint32\+\_\+t value, int class\+Type)
+void \hyperlink{classFileManager_ae4e12983c4d731b8efd5a475b9704572}{insert\+Pos\+Value} (uint32\+\_\+t value, uint8\+\_\+t class\+Type)
 \begin{DoxyCompactList}\small\item\em Writes the pos descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
-void \hyperlink{classFileManager_a6dd7d533d9aae0c19077be7828d20260}{insert\+Rcomp\+Value} (uint8\+\_\+t value, int class\+Type)
-\begin{DoxyCompactList}\small\item\em Writes the rcomp descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
-void \hyperlink{classFileManager_a3ab1aebcb58f268bdb03fd98dd3202da}{insert\+Flags\+Value} (uint8\+\_\+t value, int class\+Type)
+uint8\+\_\+t \hyperlink{classFileManager_af6894cae33f3cdde6206a67f260ab3f1}{insert\+Rcomp\+Value} (Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)
+\begin{DoxyCompactList}\small\item\em calculates and writes the rcomp descriptor value of the read to the respective file according to the class type \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classFileManager_a749517da172c0374f668121a090e1046}{insert\+Flags\+Value} (Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)
 \begin{DoxyCompactList}\small\item\em Writes the flags descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
-void \hyperlink{classFileManager_a6ce4167c88dffc1321a110adcf195cfe}{insert\+Mmpos\+Value} (uint16\+\_\+t value, int class\+Type)
-\begin{DoxyCompactList}\small\item\em Writes the mmpos descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
-void \hyperlink{classFileManager_a41c3937aa2e60ac323cd70444a24bf7a}{insert\+Mmtype\+Value} (uint8\+\_\+t value, int class\+Type)
-\begin{DoxyCompactList}\small\item\em Writes the mmtype descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
-void {\bfseries insert\+Clips\+Value} (uint32\+\_\+t id, uint8\+\_\+t pos, std\+::string bases, uint8\+\_\+t terminator, uint8\+\_\+t final\+\_\+terminator)\hypertarget{classFileManager_ab4a33b4b3142769792c8d557002b01eb}{}\label{classFileManager_ab4a33b4b3142769792c8d557002b01eb}
+uint8\+\_\+t \hyperlink{classFileManager_a72a9c467af917d1f9ad0d066d1058104}{insert\+Rlen\+Value} (Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the rlen descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classFileManager_a2e3fb2385a3d0e4d3b214d98bbf34248}{insert\+Pair\+Value} (Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the pair descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+void {\bfseries insert\+Mmpos\+Value} (uint16\+\_\+t pos, uint8\+\_\+t class\+Type)\hypertarget{classFileManager_a2e4111b01499b3821831cd7142cdcc79}{}\label{classFileManager_a2e4111b01499b3821831cd7142cdcc79}
 
 \item 
-void \hyperlink{classFileManager_a16890f19ed236ad5f76fe817e37d63fb}{insert\+Rlen\+Value} (uint8\+\_\+t value, int class\+Type)
-\begin{DoxyCompactList}\small\item\em Writes the rlen descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \hyperlink{classFileManager_af204ff60c18d99de4e45453598dae332}{insertmmtype\+Descriptor} (std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&mmpos, uint8\+\_\+t class\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the mmtype descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries insert\+Clips\+Descriptor} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&record, uint32\+\_\+t id)\hypertarget{classFileManager_a5a4dba449ff5fb6df09487bee0d815da}{}\label{classFileManager_a5a4dba449ff5fb6df09487bee0d815da}
+
+\item 
 void \hyperlink{classFileManager_a261e820bc6f8c8d08aa52493d1a840a5}{write\+Mpegg\+To\+File} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&result)
 \begin{DoxyCompactList}\small\item\em Writes the mpegg record of the respective read to a file. \end{DoxyCompactList}\item 
 void \hyperlink{classFileManager_ad0173ee2705241fbbd6b7f1928863256}{close\+Files} ()
 \begin{DoxyCompactList}\small\item\em Closes all the created files. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::ofstream {\bfseries mpegg\+Record\+File}\hypertarget{classFileManager_ad95a9648dfc3541578a150d76af55e63}{}\label{classFileManager_ad95a9648dfc3541578a150d76af55e63}
-
-\item 
-std\+::ofstream {\bfseries pos\+Descriptor\+ClassP}\hypertarget{classFileManager_aae522b8b9c1ba631fc5504fa7fa26437}{}\label{classFileManager_aae522b8b9c1ba631fc5504fa7fa26437}
-
-\item 
-std\+::ofstream {\bfseries rcomp\+Descriptor\+ClassP}\hypertarget{classFileManager_ae5c73753c5cc78dde3b191945e5955e3}{}\label{classFileManager_ae5c73753c5cc78dde3b191945e5955e3}
-
-\item 
-std\+::ofstream {\bfseries flags\+Descriptor\+ClassP}\hypertarget{classFileManager_a9cbace55656eca929e5d73118c5f7aaf}{}\label{classFileManager_a9cbace55656eca929e5d73118c5f7aaf}
-
-\item 
-std\+::ofstream {\bfseries rlen\+Descriptor\+ClassP}\hypertarget{classFileManager_a7f7bd0e816434ede0bfb31d6851dc1be}{}\label{classFileManager_a7f7bd0e816434ede0bfb31d6851dc1be}
-
-\item 
-std\+::ofstream {\bfseries pair\+Descriptor\+ClassP}\hypertarget{classFileManager_a0bb3eb7428c5964da397cb420aac5b59}{}\label{classFileManager_a0bb3eb7428c5964da397cb420aac5b59}
-
-\item 
-std\+::ofstream {\bfseries pos\+Descriptor\+ClassN}\hypertarget{classFileManager_abed47e96ba80b492e05a3bf7e2b523e2}{}\label{classFileManager_abed47e96ba80b492e05a3bf7e2b523e2}
-
-\item 
-std\+::ofstream {\bfseries rcomp\+Descriptor\+ClassN}\hypertarget{classFileManager_a34f1eddd1f0f36c172a495bb3a02dca9}{}\label{classFileManager_a34f1eddd1f0f36c172a495bb3a02dca9}
-
-\item 
-std\+::ofstream {\bfseries flags\+Descriptor\+ClassN}\hypertarget{classFileManager_ac544ab46ec7cb3102710f53b39f1c373}{}\label{classFileManager_ac544ab46ec7cb3102710f53b39f1c373}
-
-\item 
-std\+::ofstream {\bfseries mmpos\+Descriptor\+ClassN}\hypertarget{classFileManager_ae6d2fcc21a81a0095617b08666242a3b}{}\label{classFileManager_ae6d2fcc21a81a0095617b08666242a3b}
-
-\item 
-std\+::ofstream {\bfseries rlen\+Descriptor\+ClassN}\hypertarget{classFileManager_afa327bde55dc2d27c06cc0b61587a208}{}\label{classFileManager_afa327bde55dc2d27c06cc0b61587a208}
-
-\item 
-std\+::ofstream {\bfseries pair\+Descriptor\+ClassN}\hypertarget{classFileManager_a44465b04f9de21f03914387d28444c31}{}\label{classFileManager_a44465b04f9de21f03914387d28444c31}
-
-\item 
-std\+::ofstream {\bfseries pos\+Descriptor\+ClassM}\hypertarget{classFileManager_a1dbec0f68274aeebfaaae24256f86f2a}{}\label{classFileManager_a1dbec0f68274aeebfaaae24256f86f2a}
-
-\item 
-std\+::ofstream {\bfseries rcomp\+Descriptor\+ClassM}\hypertarget{classFileManager_aeb0bbd9c0216d2d26c4a17ea3c8146cb}{}\label{classFileManager_aeb0bbd9c0216d2d26c4a17ea3c8146cb}
-
-\item 
-std\+::ofstream {\bfseries flags\+Descriptor\+ClassM}\hypertarget{classFileManager_af0ba8387e2e89f4a9e199fd92f613614}{}\label{classFileManager_af0ba8387e2e89f4a9e199fd92f613614}
-
-\item 
-std\+::ofstream {\bfseries mmpos\+Descriptor\+ClassM}\hypertarget{classFileManager_a07dc68fd95669eee3701c4553d344596}{}\label{classFileManager_a07dc68fd95669eee3701c4553d344596}
-
-\item 
-std\+::ofstream {\bfseries mmtype\+Descriptor\+ClassM}\hypertarget{classFileManager_aed8224ddcfb010614637e8a8e35da413}{}\label{classFileManager_aed8224ddcfb010614637e8a8e35da413}
-
-\item 
-std\+::ofstream {\bfseries rlen\+Descriptor\+ClassM}\hypertarget{classFileManager_aefa4e192e337fec0410c08042fc298ff}{}\label{classFileManager_aefa4e192e337fec0410c08042fc298ff}
-
-\item 
-std\+::ofstream {\bfseries pair\+Descriptor\+ClassM}\hypertarget{classFileManager_a7e51ce9fcb6599ae9cbc6dd1512de469}{}\label{classFileManager_a7e51ce9fcb6599ae9cbc6dd1512de469}
-
-\item 
-std\+::ofstream {\bfseries pos\+Descriptor\+ClassI}\hypertarget{classFileManager_aa828a40e06a2e722f0e3e57804b6feb1}{}\label{classFileManager_aa828a40e06a2e722f0e3e57804b6feb1}
-
-\item 
-std\+::ofstream {\bfseries rcomp\+Descriptor\+ClassI}\hypertarget{classFileManager_a7d6e1e8ee48df2718581467dd2ff5367}{}\label{classFileManager_a7d6e1e8ee48df2718581467dd2ff5367}
-
-\item 
-std\+::ofstream {\bfseries flags\+Descriptor\+ClassI}\hypertarget{classFileManager_a9baafb96879834399e7c6cfb8f20501d}{}\label{classFileManager_a9baafb96879834399e7c6cfb8f20501d}
-
-\item 
-std\+::ofstream {\bfseries mmpos\+Descriptor\+ClassI}\hypertarget{classFileManager_a03c7404f03e589767b08c1e7932d7f9e}{}\label{classFileManager_a03c7404f03e589767b08c1e7932d7f9e}
-
-\item 
-std\+::ofstream {\bfseries mmtype\+Descriptor\+ClassI}\hypertarget{classFileManager_a48c0003e8c48cf700d4e624f2e316eeb}{}\label{classFileManager_a48c0003e8c48cf700d4e624f2e316eeb}
-
-\item 
-std\+::ofstream {\bfseries clips\+Descriptor\+ClassI}\hypertarget{classFileManager_af84ef42e8469bc639d03d86b615d1310}{}\label{classFileManager_af84ef42e8469bc639d03d86b615d1310}
-
-\item 
-std\+::ofstream {\bfseries rlen\+Descriptor\+ClassI}\hypertarget{classFileManager_ad1c0769f7859d6d0367a3cb5702fabcb}{}\label{classFileManager_ad1c0769f7859d6d0367a3cb5702fabcb}
-
-\item 
-std\+::ofstream {\bfseries pair\+Descriptor\+ClassI}\hypertarget{classFileManager_a96d07ac911f5042814b61f9b3229642d}{}\label{classFileManager_a96d07ac911f5042814b61f9b3229642d}
-
-\item 
-std\+::ofstream {\bfseries pos\+Descriptor\+Class\+HM}\hypertarget{classFileManager_ad7646dbd72d0d18d2400fa59eb0e5bfa}{}\label{classFileManager_ad7646dbd72d0d18d2400fa59eb0e5bfa}
-
-\item 
-std\+::ofstream {\bfseries rcomp\+Descriptor\+Class\+HM}\hypertarget{classFileManager_ae42a395f11d41d96c54cd6fa3fbb14df}{}\label{classFileManager_ae42a395f11d41d96c54cd6fa3fbb14df}
-
-\item 
-std\+::ofstream {\bfseries flags\+Descriptor\+Class\+HM}\hypertarget{classFileManager_aed4c66fb024bd6b71bbb710ad8776085}{}\label{classFileManager_aed4c66fb024bd6b71bbb710ad8776085}
-
-\item 
-std\+::ofstream {\bfseries rlen\+Descriptor\+Class\+HM}\hypertarget{classFileManager_aa3a9bf5fca8a6797f481bf458378f29c}{}\label{classFileManager_aa3a9bf5fca8a6797f481bf458378f29c}
-
-\item 
-std\+::ofstream {\bfseries pair\+Descriptor\+Class\+HM}\hypertarget{classFileManager_a31803f00b6d248d0281c0e861d52fee7}{}\label{classFileManager_a31803f00b6d248d0281c0e861d52fee7}
-
-\item 
-std\+::ofstream {\bfseries rlen\+Descriptor\+ClassU}\hypertarget{classFileManager_a906055054a2191265793a92fcc8f9a38}{}\label{classFileManager_a906055054a2191265793a92fcc8f9a38}
-
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -167,7 +58,7 @@ Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com}
 \begin{DoxyParamCaption}
 \item[{std\+::string}]{File\+Name}
 \end{DoxyParamCaption}
-)}\hypertarget{classFileManager_a343a21742b8d4da805b11a5ed41f4b17}{}\label{classFileManager_a343a21742b8d4da805b11a5ed41f4b17}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classFileManager_a343a21742b8d4da805b11a5ed41f4b17}{}\label{classFileManager_a343a21742b8d4da805b11a5ed41f4b17}
 
 
 Constructor method. 
@@ -223,12 +114,12 @@ void
 \end{DoxyReturn}
 \index{File\+Manager@{File\+Manager}!insert\+Flags\+Value@{insert\+Flags\+Value}}
 \index{insert\+Flags\+Value@{insert\+Flags\+Value}!File\+Manager@{File\+Manager}}
-\subsubsection[{\texorpdfstring{insert\+Flags\+Value(uint8\+\_\+t value, int class\+Type)}{insertFlagsValue(uint8_t value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Flags\+Value (
+\subsubsection[{\texorpdfstring{insert\+Flags\+Value(\+Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)}{insertFlagsValue(BamAlignmentRecord &record, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t File\+Manager\+::insert\+Flags\+Value (
 \begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{value, }
-\item[{int}]{class\+Type}
+\item[{Bam\+Alignment\+Record \&}]{record, }
+\item[{uint8\+\_\+t}]{class\+Type}
 \end{DoxyParamCaption}
-)}\hypertarget{classFileManager_a3ab1aebcb58f268bdb03fd98dd3202da}{}\label{classFileManager_a3ab1aebcb58f268bdb03fd98dd3202da}
+)}\hypertarget{classFileManager_a749517da172c0374f668121a090e1046}{}\label{classFileManager_a749517da172c0374f668121a090e1046}
 
 
 Writes the flags descriptor value to the respective file according to the class type. 
@@ -241,38 +132,16 @@ Writes the flags descriptor value to the respective file according to the class 
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void 
+Flags descriptor value of the read 
 \end{DoxyReturn}
-\index{File\+Manager@{File\+Manager}!insert\+Mmpos\+Value@{insert\+Mmpos\+Value}}
-\index{insert\+Mmpos\+Value@{insert\+Mmpos\+Value}!File\+Manager@{File\+Manager}}
-\subsubsection[{\texorpdfstring{insert\+Mmpos\+Value(uint16\+\_\+t value, int class\+Type)}{insertMmposValue(uint16_t value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Mmpos\+Value (
+\index{File\+Manager@{File\+Manager}!insertmmtype\+Descriptor@{insertmmtype\+Descriptor}}
+\index{insertmmtype\+Descriptor@{insertmmtype\+Descriptor}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insertmmtype\+Descriptor(std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&mmpos, uint8\+\_\+t class\+Type)}{insertmmtypeDescriptor(std::vector< std::pair< uint16_t, std::string > > &mmpos, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ uint8\+\_\+t $>$ File\+Manager\+::insertmmtype\+Descriptor (
 \begin{DoxyParamCaption}
-\item[{uint16\+\_\+t}]{value, }
-\item[{int}]{class\+Type}
+\item[{std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&}]{mmpos, }
+\item[{uint8\+\_\+t}]{class\+Type}
 \end{DoxyParamCaption}
-)}\hypertarget{classFileManager_a6ce4167c88dffc1321a110adcf195cfe}{}\label{classFileManager_a6ce4167c88dffc1321a110adcf195cfe}
-
-
-Writes the mmpos descriptor value to the respective file according to the class type. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em value} & value of the mmpos descriptor \\
-\hline
-{\em class\+Type} & class type \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
-\index{File\+Manager@{File\+Manager}!insert\+Mmtype\+Value@{insert\+Mmtype\+Value}}
-\index{insert\+Mmtype\+Value@{insert\+Mmtype\+Value}!File\+Manager@{File\+Manager}}
-\subsubsection[{\texorpdfstring{insert\+Mmtype\+Value(uint8\+\_\+t value, int class\+Type)}{insertMmtypeValue(uint8_t value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Mmtype\+Value (
-\begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{value, }
-\item[{int}]{class\+Type}
-\end{DoxyParamCaption}
-)}\hypertarget{classFileManager_a41c3937aa2e60ac323cd70444a24bf7a}{}\label{classFileManager_a41c3937aa2e60ac323cd70444a24bf7a}
+)}\hypertarget{classFileManager_af204ff60c18d99de4e45453598dae332}{}\label{classFileManager_af204ff60c18d99de4e45453598dae332}
 
 
 Writes the mmtype descriptor value to the respective file according to the class type. 
@@ -287,14 +156,36 @@ Writes the mmtype descriptor value to the respective file according to the class
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\index{File\+Manager@{File\+Manager}!insert\+Pair\+Value@{insert\+Pair\+Value}}
+\index{insert\+Pair\+Value@{insert\+Pair\+Value}!File\+Manager@{File\+Manager}}
+\subsubsection[{\texorpdfstring{insert\+Pair\+Value(\+Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)}{insertPairValue(BamAlignmentRecord &record, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t File\+Manager\+::insert\+Pair\+Value (
+\begin{DoxyParamCaption}
+\item[{Bam\+Alignment\+Record \&}]{record, }
+\item[{uint8\+\_\+t}]{class\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileManager_a2e3fb2385a3d0e4d3b214d98bbf34248}{}\label{classFileManager_a2e3fb2385a3d0e4d3b214d98bbf34248}
+
+
+Writes the pair descriptor value to the respective file according to the class type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value of the rlen descriptor \\
+\hline
+{\em class\+Type} & class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rlen descriptor value of the read 
+\end{DoxyReturn}
 \index{File\+Manager@{File\+Manager}!insert\+Pos\+Value@{insert\+Pos\+Value}}
 \index{insert\+Pos\+Value@{insert\+Pos\+Value}!File\+Manager@{File\+Manager}}
-\subsubsection[{\texorpdfstring{insert\+Pos\+Value(uint32\+\_\+t value, int class\+Type)}{insertPosValue(uint32_t value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Pos\+Value (
+\subsubsection[{\texorpdfstring{insert\+Pos\+Value(uint32\+\_\+t value, uint8\+\_\+t class\+Type)}{insertPosValue(uint32_t value, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Pos\+Value (
 \begin{DoxyParamCaption}
 \item[{uint32\+\_\+t}]{value, }
-\item[{int}]{class\+Type}
+\item[{uint8\+\_\+t}]{class\+Type}
 \end{DoxyParamCaption}
-)}\hypertarget{classFileManager_aec62a3da1d11d7d832b294b4fb70b0cc}{}\label{classFileManager_aec62a3da1d11d7d832b294b4fb70b0cc}
+)}\hypertarget{classFileManager_ae4e12983c4d731b8efd5a475b9704572}{}\label{classFileManager_ae4e12983c4d731b8efd5a475b9704572}
 
 
 Writes the pos descriptor value to the respective file according to the class type. 
@@ -311,15 +202,15 @@ void
 \end{DoxyReturn}
 \index{File\+Manager@{File\+Manager}!insert\+Rcomp\+Value@{insert\+Rcomp\+Value}}
 \index{insert\+Rcomp\+Value@{insert\+Rcomp\+Value}!File\+Manager@{File\+Manager}}
-\subsubsection[{\texorpdfstring{insert\+Rcomp\+Value(uint8\+\_\+t value, int class\+Type)}{insertRcompValue(uint8_t value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Rcomp\+Value (
+\subsubsection[{\texorpdfstring{insert\+Rcomp\+Value(\+Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)}{insertRcompValue(BamAlignmentRecord &record, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t File\+Manager\+::insert\+Rcomp\+Value (
 \begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{value, }
-\item[{int}]{class\+Type}
+\item[{Bam\+Alignment\+Record \&}]{record, }
+\item[{uint8\+\_\+t}]{class\+Type}
 \end{DoxyParamCaption}
-)}\hypertarget{classFileManager_a6dd7d533d9aae0c19077be7828d20260}{}\label{classFileManager_a6dd7d533d9aae0c19077be7828d20260}
+)}\hypertarget{classFileManager_af6894cae33f3cdde6206a67f260ab3f1}{}\label{classFileManager_af6894cae33f3cdde6206a67f260ab3f1}
 
 
-Writes the rcomp descriptor value to the respective file according to the class type. 
+calculates and writes the rcomp descriptor value of the read to the respective file according to the class type 
 
 
 \begin{DoxyParams}{Parameters}
@@ -328,14 +219,17 @@ Writes the rcomp descriptor value to the respective file according to the class 
 {\em class\+Type} & class type \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rcomp descriptor value of the read 
+\end{DoxyReturn}
 \index{File\+Manager@{File\+Manager}!insert\+Rlen\+Value@{insert\+Rlen\+Value}}
 \index{insert\+Rlen\+Value@{insert\+Rlen\+Value}!File\+Manager@{File\+Manager}}
-\subsubsection[{\texorpdfstring{insert\+Rlen\+Value(uint8\+\_\+t value, int class\+Type)}{insertRlenValue(uint8_t value, int classType)}}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Manager\+::insert\+Rlen\+Value (
+\subsubsection[{\texorpdfstring{insert\+Rlen\+Value(\+Bam\+Alignment\+Record \&record, uint8\+\_\+t class\+Type)}{insertRlenValue(BamAlignmentRecord &record, uint8_t classType)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t File\+Manager\+::insert\+Rlen\+Value (
 \begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{value, }
-\item[{int}]{class\+Type}
+\item[{Bam\+Alignment\+Record \&}]{record, }
+\item[{uint8\+\_\+t}]{class\+Type}
 \end{DoxyParamCaption}
-)}\hypertarget{classFileManager_a16890f19ed236ad5f76fe817e37d63fb}{}\label{classFileManager_a16890f19ed236ad5f76fe817e37d63fb}
+)}\hypertarget{classFileManager_a72a9c467af917d1f9ad0d066d1058104}{}\label{classFileManager_a72a9c467af917d1f9ad0d066d1058104}
 
 
 Writes the rlen descriptor value to the respective file according to the class type. 
@@ -348,7 +242,7 @@ Writes the rlen descriptor value to the respective file according to the class t
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void 
+Rlen descriptor value of the read 
 \end{DoxyReturn}
 \index{File\+Manager@{File\+Manager}!write\+Mpegg\+To\+File@{write\+Mpegg\+To\+File}}
 \index{write\+Mpegg\+To\+File@{write\+Mpegg\+To\+File}!File\+Manager@{File\+Manager}}

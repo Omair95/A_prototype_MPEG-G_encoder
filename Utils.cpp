@@ -29,7 +29,7 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
     std::string MD = getMDtag(record);
     std::string result;
     std::map<int, std::string> mmpos;
-    int sum = 0, insertions = 0;
+    int sum = 0, softClipsIni = 0, softClipsFinal = 0;
 
     if (cigar != "100M") {
         for (int i = 0; i < cigar.size(); ++i) {
@@ -41,18 +41,22 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
                 } else if (isdigit(cigar[i - 1])) {
                     b = cigar[i - 1] - '0';
                 }
+                if (cigar[i] == 'S') {
+                    if (softClipsIni == 0) softClipsIni = a * 10 + b;
+                    else softClipsFinal = a * 10 + b;
+                }
                 if (cigar[i] != 'D' and cigar[i] != 'S') sum += a * 10 + b;
-                if (cigar[i] != 'M') {
+                if (cigar[i] != 'M' and cigar[i] != 'S') {
                     std::string c;
-                    c += std::to_string(a * 10 + b);
+                    c += std::to_string(a*10 + b);
                     c += cigar[i];
                     mmpos.insert(std::make_pair(sum, c));
-                    if (cigar[i] == 'I') insertions += a*10 + b;
                 }
             }
         }
     }
-    sum = insertions;
+
+    sum = 0;
 
     if (MD != "100") {
         for (int i = 0; i < MD.size(); ++i) {
@@ -64,13 +68,15 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
                 } else if (isdigit(MD[i - 1])) {
                     b = MD[i - 1] - '0';
                 }
-                if (MD[i] != 'D') sum += a*10 + b;
-                if (MD[i] != 'M' and MD[i] != '^') {
+                sum += a*10 + b;
+                if (MD[i] != '^') {
                     ++sum;
                     std::string c;
                     c += std::to_string(sum);
                     c += MD[i];
                     mmpos.insert(std::make_pair(sum, c));
+                } else {
+                    while(not isdigit(MD[i])) ++i;
                 }
             }
         }
@@ -78,47 +84,33 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
 
     if (cigar == "100M" and MD == "100") return "100=";
 
+    if (softClipsIni != 0) result += '(' + std::to_string(softClipsIni) + ')';
+    int insertions = 0;
     int ant = 0;
     auto it = mmpos.begin();
     auto last = mmpos.end();
     --last;
     while (it != mmpos.end()) {
-        if (it->second[it->second.size() - 1] == 'S') {
-            if (ant == 0 and it == last) {
-                int a = it->second[0] - '0', b = it->second[1] - '0';
-                result += std::to_string(100 - a*10 - b);
-                result += '=';
-            }
-            if (ant != 0) {
-                int a = it->second[0] - '0';
-                if (isdigit(it->second[1])) {
-                    int b = it->second[1] - '0';
-                    result += std::to_string(it->first - ant - (a * 10 + b));
-                }
-                else result += std::to_string(it->first - ant);
-                result += '=';
-            }
-            int a = it->second[0] - '0';
-            if (isdigit(it->second[1])) {
-                int b = it->second[1] - '0';
-                result += "(" + std::to_string(a*10 + b) + ")";
-            } else result += "(" + std::to_string(a) + ")";
-            ant = it->first;
-            if (it != mmpos.begin()) return result;
-        } else if (it->second[it->second.size() - 1] == 'I' or
-                   it->second[it->second.size() - 1] == 'D') {
+        if (it->second[it->second.size() - 1] == 'I' or
+            it->second[it->second.size() - 1] == 'D') {
             int a = 0, b = 0;
             a = it->second[0] - '0';
             if (isdigit(it->second[1])) {
                 b = it->second[1] - '0';
                 result += std::to_string(it->first - ant - (a*10 + b));
                 result += '=';
-                if (it->second[it->second.size() - 1] == 'I') result += std::to_string(a*10 + b) + '+';
+                if (it->second[it->second.size() - 1] == 'I') {
+                    result += std::to_string(a*10 + b) + '+';
+                    insertions += a*10 + b;
+                }
                 else result += std::to_string(a*10 + b) + '-';
             } else {
                 result += std::to_string(it->first - ant - a);
                 result += '=';
-                if (it->second[it->second.size() - 1] == 'I') result += std::to_string(a) + '+';
+                if (it->second[it->second.size() - 1] == 'I') {
+                    result += std::to_string(a) + '+';
+                    insertions += a;
+                }
                 else result += std::to_string(a) + '-';
             }
             ant = it->first;
@@ -134,10 +126,9 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
         ++it;
     }
 
-    if (last->first != 100) {
-        result += std::to_string(100 - last->first);
-        result += '=';
-    }
+    result += std::to_string(100-sum-insertions-softClipsFinal-softClipsIni) + "=";
+
+    if (softClipsFinal) result += '(' + std::to_string(softClipsFinal) + ')';
 
     return result;
 }
