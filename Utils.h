@@ -141,17 +141,7 @@ public:
      *  \param classType class type
      *   \return void
      * */
-    std::vector<std::pair<uint16_t, std::string> > getMmposValue(BamAlignmentRecord& record);
-
-    static uint64_t hex_to_int(std::string value);
-
-    /** \brief A simple function that converts a value from a int to a hex
-     *  \param value int value to be converted
-     *  \return hexadecimal value converted
-     * */
-    std::string int32_to_hex(int32_t value);
-
-    static std::string int16_to_hex(int16_t value);
+    std::vector<std::pair<uint16_t, std::string> > getMmposValues(BamAlignmentRecord& record);
 
     /** \brief Removes the first read from the list of paired reads
      * \param void

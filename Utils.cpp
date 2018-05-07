@@ -374,18 +374,16 @@ void Utils::convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record
     if (result.number_of_segments > 1) result.reverse_comp.at(1).push_back((second.flag & 16) ? 0: 1);
 }
 
-
-std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignmentRecord& record) {
+std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValues(BamAlignmentRecord& record) {
     std::vector<std::pair<uint16_t, std::string> > mmpos;
     std::map<int, std::string> mmposread;
     CharString seq = record.seq;
     const char *s1 = toCString(seq);
     std::string str1(s1);
-    std::string cigarRead1 = Utils::getCigar(record.cigar);
-    std::string MD = Utils::getMDtag(record);
+    std::string cigarRead1 = getCigar(record.cigar);
+    std::string MD = getMDtag(record);
     int sum = 0, lastMismatch = 0;
     bool firstMismatch = true;
-    int insertions = 0;
 
     if (cigarRead1 != "100M") {
         for (int i = 0; i < cigarRead1.size(); ++i) {
@@ -397,7 +395,7 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
                 } else if (isdigit(cigarRead1[i-1])) {
                     b = cigarRead1[i-1] - '0';
                 }
-                sum += a*10 + b;
+                if (cigarRead1[i] != 'S') sum += a*10 + b;
 
                 if (cigarRead1[i] == 'I' or cigarRead1[i] == 'D') {
                     while (b > 0) {
@@ -406,7 +404,6 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
                             char c = str1[sum - 1];
                             std::string a = "I";
                             a.insert(a.size(), 1, c);
-                            ++insertions;
                             mmposread.insert(std::make_pair(sum - b - 1, a));
                         } else {
                             mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead1[i])));
@@ -435,7 +432,7 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
                 sum += a*10 + b;
                 ++sum;
                 if (sum >= lastMismatch) lastMismatch = sum;
-                mmposread.insert(std::make_pair(sum + insertions, std::string(1, MD[i])));
+                mmposread.insert(std::make_pair(sum, std::string(1, MD[i])));
             }
         }
     }
@@ -445,23 +442,27 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
             ant = it->first;
             mmpos.push_back(std::make_pair(it->first, it->second));
             firstMismatch = false;
+
+            if (it->second[0] == 'I') ant = it->first - 1;
+            else ant = it->first;
         } else {
             mmpos.push_back(std::make_pair(it->first - ant, it->second));
-            ant = it->first;
+            if (it->second[0] == 'I') ant = it->first - 1;
+            else ant = it->first;
         }
     }
+
     mmposread.clear();
 
-    if (record.flag & 8) return mmpos;
+    if (record.flag & 8 or record.flag == 129) return mmpos;
 
     BamAlignmentRecord second = Utils::getSecondRecord(record);
     CharString seq2 = second.seq;
     const char *s2 = toCString(seq2);
     std::string str2(s2);
-    std::string cigarRead2 = Utils::getCigar(second.cigar);
-    std::string MD2 = Utils::getMDtag(second);
+    std::string cigarRead2 = getCigar(second.cigar);
+    std::string MD2 = getMDtag(second);
     sum = 0;
-    insertions = 0;
 
     if (cigarRead2 != "100M") {
         for (int i = 0; i < cigarRead2.size(); ++i) {
@@ -473,7 +474,7 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
                 } else if (isdigit(cigarRead2[i-1])) {
                     b = cigarRead2[i-1] - '0';
                 }
-                sum += a*10 + b;
+                if (cigarRead1[i] != 'S') sum += a*10 + b;
 
                 if (cigarRead2[i] == 'I' or cigarRead2[i] == 'D') {
                     while (b > 0) {
@@ -482,7 +483,6 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
                             char c = str2[sum - 1];
                             std::string a = "I";
                             a.insert(a.size(), 1, c);
-                            ++insertions;
                             mmposread.insert(std::make_pair(sum - b - 1, a));
                         } else {
                             mmposread.insert(std::make_pair(sum - b, std::string(1, cigarRead2[i])));
@@ -507,7 +507,7 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
                 }
                 sum += a*10 + b;
                 ++sum;
-                mmposread.insert(std::make_pair(sum + insertions, std::string(1, MD2[i])));
+                mmposread.insert(std::make_pair(sum, std::string(1, MD2[i])));
             }
         }
     }
@@ -516,45 +516,21 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValue(BamAlignment
     ant = 0;
     for (auto it = mmposread.begin(); it != mmposread.end(); ++it) {
         if (first) {
-            if (lastMismatch != 0) {
-                mmpos.push_back(std::make_pair(100 - lastMismatch + it->first, it->second));
-                ant = it->first;
-            } else {
-                mmpos.push_back(std::make_pair(100 + it->first, it->second));
-                ant = it->first;
-            }
+            if (lastMismatch != 0) mmpos.push_back(std::make_pair(100 - lastMismatch + it->first, it->second));
+            else mmpos.push_back(std::make_pair(100 + it->first, it->second));
+
+            if (it->second[0] == 'I') ant = it->first - 1;
+            else ant = it->first;
             first = false;
         } else {
             mmpos.push_back(std::make_pair(it->first - ant, it->second));
-            ant = it->first;
+            if (it->second[0] == 'I') ant = it->first - 1;
+            else ant = it->first;
         }
     }
     mmposread.clear();
 
     return mmpos;
-}
-
-
-uint64_t Utils::hex_to_int(std::string value) {
-    uint64_t x;
-    std::stringstream ss;
-    ss << std::hex << value;
-    ss >> x;
-    return x;
-}
-
-std::string Utils::int32_to_hex(int32_t value) {
-    std::stringstream stream;
-    stream << std::setfill ('0') << std::setw(sizeof(value)*2)
-           << std::hex << value;
-    return stream.str();
-}
-
-std::string Utils::int16_to_hex(int16_t value) {
-    std::stringstream stream;
-    stream << std::setfill ('0') << std::setw(sizeof(value)*2)
-           << std::hex << value;
-    return stream.str();
 }
 
 void Utils::removeFirstRead() {

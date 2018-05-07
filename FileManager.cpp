@@ -283,14 +283,18 @@ uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, uint8_t classT
     return result;
 }
 
-void FileManager::insertMmposValue(uint16_t pos, uint8_t classType) {
+void FileManager::insertMmposValue(uint16_t pos, uint8_t classType, bool lastPos) {
     uint16_t littleEndianValue = boost::endian::native_to_little(pos);
+    uint16_t endPos = boost::endian::native_to_little(0x03e9);
     if (classType == 2) {
         mmposDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        if (lastPos) mmposDescriptorClassN.write(reinterpret_cast<const char *>(&endPos), sizeof(endPos));
     } else if (classType == 3) {
         mmposDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        if (lastPos) mmposDescriptorClassM.write(reinterpret_cast<const char *>(&endPos), sizeof(endPos));
     } else if (classType == 4) {
         mmposDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+        if (lastPos) mmposDescriptorClassI.write(reinterpret_cast<const char *>(&endPos), sizeof(endPos));
     }
 }
 
@@ -505,7 +509,6 @@ std::vector<uint8_t> FileManager::insertmmtypeDescriptor(std::vector<std::pair<u
             mmtypeDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
         }
     }
-
     return result;
 }
 

@@ -119,7 +119,7 @@ public:
     uint16_t insertPairValue(BamAlignmentRecord& record, uint8_t classType);
 
 
-    void insertMmposValue(uint16_t pos, uint8_t classType);
+    void insertMmposValue(uint16_t pos, uint8_t classType, bool lastPos);
 
     /** \brief Writes the mmtype descriptor value to the respective file
      *         according to the class type

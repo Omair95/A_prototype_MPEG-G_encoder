@@ -135,11 +135,11 @@ void generateByteStream() {
             static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(std::to_string(pair));
 
             // get mmpos descriptor
-            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValue(it->second.first);
-
+            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(it->second.first);
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_N*> (AU_N)->insertMmposDescriptor(mmpos[i].first);
-                f.insertMmposValue(mmpos[i].first, 2);
+                if (i != (mmpos.size() - 1)) f.insertMmposValue(mmpos[i].first, 2, false);
+                else f.insertMmposValue(mmpos[i].first, 2, true);
             }
 
             // create a new access unit in case if the current one is full
@@ -182,11 +182,12 @@ void generateByteStream() {
             AU_M->insertFlagsDescriptor(flags);
 
             // get mmpos descriptor
-            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValue(it->second.first);
-
+            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(it->second.first);
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_M*> (AU_M)->insertMmposDescriptor(mmpos[i].first);
-                f.insertMmposValue(mmpos[i].first, 3);
+                if (i != (mmpos.size() - 1)) f.insertMmposValue(mmpos[i].first, 3, false);
+                else f.insertMmposValue(mmpos[i].first, 3, true);
+
             }
 
             // get mmtype descriptor
@@ -242,12 +243,15 @@ void generateByteStream() {
             AU_I->insertFlagsDescriptor(flags);
 
             // get mmpos descriptor
-            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValue(it->second.first);
-
+            std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(it->second.first);
+            std::cout << it->second.first.qName << " " << u.getCigar(it->second.first.cigar) << " " << u.getMDtag(it->second.first) << " ";
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(mmpos[i].first);
-                f.insertMmposValue(mmpos[i].first, 4);
+                if (i != (mmpos.size() - 1)) f.insertMmposValue(mmpos[i].first, 4, false);
+                else f.insertMmposValue(mmpos[i].first, 4, true);
+                std::cout << mmpos[i].first << " ";
             }
+            std::cout << std::endl;
 
             // get mmtype descriptor
             std::vector<uint8_t> mmtype = f.insertmmtypeDescriptor(mmpos, 4);
@@ -370,7 +374,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 10000) {
+    while (!atEnd(bamFileIn) and count <= 100) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {
