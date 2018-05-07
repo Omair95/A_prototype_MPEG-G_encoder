@@ -89,7 +89,7 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
     auto it = mmpos.begin();
     auto last = mmpos.end();
 
-    if (it->first == last->first and it->second == last->second and softClipsIni != 0 or softClipsFinal != 0) {
+    if (it->first == last->first and it->second == last->second and (softClipsIni != 0 or softClipsFinal != 0)) {
         if (softClipsIni != 0) result += '(' + std::to_string(softClipsIni) + ')';
         result += std::to_string(100 - softClipsFinal - softClipsIni) + "=";
         if (softClipsFinal != 0) result += '(' + std::to_string(softClipsFinal) + ')';

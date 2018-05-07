@@ -392,6 +392,6 @@ int main () {
     for (int i = 0; i < au.size(); ++i) {
         au[i].write();
     }
-    f.closeFiles();
+    f.closeFiles(); 
     return 0;
 }
