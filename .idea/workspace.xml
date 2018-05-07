@@ -13,6 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" afterDir="false" />
@@ -30,12 +31,18 @@
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nflags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nmmpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nmmpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrcomp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrlen" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
@@ -57,8 +64,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="394" column="20" lean-forward="true" selection-start-line="394" selection-start-column="20" selection-end-line="394" selection-end-column="20" />
+            <state relative-caret-position="260">
+              <caret line="382" column="34" selection-start-line="382" selection-start-column="34" selection-end-line="382" selection-end-column="34" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -66,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils.cpp">
+      <file leaf-file-name="FileManager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FileManager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+            <state relative-caret-position="104">
+              <caret line="383" column="41" selection-start-line="383" selection-start-column="41" selection-end-line="383" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -79,8 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>insertpairdescriptor</find>
-      <find>insertclips</find>
       <find>convert</find>
       <find>clips</find>
       <find>read2_cigar</find>
@@ -91,7 +96,6 @@
       <find>getextended</find>
       <find>return</find>
       <find>HS25_09827:2:1303:10406:77761#49</find>
-      <find>std::cout</find>
       <find>insertpair</find>
       <find>insertpos</find>
       <find>insertrcomp</find>
@@ -109,6 +113,9 @@
       <find>extended</find>
       <find>85M15S</find>
       <find>getex</find>
+      <find>insertclips</find>
+      <find>read1_sequence</find>
+      <find>std::cout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,10 +145,10 @@
         <option value="$PROJECT_DIR$/AccessUnit_U.h" />
         <option value="$PROJECT_DIR$/AccessUnit_U.cpp" />
         <option value="$PROJECT_DIR$/MpeggRecord.h" />
-        <option value="$PROJECT_DIR$/FileManager.cpp" />
         <option value="$PROJECT_DIR$/FileManager.h" />
         <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/Utils.cpp" />
+        <option value="$PROJECT_DIR$/FileManager.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -342,12 +349,12 @@
       <workItem from="1525281918824" duration="2098000" />
       <workItem from="1525686155465" duration="1050000" />
       <workItem from="1525687353819" duration="7662000" />
-      <workItem from="1525696886879" duration="10885000" />
+      <workItem from="1525696886879" duration="13220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406136000" />
+    <option name="totallyTimeSpent" value="408471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
@@ -381,17 +388,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Utils.cpp</url>
-          <line>90</line>
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="144" />
+      <option name="time" value="149" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -728,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FileManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="459" selection-start-line="459" selection-end-line="459" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -744,15 +737,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        <state relative-caret-position="132">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="383" column="41" selection-start-line="383" selection-start-column="41" selection-end-line="383" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="394" column="20" lean-forward="true" selection-start-line="394" selection-start-column="20" selection-end-line="394" selection-end-column="20" />
+        <state relative-caret-position="260">
+          <caret line="382" column="34" selection-start-line="382" selection-start-column="34" selection-end-line="382" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

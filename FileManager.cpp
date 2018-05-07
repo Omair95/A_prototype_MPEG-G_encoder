@@ -445,10 +445,10 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record,
             }
 
             for (int i = 0; i < f; ++i) {
-                uint8_t c = read1_sequence[i];
+                uint8_t c = read2_sequence[i];
                 clipsDescriptorClassI.write(reinterpret_cast<const char *>(&c), sizeof(c));
             }
-            result += read1_sequence.substr(0, f);  // M bases
+            result += read2_sequence.substr(0, f);  // M bases
             uint8_t terminator;
 
             if (k > 1) terminator = 0xfe;
@@ -469,7 +469,7 @@ std::vector<std::string> FileManager::insertClipsDescriptor(MpeggRecord& record,
                 f = a;
             }
 
-            for (int i = read2_sequence.size() - 1 - f; i < read2_sequence.size() - 1; ++i) {
+            for (int i = read2_sequence.size() - f; i < read2_sequence.size(); ++i) {
                 uint8_t c = read2_sequence[i];
                 clipsDescriptorClassI.write(reinterpret_cast<const char *>(&c), sizeof(c));
             }

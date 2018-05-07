@@ -244,14 +244,12 @@ void generateByteStream() {
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(it->second.first);
-            std::cout << it->second.first.qName << " " << u.getCigar(it->second.first.cigar) << " " << u.getMDtag(it->second.first) << " ";
+
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(mmpos[i].first);
                 if (i != (mmpos.size() - 1)) f.insertMmposValue(mmpos[i].first, 4, false);
                 else f.insertMmposValue(mmpos[i].first, 4, true);
-                std::cout << mmpos[i].first << " ";
             }
-            std::cout << std::endl;
 
             // get mmtype descriptor
             std::vector<uint8_t> mmtype = f.insertmmtypeDescriptor(mmpos, 4);
@@ -265,9 +263,11 @@ void generateByteStream() {
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, 4);
             static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(std::to_string(pair));
+
             // get clips descriptor
             std::string read1_cigar = u.getCigar(it->second.first.cigar);
             std::string read2_cigar = u.getCigar(it->second.second.cigar);
+
             if (read1_cigar.find('S') != std::string::npos or read2_cigar.find('S') != std::string::npos) {
                 std::vector<std::string> clips = f.insertClipsDescriptor(record, AU_I->getReadsCount() - 1);
             }
@@ -374,7 +374,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 100) {
+    while (!atEnd(bamFileIn) and count <= 1000) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {
@@ -392,6 +392,6 @@ int main () {
     for (int i = 0; i < au.size(); ++i) {
         au[i].write();
     }
-    f.closeFiles(); 
+    f.closeFiles();
     return 0;
 }
