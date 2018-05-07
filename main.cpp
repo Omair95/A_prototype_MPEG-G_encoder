@@ -9,7 +9,6 @@
 
 /*! \file main.cpp */
 
-
 int au_id = -1;
 
 // Bam file to read
@@ -190,12 +189,10 @@ void generateByteStream() {
                 f.insertMmposValue(mmpos[i].first, 3);
             }
 
-
             // get mmtype descriptor
             std::vector<uint8_t> mmtype = f.insertmmtypeDescriptor(mmpos, 3);
 
             for (int i = 0; i < mmtype.size(); ++i) static_cast<AccessUnit_M*> (AU_M)->insertMmtypeDescriptor(mmtype[i]);
-
 
             // get rlen descriptor
             uint8_t rlen = f.insertRlenValue(it->second.first, 3);
@@ -269,11 +266,6 @@ void generateByteStream() {
             std::string read2_cigar = u.getCigar(it->second.second.cigar);
             if (read1_cigar.find('S') != std::string::npos or read2_cigar.find('S') != std::string::npos) {
                 std::vector<std::string> clips = f.insertClipsDescriptor(record, AU_I->getReadsCount() - 1);
-                std::cout << it->second.first.qName << " " << read1_cigar << " " << read2_cigar << " ";
-                for (int i = 0; i < clips.size(); ++i) {
-                     std::cout << clips[i] << " ";
-                }
-                std::cout << std::endl;
             }
 
             // create a new access unit in case if the current one is full
@@ -378,7 +370,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 1000) {
+    while (!atEnd(bamFileIn) and count <= 10000) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {

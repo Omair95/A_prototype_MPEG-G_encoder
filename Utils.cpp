@@ -42,7 +42,7 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
                     b = cigar[i - 1] - '0';
                 }
                 if (cigar[i] == 'S') {
-                    if (softClipsIni == 0) softClipsIni = a * 10 + b;
+                    if (softClipsIni == 0 and sum == 0) softClipsIni = a * 10 + b;
                     else softClipsFinal = a * 10 + b;
                 }
                 if (cigar[i] != 'D' and cigar[i] != 'S') sum += a * 10 + b;
@@ -84,12 +84,21 @@ std::string Utils::getExtendedCigar(BamAlignmentRecord& record) {
 
     if (cigar == "100M" and MD == "100") return "100=";
 
-    if (softClipsIni != 0) result += '(' + std::to_string(softClipsIni) + ')';
     int insertions = 0;
     int ant = 0;
     auto it = mmpos.begin();
     auto last = mmpos.end();
+
+    if (it->first == last->first and it->second == last->second and softClipsIni != 0 or softClipsFinal != 0) {
+        if (softClipsIni != 0) result += '(' + std::to_string(softClipsIni) + ')';
+        result += std::to_string(100 - softClipsFinal - softClipsIni) + "=";
+        if (softClipsFinal != 0) result += '(' + std::to_string(softClipsFinal) + ')';
+        return result;
+    }
     --last;
+
+    if (softClipsIni != 0) result += '(' + std::to_string(softClipsIni) + ')';
+
     while (it != mmpos.end()) {
         if (it->second[it->second.size() - 1] == 'I' or
             it->second[it->second.size() - 1] == 'D') {
