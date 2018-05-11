@@ -92,7 +92,7 @@ public:
      *  \param classType class type
      *  \return Rcomp descriptor value of the read
      * */
-    uint8_t insertRcompValue(BamAlignmentRecord& record, uint8_t classType);
+    uint8_t insertRcompValue(BamAlignmentRecord& record, BamAlignmentRecord& second, uint8_t classType);
 
     /** \brief Writes the flags descriptor value to the respective file
      *         according to the class type
@@ -109,6 +109,7 @@ public:
      *   \return Rlen descriptor value of the read
      * */
     uint8_t insertRlenValue(BamAlignmentRecord& record, uint8_t classType);
+
 
     /** \brief Writes the pair descriptor value to the respective file
      *         according to the class type

@@ -24,7 +24,8 @@ Utils u;
 
 /** Size of each access unit
  * */
-#define ACCESS_UNIT_SIZE 100000
+#define ACCESS_UNIT_SIZE 10000
+#define READS 100000
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -50,6 +51,7 @@ void generateByteStream() {
     int antPosP = 0, antPosN = 0, antPosM = 0;
     int antPosI = 0, antPosHM = 0;
 
+    int nP = 0;
     while (it != end) {
         MpeggRecord record;
         u.convertToMpeggRecord(record, it->second.first);
@@ -58,6 +60,8 @@ void generateByteStream() {
         if (record.class_type == 1) {
             // update the number of reads in the access unit
             AU_P->updateReads();
+
+            BamAlignmentRecord second = it->second.second;
 
             // get pos descriptor
             if (firstP) {
@@ -69,11 +73,44 @@ void generateByteStream() {
             } else {
                 AU_P->insertPosdescriptor(record.mapping_pos[0] - antPosP);
                 f.insertPosValue(record.mapping_pos[0] - antPosP, 1);
+
+                if (nP == 1514) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1515) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1516) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1517) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1518) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1519) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1520) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1521) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1522) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                else if (nP == 1523) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+
+                ++nP;
                 antPosP = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(it->second.first, 1);
+            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 1);
             AU_P->insertRcompDescriptor(rcomp);
 
             // get flags descriptor
@@ -101,7 +138,8 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (record.class_type == 2) {
+        }
+        else if (record.class_type == 2) {
             // update the number of reads in the access unit
             AU_N->updateReads();
 
@@ -119,7 +157,7 @@ void generateByteStream() {
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(it->second.first, 2);
+            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 2);
             AU_N->insertRcompDescriptor(rcomp);
 
             // get flags descriptor
@@ -156,7 +194,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (record.class_type == 3) {
+        } else ++it;/*else if (record.class_type == 3) {
             // update the number of reads in the access unit
             AU_M->updateReads();
 
@@ -354,16 +392,18 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else ++it;
+        }*/
     }
 
     // add all incomplete access units
     u.insertAccessUnit(*AU_P);
+
+    /*
     u.insertAccessUnit(*AU_N);
     u.insertAccessUnit(*AU_M);
     u.insertAccessUnit(*AU_I);
     u.insertAccessUnit(*AU_HM);
-    u.insertAccessUnit(*AU_U);
+    u.insertAccessUnit(*AU_U);*/
 }
 
 int main () {
@@ -374,7 +414,7 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= 1000) {
+    while (!atEnd(bamFileIn) and count <= READS) {
         readRecord(record, bamFileIn);
 
         if (record.beginPos <= record.pNext) {

@@ -173,6 +173,8 @@ public:
      * \return void
      * */
     void insertRead(BamAlignmentRecord first, BamAlignmentRecord second);
+
+    static bool isPaired(BamAlignmentRecord first, BamAlignmentRecord second);
 };
 
 #endif

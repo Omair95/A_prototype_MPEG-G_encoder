@@ -160,15 +160,18 @@ void Utils::updateRecord(BamAlignmentRecord& record, int& pos) {
     std::pair<it, it> ret;
     ret = reads.equal_range(pos);
     std::string s = toCString(record.qName);
-
+    bool found = false;
     for (auto it = ret.first; it != ret.second; ++it) {
         if (!s.compare(toCString(it->second.first.qName))) {
             BamAlignmentRecord first = it->second.first;
             reads.erase(it);
             reads.insert(std::make_pair(pos, std::make_pair(first, record)));
+            found = true;
             break;
         }
     }
+
+    if (not found) reads.insert(std::make_pair(record.beginPos, std::make_pair(record, record)));
 }
 
 bool Utils::isClassP(BamAlignmentRecord& record) {
@@ -181,7 +184,8 @@ bool Utils::isClassP(BamAlignmentRecord& record) {
     CharString tagValFirst = 0;
     if (!extractTagValue(tagValFirst, tagsDict, tagIdx)) std::cerr << "ERROR: There was an error extracting MD from tags!" << std::endl;
 
-    if (record.flag & 8) {
+    BamAlignmentRecord second = getSecondRecord(record);
+    if (not isPaired(record, second)) {
         if (firstCigar == "100M" and tagValFirst == "100") return true;
     } else {
         BamAlignmentRecord second = getSecondRecord(record);
@@ -210,7 +214,8 @@ bool Utils::isClassN(BamAlignmentRecord& record) {
     int tagValFirst = getNMtag(record);
     auto nFirst = std::count(str1.begin(), str1.end(), 'N');
 
-    if (record.flag & 8) {
+    BamAlignmentRecord second = getSecondRecord(record);
+    if (not isPaired(record, second)) {
         if (str1.find("N") != std::string::npos and nFirst == tagValFirst and firstCigar == "100M") return true;
     } else {
         BamAlignmentRecord second = getSecondRecord(record);
@@ -237,7 +242,8 @@ bool Utils::isClassM(BamAlignmentRecord& record) {
     int tagValFirst = getNMtag(record);
     auto nFirst = std::count(str1.begin(), str1.end(), 'N');
 
-    if (record.flag & 8) {
+    BamAlignmentRecord second = getSecondRecord(record);
+    if (not isPaired(record, second)) {
         if (firstCigar == "100M" and tagValFirst != nFirst) return true;
     } else {
         BamAlignmentRecord second = getSecondRecord(record);
@@ -257,7 +263,8 @@ bool Utils::isClassM(BamAlignmentRecord& record) {
 bool Utils::isClassI(BamAlignmentRecord& record) {
     std::string firstCigar = getCigar(record.cigar);;
 
-    if (record.flag & 8) {
+    BamAlignmentRecord second = getSecondRecord(record);
+    if (not isPaired(record, second)) {
         if (firstCigar != "100M") return true;
     } else {
         BamAlignmentRecord second = getSecondRecord(record);
@@ -268,7 +275,8 @@ bool Utils::isClassI(BamAlignmentRecord& record) {
 }
 
 bool Utils::isClassHM(BamAlignmentRecord& record) {
-    if (record.flag & 128 and record.flag & 1) return true;
+    BamAlignmentRecord second = getSecondRecord(record);
+    if (not isPaired(record, second)) return true;
     return false;
 }
 
@@ -328,7 +336,8 @@ void Utils::convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record
     result.seq_Id = (result.class_type == 6) ? 0 : record.rID;
     result.read1_first = (record.flag & 64) ? 1 : 0;
     result.flags = record.flag;
-    result.number_of_segments = (record.flag & 8) ? 1 : 2;
+    BamAlignmentRecord second = getSecondRecord(record);
+    result.number_of_segments = (not isPaired(record, second)) ? 1 : 2;
     result.number_of_alignments = 1; // just put 1 for now
 
     CharString seq = record.seq;
@@ -340,7 +349,6 @@ void Utils::convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record
     result.quality_values.push_back(qv);
     result.sequence.push_back(sequence);
 
-    BamAlignmentRecord second;
     if (result.number_of_segments > 1) {
         second = getSecondRecord(record);
         CharString seq = second.seq;
@@ -454,9 +462,9 @@ std::vector<std::pair<uint16_t, std::string> > Utils::getMmposValues(BamAlignmen
 
     mmposread.clear();
 
-    if (record.flag & 8 or record.flag == 129) return mmpos;
+    BamAlignmentRecord second = getSecondRecord(record);
+    if (not isPaired(record, second)) return mmpos;
 
-    BamAlignmentRecord second = Utils::getSecondRecord(record);
     CharString seq2 = second.seq;
     const char *s2 = toCString(seq2);
     std::string str2(s2);
@@ -552,4 +560,19 @@ void Utils::getAllAccessUnits(std::vector<AccessUnit>& au) {
 
 void Utils::insertRead(BamAlignmentRecord first, BamAlignmentRecord second) {
     reads.insert(std::make_pair(first.beginPos, std::make_pair(first, second)));
+}
+
+bool Utils::isPaired(BamAlignmentRecord first, BamAlignmentRecord second) {
+    if (first.flag & 8) return false;
+
+    if (strcmp(toCString(first.qName), toCString(second.qName)) == 0
+        and first.flag == second.flag
+        and first.rID == second.rID
+        and first.beginPos == second.beginPos
+        and first.rNextId == second.rNextId
+        and first.pNext == second.pNext
+        and first.tLen == second.tLen
+        and strcmp(toCString(first.qual), toCString(second.qual)) == 0
+        and strcmp(toCString(first.tags), toCString(second.tags)) == 0) return false;
+    else return true;
 }

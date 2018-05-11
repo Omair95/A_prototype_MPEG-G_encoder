@@ -59,13 +59,13 @@ void FileManager::insertPosValue(uint32_t value, uint8_t classType) {
     }
 }
 
-uint8_t FileManager::insertRcompValue(BamAlignmentRecord& record, uint8_t classType) {
+uint8_t FileManager::insertRcompValue(BamAlignmentRecord& record, BamAlignmentRecord& second, uint8_t classType) {
     uint8_t result = 0;
     bool pair1 = record.flag & 16;
 
-    if (record.flag & 8) {
-        if (pair1) result = 0;
-        else result = 1;
+    if (not Utils::isPaired(record, second)) {
+        if (pair1) result = 1;
+        else result = 0;
     }
     else {
         bool pair2 = record.flag & 32;
