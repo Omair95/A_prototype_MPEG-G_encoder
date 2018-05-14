@@ -24,8 +24,8 @@ Utils u;
 
 /** Size of each access unit
  * */
-#define ACCESS_UNIT_SIZE 10000
-#define READS 100000
+#define ACCESS_UNIT_SIZE 100000
+#define READS 100000000
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -51,7 +51,7 @@ void generateByteStream() {
     int antPosP = 0, antPosN = 0, antPosM = 0;
     int antPosI = 0, antPosHM = 0;
 
-    int nP = 0;
+    int nP = 0, nM = 0;
     while (it != end) {
         MpeggRecord record;
         u.convertToMpeggRecord(record, it->second.first);
@@ -60,6 +60,7 @@ void generateByteStream() {
         if (record.class_type == 1) {
             // update the number of reads in the access unit
             AU_P->updateReads();
+
 
             BamAlignmentRecord second = it->second.second;
 
@@ -74,37 +75,9 @@ void generateByteStream() {
                 AU_P->insertPosdescriptor(record.mapping_pos[0] - antPosP);
                 f.insertPosValue(record.mapping_pos[0] - antPosP, 1);
 
-                if (nP == 1514) {
+                if (nP >= 12428 and nP <= 12433) {
                     std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
                 }
-                else if (nP == 1515) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1516) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1517) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1518) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1519) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1520) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1521) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1522) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                else if (nP == 1523) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-
                 ++nP;
                 antPosP = record.mapping_pos[0];
             }
@@ -153,6 +126,7 @@ void generateByteStream() {
             } else {
                 AU_N->insertPosdescriptor(record.mapping_pos[0] - antPosN);
                 f.insertPosValue(record.mapping_pos[0] - antPosN, 2);
+
                 antPosN = record.mapping_pos[0];
             }
 
@@ -194,7 +168,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else ++it;/*else if (record.class_type == 3) {
+        } else if (record.class_type == 3) {
             // update the number of reads in the access unit
             AU_M->updateReads();
 
@@ -208,11 +182,13 @@ void generateByteStream() {
             } else {
                 AU_M->insertPosdescriptor(record.mapping_pos[0] - antPosM);
                 f.insertPosValue(record.mapping_pos[0] - antPosM, 3);
+
+
                 antPosM = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(it->second.first, 3);
+            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 3);
             AU_M->insertRcompDescriptor(rcomp);
 
             // get flags descriptor
@@ -255,7 +231,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (record.class_type == 4) {
+        } else ++it; /*else if (record.class_type == 4) {
             // update the number of reads in the access unit
             AU_I->updateReads();
 
@@ -397,10 +373,10 @@ void generateByteStream() {
 
     // add all incomplete access units
     u.insertAccessUnit(*AU_P);
-
-    /*
     u.insertAccessUnit(*AU_N);
     u.insertAccessUnit(*AU_M);
+
+    /*
     u.insertAccessUnit(*AU_I);
     u.insertAccessUnit(*AU_HM);
     u.insertAccessUnit(*AU_U);*/
@@ -412,19 +388,42 @@ int main () {
     BamHeader header;
     readHeader(header, bamFileIn);
 
-    int count = 1;
+    long long count = 1;
     BamAlignmentRecord record;
-    while (!atEnd(bamFileIn) and count <= READS) {
+
+    std::map<int, std::pair<int, int> > references;
+
+    while (!atEnd(bamFileIn) and count < 8559059) {
         readRecord(record, bamFileIn);
 
-        if (record.beginPos <= record.pNext) {
+        if (references.find(record.rID) == references.end()) {
+            references.insert(std::make_pair(record.rID, std::make_pair(record.beginPos, record.beginPos)));
+        } else {
+            auto it = references.find(record.rID);
+            int begin = it->second.first;
+            references.erase(record.rID);
+            references.insert(std::make_pair(record.rID, std::make_pair(begin, record.beginPos)));
+        }
+
+        std::cout << count << " " << "REF = " << record.rID << " " << record.qName  << " " << record.beginPos << std::endl;
+
+        /*
+        if (record.tLen > 1500 or record.tLen < -1500) {
+            u.insertRead(record, record);
+        } else if (record.beginPos <= record.pNext) {
             u.insertRead(record, record);
         } else {
             u.updateRecord(record, record.pNext);
-        }
+        } */
         ++count;
     }
 
+    std::cout << "END" << std::endl;
+    for (auto it = references.begin(); it != references.end(); ++it) {
+        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
+    }
+
+    /*
     generateByteStream();
     std::vector<AccessUnit> au;
     u.getAllAccessUnits(au);
@@ -433,5 +432,6 @@ int main () {
         au[i].write();
     }
     f.closeFiles();
+     */
     return 0;
 }
