@@ -1,3 +1,4 @@
+#include <boost/endian/conversion.hpp>
 #include "Utils.h"
 
 Utils::Utils() {

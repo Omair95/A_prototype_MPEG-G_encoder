@@ -117,7 +117,7 @@ public:
      *  \param classType class type
      *   \return Rlen descriptor value of the read
      * */
-    uint16_t insertPairValue(BamAlignmentRecord& record, uint8_t classType);
+    uint16_t insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType);
 
 
     void insertMmposValue(uint16_t pos, uint8_t classType, bool lastPos);
@@ -143,6 +143,10 @@ public:
      * \return void
      * */
     void closeFiles();
+
+    void write16bit(uint16_t value, uint8_t classType);
+
+    void write32bit(uint32_t value, uint8_t classType);
 };
 
 

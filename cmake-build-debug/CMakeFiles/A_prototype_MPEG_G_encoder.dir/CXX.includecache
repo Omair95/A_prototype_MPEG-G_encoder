@@ -2779,6 +2779,8 @@ vector
 -
 
 /home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.cpp
+boost/endian/conversion.hpp
+-
 Utils.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.h
 

@@ -18,6 +18,10 @@ std::string fileName = "9827_2#49";
  * */
 FileManager f(fileName);
 
+/* Number of references sequences
+ * */
+std::map<int, std::pair<int, int> > references;
+
 /**
  * */
 Utils u;
@@ -25,7 +29,6 @@ Utils u;
 /** Size of each access unit
  * */
 #define ACCESS_UNIT_SIZE 100000
-#define READS 100000000
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -50,8 +53,7 @@ void generateByteStream() {
     bool firstI = true, firstHM = true;
     int antPosP = 0, antPosN = 0, antPosM = 0;
     int antPosI = 0, antPosHM = 0;
-
-    int nP = 0, nM = 0;
+    int count = 0;
     while (it != end) {
         MpeggRecord record;
         u.convertToMpeggRecord(record, it->second.first);
@@ -60,9 +62,6 @@ void generateByteStream() {
         if (record.class_type == 1) {
             // update the number of reads in the access unit
             AU_P->updateReads();
-
-
-            BamAlignmentRecord second = it->second.second;
 
             // get pos descriptor
             if (firstP) {
@@ -74,17 +73,13 @@ void generateByteStream() {
             } else {
                 AU_P->insertPosdescriptor(record.mapping_pos[0] - antPosP);
                 f.insertPosValue(record.mapping_pos[0] - antPosP, 1);
-
-                if (nP >= 12428 and nP <= 12433) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                ++nP;
                 antPosP = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
             uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 1);
             AU_P->insertRcompDescriptor(rcomp);
+
 
             // get flags descriptor
             uint8_t flags = f.insertFlagsValue(it->second.first, 1);
@@ -95,8 +90,11 @@ void generateByteStream() {
             static_cast<AccessUnit_P*> (AU_P)->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            uint16_t pair = f.insertPairValue(it->second.first, 1);
+            uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 1);
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(std::to_string(pair));
+
+            std::cout << count << " " << it->second.first.qName << " " << it->second.first.beginPos << " " << it->second.first.pNext << " " << pair << std::endl;
+            ++count;
 
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -111,7 +109,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        }
+        } else ++it; /*
         else if (record.class_type == 2) {
             // update the number of reads in the access unit
             AU_N->updateReads();
@@ -231,7 +229,8 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else ++it; /*else if (record.class_type == 4) {
+        }
+        else if (record.class_type == 4) {
             // update the number of reads in the access unit
             AU_I->updateReads();
 
@@ -375,11 +374,9 @@ void generateByteStream() {
     u.insertAccessUnit(*AU_P);
     u.insertAccessUnit(*AU_N);
     u.insertAccessUnit(*AU_M);
-
-    /*
     u.insertAccessUnit(*AU_I);
     u.insertAccessUnit(*AU_HM);
-    u.insertAccessUnit(*AU_U);*/
+    u.insertAccessUnit(*AU_U);
 }
 
 int main () {
@@ -391,9 +388,7 @@ int main () {
     long long count = 1;
     BamAlignmentRecord record;
 
-    std::map<int, std::pair<int, int> > references;
-
-    while (!atEnd(bamFileIn) and count < 8559059) {
+    while (!atEnd(bamFileIn) and count < 10000) { // 8559058 total reads encoded
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -405,25 +400,20 @@ int main () {
             references.insert(std::make_pair(record.rID, std::make_pair(begin, record.beginPos)));
         }
 
-        std::cout << count << " " << "REF = " << record.rID << " " << record.qName  << " " << record.beginPos << std::endl;
-
-        /*
         if (record.tLen > 1500 or record.tLen < -1500) {
             u.insertRead(record, record);
         } else if (record.beginPos <= record.pNext) {
             u.insertRead(record, record);
         } else {
             u.updateRecord(record, record.pNext);
-        } */
+        }
         ++count;
     }
 
-    std::cout << "END" << std::endl;
-    for (auto it = references.begin(); it != references.end(); ++it) {
-        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
-    }
+    // 0 10000 249240518
+    // 1 10267 237429082
 
-    /*
+
     generateByteStream();
     std::vector<AccessUnit> au;
     u.getAllAccessUnits(au);
@@ -432,6 +422,6 @@ int main () {
         au[i].write();
     }
     f.closeFiles();
-     */
+
     return 0;
 }
