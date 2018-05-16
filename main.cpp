@@ -12,6 +12,7 @@
 int au_id = -1;
 
 // Bam file to read
+
 std::string fileName = "9827_2#49";
 
 /** Auxiliary class to be used that allows to create and write into files
@@ -28,7 +29,7 @@ Utils u;
 
 /** Size of each access unit
  * */
-#define ACCESS_UNIT_SIZE 100000
+#define ACCESS_UNIT_SIZE 1000000
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -53,12 +54,14 @@ void generateByteStream() {
     bool firstI = true, firstHM = true;
     int antPosP = 0, antPosN = 0, antPosM = 0;
     int antPosI = 0, antPosHM = 0;
-    int count = 0;
+    int countP = 0;
+
     while (it != end) {
         MpeggRecord record;
         u.convertToMpeggRecord(record, it->second.first);
         f.writeMpeggToFile(record);
 
+        /*
         if (record.class_type == 1) {
             // update the number of reads in the access unit
             AU_P->updateReads();
@@ -73,6 +76,12 @@ void generateByteStream() {
             } else {
                 AU_P->insertPosdescriptor(record.mapping_pos[0] - antPosP);
                 f.insertPosValue(record.mapping_pos[0] - antPosP, 1);
+
+                if (countP >= 381905 and countP <= 381913) {
+                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
+                }
+                ++countP;
+
                 antPosP = record.mapping_pos[0];
             }
 
@@ -93,9 +102,6 @@ void generateByteStream() {
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 1);
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(std::to_string(pair));
 
-            std::cout << count << " " << it->second.first.qName << " " << it->second.first.beginPos << " " << it->second.first.pNext << " " << pair << std::endl;
-            ++count;
-
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
                 AU_P->setEndPosition(record.mapping_pos[0]);
@@ -109,7 +115,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else ++it; /*
+        }
         else if (record.class_type == 2) {
             // update the number of reads in the access unit
             AU_N->updateReads();
@@ -141,7 +147,7 @@ void generateByteStream() {
             static_cast<AccessUnit_N*> (AU_N)->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            uint16_t pair = f.insertPairValue(it->second.first, 2);
+            uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 2);
             static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(std::to_string(pair));
 
             // get mmpos descriptor
@@ -166,7 +172,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (record.class_type == 3) {
+        } else */if (record.class_type == 3) {
             // update the number of reads in the access unit
             AU_M->updateReads();
 
@@ -212,7 +218,7 @@ void generateByteStream() {
             static_cast<AccessUnit_M*> (AU_M)->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            uint16_t pair = f.insertPairValue(it->second.first, 3);
+            uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 3);
             static_cast<AccessUnit_M*> (AU_M)->insertPairDescriptor(std::to_string(pair));
 
             // create a new access unit in case if the current one is full
@@ -248,7 +254,7 @@ void generateByteStream() {
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(it->second.first, 4);
+            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 4);
             AU_I->insertRcompDescriptor(rcomp);
 
             // get flags descriptor
@@ -274,7 +280,7 @@ void generateByteStream() {
             static_cast<AccessUnit_I*> (AU_I)->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            uint16_t pair = f.insertPairValue(it->second.first, 4);
+            uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 4);
             static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(std::to_string(pair));
 
             // get clips descriptor
@@ -317,7 +323,7 @@ void generateByteStream() {
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(it->second.first, 5);
+            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 5);
             AU_HM->insertRcompDescriptor(rcomp);
 
             // get flags descriptor
@@ -329,7 +335,7 @@ void generateByteStream() {
             static_cast<AccessUnit_HM*> (AU_HM)->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            uint16_t pair = f.insertPairValue(it->second.first, 5);
+            uint16_t pair = f.insertPairValue(it->second.first, it->second.second,  5);
             static_cast<AccessUnit_HM*> (AU_HM)->insertPairDescriptor(std::to_string(pair));
 
             // create a new access unit in case if the current one is full
@@ -367,7 +373,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        }*/
+        } else ++it;
     }
 
     // add all incomplete access units
@@ -388,7 +394,7 @@ int main () {
     long long count = 1;
     BamAlignmentRecord record;
 
-    while (!atEnd(bamFileIn) and count < 10000) { // 8559058 total reads encoded
+    while (!atEnd(bamFileIn) and count < 3000000) { // 8559058 total reads encoded
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -400,8 +406,10 @@ int main () {
             references.insert(std::make_pair(record.rID, std::make_pair(begin, record.beginPos)));
         }
 
-        if (record.tLen > 1500 or record.tLen < -1500) {
+        if (record.tLen > 2150 or record.tLen < -2150) {
             u.insertRead(record, record);
+        } else if (record.beginPos == record.pNext) {
+            u.updateRecord(record, record.pNext);
         } else if (record.beginPos <= record.pNext) {
             u.insertRead(record, record);
         } else {

@@ -7,25 +7,86 @@
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="PATH" value="/usr/bin" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immtype" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immtype" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ircomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ircomp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.irlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.irlen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mflags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmtype" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmtype" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/classP_rcomp_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classP_rcomp_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/classP_pos_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classP_pos_compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.2/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -42,32 +103,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="94" selection-start-line="94" selection-end-line="95" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileManager.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FileManager.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2535">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileManager.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FileManager.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
+            <state relative-caret-position="215">
+              <caret line="396" column="42" selection-start-line="396" selection-start-column="42" selection-end-line="396" selection-end-column="42" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -102,13 +142,13 @@
       <find>getsecond</find>
       <find>insertrc</find>
       <find>ispa</find>
-      <find>std::cout</find>
       <find>update</find>
       <find>alert</find>
       <find>aler</find>
       <find>insertpa</find>
       <find>insertpair</find>
       <find>ispaired</find>
+      <find>std::cout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,7 +162,6 @@
         <option value="$PROJECT_DIR$/GlobalVariables.h" />
         <option value="$PROJECT_DIR$/AccessUnitBlock.cpp" />
         <option value="$PROJECT_DIR$/AccessUnitBlock.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/AccessUnit.cpp" />
         <option value="$PROJECT_DIR$/AccessUnit.h" />
         <option value="$PROJECT_DIR$/AccessUnit_N.h" />
@@ -141,8 +180,9 @@
         <option value="$PROJECT_DIR$/Utils.cpp" />
         <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/FileManager.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/FileManager.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -173,10 +213,6 @@
               <item name="A_prototype_MPEG_G_encoder" type="b2602c69:ProjectViewProjectNode" />
               <item name="A_prototype_MPEG-G_encoder" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="A_prototype_MPEG_G_encoder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -186,8 +222,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/seqan/demos/tutorial/sam_and_bam_io/base.cpp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -201,7 +238,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.A_prototype_MPEG_G_encoder">
+  <component name="RunManager" selected="Application.Build All">
     <configuration name="A_prototype_MPEG_G_encoder" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="A_prototype_MPEG_G_encoder" TARGET_NAME="A_prototype_MPEG_G_encoder" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A_prototype_MPEG_G_encoder" RUN_TARGET_NAME="A_prototype_MPEG_G_encoder" />
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A_prototype_MPEG_G_encoder" RUN_TARGET_NAME="A_prototype_MPEG_G_encoder" EXPLICIT_BUILD_TARGET_NAME="all" />
     <list>
@@ -357,11 +394,15 @@
       <workItem from="1526302464411" duration="10566000" />
       <workItem from="1526318970291" duration="2036000" />
       <workItem from="1526378695907" duration="7795000" />
+      <workItem from="1526475030329" duration="275000" />
+      <workItem from="1526475316389" duration="2615000" />
+      <workItem from="1526479098699" duration="4806000" />
+      <workItem from="1526488746338" duration="1822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463903000" />
+    <option name="totallyTimeSpent" value="473421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,20 +414,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1366" height="738" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.13689604" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.13653535" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.31687897" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.50955415" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.30247933" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.5089947" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.30095038" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5063694" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5058201" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289256" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.13689604" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6576433" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6571429" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -407,7 +448,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="157" />
+      <option name="time" value="158" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -447,13 +488,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="176" column="76" selection-start-line="176" selection-start-column="76" selection-end-line="176" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -577,13 +611,7 @@
     <entry file="file://$PROJECT_DIR$/seqan/include/seqan/sequence/string_base.h" />
     <entry file="file://$PROJECT_DIR$/Block.h" />
     <entry file="file://$PROJECT_DIR$/GlobalVariables.h" />
-    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="798" column="10" lean-forward="true" selection-start-line="798" selection-start-column="10" selection-end-line="798" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_vector.h" />
     <entry file="file://$PROJECT_DIR$/AccessUnitBlock.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -591,34 +619,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/basic/alphabet_residue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="639" selection-start-line="639" selection-end-line="639" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/basic/allocator_interface.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="210" selection-start-line="210" selection-end-line="210" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/bam_io/bam_alignment_record.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="235" column="20" selection-start-line="235" selection-start-column="20" selection-end-line="235" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/basic/alphabet_residue.h" />
+    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/basic/allocator_interface.h" />
+    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/bam_io/bam_alignment_record.h" />
     <entry file="file://$PROJECT_DIR$/AccessUnit.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
@@ -722,13 +725,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/basic/debug_test_system.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="489" selection-start-line="489" selection-end-line="489" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/seqan/include/seqan/basic/debug_test_system.h" />
     <entry file="file://$PROJECT_DIR$/AccessUnitBlock.h">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -736,22 +733,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/5/bits/stl_tree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_tree.h" />
     <entry file="file://$PROJECT_DIR$/Utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
           <caret line="578" column="1" selection-start-line="578" selection-start-column="1" selection-end-line="578" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#81#448#0" />
-            <element signature="e#450#4703#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,27 +748,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="94" selection-start-line="94" selection-end-line="95" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2535">
+        <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
+        <state relative-caret-position="2220">
           <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boost_1_66_0/libs/beast/test/extern/zlib-1.2.11/contrib/puff/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="396" column="42" selection-start-line="396" selection-start-column="42" selection-end-line="396" selection-end-column="42" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

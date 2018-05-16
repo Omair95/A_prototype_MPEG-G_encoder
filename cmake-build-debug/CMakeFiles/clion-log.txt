@@ -1,4 +1,4 @@
-/home/omair/Programs/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/omair/TFG/A_prototype_MPEG-G_encoder
+/home/omair/Programs/clion-2018.1.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/omair/TFG/A_prototype_MPEG-G_encoder
 CMAKE_MODULE_PATH = /home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/util/cmake
 CMAKE_INCLUDE_PATH = /home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include
 -- Found Seqan: /home/omair/TFG/A_prototype_MPEG-G_encoder/seqan/include (found version "2.4.0")
