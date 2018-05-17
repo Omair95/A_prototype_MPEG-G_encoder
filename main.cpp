@@ -394,7 +394,7 @@ int main () {
     long long count = 1;
     BamAlignmentRecord record;
 
-    while (!atEnd(bamFileIn) and count < 20000) { // 8559058 total reads encoded
+    while (!atEnd(bamFileIn) and count <= 8559058) { // 8559058 total reads encoded
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -421,8 +421,8 @@ int main () {
     // 0 10000 249240518
     // 1 10267 237429082
 
-
     generateByteStream();
+
     std::vector<AccessUnit> au;
     u.getAllAccessUnits(au);
 

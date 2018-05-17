@@ -36,10 +36,8 @@ int \hyperlink{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}{get\+N\+Mtag} (Bam\
 \begin{DoxyCompactList}\small\item\em Extracts the value of the NM tag from the read. \end{DoxyCompactList}\item 
 void \hyperlink{classUtils_a5a62399a8bb675cc0d41846a2e38cfc5}{convert\+To\+Mpegg\+Record} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&result, Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em Converts the read or paired read to the mpegg output format. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \hyperlink{classUtils_ad8cf76e464dc733abda80738709740e5}{get\+Mmpos\+Value} (Bam\+Alignment\+Record \&record)
+std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \hyperlink{classUtils_af2edb16666facfd3fe4e72a0172ee811}{get\+Mmpos\+Values} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em Writes the mmpos descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
-std\+::string \hyperlink{classUtils_acbd0c6160115aea411d926e4c66fdb2d}{int32\+\_\+to\+\_\+hex} (int32\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em A simple function that converts a value from a int to a hex. \end{DoxyCompactList}\item 
 void \hyperlink{classUtils_abddd37adce88799fc8a66f7779c407bb}{remove\+First\+Read} ()
 \begin{DoxyCompactList}\small\item\em Removes the first read from the list of paired reads. \end{DoxyCompactList}\item 
 void \hyperlink{classUtils_a23ce2e6de05c4574f2296353f03fc9db}{get\+Allreads} (std\+::multimap$<$ int, std\+::pair$<$ Bam\+Alignment\+Record, Bam\+Alignment\+Record $>$ $>$ \&all\+Reads)
@@ -55,16 +53,13 @@ void \hyperlink{classUtils_aa2bffe3dfec78617ebdf207ff0fa0820}{insert\+Read} (Bam
 \item 
 static std\+::string \hyperlink{classUtils_a61182e6d5c700eedfaff392b51826af3}{get\+Cigar} (String$<$ Cigar\+Element$<$$>$ $>$ \&r\+Cigar)
 \begin{DoxyCompactList}\small\item\em Convert from a string$<$cigar\+Element$>$ to a std\+::string. \end{DoxyCompactList}\item 
-static uint16\+\_\+t {\bfseries reads\+\_\+distance} (Bam\+Alignment\+Record \&record)\hypertarget{classUtils_a02d521d4d7cecbe20acab176d08b7857}{}\label{classUtils_a02d521d4d7cecbe20acab176d08b7857}
-
+\mbox{\Hypertarget{classUtils_a02d521d4d7cecbe20acab176d08b7857}\label{classUtils_a02d521d4d7cecbe20acab176d08b7857}} 
+static uint16\+\_\+t {\bfseries reads\+\_\+distance} (Bam\+Alignment\+Record \&record)
 \item 
 static std\+::string \hyperlink{classUtils_a58dcdc1dd071936078799ee35d5f2502}{get\+M\+Dtag} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em Extracts the value of the MD tag from the read. \end{DoxyCompactList}\item 
-static uint64\+\_\+t {\bfseries hex\+\_\+to\+\_\+int} (std\+::string value)\hypertarget{classUtils_aaccbd9f6e04b06c6c95617ec36709f96}{}\label{classUtils_aaccbd9f6e04b06c6c95617ec36709f96}
-
-\item 
-static std\+::string {\bfseries int16\+\_\+to\+\_\+hex} (int16\+\_\+t value)\hypertarget{classUtils_a1b2c28fa49f1048d6af6f8b768490df6}{}\label{classUtils_a1b2c28fa49f1048d6af6f8b768490df6}
-
+\mbox{\Hypertarget{classUtils_a2051c7e16daa8b646bfb69fc9a7ff9e0}\label{classUtils_a2051c7e16daa8b646bfb69fc9a7ff9e0}} 
+static bool {\bfseries is\+Paired} (Bam\+Alignment\+Record first, Bam\+Alignment\+Record second)
 \end{DoxyCompactItemize}
 
 
@@ -80,13 +75,12 @@ Omair Iqbal
 Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com} 
 
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtils_a452e78692c87ed5c7c993b6c6ac4981a}\label{classUtils_a452e78692c87ed5c7c993b6c6ac4981a}} 
 \index{Utils@{Utils}!Utils@{Utils}}
 \index{Utils@{Utils}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{Utils()}{Utils()}}]{\setlength{\rightskip}{0pt plus 5cm}Utils\+::\+Utils (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a452e78692c87ed5c7c993b6c6ac4981a}{}\label{classUtils_a452e78692c87ed5c7c993b6c6ac4981a}
+\subsubsection{\texorpdfstring{Utils()}{Utils()}}
+{\footnotesize\ttfamily Utils\+::\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 identifier of the genomic record in the output mpegg format 
@@ -99,13 +93,12 @@ Constructor method
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_afa5e70facffc286607498e7edb639b8a}\label{classUtils_afa5e70facffc286607498e7edb639b8a}} 
 \index{Utils@{Utils}!````~Utils@{$\sim$\+Utils}}
 \index{````~Utils@{$\sim$\+Utils}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{$\sim$\+Utils()}{~Utils()}}]{\setlength{\rightskip}{0pt plus 5cm}Utils\+::$\sim$\+Utils (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_afa5e70facffc286607498e7edb639b8a}{}\label{classUtils_afa5e70facffc286607498e7edb639b8a}
+\subsubsection{\texorpdfstring{$\sim$\+Utils()}{~Utils()}}
+{\footnotesize\ttfamily Utils\+::$\sim$\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Destructor method. 
@@ -121,14 +114,12 @@ void
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtils_a5a62399a8bb675cc0d41846a2e38cfc5}\label{classUtils_a5a62399a8bb675cc0d41846a2e38cfc5}} 
 \index{Utils@{Utils}!convert\+To\+Mpegg\+Record@{convert\+To\+Mpegg\+Record}}
 \index{convert\+To\+Mpegg\+Record@{convert\+To\+Mpegg\+Record}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{convert\+To\+Mpegg\+Record(\+Mpegg\+Record \&result, Bam\+Alignment\+Record \&record)}{convertToMpeggRecord(MpeggRecord &result, BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\+::convert\+To\+Mpegg\+Record (
-\begin{DoxyParamCaption}
-\item[{{\bf Mpegg\+Record} \&}]{result, }
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a5a62399a8bb675cc0d41846a2e38cfc5}{}\label{classUtils_a5a62399a8bb675cc0d41846a2e38cfc5}
+\subsubsection{\texorpdfstring{convert\+To\+Mpegg\+Record()}{convertToMpeggRecord()}}
+{\footnotesize\ttfamily void Utils\+::convert\+To\+Mpegg\+Record (\begin{DoxyParamCaption}\item[{\hyperlink{structMpeggRecord}{Mpegg\+Record} \&}]{result,  }\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 Converts the read or paired read to the mpegg output format. 
@@ -141,13 +132,12 @@ Converts the read or paired read to the mpegg output format.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a1f13b160cd02b1fdf44e6ff8ba2c2406}\label{classUtils_a1f13b160cd02b1fdf44e6ff8ba2c2406}} 
 \index{Utils@{Utils}!get\+All\+Access\+Units@{get\+All\+Access\+Units}}
 \index{get\+All\+Access\+Units@{get\+All\+Access\+Units}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+All\+Access\+Units(std\+::vector$<$ Access\+Unit $>$ \&au)}{getAllAccessUnits(std::vector< AccessUnit > &au)}}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\+::get\+All\+Access\+Units (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ {\bf Access\+Unit} $>$ \&}]{au}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a1f13b160cd02b1fdf44e6ff8ba2c2406}{}\label{classUtils_a1f13b160cd02b1fdf44e6ff8ba2c2406}
+\subsubsection{\texorpdfstring{get\+All\+Access\+Units()}{getAllAccessUnits()}}
+{\footnotesize\ttfamily void Utils\+::get\+All\+Access\+Units (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{classAccessUnit}{Access\+Unit} $>$ \&}]{au }\end{DoxyParamCaption})}
+
 
 
 Gets all the access units stored. 
@@ -160,13 +150,12 @@ Gets all the access units stored.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a23ce2e6de05c4574f2296353f03fc9db}\label{classUtils_a23ce2e6de05c4574f2296353f03fc9db}} 
 \index{Utils@{Utils}!get\+Allreads@{get\+Allreads}}
 \index{get\+Allreads@{get\+Allreads}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Allreads(std\+::multimap$<$ int, std\+::pair$<$ Bam\+Alignment\+Record, Bam\+Alignment\+Record $>$ $>$ \&all\+Reads)}{getAllreads(std::multimap< int, std::pair< BamAlignmentRecord, BamAlignmentRecord > > &allReads)}}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\+::get\+Allreads (
-\begin{DoxyParamCaption}
-\item[{std\+::multimap$<$ int, std\+::pair$<$ Bam\+Alignment\+Record, Bam\+Alignment\+Record $>$ $>$ \&}]{all\+Reads}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a23ce2e6de05c4574f2296353f03fc9db}{}\label{classUtils_a23ce2e6de05c4574f2296353f03fc9db}
+\subsubsection{\texorpdfstring{get\+Allreads()}{getAllreads()}}
+{\footnotesize\ttfamily void Utils\+::get\+Allreads (\begin{DoxyParamCaption}\item[{std\+::multimap$<$ int, std\+::pair$<$ Bam\+Alignment\+Record, Bam\+Alignment\+Record $>$ $>$ \&}]{all\+Reads }\end{DoxyParamCaption})}
+
 
 
 Gets all the paired reads. 
@@ -179,13 +168,12 @@ Gets all the paired reads.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a61182e6d5c700eedfaff392b51826af3}\label{classUtils_a61182e6d5c700eedfaff392b51826af3}} 
 \index{Utils@{Utils}!get\+Cigar@{get\+Cigar}}
 \index{get\+Cigar@{get\+Cigar}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Cigar(\+String$<$ Cigar\+Element$<$$>$ $>$ \&r\+Cigar)}{getCigar(String< CigarElement<> > &rCigar)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::get\+Cigar (
-\begin{DoxyParamCaption}
-\item[{String$<$ Cigar\+Element$<$$>$ $>$ \&}]{r\+Cigar}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classUtils_a61182e6d5c700eedfaff392b51826af3}{}\label{classUtils_a61182e6d5c700eedfaff392b51826af3}
+\subsubsection{\texorpdfstring{get\+Cigar()}{getCigar()}}
+{\footnotesize\ttfamily std\+::string Utils\+::get\+Cigar (\begin{DoxyParamCaption}\item[{String$<$ Cigar\+Element$<$$>$ $>$ \&}]{r\+Cigar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 
 
 Convert from a string$<$cigar\+Element$>$ to a std\+::string. 
@@ -198,13 +186,12 @@ Convert from a string$<$cigar\+Element$>$ to a std\+::string.
 \begin{DoxyReturn}{Returns}
 converted value 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a75b0e41bc884a3fcebb4f55c45855d82}\label{classUtils_a75b0e41bc884a3fcebb4f55c45855d82}} 
 \index{Utils@{Utils}!get\+Class\+Type@{get\+Class\+Type}}
 \index{get\+Class\+Type@{get\+Class\+Type}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Class\+Type(\+Bam\+Alignment\+Record \&record)}{getClassType(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Utils\+::get\+Class\+Type (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a75b0e41bc884a3fcebb4f55c45855d82}{}\label{classUtils_a75b0e41bc884a3fcebb4f55c45855d82}
+\subsubsection{\texorpdfstring{get\+Class\+Type()}{getClassType()}}
+{\footnotesize\ttfamily uint8\+\_\+t Utils\+::get\+Class\+Type (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 To determine the data class where a read belongs to. 
@@ -217,13 +204,12 @@ To determine the data class where a read belongs to.
 \begin{DoxyReturn}{Returns}
 integer indicating the type of data class of the read 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a612bb61872bc69a806c0159dcd3da28c}\label{classUtils_a612bb61872bc69a806c0159dcd3da28c}} 
 \index{Utils@{Utils}!get\+Extended\+Cigar@{get\+Extended\+Cigar}}
 \index{get\+Extended\+Cigar@{get\+Extended\+Cigar}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Extended\+Cigar(\+Bam\+Alignment\+Record \&record)}{getExtendedCigar(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::get\+Extended\+Cigar (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a612bb61872bc69a806c0159dcd3da28c}{}\label{classUtils_a612bb61872bc69a806c0159dcd3da28c}
+\subsubsection{\texorpdfstring{get\+Extended\+Cigar()}{getExtendedCigar()}}
+{\footnotesize\ttfamily std\+::string Utils\+::get\+Extended\+Cigar (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 Gets the extended cigar of the read. 
@@ -236,13 +222,12 @@ Gets the extended cigar of the read.
 \begin{DoxyReturn}{Returns}
 Extended cigar of the read 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a58dcdc1dd071936078799ee35d5f2502}\label{classUtils_a58dcdc1dd071936078799ee35d5f2502}} 
 \index{Utils@{Utils}!get\+M\+Dtag@{get\+M\+Dtag}}
 \index{get\+M\+Dtag@{get\+M\+Dtag}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+M\+Dtag(\+Bam\+Alignment\+Record \&record)}{getMDtag(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::get\+M\+Dtag (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classUtils_a58dcdc1dd071936078799ee35d5f2502}{}\label{classUtils_a58dcdc1dd071936078799ee35d5f2502}
+\subsubsection{\texorpdfstring{get\+M\+Dtag()}{getMDtag()}}
+{\footnotesize\ttfamily std\+::string Utils\+::get\+M\+Dtag (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 
 
 Extracts the value of the MD tag from the read. 
@@ -255,13 +240,12 @@ Extracts the value of the MD tag from the read.
 \begin{DoxyReturn}{Returns}
 string containing the value of the MD tag 
 \end{DoxyReturn}
-\index{Utils@{Utils}!get\+Mmpos\+Value@{get\+Mmpos\+Value}}
-\index{get\+Mmpos\+Value@{get\+Mmpos\+Value}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Mmpos\+Value(\+Bam\+Alignment\+Record \&record)}{getMmposValue(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ Utils\+::get\+Mmpos\+Value (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_ad8cf76e464dc733abda80738709740e5}{}\label{classUtils_ad8cf76e464dc733abda80738709740e5}
+\mbox{\Hypertarget{classUtils_af2edb16666facfd3fe4e72a0172ee811}\label{classUtils_af2edb16666facfd3fe4e72a0172ee811}} 
+\index{Utils@{Utils}!get\+Mmpos\+Values@{get\+Mmpos\+Values}}
+\index{get\+Mmpos\+Values@{get\+Mmpos\+Values}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{get\+Mmpos\+Values()}{getMmposValues()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ Utils\+::get\+Mmpos\+Values (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 Writes the mmpos descriptor value to the respective file according to the class type. 
@@ -276,13 +260,12 @@ Writes the mmpos descriptor value to the respective file according to the class 
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}\label{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}} 
 \index{Utils@{Utils}!get\+N\+Mtag@{get\+N\+Mtag}}
 \index{get\+N\+Mtag@{get\+N\+Mtag}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+N\+Mtag(\+Bam\+Alignment\+Record \&record)}{getNMtag(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}int Utils\+::get\+N\+Mtag (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}{}\label{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}
+\subsubsection{\texorpdfstring{get\+N\+Mtag()}{getNMtag()}}
+{\footnotesize\ttfamily int Utils\+::get\+N\+Mtag (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 Extracts the value of the NM tag from the read. 
@@ -295,13 +278,12 @@ Extracts the value of the NM tag from the read.
 \begin{DoxyReturn}{Returns}
 integer containing the value of the NM tag 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_acba7464c0972dceade69f1f1aef4e5f4}\label{classUtils_acba7464c0972dceade69f1f1aef4e5f4}} 
 \index{Utils@{Utils}!get\+Second\+Record@{get\+Second\+Record}}
 \index{get\+Second\+Record@{get\+Second\+Record}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{get\+Second\+Record(\+Bam\+Alignment\+Record \&record)}{getSecondRecord(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}Bam\+Alignment\+Record Utils\+::get\+Second\+Record (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_acba7464c0972dceade69f1f1aef4e5f4}{}\label{classUtils_acba7464c0972dceade69f1f1aef4e5f4}
+\subsubsection{\texorpdfstring{get\+Second\+Record()}{getSecondRecord()}}
+{\footnotesize\ttfamily Bam\+Alignment\+Record Utils\+::get\+Second\+Record (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 Get the second read for the read pair. 
@@ -314,13 +296,12 @@ Get the second read for the read pair.
 \begin{DoxyReturn}{Returns}
 second read of the pair 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a20d62b8e6495536108e7bfe1b955355a}\label{classUtils_a20d62b8e6495536108e7bfe1b955355a}} 
 \index{Utils@{Utils}!insert\+Access\+Unit@{insert\+Access\+Unit}}
 \index{insert\+Access\+Unit@{insert\+Access\+Unit}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{insert\+Access\+Unit(\+Access\+Unit au)}{insertAccessUnit(AccessUnit au)}}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\+::insert\+Access\+Unit (
-\begin{DoxyParamCaption}
-\item[{{\bf Access\+Unit}}]{au}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a20d62b8e6495536108e7bfe1b955355a}{}\label{classUtils_a20d62b8e6495536108e7bfe1b955355a}
+\subsubsection{\texorpdfstring{insert\+Access\+Unit()}{insertAccessUnit()}}
+{\footnotesize\ttfamily void Utils\+::insert\+Access\+Unit (\begin{DoxyParamCaption}\item[{\hyperlink{classAccessUnit}{Access\+Unit}}]{au }\end{DoxyParamCaption})}
+
 
 
 Inserts a new access unit to the list of access units. 
@@ -333,14 +314,12 @@ Inserts a new access unit to the list of access units.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_aa2bffe3dfec78617ebdf207ff0fa0820}\label{classUtils_aa2bffe3dfec78617ebdf207ff0fa0820}} 
 \index{Utils@{Utils}!insert\+Read@{insert\+Read}}
 \index{insert\+Read@{insert\+Read}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{insert\+Read(\+Bam\+Alignment\+Record first, Bam\+Alignment\+Record second)}{insertRead(BamAlignmentRecord first, BamAlignmentRecord second)}}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\+::insert\+Read (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record}]{first, }
-\item[{Bam\+Alignment\+Record}]{second}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_aa2bffe3dfec78617ebdf207ff0fa0820}{}\label{classUtils_aa2bffe3dfec78617ebdf207ff0fa0820}
+\subsubsection{\texorpdfstring{insert\+Read()}{insertRead()}}
+{\footnotesize\ttfamily void Utils\+::insert\+Read (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record}]{first,  }\item[{Bam\+Alignment\+Record}]{second }\end{DoxyParamCaption})}
+
 
 
 Inserts a new read pair to the list of paired reads. 
@@ -355,32 +334,12 @@ Inserts a new read pair to the list of paired reads.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\index{Utils@{Utils}!int32\+\_\+to\+\_\+hex@{int32\+\_\+to\+\_\+hex}}
-\index{int32\+\_\+to\+\_\+hex@{int32\+\_\+to\+\_\+hex}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{int32\+\_\+to\+\_\+hex(int32\+\_\+t value)}{int32_to_hex(int32_t value)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Utils\+::int32\+\_\+to\+\_\+hex (
-\begin{DoxyParamCaption}
-\item[{int32\+\_\+t}]{value}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_acbd0c6160115aea411d926e4c66fdb2d}{}\label{classUtils_acbd0c6160115aea411d926e4c66fdb2d}
-
-
-A simple function that converts a value from a int to a hex. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em value} & int value to be converted \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-hexadecimal value converted 
-\end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_abf817f51550147aa6f7265e45c357f14}\label{classUtils_abf817f51550147aa6f7265e45c357f14}} 
 \index{Utils@{Utils}!is\+Class\+HM@{is\+Class\+HM}}
 \index{is\+Class\+HM@{is\+Class\+HM}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{is\+Class\+H\+M(\+Bam\+Alignment\+Record \&record)}{isClassHM(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Utils\+::is\+Class\+HM (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_abf817f51550147aa6f7265e45c357f14}{}\label{classUtils_abf817f51550147aa6f7265e45c357f14}
+\subsubsection{\texorpdfstring{is\+Class\+H\+M()}{isClassHM()}}
+{\footnotesize\ttfamily bool Utils\+::is\+Class\+HM (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 To determine if the read belongs to class HM, reads where only one read is mapped. 
@@ -393,13 +352,12 @@ To determine if the read belongs to class HM, reads where only one read is mappe
 \begin{DoxyReturn}{Returns}
 bool indicating if the read belongs to class HM 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a4e19b89b708e23964398b1e561686423}\label{classUtils_a4e19b89b708e23964398b1e561686423}} 
 \index{Utils@{Utils}!is\+ClassI@{is\+ClassI}}
 \index{is\+ClassI@{is\+ClassI}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{is\+Class\+I(\+Bam\+Alignment\+Record \&record)}{isClassI(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Utils\+::is\+ClassI (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a4e19b89b708e23964398b1e561686423}{}\label{classUtils_a4e19b89b708e23964398b1e561686423}
+\subsubsection{\texorpdfstring{is\+Class\+I()}{isClassI()}}
+{\footnotesize\ttfamily bool Utils\+::is\+ClassI (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 To determine if the read belongs to class I, reads contanining at least one insertion, deletion or clippled base, and optionally unknown bases or substitution. 
@@ -412,13 +370,12 @@ To determine if the read belongs to class I, reads contanining at least one inse
 \begin{DoxyReturn}{Returns}
 bool indicating if the read belongs to class I 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a2ab4c3d1059e841aaa81bf6eb7650c46}\label{classUtils_a2ab4c3d1059e841aaa81bf6eb7650c46}} 
 \index{Utils@{Utils}!is\+ClassM@{is\+ClassM}}
 \index{is\+ClassM@{is\+ClassM}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{is\+Class\+M(\+Bam\+Alignment\+Record \&record)}{isClassM(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Utils\+::is\+ClassM (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a2ab4c3d1059e841aaa81bf6eb7650c46}{}\label{classUtils_a2ab4c3d1059e841aaa81bf6eb7650c46}
+\subsubsection{\texorpdfstring{is\+Class\+M()}{isClassM()}}
+{\footnotesize\ttfamily bool Utils\+::is\+ClassM (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 To determine if the read belongs to class M, reads contanining at least one substitution, optionally unknown bases and no insertion, deletions and clipped bases. 
@@ -431,13 +388,12 @@ To determine if the read belongs to class M, reads contanining at least one subs
 \begin{DoxyReturn}{Returns}
 bool indicating if the read belongs to class M 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a68dc1efdf9895d4c63a0a78a09d407d4}\label{classUtils_a68dc1efdf9895d4c63a0a78a09d407d4}} 
 \index{Utils@{Utils}!is\+ClassN@{is\+ClassN}}
 \index{is\+ClassN@{is\+ClassN}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{is\+Class\+N(\+Bam\+Alignment\+Record \&record)}{isClassN(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Utils\+::is\+ClassN (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a68dc1efdf9895d4c63a0a78a09d407d4}{}\label{classUtils_a68dc1efdf9895d4c63a0a78a09d407d4}
+\subsubsection{\texorpdfstring{is\+Class\+N()}{isClassN()}}
+{\footnotesize\ttfamily bool Utils\+::is\+ClassN (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 To determine if the read belongs to class N, reads containing mismatches which are unknonwn bases only. 
@@ -450,13 +406,12 @@ To determine if the read belongs to class N, reads containing mismatches which a
 \begin{DoxyReturn}{Returns}
 bool indicating if the read belongs to class N 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_ab384d430e1cc5e0cc1ce1913eeab7e82}\label{classUtils_ab384d430e1cc5e0cc1ce1913eeab7e82}} 
 \index{Utils@{Utils}!is\+ClassP@{is\+ClassP}}
 \index{is\+ClassP@{is\+ClassP}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{is\+Class\+P(\+Bam\+Alignment\+Record \&record)}{isClassP(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Utils\+::is\+ClassP (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_ab384d430e1cc5e0cc1ce1913eeab7e82}{}\label{classUtils_ab384d430e1cc5e0cc1ce1913eeab7e82}
+\subsubsection{\texorpdfstring{is\+Class\+P()}{isClassP()}}
+{\footnotesize\ttfamily bool Utils\+::is\+ClassP (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 To determine if the read belongs to class P, reads perfectly matching the reference sequence. 
@@ -469,13 +424,12 @@ To determine if the read belongs to class P, reads perfectly matching the refere
 \begin{DoxyReturn}{Returns}
 bool indicating if the read belongs to class P 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}\label{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}} 
 \index{Utils@{Utils}!is\+ClassU@{is\+ClassU}}
 \index{is\+ClassU@{is\+ClassU}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{is\+Class\+U(\+Bam\+Alignment\+Record \&record)}{isClassU(BamAlignmentRecord &record)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Utils\+::is\+ClassU (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}{}\label{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}
+\subsubsection{\texorpdfstring{is\+Class\+U()}{isClassU()}}
+{\footnotesize\ttfamily bool Utils\+::is\+ClassU (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
 
 
 To determine if the read belongs to class U, unmapped reads only. 
@@ -488,13 +442,12 @@ To determine if the read belongs to class U, unmapped reads only.
 \begin{DoxyReturn}{Returns}
 bool indicating if the read belongs to class U 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_abddd37adce88799fc8a66f7779c407bb}\label{classUtils_abddd37adce88799fc8a66f7779c407bb}} 
 \index{Utils@{Utils}!remove\+First\+Read@{remove\+First\+Read}}
 \index{remove\+First\+Read@{remove\+First\+Read}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{remove\+First\+Read()}{removeFirstRead()}}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\+::remove\+First\+Read (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_abddd37adce88799fc8a66f7779c407bb}{}\label{classUtils_abddd37adce88799fc8a66f7779c407bb}
+\subsubsection{\texorpdfstring{remove\+First\+Read()}{removeFirstRead()}}
+{\footnotesize\ttfamily void Utils\+::remove\+First\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Removes the first read from the list of paired reads. 
@@ -507,14 +460,12 @@ Removes the first read from the list of paired reads.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a6e24ee791d9ce74a9e8991c8bf7cecdf}\label{classUtils_a6e24ee791d9ce74a9e8991c8bf7cecdf}} 
 \index{Utils@{Utils}!update\+Record@{update\+Record}}
 \index{update\+Record@{update\+Record}!Utils@{Utils}}
-\subsubsection[{\texorpdfstring{update\+Record(\+Bam\+Alignment\+Record \&record, int \&pos)}{updateRecord(BamAlignmentRecord &record, int &pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\+::update\+Record (
-\begin{DoxyParamCaption}
-\item[{Bam\+Alignment\+Record \&}]{record, }
-\item[{int \&}]{pos}
-\end{DoxyParamCaption}
-)}\hypertarget{classUtils_a6e24ee791d9ce74a9e8991c8bf7cecdf}{}\label{classUtils_a6e24ee791d9ce74a9e8991c8bf7cecdf}
+\subsubsection{\texorpdfstring{update\+Record()}{updateRecord()}}
+{\footnotesize\ttfamily void Utils\+::update\+Record (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record,  }\item[{int \&}]{pos }\end{DoxyParamCaption})}
+
 
 
 Updates the second read from the pair with a new value. 
