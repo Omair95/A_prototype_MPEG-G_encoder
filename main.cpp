@@ -61,7 +61,6 @@ void generateByteStream() {
         u.convertToMpeggRecord(record, it->second.first);
         f.writeMpeggToFile(record);
 
-        /*
         if (record.class_type == 1) {
             // update the number of reads in the access unit
             AU_P->updateReads();
@@ -76,19 +75,20 @@ void generateByteStream() {
             } else {
                 AU_P->insertPosdescriptor(record.mapping_pos[0] - antPosP);
                 f.insertPosValue(record.mapping_pos[0] - antPosP, 1);
-
-                if (countP >= 381905 and countP <= 381913) {
-                    std::cout << it->second.first.qName << " " << it->second.first.beginPos << " " << record.mapping_pos[0] - antPosP << std::endl;
-                }
-                ++countP;
-
                 antPosP = record.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 1);
+            BamAlignmentRecord first, second;
+            if (it->second.first.flag & 64) {
+                first = it->second.first;
+                second = it->second.second;
+            } else {
+                first = it->second.second;
+                second = it->second.first;
+            }
+            uint8_t rcomp = f.insertRcompValue(first, second, 1);
             AU_P->insertRcompDescriptor(rcomp);
-
 
             // get flags descriptor
             uint8_t flags = f.insertFlagsValue(it->second.first, 1);
@@ -101,6 +101,7 @@ void generateByteStream() {
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 1);
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(std::to_string(pair));
+
 
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -115,8 +116,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        }
-        else if (record.class_type == 2) {
+        } else if (record.class_type == 2) {
             // update the number of reads in the access unit
             AU_N->updateReads();
 
@@ -172,7 +172,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else */if (record.class_type == 3) {
+        } else if (record.class_type == 3) {
             // update the number of reads in the access unit
             AU_M->updateReads();
 
@@ -394,7 +394,7 @@ int main () {
     long long count = 1;
     BamAlignmentRecord record;
 
-    while (!atEnd(bamFileIn) and count < 3000000) { // 8559058 total reads encoded
+    while (!atEnd(bamFileIn) and count < 20000) { // 8559058 total reads encoded
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {

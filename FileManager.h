@@ -144,6 +144,8 @@ public:
      * */
     void closeFiles();
 
+    void write8bit(uint8_t value, uint8_t classType);
+
     void write16bit(uint16_t value, uint8_t classType);
 
     void write32bit(uint32_t value, uint8_t classType);
