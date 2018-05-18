@@ -79,15 +79,7 @@ void generateByteStream() {
             }
 
             // get rcomp descriptor
-            BamAlignmentRecord first, second;
-            if (it->second.first.flag & 64) {
-                first = it->second.first;
-                second = it->second.second;
-            } else {
-                first = it->second.second;
-                second = it->second.first;
-            }
-            uint8_t rcomp = f.insertRcompValue(first, second, 1);
+            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 1);
             AU_P->insertRcompDescriptor(rcomp);
 
             // get flags descriptor
@@ -102,6 +94,7 @@ void generateByteStream() {
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 1);
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(std::to_string(pair));
 
+            std::cout << it->second.first.qName << " " << pair << std::endl;
 
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -116,7 +109,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (record.class_type == 2) {
+        }  /*else if (record.class_type == 2) {
             // update the number of reads in the access unit
             AU_N->updateReads();
 
@@ -149,6 +142,9 @@ void generateByteStream() {
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 2);
             static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(std::to_string(pair));
+
+            std::cout << it->second.first.qName << " " << it->second.first.tLen << " " << u.reads_distance(it->second.first) << std::endl;
+
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(it->second.first);
@@ -305,7 +301,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (record.class_type == 5) {
+        } /*else if (record.class_type == 5) {
             // update the number of reads in the access unit
             AU_HM->updateReads();
 
@@ -373,7 +369,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else ++it;
+        } */else ++it;
     }
 
     // add all incomplete access units
@@ -394,7 +390,7 @@ int main () {
     long long count = 1;
     BamAlignmentRecord record;
 
-    while (!atEnd(bamFileIn) and count <= 8559058) { // 8559058 total reads encoded
+    while (!atEnd(bamFileIn) and count <= 10000) { // 8559058 total reads encoded
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {

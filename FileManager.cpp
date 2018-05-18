@@ -59,50 +59,8 @@ void FileManager::insertPosValue(uint32_t value, uint8_t classType) {
     }
 }
 
-uint8_t FileManager::insertRcompValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType) {
-    uint8_t result;
-
-    if (Utils::isPaired(record, record2)) { // if 2 reads in pair are stored together
-        if (record.flag & 16) {             // read1 is reverse
-            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
-                result = 3;
-                goto after;
-            } else {                        // read1 is reverse and read2 is forward
-                result = 1;
-                goto after;
-            }
-        } else {                            // read1 is forward
-            if (record2.flag & 16) {        // read1 is forwand and read2 is reverse
-                result = 2;
-                goto after;
-            } else {                        // read1 is forward and read2 is forward
-                result = 0;
-                goto after;
-            }
-        }
-    } else {                                // reads are stored separately
-        if (record.flag & 16) {             // read1 is reverse
-            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
-                result = 3;
-                goto after;
-            } else {                        // read1 is reverse and read2 is forward
-                result = 1;
-                goto after;
-            }
-        } else {                            // read1 is forward
-            if (record2.flag & 16) {        // read1 is forward and read2 is reverse
-                result = 2;
-                goto after;
-            } else {                        // read1 is forward and read2 is forward
-                result = 0;
-                goto after;
-            }
-        }
-    }
-
-    after:
-
-    uint8_t littleEndianValue = boost::endian::native_to_little(result);
+void FileManager::write8bitRcomp(uint8_t value, uint8_t classType) {
+    uint8_t littleEndianValue = boost::endian::native_to_little(value);
 
     if (classType == 1) {
         rcompDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
@@ -115,7 +73,54 @@ uint8_t FileManager::insertRcompValue(BamAlignmentRecord& record, BamAlignmentRe
     } else if (classType == 5) {
         rcompDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
-    return result;
+}
+
+uint8_t FileManager::insertRcompValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType) {
+
+    if (Utils::isPaired(record, record2)) { // if 2 reads in pair are stored together
+        if (record.flag & 16) {             // read1 is reverse
+            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
+                write8bitRcomp(3, classType);
+            } else {                        // read1 is reverse and read2 is forward
+                write8bitRcomp(1, classType);
+            }
+        } else {                            // read1 is forward
+            if (record2.flag & 16) {        // read1 is forwand and read2 is reverse
+                write8bitRcomp(2, classType);
+            } else {                        // read1 is forward and read2 is forward
+                write8bitRcomp(0, classType);
+            }
+        }
+        if (record2.flag & 16) {
+            if (record.flag & 16) {
+                write8bitRcomp(3, classType);
+            } else {
+                write8bitRcomp(1, classType);
+            }
+        } else {
+            if (record.flag & 16) {
+                write8bitRcomp(2, classType);
+            } else {
+                write8bitRcomp(0, classType);
+            }
+        }
+    } else {                                // reads are stored separately
+        if (record.flag & 16) {             // read1 is reverse
+            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
+                write8bitRcomp(3, classType);
+            } else {                        // read1 is reverse and read2 is forward
+                write8bitRcomp(1, classType);
+            }
+        } else {                            // read1 is forward
+            if (record2.flag & 16) {        // read1 is forward and read2 is reverse
+                write8bitRcomp(2, classType);
+            } else {                        // read1 is forward and read2 is forward
+                write8bitRcomp(0, classType);
+            }
+        }
+    }
+
+    return 0;
 }
 
 uint8_t FileManager::insertFlagsValue(BamAlignmentRecord& record, uint8_t classType) {
@@ -199,7 +204,15 @@ void FileManager::write32bit(uint32_t value, uint8_t classType) {
 uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType) {
     uint16_t result;
 
+    if (Utils::isPaired(record, record2)) {
+        result = Utils::reads_distance(record);
+        write16bit(result, classType);
+        return result;
+    }
+
     if (record.flag & 64) {
+        uint32_t r1 = record.rID;
+        uint32_t r2 = record.rNextId;
         if (record.rID == record.rNextId) { // read2 in pair is on the same reference but coded separately
             result = 0x7ffd;
             uint32_t distance = Utils::reads_distance(record);
@@ -235,11 +248,12 @@ uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, BamAlignmentRe
         }
     }
 
+    /*
     if (not Utils::isPaired(record, record2)) {
         if (record.flag & 64) result = 0x8001; // read2 unpaired
         else result = 0x7fff;                  // read1 unpaired
         write16bit(result, classType);
-    }
+    } */
 
     return result;
 }

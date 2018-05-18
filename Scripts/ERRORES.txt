@@ -1,1 +1,0 @@
-- bam.pos byte = 6064, pos value = 28, beginPos = 245242
