@@ -175,6 +175,8 @@ public:
     void insertRead(BamAlignmentRecord first, BamAlignmentRecord second);
 
     static bool isPaired(BamAlignmentRecord first, BamAlignmentRecord second);
+
+    static uint8_t getSequenceLength(BamAlignmentRecord& record);
 };
 
 #endif

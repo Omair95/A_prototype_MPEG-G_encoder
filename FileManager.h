@@ -146,6 +146,8 @@ public:
 
     void write8bitRcomp(uint8_t value, uint8_t classType);
 
+    void write8bitPair(uint8_t value, uint8_t classType);
+
     void write16bit(uint16_t value, uint8_t classType);
 
     void write32bit(uint32_t value, uint8_t classType);

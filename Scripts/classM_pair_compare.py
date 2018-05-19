@@ -8,7 +8,6 @@ couple_bytes_file1 = file1.read(1).encode("hex");
 couple_bytes_file2 = file2.read(1).encode("hex");
 ++count;
 while couple_bytes_file1 != "":
-	print(count);
 	couple_bytes_file1 = file1.read(1).encode("hex");
 	couple_bytes_file2 = file2.read(1).encode("hex");
 	count = count + 1;

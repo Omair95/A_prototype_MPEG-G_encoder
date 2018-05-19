@@ -29,7 +29,7 @@ Utils u;
 
 /** Size of each access unit
  * */
-#define ACCESS_UNIT_SIZE 1000000
+#define ACCESS_UNIT_SIZE 1000000 // 13716
 
 /**
  * \brief This is the main function of the program. It detects the type of data class that a read belongs to
@@ -54,7 +54,6 @@ void generateByteStream() {
     bool firstI = true, firstHM = true;
     int antPosP = 0, antPosN = 0, antPosM = 0;
     int antPosI = 0, antPosHM = 0;
-    int countP = 0;
 
     while (it != end) {
         MpeggRecord record;
@@ -94,8 +93,6 @@ void generateByteStream() {
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 1);
             static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(std::to_string(pair));
 
-            std::cout << it->second.first.qName << " " << pair << std::endl;
-
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
                 AU_P->setEndPosition(record.mapping_pos[0]);
@@ -109,7 +106,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        }  /*else if (record.class_type == 2) {
+        }  else if (record.class_type == 2) {
             // update the number of reads in the access unit
             AU_N->updateReads();
 
@@ -142,9 +139,6 @@ void generateByteStream() {
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 2);
             static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(std::to_string(pair));
-
-            std::cout << it->second.first.qName << " " << it->second.first.tLen << " " << u.reads_distance(it->second.first) << std::endl;
-
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(it->second.first);
@@ -301,7 +295,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } /*else if (record.class_type == 5) {
+        } else if (record.class_type == 5) {
             // update the number of reads in the access unit
             AU_HM->updateReads();
 
@@ -369,7 +363,7 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } */else ++it;
+        } else ++it;
     }
 
     // add all incomplete access units

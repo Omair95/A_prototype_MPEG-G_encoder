@@ -164,9 +164,7 @@ void Utils::updateRecord(BamAlignmentRecord& record, int& pos) {
     bool found = false;
     for (auto it = ret.first; it != ret.second; ++it) {
         if (!s.compare(toCString(it->second.first.qName))) {
-            BamAlignmentRecord first = it->second.first;
-            reads.erase(it);
-            reads.insert(std::make_pair(pos, std::make_pair(first, record)));
+            it->second.second = record;
             found = true;
             break;
         }
@@ -296,12 +294,15 @@ uint8_t Utils::getClassType(BamAlignmentRecord& record) {
 }
 
 uint16_t Utils::reads_distance(BamAlignmentRecord& record) {
-    int distance = record.tLen;
+    std::string name = toCString(record.qName);
+
+    int distance = record.pNext - record.beginPos;
+    if (distance < 0) distance = distance * (-1);
+
     int sign;
-    if (distance < 0) {
-        sign = 1;
-        distance = distance * (-1);
-    } else sign = 0;
+
+    if (record.flag & 128) sign = 1;
+    else sign = 0;
 
     distance = distance << 1;
     distance |= sign;
@@ -576,4 +577,13 @@ bool Utils::isPaired(BamAlignmentRecord first, BamAlignmentRecord second) {
         and strcmp(toCString(first.qual), toCString(second.qual)) == 0
         and strcmp(toCString(first.tags), toCString(second.tags)) == 0) return false;
     else return true;
+}
+
+uint8_t Utils::getSequenceLength(BamAlignmentRecord& record) {
+    int8_t result;
+    CharString seq = record.seq;
+    const char *s1 = toCString(seq);
+    std::string str(s1);
+    result = str.size();
+    return result;
 }
