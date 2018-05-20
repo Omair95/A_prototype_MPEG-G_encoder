@@ -6,8 +6,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o"
   "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o"
   "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o"
-  "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o"
-  "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o"
   "CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o"
   "CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o"
   "A_prototype_MPEG_G_encoder.pdb"

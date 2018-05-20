@@ -225,57 +225,9 @@ CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o.provides: CMakeFile
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o.provides.build: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o
 
 
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o: CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o: ../AccessUnit_HM.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o -c /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.cpp
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.cpp > CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.i
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.cpp -o CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.s
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.requires:
-
-.PHONY : CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.requires
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.provides: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.requires
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.provides.build
-.PHONY : CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.provides
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.provides.build: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o
-
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o: CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o: ../AccessUnit_U.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o -c /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.cpp
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.cpp > CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.i
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.cpp -o CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.s
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.requires:
-
-.PHONY : CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.requires
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.provides: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.requires
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.provides.build
-.PHONY : CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.provides
-
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.provides.build: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o
-
-
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o: CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o: ../FileManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o -c /home/omair/TFG/A_prototype_MPEG-G_encoder/FileManager.cpp
 
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.i: cmake_force
@@ -299,7 +251,7 @@ CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o.provides.build: CMak
 
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o: CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o: ../Utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o -c /home/omair/TFG/A_prototype_MPEG-G_encoder/Utils.cpp
 
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.i: cmake_force
@@ -330,8 +282,6 @@ A_prototype_MPEG_G_encoder_OBJECTS = \
 "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o" \
 "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o" \
 "CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o" \
-"CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o" \
-"CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o" \
 "CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" \
 "CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o"
 
@@ -345,14 +295,12 @@ A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o
-A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o
-A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make
 A_prototype_MPEG_G_encoder: /usr/lib/x86_64-linux-gnu/libz.so
 A_prototype_MPEG_G_encoder: CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable A_prototype_MPEG_G_encoder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/omair/TFG/A_prototype_MPEG-G_encoder/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable A_prototype_MPEG_G_encoder"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -367,8 +315,6 @@ CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o.requires
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o.requires
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o.requires
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o.requires
-CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o.requires
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o.requires
 CMakeFiles/A_prototype_MPEG_G_encoder.dir/requires: CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o.requires
 

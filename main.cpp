@@ -3,8 +3,6 @@
 #include "AccessUnit_N.h"
 #include "AccessUnit_M.h"
 #include "AccessUnit_I.h"
-#include "AccessUnit_HM.h"
-#include "AccessUnit_U.h"
 #include "FileManager.h"
 
 /*! \file main.cpp */
@@ -12,23 +10,15 @@
 int au_id = -1;
 
 // Bam file to read
-
 std::string fileName = "9827_2#49";
 
-/** Auxiliary class to be used that allows to create and write into files
- * */
+// Auxiliary class to be used that allows to create and write into files
 FileManager f(fileName);
 
-/* Number of references sequences
- * */
-std::map<int, std::pair<int, int> > references;
-
-/**
- * */
+// Auxiliary functions
 Utils u;
 
-/** Size of each access unit
- * */
+// Size of each access unit
 #define ACCESS_UNIT_SIZE 1000000 // 13716
 
 /**
@@ -43,17 +33,13 @@ void generateByteStream() {
     AU_N = new AccessUnit_N(++au_id);
     AU_M = new AccessUnit_M(++au_id);
     AU_I = new AccessUnit_I(++au_id);
-    AU_HM = new AccessUnit_HM(++au_id);
-    AU_U = new AccessUnit_U(++au_id);
     std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
     u.getAllreads(reads);
 
     auto it = reads.begin();
     const auto end = reads.end();
-    bool firstP = true, firstN = true, firstM = true;
-    bool firstI = true, firstHM = true;
-    int antPosP = 0, antPosN = 0, antPosM = 0;
-    int antPosI = 0, antPosHM = 0;
+    bool firstP = true, firstN = true, firstM = true, firstI = true;
+    int antPosP = 0, antPosN = 0, antPosM = 0, antPosI = 0;
 
     while (it != end) {
         MpeggRecord record;
@@ -91,7 +77,7 @@ void generateByteStream() {
 
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 1);
-            static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(std::to_string(pair));
+            static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(pair, it->second.first.rID, u.reads_distance(it->second.first));
 
             // create a new access unit in case if the current one is full
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -138,7 +124,7 @@ void generateByteStream() {
 
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 2);
-            static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(std::to_string(pair));
+            static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(pair, it->second.first.rID, u.reads_distance(it->second.first));
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(it->second.first);
@@ -209,7 +195,7 @@ void generateByteStream() {
 
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 3);
-            static_cast<AccessUnit_M*> (AU_M)->insertPairDescriptor(std::to_string(pair));
+            static_cast<AccessUnit_M*> (AU_M)->insertPairDescriptor(pair, it->second.first.rID, u.reads_distance(it->second.first));
 
             // create a new access unit in case if the current one is full
             if (AU_M->getReadsCount() == ACCESS_UNIT_SIZE) {
@@ -271,7 +257,7 @@ void generateByteStream() {
 
             // get pair descriptor
             uint16_t pair = f.insertPairValue(it->second.first, it->second.second, 4);
-            static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(std::to_string(pair));
+            static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(pair, it->second.first.rID, u.reads_distance(it->second.first));
 
             // get clips descriptor
             std::string read1_cigar = u.getCigar(it->second.first.cigar);
@@ -295,74 +281,6 @@ void generateByteStream() {
             reads.erase(it++);
             u.removeFirstRead();
 
-        } else if (record.class_type == 5) {
-            // update the number of reads in the access unit
-            AU_HM->updateReads();
-
-            // get pos descriptor
-            if (firstHM) {
-                firstHM = false;
-                antPosHM = record.mapping_pos[0];
-                AU_HM->insertPosdescriptor(0);
-                AU_HM->setStartPosition(record.mapping_pos[0]);
-                f.insertPosValue(0, 5);
-            } else {
-                AU_HM->insertPosdescriptor(record.mapping_pos[0] - antPosHM);
-                f.insertPosValue(record.mapping_pos[0] - antPosHM, 5);
-                antPosHM = record.mapping_pos[0];
-            }
-
-            // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(it->second.first, it->second.second, 5);
-            AU_HM->insertRcompDescriptor(rcomp);
-
-            // get flags descriptor
-            uint8_t flags = f.insertFlagsValue(it->second.first, 5);
-            AU_HM->insertFlagsDescriptor(flags);
-
-            // get rlen descriptor
-            uint8_t rlen = f.insertRlenValue(it->second.first, 5);
-            static_cast<AccessUnit_HM*> (AU_HM)->insertRlenDescriptor(rlen);
-
-            // get pair descriptor
-            uint16_t pair = f.insertPairValue(it->second.first, it->second.second,  5);
-            static_cast<AccessUnit_HM*> (AU_HM)->insertPairDescriptor(std::to_string(pair));
-
-            // create a new access unit in case if the current one is full
-            if (AU_HM->getReadsCount() == ACCESS_UNIT_SIZE) {
-                // create a new accessUnit
-                AU_HM->setEndPosition(record.mapping_pos[0]);
-                u.insertAccessUnit(*AU_HM);
-                AU_HM = new AccessUnit_HM(++au_id);
-                AU_HM->setStartPosition(record.mapping_pos[0]);
-                firstHM = true;
-            }
-
-            // erase the read after using it
-            reads.erase(it++);
-            u.removeFirstRead();
-
-        } else if (record.class_type == 6) {
-            // update the number of reads in the access unit
-            AU_U->updateReads();
-
-            // get rlen descriptor
-            uint8_t rlen = f.insertRlenValue(it->second.first, 6);
-            static_cast<AccessUnit_U*> (AU_U)->insertRlenDescriptor(rlen);
-
-            // create a new access unit in case if the current one is full
-            if (AU_U->getReadsCount() == ACCESS_UNIT_SIZE) {
-                // create a new accessUnit
-                AU_U->setEndPosition(record.mapping_pos[0]);
-                u.insertAccessUnit(*AU_U);
-                AU_U = new AccessUnit_U(++au_id);
-                AU_U->setStartPosition(record.mapping_pos[0]);
-            }
-
-            // erase the read after using it
-            reads.erase(it++);
-            u.removeFirstRead();
-
         } else ++it;
     }
 
@@ -371,8 +289,6 @@ void generateByteStream() {
     u.insertAccessUnit(*AU_N);
     u.insertAccessUnit(*AU_M);
     u.insertAccessUnit(*AU_I);
-    u.insertAccessUnit(*AU_HM);
-    u.insertAccessUnit(*AU_U);
 }
 
 int main () {
@@ -386,15 +302,6 @@ int main () {
 
     while (!atEnd(bamFileIn) and count <= 10000) { // 8559058 total reads encoded
         readRecord(record, bamFileIn);
-
-        if (references.find(record.rID) == references.end()) {
-            references.insert(std::make_pair(record.rID, std::make_pair(record.beginPos, record.beginPos)));
-        } else {
-            auto it = references.find(record.rID);
-            int begin = it->second.first;
-            references.erase(record.rID);
-            references.insert(std::make_pair(record.rID, std::make_pair(begin, record.beginPos)));
-        }
 
         if (record.tLen > 2150 or record.tLen < -2150) {
             u.insertRead(record, record);

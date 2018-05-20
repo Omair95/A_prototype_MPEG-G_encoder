@@ -35,8 +35,6 @@ struct MpeggRecord {
     std::vector < std::vector<uint16_t> > cigar_size;         /// size in characters of the cigar_size string
     std::vector < std::vector<std::string> > ecigar_string;   /// the extended cigar of the read
     std::vector < std::vector<uint8_t> > reverse_comp;        /// flag associated to each alignmnent in the Genomic Record signaling if the alignment is on forward or reverse strand
-
-    uint8_t split_aligments;
 };
 
 

@@ -13,8 +13,6 @@ add_executable(A_prototype_MPEG_G_encoder
         AccessUnit_N.h AccessUnit_N.cpp
         AccessUnit_M.h AccessUnit_M.cpp
         AccessUnit_I.h AccessUnit_I.cpp
-        AccessUnit_HM.h AccessUnit_HM.cpp
-        AccessUnit_U.h AccessUnit_U.cpp
         FileManager.h FileManager.cpp Utils.cpp)
 
 # require C++14

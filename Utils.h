@@ -94,24 +94,13 @@ public:
      * */
     bool isClassI(BamAlignmentRecord& record);
 
-    /** \brief To determine if the read belongs to class HM, reads where only
-     *         one read is mapped
-     *  \param record is the first read from the pair
-     *  \return bool indicating if the read belongs to class HM
-     * */
-    bool isClassHM(BamAlignmentRecord& record);
-
-    /** \brief To determine if the read belongs to class U, unmapped reads only
-     *  \param record is the first read from the pair
-     *  \return bool indicating if the read belongs to class U
-     * */
-    bool isClassU(BamAlignmentRecord& record);
 
     /** \brief To determine the data class where a read belongs to
      *  \param record is the first read from the pair
      *  \return integer indicating the type of data class of the read
      * */
     uint8_t getClassType(BamAlignmentRecord& record);
+
 
 
     static uint16_t reads_distance(BamAlignmentRecord& record);
@@ -133,7 +122,6 @@ public:
      *  \return void
      * */
     void convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record);
-
 
     /** \brief Writes the mmpos descriptor value to the respective file
      *         according to the class type

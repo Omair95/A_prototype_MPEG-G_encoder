@@ -11,16 +11,17 @@ AccessUnit_I::AccessUnit_I(uint32_t id) {
     AU_start_position = 0;
     AU_end_position = 0;
 
-    descriptors.push_back(AccessUnitBlock(0)); // pos descriptor
-    descriptors.push_back(AccessUnitBlock(1)); // rcomp descriptor
-    descriptors.push_back(AccessUnitBlock(2)); // flags descriptor
-    descriptors.push_back(AccessUnitBlock(3)); // mmpos descriptor
-    descriptors.push_back(AccessUnitBlock(4)); // mmtype descriptor
-    descriptors.push_back(AccessUnitBlock(7)); // rlen descriptor
-    descriptors.push_back(AccessUnitBlock(8)); // pair descriptor
+    descriptors.emplace_back(0); // pos descriptor
+    descriptors.emplace_back(1); // rcomp descriptor
+    descriptors.emplace_back(2); // flags descriptor
+    descriptors.emplace_back(7); // rlen descriptor
+    descriptors.emplace_back(8); // pair descriptor
+    descriptors.emplace_back(3); // mmpos descriptor
+    descriptors.emplace_back(4); // mmtype descriptor
+    descriptors.emplace_back(5); // sclips descriptor
 }
 
-AccessUnit_I::~AccessUnit_I() { }
+AccessUnit_I::~AccessUnit_I() = default;
 
 void AccessUnit_I::insertMmposDescriptor(uint16_t value) {
     descriptors[3].insertValue(std::to_string(value));
@@ -30,10 +31,6 @@ void AccessUnit_I::insertMmtypeDescriptor(uint8_t value) {
     descriptors[4].insertValue(std::to_string(value));
 }
 
-void AccessUnit_I::insertRlenDescriptor(uint8_t value) {
-    descriptors[5].insertValue(std::to_string(value));
-}
+void AccessUnit_I::insertSclipsDescriptor() {
 
-void AccessUnit_I::insertPairDescriptor(std::string value) {
-    descriptors[6].insertValue(value);
 }

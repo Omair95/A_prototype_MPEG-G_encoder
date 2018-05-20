@@ -120,6 +120,13 @@ public:
     uint16_t insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType);
 
 
+    /** \brief Writes the mmpos descriptor value to the respective file
+     *         according to the class type
+     *  \param pos position of the mismatch
+     *  \param classType class type
+     *  \bool lastPos check if its the last position of the mismatch
+     *   \return void
+     * */
     void insertMmposValue(uint16_t pos, uint8_t classType, bool lastPos);
 
     /** \brief Writes the mmtype descriptor value to the respective file
@@ -130,6 +137,13 @@ public:
      * */
     std::vector<uint8_t> insertmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos, uint8_t classType);
 
+
+    /** \brief Writes the sclips descriptor value to the respective file
+     *         according to the class type
+     *  \param record the genomic record
+     *  \param id identifier of the record
+     *   \return void
+     * */
     std::vector<std::string> insertClipsDescriptor(MpeggRecord& record, uint32_t id);
 
     /** \brief Writes the mpegg record of the respective read to a file

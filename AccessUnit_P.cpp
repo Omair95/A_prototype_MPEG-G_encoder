@@ -11,19 +11,11 @@ AccessUnit_P::AccessUnit_P(uint32_t id) {
     AU_start_position = 0;
     AU_end_position = 0;
 
-    descriptors.push_back(AccessUnitBlock(0)); // pos descriptor
-    descriptors.push_back(AccessUnitBlock(1)); // rcomp descriptor
-    descriptors.push_back(AccessUnitBlock(2)); // flags descriptor
-    descriptors.push_back(AccessUnitBlock(7)); // rlen descriptor
-    descriptors.push_back(AccessUnitBlock(8)); // pair descriptor
+    descriptors.emplace_back(0); // pos descriptor
+    descriptors.emplace_back(1); // rcomp descriptor
+    descriptors.emplace_back(2); // flags descriptor
+    descriptors.emplace_back(7); // rlen descriptor
+    descriptors.emplace_back(8); // pair descriptor
 }
 
-AccessUnit_P::~AccessUnit_P() { }
-
-void AccessUnit_P::insertRlenDescriptor(uint8_t value) {
-    descriptors[3].insertValue(std::to_string(value));
-}
-
-void AccessUnit_P::insertPairDescriptor(std::string value) {
-    descriptors[4].insertValue(value);
-}
+AccessUnit_P::~AccessUnit_P() = default;

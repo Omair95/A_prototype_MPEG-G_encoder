@@ -42,7 +42,7 @@ FileManager::FileManager(std::string fileName) {
     rlenDescriptorClassU.open("../Files/" + fileName + ".mpegg.urlen", std::ofstream::out | std::ofstream::trunc);
 }
 
-FileManager::~FileManager() { }
+FileManager::~FileManager() = default;
 
 void FileManager::insertPosValue(uint32_t value, uint8_t classType) {
     uint32_t littleEndianValue = boost::endian::native_to_little(value);
@@ -58,39 +58,6 @@ void FileManager::insertPosValue(uint32_t value, uint8_t classType) {
         posDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
-
-void FileManager::write8bitRcomp(uint8_t value, uint8_t classType) {
-    uint8_t littleEndianValue = boost::endian::native_to_little(value);
-
-    if (classType == 1) {
-        rcompDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 2) {
-        rcompDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 3) {
-        rcompDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 4) {
-        rcompDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        rcompDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    }
-}
-
-void FileManager::write8bitPair(uint8_t value, uint8_t classType) {
-    uint8_t littleEndianValue = boost::endian::native_to_little(value);
-
-    if (classType == 1) {
-        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 2) {
-        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 3) {
-        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 4) {
-        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    }
-}
-
 
 uint8_t FileManager::insertRcompValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType) {
     uint8_t result;
@@ -196,38 +163,6 @@ uint8_t FileManager::insertRlenValue(BamAlignmentRecord& record, uint8_t classTy
         rlenDescriptorClassU.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
     return length;
-}
-
-void FileManager::write16bit(uint16_t value, uint8_t classType) {
-    uint16_t littleEndianResult = boost::endian::native_to_little(value);
-
-    if (classType == 1) {
-        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 2) {
-        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 3) {
-        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 4) {
-        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    }
-}
-
-void FileManager::write32bit(uint32_t value, uint8_t classType) {
-    uint32_t littleEndianResult = boost::endian::native_to_little(value);
-
-    if (classType == 1) {
-        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 2) {
-        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 3) {
-        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 4) {
-        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    }
 }
 
 uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType) {
@@ -583,4 +518,68 @@ void FileManager::closeFiles() {
 
     rlenDescriptorClassU.close();
 
+}
+
+void FileManager::write8bitRcomp(uint8_t value, uint8_t classType) {
+    uint8_t littleEndianValue = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        rcompDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 2) {
+        rcompDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 3) {
+        rcompDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 4) {
+        rcompDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 5) {
+        rcompDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    }
+}
+
+void FileManager::write8bitPair(uint8_t value, uint8_t classType) {
+    uint8_t littleEndianValue = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 2) {
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 3) {
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 4) {
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    } else if (classType == 5) {
+        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
+    }
+}
+
+void FileManager::write16bit(uint16_t value, uint8_t classType) {
+    uint16_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 5) {
+        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+void FileManager::write32bit(uint32_t value, uint8_t classType) {
+    uint32_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 5) {
+        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
 }

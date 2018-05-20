@@ -5,7 +5,7 @@ AccessUnitBlock::AccessUnitBlock(uint8_t descriptorId) {
     reserved = 0;
     padding = 0;
     block_size = 0;
-    std::vector<int> descriptor(0);
+    std::vector<std::string> descriptor(0);
 }
 
 AccessUnitBlock::~AccessUnitBlock() { }

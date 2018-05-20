@@ -273,24 +273,11 @@ bool Utils::isClassI(BamAlignmentRecord& record) {
     return false;
 }
 
-bool Utils::isClassHM(BamAlignmentRecord& record) {
-    BamAlignmentRecord second = getSecondRecord(record);
-    if (not isPaired(record, second)) return true;
-    return false;
-}
-
-bool Utils::isClassU(BamAlignmentRecord& record) {
-    if (record.flag & 4) return true;
-    return false;
-}
-
 uint8_t Utils::getClassType(BamAlignmentRecord& record) {
     if (isClassP(record)) return 1;
     else if (isClassN(record)) return 2;
     else if (isClassM(record)) return 3;
     else if (isClassI(record)) return 4;
-    else if (isClassHM(record)) return 5;
-    else if (isClassU(record)) return 6;
 }
 
 uint16_t Utils::reads_distance(BamAlignmentRecord& record) {

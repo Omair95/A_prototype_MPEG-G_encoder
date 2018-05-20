@@ -26,7 +26,7 @@ protected:
     uint16_t parameter_set_id;                  /// unique identifier of the Parameters Set in the Dataset Group
     uint8_t AU_type;                            /// identifies the type of Access Unit and the class of data carried
     uint32_t reads_count;                       /// number of genomic sequence reads encoded in the Access Unit
-    uint8_t reference_id;                       /// unique identifier of the Raw Reference to be used to decode the Access Uni
+    uint8_t reference_id;                       /// unique identifier of the Raw Reference to be used to decode the Access Unit
     uint16_t sequence_id;                       /// unique identifier of the Reference Sequence to be used to decode the Access Unit
     uint32_t AU_start_position;                 /// indexing lower information
     uint32_t AU_end_position;                   /// indexing higher information
@@ -44,7 +44,7 @@ public:
     * \param void
     * \return void
     * */
-    ~AccessUnit();
+    virtual ~AccessUnit();
 
     /** \brief gets the type of access unit
      * \param void
@@ -82,6 +82,20 @@ public:
     * */
     void insertFlagsDescriptor(uint8_t value);
 
+    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
+    * \param value unsigned int representing the value of the rlen descriptor
+    * \return void
+    * */
+    void insertRlenDescriptor(uint8_t value);
+
+    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
+    * \param type represents the type of pair descriptor value
+     * \param referenceID represents the id of the reference sequence
+     * \param distance represents the distance of the read pairs
+    * \return void
+    * */
+    void insertPairDescriptor(uint16_t type, uint8_t referenceID, uint32_t distance);
+
     /** \brief Gets all the values of the pos descriptor in the access unit
     * \param void
     * \return void
@@ -99,6 +113,18 @@ public:
     * \return void
     * */
     void getFlagsDescriptorValues();
+
+    /** \brief Gets all the values of the rlen descriptor in the access unit
+    * \param void
+    * \return void
+    * */
+    void getRLenDescriptorValues();
+
+    /** \brief Gets all the values of the pair descriptor in the access unit
+    * \param void
+    * \return void
+    * */
+    void getPairDescriptorValues();
 
     /** \brief Updates the numbers of reads stored in the access unit
     * \param void

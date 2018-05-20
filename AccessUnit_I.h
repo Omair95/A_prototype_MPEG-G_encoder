@@ -24,7 +24,7 @@ public:
     * \param id identifier of the access unit of type I (4)
     * \return void
     * */
-    AccessUnit_I(uint32_t id);
+    explicit AccessUnit_I(uint32_t id);
 
     /** \brief Destructor method
     * \param void
@@ -44,17 +44,12 @@ public:
     * */
     void insertMmtypeDescriptor(uint8_t value);
 
-    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value of the rlen descriptor
-    * \return void
-    * */
-    void insertRlenDescriptor(uint8_t value);
 
-    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value of the pair descriptor
+    /** \brief Inserts the sclips descriptor value inside the corresponding block in the access unit's payload
+    * \param value string representing the value of the mmtype descriptor
     * \return void
     * */
-    void insertPairDescriptor(std::string value);
+    void insertSclipsDescriptor();
 };
 
 

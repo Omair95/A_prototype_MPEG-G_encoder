@@ -23,26 +23,13 @@ public:
     * \param id identifier of the access unit of type P (1)
     * \return void
     * */
-    AccessUnit_P(uint32_t id);
+    explicit AccessUnit_P(uint32_t id);
 
     /** \brief Destructor method
     * \param void
     * \return void
     * */
     ~AccessUnit_P();
-
-    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value of the rlen descriptor
-    * \return void
-    * */
-    void insertRlenDescriptor(uint8_t value);
-
-    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value of the pair descriptor
-    * \return void
-    * */
-    void insertPairDescriptor(std::string value);
-
 };
 
 

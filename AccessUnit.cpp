@@ -28,6 +28,14 @@ void AccessUnit::insertFlagsDescriptor(uint8_t value) {
     descriptors[2].insertValue(std::to_string(value));
 }
 
+void AccessUnit::insertRlenDescriptor(uint8_t value) {
+    descriptors[3].insertValue(std::to_string(value));
+}
+
+void AccessUnit::insertPairDescriptor(uint16_t type, uint8_t referenceID, uint32_t distance) {
+    descriptors[4].insertValue(std::to_string(type) + std::to_string(referenceID) + std::to_string(distance));
+}
+
 void AccessUnit::getPosDescriptorValues() {
     descriptors[0].write();
 }
@@ -38,6 +46,14 @@ void AccessUnit::getRcompDescriptorValues() {
 
 void AccessUnit::getFlagsDescriptorValues() {
     descriptors[2].write();
+}
+
+void AccessUnit::getRLenDescriptorValues() {
+    descriptors[3].write();
+}
+
+void AccessUnit::getPairDescriptorValues() {
+    descriptors[4].write();
 }
 
 void AccessUnit::updateReads() {

@@ -108,12 +108,6 @@
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnitBlock.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
-		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.cpp">
-			<Option target="A_prototype_MPEG_G_encoder"/>
-		</Unit>
-		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.h">
-			<Option target="A_prototype_MPEG_G_encoder"/>
-		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_I.cpp">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
@@ -136,12 +130,6 @@
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_P.h">
-			<Option target="A_prototype_MPEG_G_encoder"/>
-		</Unit>
-		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.cpp">
-			<Option target="A_prototype_MPEG_G_encoder"/>
-		</Unit>
-		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.h">
 			<Option target="A_prototype_MPEG_G_encoder"/>
 		</Unit>
 		<Unit filename="/home/omair/TFG/A_prototype_MPEG-G_encoder/FileManager.cpp">

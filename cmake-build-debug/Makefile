@@ -177,33 +177,6 @@ AccessUnitBlock.cpp.s:
 	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.s
 .PHONY : AccessUnitBlock.cpp.s
 
-AccessUnit_HM.o: AccessUnit_HM.cpp.o
-
-.PHONY : AccessUnit_HM.o
-
-# target to build an object file
-AccessUnit_HM.cpp.o:
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.o
-.PHONY : AccessUnit_HM.cpp.o
-
-AccessUnit_HM.i: AccessUnit_HM.cpp.i
-
-.PHONY : AccessUnit_HM.i
-
-# target to preprocess a source file
-AccessUnit_HM.cpp.i:
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.i
-.PHONY : AccessUnit_HM.cpp.i
-
-AccessUnit_HM.s: AccessUnit_HM.cpp.s
-
-.PHONY : AccessUnit_HM.s
-
-# target to generate assembly for a file
-AccessUnit_HM.cpp.s:
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_HM.cpp.s
-.PHONY : AccessUnit_HM.cpp.s
-
 AccessUnit_I.o: AccessUnit_I.cpp.o
 
 .PHONY : AccessUnit_I.o
@@ -312,33 +285,6 @@ AccessUnit_P.cpp.s:
 	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.s
 .PHONY : AccessUnit_P.cpp.s
 
-AccessUnit_U.o: AccessUnit_U.cpp.o
-
-.PHONY : AccessUnit_U.o
-
-# target to build an object file
-AccessUnit_U.cpp.o:
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.o
-.PHONY : AccessUnit_U.cpp.o
-
-AccessUnit_U.i: AccessUnit_U.cpp.i
-
-.PHONY : AccessUnit_U.i
-
-# target to preprocess a source file
-AccessUnit_U.cpp.i:
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.i
-.PHONY : AccessUnit_U.cpp.i
-
-AccessUnit_U.s: AccessUnit_U.cpp.s
-
-.PHONY : AccessUnit_U.s
-
-# target to generate assembly for a file
-AccessUnit_U.cpp.s:
-	$(MAKE) -f CMakeFiles/A_prototype_MPEG_G_encoder.dir/build.make CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_U.cpp.s
-.PHONY : AccessUnit_U.cpp.s
-
 FileManager.o: FileManager.cpp.o
 
 .PHONY : FileManager.o
@@ -435,9 +381,6 @@ help:
 	@echo "... AccessUnitBlock.o"
 	@echo "... AccessUnitBlock.i"
 	@echo "... AccessUnitBlock.s"
-	@echo "... AccessUnit_HM.o"
-	@echo "... AccessUnit_HM.i"
-	@echo "... AccessUnit_HM.s"
 	@echo "... AccessUnit_I.o"
 	@echo "... AccessUnit_I.i"
 	@echo "... AccessUnit_I.s"
@@ -450,9 +393,6 @@ help:
 	@echo "... AccessUnit_P.o"
 	@echo "... AccessUnit_P.i"
 	@echo "... AccessUnit_P.s"
-	@echo "... AccessUnit_U.o"
-	@echo "... AccessUnit_U.i"
-	@echo "... AccessUnit_U.s"
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"

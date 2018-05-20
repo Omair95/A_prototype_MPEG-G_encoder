@@ -47,18 +47,6 @@ public:
     * \return void
     * */
     void insertMmtypeDescriptor(uint8_t value);
-
-    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value in hexadecimal of the rlen descriptor
-    * \return void
-    * */
-    void insertRlenDescriptor(uint8_t value);
-
-    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value in hexadecimal of the pair descriptor
-    * \return void
-    * */
-    void insertPairDescriptor(std::string value);
 };
 
 

@@ -23,6 +23,7 @@ private:
     uint16_t mm_count;
 
 public:
+
     /** \brief Constructor method
     * \param id identifier of the access unit of type N (2)
     * \return void
@@ -40,18 +41,6 @@ public:
     * \return void
     * */
     void insertMmposDescriptor(uint16_t value);
-
-    /** \brief Inserts the rlen descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value of the rlen descriptor
-    * \return void
-    * */
-    void insertRlenDescriptor(uint8_t value);
-
-    /** \brief Inserts the pair descriptor value inside the corresponding block in the access unit's payload
-    * \param value string representing the value of the pair descriptor
-    * \return void
-    * */
-    void insertPairDescriptor(std::string value);
 
 };
 
