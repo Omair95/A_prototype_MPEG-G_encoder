@@ -2708,14 +2708,6 @@ AccessUnitBlock.h
 seqan/bam_io.h
 -
 
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.cpp
-AccessUnit_HM.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.h
-
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.h
-AccessUnit.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit.h
-
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_I.cpp
 AccessUnit_I.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_I.h
@@ -2745,14 +2737,6 @@ AccessUnit_P.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_P.h
 
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_P.h
-AccessUnit.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit.h
-
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.cpp
-AccessUnit_U.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.h
-
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.h
 AccessUnit.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit.h
 
@@ -2805,10 +2789,6 @@ AccessUnit_M.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_M.h
 AccessUnit_I.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_I.h
-AccessUnit_HM.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_HM.h
-AccessUnit_U.h
-/home/omair/TFG/A_prototype_MPEG-G_encoder/AccessUnit_U.h
 FileManager.h
 /home/omair/TFG/A_prototype_MPEG-G_encoder/FileManager.h
 
