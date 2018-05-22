@@ -28,7 +28,7 @@ std::map<int, std::pair<int, int> > references;
 
 std::multimap<int, std::pair<MpeggRecord, std::vector<std::string> > > tags_read;
 
-void insertTagsToReads(std::map<int, std::string>& positions) {
+void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& positions) {
     std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
     u.getAllreads(reads);
 
@@ -37,9 +37,9 @@ void insertTagsToReads(std::map<int, std::string>& positions) {
         u.convertToMpeggRecord(record, it->second.first);
         f.writeMpeggToFile(record);
         bool found = false;
-        auto position = positions.begin();
+        auto position = positions[record.seq_Id].begin();
 
-        while (not found and position != positions.end()) {
+        while (not found and position != positions[record.seq_Id].end()) {
             if (it->first < position->first) {
                 std::vector<std::string> tags;
                 tags.emplace_back(position->second);
@@ -51,18 +51,35 @@ void insertTagsToReads(std::map<int, std::string>& positions) {
         }
         if (not found) {
             std::vector<std::string> tags;
-            tags.emplace_back("General");
+            tags.emplace_back("Public");
             tags_read.insert(std::make_pair(it->first, std::make_pair(record, tags)));
         }
     }
 }
 
-/**
- * \brief This is the main function of the program. It detects the type of data class that a read belongs to
- *  and generates all the associated descriptors
- * \param void
- * \return void
- * */
+void mergeTags(std::vector<std::map<int, std::vector<std::string> > >& useCase1, std::vector<std::map<int, std::vector<std::string> > >& useCase2, std::vector<std::map<int, std::vector<std::string> > >& result) {
+    for (int i = 0; i < useCase1.size(); ++i) {
+        useCase1[i].insert(useCase2[i].begin(), useCase2.end());
+
+        auto it = useCase1[i].begin();
+        auto it2 = useCase2[i].begin();
+        
+        while (it != useCase1[i].end()) {
+            if (it->first <= it2->first) {
+                if (it->second[0] != it2->second[0]) {
+                    it->second.emplace_back(it2->second[0]);
+                }
+                ++it;
+            } else if (it2->first >= it->first and it2->first <= it++->first) {
+                ++it;
+            } else {
+                ++it2;
+            }
+        }
+    }
+    result = useCase1;
+}
+
 void dispatcher() {
     AccessUnit *AU_P, *AU_N, *AU_M, *AU_I;
     AU_P = new AccessUnit_P(++au_id);
@@ -394,8 +411,8 @@ int main () {
 
     int count = 1;
     BamAlignmentRecord record;
-
-    while (!atEnd(bamFileIn) and count <= 40000) { // 8559058 total reads encoded
+    std::cout << "Pairing reads ... " << std::endl;
+    while (!atEnd(bamFileIn) and count <= 1000000) { // 8559058 total reads encoded
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -426,10 +443,16 @@ int main () {
         std::cout << "Reference ID = " << it->first << " " << "Start : " << it->second.first << " " << "End : " << it->second.second << std::endl;
     }
 
+    std::cout << "PROTECTION    : 1 " << std::endl;
+    std::cout << "RANDOM ACCESS : 2 " << std::endl;
     std::cout << "Enter use case : ";
+
     int useCase;
     std::cin >> useCase;
-    std::map<int, std::string> positions;
+    std::cout << std::endl;
+
+    std::vector<std::map<int, std::vector<std::string> > > useCase1Positions(references.size());
+    std::vector<std::map<int, std::vector<std::string> > > useCase2Positions(references.size());
 
     if (useCase == 1) {
         for (auto it = references.begin(); it != references.end(); it++) {
@@ -439,19 +462,16 @@ int main () {
             std::cout << "Insert 0 and END to finish" << std::endl;
             int pos = -1;
             std::string tag;
-            while (std::cin >> pos >> tag) {
-                if (pos == 0 and tag == "END") break;
-                positions.insert(std::make_pair(pos, tag));
+            while (std::cin >> pos >> tag and pos != 0 and tag != "END") {
+                std::vector<std::string> tags;
+                tags.emplace_back(tag);
+                useCase1Positions[it->first].insert(std::make_pair(pos, tags));
             }
-
-            std::cout << "Inserting tags ..." << std::endl;
-            insertTagsToReads(positions);
         }
 
     } else if (useCase == 2) {
-        std::cout << "Use case : Random access " << std::endl;
-        std::cout << "Insert Tags : " << std::endl;
-        std::cout << "Insert END to finish " << std::endl;
+        std::cout << "Use case: Random access " << std::endl;
+        std::cout << "Insert Tags (insert END to finish) : " << std::endl;
 
         std::string tag;
         std::vector<std::string> tags;
@@ -459,32 +479,43 @@ int main () {
             tags.emplace_back(tag);
         }
 
+        std::cout << "Calculating positions ... " << std::endl;
+
         int j = 0;
         for (auto it = references.begin(); it != references.end(); ++it) {
             for (int i = it->second.first; i < it->second.second; ++i) {
-                if (i == ((it->second.second - it->second.first) / tags.size()) * (j+1)) {
-                    positions.insert(std::make_pair(i, tags[j]));
+                if (i == (((it->second.second - it->second.first) / tags.size()) * (j+1)) + it->second.first){
+                    useCase2Positions[it->first].insert(std::make_pair(i, tags[j]));
                     ++j;
                 }
             }
         }
+    }
+
+    std::cout << "Merge use cases? Y/N ";
+    char c; std::cin >> c;
+    if (c == 'Y') {
+        std::cout << "Merging tags ..." << std::endl;
+        std::vector<std::map<int, std::vector<std::string> > > result(references.size());
+        mergeTags(useCase1Positions, useCase2Positions, result);
 
         std::cout << "Inserting tags ..." << std::endl;
-        insertTagsToReads(positions);
+        insertTagsToReads(result);
+    } else if (c == 'N') {
 
-    } else if (useCase == 3) {
-        insertTagsToReads(positions);
-
+        std::cout << "Inserting tags ..." << std::endl;
+        if (useCase == 1) insertTagsToReads(useCase1Positions);
+        else insertTagsToReads(useCase2Positions);
     }
 
     std::cout << "Dispatching and encoding..." << std::endl;
 
     dispatcher();
 
+    std::cout << "List of access Units encoded" << std::endl;
     std::vector<AccessUnit> au;
     u.getAllAccessUnits(au);
 
-    std::cout << "List of access Units encoded" << std::endl;
     for (int i = 0; i < au.size(); ++i) {
         au[i].write();
     }
