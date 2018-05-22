@@ -42,7 +42,7 @@ void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& p
         while (not found and position != positions[record.seq_Id].end()) {
             if (it->first < position->first) {
                 std::vector<std::string> tags;
-                tags.emplace_back(position->second);
+                tags.push_back(position->second[0]);
                 tags_read.insert(std::make_pair(it->first, std::make_pair(record, tags)));
                 found = true;
             } else {
@@ -59,11 +59,11 @@ void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& p
 
 void mergeTags(std::vector<std::map<int, std::vector<std::string> > >& useCase1, std::vector<std::map<int, std::vector<std::string> > >& useCase2, std::vector<std::map<int, std::vector<std::string> > >& result) {
     for (int i = 0; i < useCase1.size(); ++i) {
-        useCase1[i].insert(useCase2[i].begin(), useCase2.end());
+        useCase1[i].insert(useCase2[i].begin(), useCase2[i].end());
 
         auto it = useCase1[i].begin();
         auto it2 = useCase2[i].begin();
-        
+
         while (it != useCase1[i].end()) {
             if (it->first <= it2->first) {
                 if (it->second[0] != it2->second[0]) {
@@ -485,7 +485,9 @@ int main () {
         for (auto it = references.begin(); it != references.end(); ++it) {
             for (int i = it->second.first; i < it->second.second; ++i) {
                 if (i == (((it->second.second - it->second.first) / tags.size()) * (j+1)) + it->second.first){
-                    useCase2Positions[it->first].insert(std::make_pair(i, tags[j]));
+                    std::vector<std::string> singleTag;
+                    singleTag.emplace_back(tags[j]);
+                    useCase2Positions[it->first].insert(std::make_pair(i, singleTag));
                     ++j;
                 }
             }

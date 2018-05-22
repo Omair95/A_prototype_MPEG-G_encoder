@@ -17,7 +17,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="" />
+    <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,12 +39,10 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="511" lean-forward="true" selection-start-line="511" selection-end-line="511" />
+            <state relative-caret-position="226">
+              <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#677#1775#0" />
-                <element signature="e#1765#1938#0" />
                 <element signature="e#1765#16133#0" />
               </folding>
             </state>
@@ -394,12 +396,12 @@
       <workItem from="1526991237448" duration="3232000" />
       <workItem from="1526996218974" duration="590000" />
       <workItem from="1526998797816" duration="1505000" />
-      <workItem from="1527005340142" duration="3384000" />
+      <workItem from="1527005340142" duration="3967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="538458000" />
+    <option name="totallyTimeSpent" value="539041000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,7 +418,7 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910053" visible="true" weight="0.13653535" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.31687897" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.5089947" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.5089947" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.30095038" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
@@ -442,10 +444,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>437</line>
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="195" />
+      <option name="time" value="198" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -790,12 +799,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="511" lean-forward="true" selection-start-line="511" selection-end-line="511" />
+        <state relative-caret-position="226">
+          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#677#1775#0" />
-            <element signature="e#1765#1938#0" />
             <element signature="e#1765#16133#0" />
           </folding>
         </state>
