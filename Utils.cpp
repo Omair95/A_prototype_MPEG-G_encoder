@@ -322,7 +322,7 @@ void Utils::convertToMpeggRecord(MpeggRecord& result, BamAlignmentRecord& record
     result.global_Id = ++record_id;
     result.read_name = toCString(record.qName);
     result.class_type = getClassType(record);
-    result.seq_Id = (result.class_type == 6) ? 0 : record.rID;
+    result.seq_Id = record.rID;
     result.read1_first = (record.flag & 64) ? 1 : 0;
     result.flags = record.flag;
     BamAlignmentRecord second = getSecondRecord(record);

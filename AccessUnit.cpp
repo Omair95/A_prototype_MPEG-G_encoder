@@ -65,6 +65,10 @@ uint32_t AccessUnit::getReadsCount() {
 }
 
 void AccessUnit::write() {
-    std::cout << "Type : " << unsigned(AU_type) << " ";
+    std::cout << "Type : ";
+    if (AU_type == 1) std::cout << "P ";
+    else if (AU_type == 2) std::cout << "N ";
+    else if (AU_type == 3) std::cout << "M ";
+    else if (AU_type == 4) std::cout << "I ";
     std::cout << "ID = " << access_unit_id << " " << AU_start_position << " " << AU_end_position << " number of reads = " << reads_count << std::endl;
 }
