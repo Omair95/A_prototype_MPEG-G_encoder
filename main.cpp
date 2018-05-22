@@ -52,7 +52,7 @@ void insertTagsToReads(std::map<int, std::string>& positions) {
         if (not found) {
             std::vector<std::string> tags;
             tags.emplace_back("General");
-            tags_read.insert(std::make_pair(it->first, std::make_pair(record, tags)));
+            tags_read.insert(std::make_pair(it->first, std::make_pair(rtecord, tags)));
         }
     }
 }
