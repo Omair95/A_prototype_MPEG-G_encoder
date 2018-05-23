@@ -554,16 +554,15 @@ void Utils::insertRead(BamAlignmentRecord first, BamAlignmentRecord second) {
 bool Utils::isPaired(BamAlignmentRecord first, BamAlignmentRecord second) {
     if (first.flag & 8) return false;
 
-    if (strcmp(toCString(first.qName), toCString(second.qName)) == 0
-        and first.flag == second.flag
-        and first.rID == second.rID
-        and first.beginPos == second.beginPos
-        and first.rNextId == second.rNextId
-        and first.pNext == second.pNext
-        and first.tLen == second.tLen
-        and strcmp(toCString(first.qual), toCString(second.qual)) == 0
-        and strcmp(toCString(first.tags), toCString(second.tags)) == 0) return false;
-    else return true;
+    return !(strcmp(toCString(first.qName), toCString(second.qName)) == 0
+             and first.flag == second.flag
+             and first.rID == second.rID
+             and first.beginPos == second.beginPos
+             and first.rNextId == second.rNextId
+             and first.pNext == second.pNext
+             and first.tLen == second.tLen
+             and strcmp(toCString(first.qual), toCString(second.qual)) == 0
+             and strcmp(toCString(first.tags), toCString(second.tags)) == 0);
 }
 
 uint8_t Utils::getSequenceLength(BamAlignmentRecord& record) {

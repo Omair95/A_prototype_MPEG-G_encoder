@@ -49,7 +49,7 @@ public:
     * \param value string representing the value of the mmtype descriptor
     * \return void
     * */
-    void insertSclipsDescriptor();
+    void insertSclipsDescriptor(std::vector<std::string>& sclips);
 };
 
 

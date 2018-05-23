@@ -101,8 +101,6 @@ public:
      * */
     uint8_t getClassType(BamAlignmentRecord& record);
 
-
-
     static uint16_t reads_distance(BamAlignmentRecord& record);
 
     /** \brief Extracts the value of the NM tag from the read

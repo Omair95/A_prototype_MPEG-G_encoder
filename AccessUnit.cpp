@@ -16,6 +16,10 @@ void AccessUnit::setEndPosition(uint32_t endpos) {
     AU_end_position = endpos;
 }
 
+void AccessUnit::setSequenceID(uint8_t id) {
+    sequence_id = id;
+}
+
 void AccessUnit::insertPosdescriptor(uint32_t value) {
     descriptors[0].insertValue(std::to_string(value));
 }

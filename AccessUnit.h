@@ -64,6 +64,8 @@ public:
     * */
     void setEndPosition(uint32_t endpos);
 
+    void setSequenceID(uint8_t id);
+
     /** \brief Inserts the pos descriptor value inside the corresponding block in the access unit's payload
     * \param value string representing the value of the pos descriptor
     * \return void
