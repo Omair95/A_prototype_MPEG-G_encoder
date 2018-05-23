@@ -94,14 +94,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a16ce87dfa783bb7c87edab979dc2f5d4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a16ce87dfa783bb7c87edab979dc2f5d4">insertPairValue</a> (BamAlignmentRecord &amp;record, BamAlignmentRecord &amp;record2, uint8_t classType)</td></tr>
 <tr class="memdesc:a16ce87dfa783bb7c87edab979dc2f5d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the pair descriptor value to the respective file according to the class type.  <a href="#a16ce87dfa783bb7c87edab979dc2f5d4">More...</a><br /></td></tr>
 <tr class="separator:a16ce87dfa783bb7c87edab979dc2f5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14f31a6e0aacfbcd0c9f6d9de76294bd"><td class="memItemLeft" align="right" valign="top"><a id="a14f31a6e0aacfbcd0c9f6d9de76294bd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insertMmposValue</b> (uint16_t pos, uint8_t classType, bool lastPos)</td></tr>
+<tr class="memitem:a14f31a6e0aacfbcd0c9f6d9de76294bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a14f31a6e0aacfbcd0c9f6d9de76294bd">insertMmposValue</a> (uint16_t pos, uint8_t classType, bool lastPos)</td></tr>
+<tr class="memdesc:a14f31a6e0aacfbcd0c9f6d9de76294bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mmpos descriptor value to the respective file according to the class type.  <a href="#a14f31a6e0aacfbcd0c9f6d9de76294bd">More...</a><br /></td></tr>
 <tr class="separator:a14f31a6e0aacfbcd0c9f6d9de76294bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af204ff60c18d99de4e45453598dae332"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#af204ff60c18d99de4e45453598dae332">insertmmtypeDescriptor</a> (std::vector&lt; std::pair&lt; uint16_t, std::string &gt; &gt; &amp;mmpos, uint8_t classType)</td></tr>
 <tr class="memdesc:af204ff60c18d99de4e45453598dae332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mmtype descriptor value to the respective file according to the class type.  <a href="#af204ff60c18d99de4e45453598dae332">More...</a><br /></td></tr>
 <tr class="separator:af204ff60c18d99de4e45453598dae332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a4dba449ff5fb6df09487bee0d815da"><td class="memItemLeft" align="right" valign="top"><a id="a5a4dba449ff5fb6df09487bee0d815da"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>insertClipsDescriptor</b> (<a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;record, uint32_t id)</td></tr>
+<tr class="memitem:a5a4dba449ff5fb6df09487bee0d815da"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a5a4dba449ff5fb6df09487bee0d815da">insertClipsDescriptor</a> (<a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;record, uint32_t id)</td></tr>
+<tr class="memdesc:a5a4dba449ff5fb6df09487bee0d815da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the sclips descriptor value to the respective file according to the class type.  <a href="#a5a4dba449ff5fb6df09487bee0d815da">More...</a><br /></td></tr>
 <tr class="separator:a5a4dba449ff5fb6df09487bee0d815da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a261e820bc6f8c8d08aa52493d1a840a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#a261e820bc6f8c8d08aa52493d1a840a5">writeMpeggToFile</a> (<a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;result)</td></tr>
 <tr class="memdesc:a261e820bc6f8c8d08aa52493d1a840a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mpegg record of the respective read to a file.  <a href="#a261e820bc6f8c8d08aa52493d1a840a5">More...</a><br /></td></tr>
@@ -109,9 +109,12 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:ad0173ee2705241fbbd6b7f1928863256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#ad0173ee2705241fbbd6b7f1928863256">closeFiles</a> ()</td></tr>
 <tr class="memdesc:ad0173ee2705241fbbd6b7f1928863256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes all the created files.  <a href="#ad0173ee2705241fbbd6b7f1928863256">More...</a><br /></td></tr>
 <tr class="separator:ad0173ee2705241fbbd6b7f1928863256"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3ef02d04142dbd3ac4e273e5d5a1ce2"><td class="memItemLeft" align="right" valign="top"><a id="ab3ef02d04142dbd3ac4e273e5d5a1ce2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>write8bit</b> (uint8_t value, uint8_t classType)</td></tr>
-<tr class="separator:ab3ef02d04142dbd3ac4e273e5d5a1ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea210e106a1056fd5fa8e6136e90364"><td class="memItemLeft" align="right" valign="top"><a id="afea210e106a1056fd5fa8e6136e90364"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>write8bitRcomp</b> (uint8_t value, uint8_t classType)</td></tr>
+<tr class="separator:afea210e106a1056fd5fa8e6136e90364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a649f89525da2efb00a9e841da7bf0dc4"><td class="memItemLeft" align="right" valign="top"><a id="a649f89525da2efb00a9e841da7bf0dc4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>write8bitPair</b> (uint8_t value, uint8_t classType)</td></tr>
+<tr class="separator:a649f89525da2efb00a9e841da7bf0dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e97311c2c3e61f8adbf3cda6ceb7768"><td class="memItemLeft" align="right" valign="top"><a id="a5e97311c2c3e61f8adbf3cda6ceb7768"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>write16bit</b> (uint16_t value, uint8_t classType)</td></tr>
 <tr class="separator:a5e97311c2c3e61f8adbf3cda6ceb7768"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +168,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>write32bit</b> (uint3
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">FileManager::~FileManager </td>
@@ -173,6 +179,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>write32bit</b> (uint3
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Destructor method. </p>
@@ -206,6 +217,44 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>write32bit</b> (uint3
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a5a4dba449ff5fb6df09487bee0d815da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a4dba449ff5fb6df09487bee0d815da">&#9670;&nbsp;</a></span>insertClipsDescriptor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; FileManager::insertClipsDescriptor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMpeggRecord.html">MpeggRecord</a> &amp;&#160;</td>
+          <td class="paramname"><em>record</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the sclips descriptor value to the respective file according to the class type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">record</td><td>the genomic record </td></tr>
+    <tr><td class="paramname">id</td><td>identifier of the record </td></tr>
   </table>
   </dd>
 </dl>
@@ -248,6 +297,50 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>write32bit</b> (uint3
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Flags descriptor value of the read </dd></dl>
+
+</div>
+</div>
+<a id="a14f31a6e0aacfbcd0c9f6d9de76294bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14f31a6e0aacfbcd0c9f6d9de76294bd">&#9670;&nbsp;</a></span>insertMmposValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileManager::insertMmposValue </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>classType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>lastPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the mmpos descriptor value to the respective file according to the class type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>position of the mismatch </td></tr>
+    <tr><td class="paramname">classType</td><td>class type  lastPos check if its the last position of the mismatch </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

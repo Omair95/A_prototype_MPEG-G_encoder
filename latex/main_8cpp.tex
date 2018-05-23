@@ -1,8 +1,11 @@
 \hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
 \label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
-{\ttfamily \#include \char`\"{}Utils.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Access\+Unit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Access\+Unit\+\_\+\+P.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Access\+Unit\+\_\+\+N.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Access\+Unit\+\_\+\+M.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Access\+Unit\+\_\+\+I.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}File\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
 Include dependency graph for main.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -13,13 +16,21 @@ Include dependency graph for main.\+cpp\+:\nopagebreak
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{main_8cpp_a14bc7a6afe06ff323a5a7afaae566511}{A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE}~1000000
+\mbox{\Hypertarget{main_8cpp_a14bc7a6afe06ff323a5a7afaae566511}\label{main_8cpp_a14bc7a6afe06ff323a5a7afaae566511}} 
+\#define {\bfseries A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE}~1000000
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{main_8cpp_af069b537362d4cd928303b086fe1f7ed}{generate\+Byte\+Stream} ()
-\begin{DoxyCompactList}\small\item\em This is the main function of the program. It detects the type of data class that a read belongs to and generates all the associated descriptors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_adcff46937a8a6314884f71d222076a39}\label{main_8cpp_adcff46937a8a6314884f71d222076a39}} 
+void {\bfseries insert\+Tags\+To\+Reads} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&positions)
+\item 
+\mbox{\Hypertarget{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}\label{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}} 
+void {\bfseries merge\+Tags} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case1, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case2, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&result)
+\item 
+\mbox{\Hypertarget{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}\label{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}} 
+void {\bfseries dispatcher} ()
+\item 
 \mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 int {\bfseries main} ()
 \end{DoxyCompactItemize}
@@ -32,51 +43,15 @@ int {\bfseries au\+\_\+id} = -\/1
 \mbox{\Hypertarget{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}\label{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}} 
 std\+::string {\bfseries file\+Name} = \char`\"{}9827\+\_\+2\#49\char`\"{}
 \item 
-\hyperlink{classFileManager}{File\+Manager} \hyperlink{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}{f} (file\+Name)
+\mbox{\Hypertarget{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}\label{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}} 
+\hyperlink{classFileManager}{File\+Manager} {\bfseries f} (file\+Name)
+\item 
+\mbox{\Hypertarget{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}\label{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}} 
+\hyperlink{classUtils}{Utils} {\bfseries u}
 \item 
 \mbox{\Hypertarget{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}\label{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}} 
 std\+::map$<$ int, std\+::pair$<$ int, int $>$ $>$ {\bfseries references}
 \item 
-\mbox{\Hypertarget{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}\label{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}} 
-\hyperlink{classUtils}{Utils} {\bfseries u}
+\mbox{\Hypertarget{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}\label{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}} 
+std\+::multimap$<$ int, std\+::pair$<$ \hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$ std\+::string $>$ $>$ $>$ {\bfseries tags\+\_\+read}
 \end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{main_8cpp_a14bc7a6afe06ff323a5a7afaae566511}\label{main_8cpp_a14bc7a6afe06ff323a5a7afaae566511}} 
-\index{main.\+cpp@{main.\+cpp}!A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE@{A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE}}
-\index{A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE@{A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE}{ACCESS\_UNIT\_SIZE}}
-{\footnotesize\ttfamily \#define A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE~1000000}
-
-Size of each access unit 
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{main_8cpp_af069b537362d4cd928303b086fe1f7ed}\label{main_8cpp_af069b537362d4cd928303b086fe1f7ed}} 
-\index{main.\+cpp@{main.\+cpp}!generate\+Byte\+Stream@{generate\+Byte\+Stream}}
-\index{generate\+Byte\+Stream@{generate\+Byte\+Stream}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{generate\+Byte\+Stream()}{generateByteStream()}}
-{\footnotesize\ttfamily void generate\+Byte\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-This is the main function of the program. It detects the type of data class that a read belongs to and generates all the associated descriptors. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em void} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}\label{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}} 
-\index{main.\+cpp@{main.\+cpp}!f@{f}}
-\index{f@{f}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{f}{f}}
-{\footnotesize\ttfamily \hyperlink{classFileManager}{File\+Manager} f(file\+Name)}
-
-Auxiliary class to be used that allows to create and write into files 

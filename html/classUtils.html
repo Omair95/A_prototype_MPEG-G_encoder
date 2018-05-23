@@ -99,12 +99,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e19b89b708e23964398b1e561686423"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a4e19b89b708e23964398b1e561686423">isClassI</a> (BamAlignmentRecord &amp;record)</td></tr>
 <tr class="memdesc:a4e19b89b708e23964398b1e561686423"><td class="mdescLeft">&#160;</td><td class="mdescRight">To determine if the read belongs to class I, reads contanining at least one insertion, deletion or clippled base, and optionally unknown bases or substitution.  <a href="#a4e19b89b708e23964398b1e561686423">More...</a><br /></td></tr>
 <tr class="separator:a4e19b89b708e23964398b1e561686423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf817f51550147aa6f7265e45c357f14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#abf817f51550147aa6f7265e45c357f14">isClassHM</a> (BamAlignmentRecord &amp;record)</td></tr>
-<tr class="memdesc:abf817f51550147aa6f7265e45c357f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">To determine if the read belongs to class HM, reads where only one read is mapped.  <a href="#abf817f51550147aa6f7265e45c357f14">More...</a><br /></td></tr>
-<tr class="separator:abf817f51550147aa6f7265e45c357f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19d7def56cdd52bfca9e4f2a3f6ac535"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a19d7def56cdd52bfca9e4f2a3f6ac535">isClassU</a> (BamAlignmentRecord &amp;record)</td></tr>
-<tr class="memdesc:a19d7def56cdd52bfca9e4f2a3f6ac535"><td class="mdescLeft">&#160;</td><td class="mdescRight">To determine if the read belongs to class U, unmapped reads only.  <a href="#a19d7def56cdd52bfca9e4f2a3f6ac535">More...</a><br /></td></tr>
-<tr class="separator:a19d7def56cdd52bfca9e4f2a3f6ac535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75b0e41bc884a3fcebb4f55c45855d82"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a75b0e41bc884a3fcebb4f55c45855d82">getClassType</a> (BamAlignmentRecord &amp;record)</td></tr>
 <tr class="memdesc:a75b0e41bc884a3fcebb4f55c45855d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">To determine the data class where a read belongs to.  <a href="#a75b0e41bc884a3fcebb4f55c45855d82">More...</a><br /></td></tr>
 <tr class="separator:a75b0e41bc884a3fcebb4f55c45855d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +141,9 @@ static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>reads_dist
 <tr class="memitem:a2051c7e16daa8b646bfb69fc9a7ff9e0"><td class="memItemLeft" align="right" valign="top"><a id="a2051c7e16daa8b646bfb69fc9a7ff9e0"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPaired</b> (BamAlignmentRecord first, BamAlignmentRecord second)</td></tr>
 <tr class="separator:a2051c7e16daa8b646bfb69fc9a7ff9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40949f3bf1253166d2ed7933e9448e20"><td class="memItemLeft" align="right" valign="top"><a id="a40949f3bf1253166d2ed7933e9448e20"></a>
+static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getSequenceLength</b> (BamAlignmentRecord &amp;record)</td></tr>
+<tr class="separator:a40949f3bf1253166d2ed7933e9448e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Auxiliary class that contains useful methods from the main class. </p>
@@ -569,33 +566,6 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPaired</b> (
 
 </div>
 </div>
-<a id="abf817f51550147aa6f7265e45c357f14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf817f51550147aa6f7265e45c357f14">&#9670;&nbsp;</a></span>isClassHM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Utils::isClassHM </td>
-          <td>(</td>
-          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
-          <td class="paramname"><em>record</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>To determine if the read belongs to class HM, reads where only one read is mapped. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">record</td><td>is the first read from the pair </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool indicating if the read belongs to class HM </dd></dl>
-
-</div>
-</div>
 <a id="a4e19b89b708e23964398b1e561686423"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e19b89b708e23964398b1e561686423">&#9670;&nbsp;</a></span>isClassI()</h2>
 
@@ -701,33 +671,6 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPaired</b> (
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool indicating if the read belongs to class P </dd></dl>
-
-</div>
-</div>
-<a id="a19d7def56cdd52bfca9e4f2a3f6ac535"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19d7def56cdd52bfca9e4f2a3f6ac535">&#9670;&nbsp;</a></span>isClassU()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Utils::isClassU </td>
-          <td>(</td>
-          <td class="paramtype">BamAlignmentRecord &amp;&#160;</td>
-          <td class="paramname"><em>record</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>To determine if the read belongs to class U, unmapped reads only. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">record</td><td>is the first read from the pair </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool indicating if the read belongs to class U </dd></dl>
 
 </div>
 </div>

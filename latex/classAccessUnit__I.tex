@@ -38,10 +38,8 @@ void \hyperlink{classAccessUnit__I_a761754f1229fe7cf78833281a90005ae}{insert\+Mm
 \begin{DoxyCompactList}\small\item\em Inserts the mmpos descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
 void \hyperlink{classAccessUnit__I_a322a02df826320da868ad848eded885b}{insert\+Mmtype\+Descriptor} (uint8\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Inserts the mmtype descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
-void \hyperlink{classAccessUnit__I_ac9a266b81b386b1f14db2225a8e6b46a}{insert\+Rlen\+Descriptor} (uint8\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Inserts the rlen descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
-void \hyperlink{classAccessUnit__I_a3ce9bf4a7f73e16a515613ff6436c13e}{insert\+Pair\+Descriptor} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Inserts the pair descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classAccessUnit__I_aa52235996105994359fccb6218566b6b}{insert\+Sclips\+Descriptor} (std\+::vector$<$ std\+::string $>$ \&sclips)
+\begin{DoxyCompactList}\small\item\em Inserts the sclips descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -61,7 +59,7 @@ Contact\+: \href{mailto:Omair95@protonmail.com}{\tt Omair95@protonmail.\+com}
 \index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
 \index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
 \subsubsection{\texorpdfstring{Access\+Unit\+\_\+\+I()}{AccessUnit\_I()}}
-{\footnotesize\ttfamily Access\+Unit\+\_\+\+I\+::\+Access\+Unit\+\_\+I (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Access\+Unit\+\_\+\+I\+::\+Access\+Unit\+\_\+I (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -79,7 +77,7 @@ void
 \index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!````~Access\+Unit\+\_\+I@{$\sim$\+Access\+Unit\+\_\+I}}
 \index{````~Access\+Unit\+\_\+I@{$\sim$\+Access\+Unit\+\_\+I}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
 \subsubsection{\texorpdfstring{$\sim$\+Access\+Unit\+\_\+\+I()}{~AccessUnit\_I()}}
-{\footnotesize\ttfamily Access\+Unit\+\_\+\+I\+::$\sim$\+Access\+Unit\+\_\+I (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Access\+Unit\+\_\+\+I\+::$\sim$\+Access\+Unit\+\_\+I (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
 
 
@@ -132,37 +130,19 @@ Inserts the mmtype descriptor value inside the corresponding block in the access
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAccessUnit__I_a3ce9bf4a7f73e16a515613ff6436c13e}\label{classAccessUnit__I_a3ce9bf4a7f73e16a515613ff6436c13e}} 
-\index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!insert\+Pair\+Descriptor@{insert\+Pair\+Descriptor}}
-\index{insert\+Pair\+Descriptor@{insert\+Pair\+Descriptor}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
-\subsubsection{\texorpdfstring{insert\+Pair\+Descriptor()}{insertPairDescriptor()}}
-{\footnotesize\ttfamily void Access\+Unit\+\_\+\+I\+::insert\+Pair\+Descriptor (\begin{DoxyParamCaption}\item[{std\+::string}]{value }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classAccessUnit__I_aa52235996105994359fccb6218566b6b}\label{classAccessUnit__I_aa52235996105994359fccb6218566b6b}} 
+\index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!insert\+Sclips\+Descriptor@{insert\+Sclips\+Descriptor}}
+\index{insert\+Sclips\+Descriptor@{insert\+Sclips\+Descriptor}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
+\subsubsection{\texorpdfstring{insert\+Sclips\+Descriptor()}{insertSclipsDescriptor()}}
+{\footnotesize\ttfamily void Access\+Unit\+\_\+\+I\+::insert\+Sclips\+Descriptor (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{sclips }\end{DoxyParamCaption})}
 
 
 
-Inserts the pair descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em value} & string representing the value of the pair descriptor \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classAccessUnit__I_ac9a266b81b386b1f14db2225a8e6b46a}\label{classAccessUnit__I_ac9a266b81b386b1f14db2225a8e6b46a}} 
-\index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!insert\+Rlen\+Descriptor@{insert\+Rlen\+Descriptor}}
-\index{insert\+Rlen\+Descriptor@{insert\+Rlen\+Descriptor}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
-\subsubsection{\texorpdfstring{insert\+Rlen\+Descriptor()}{insertRlenDescriptor()}}
-{\footnotesize\ttfamily void Access\+Unit\+\_\+\+I\+::insert\+Rlen\+Descriptor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
-
-
-
-Inserts the rlen descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
+Inserts the sclips descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & string representing the value of the rlen descriptor \\
+{\em value} & string representing the value of the mmtype descriptor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

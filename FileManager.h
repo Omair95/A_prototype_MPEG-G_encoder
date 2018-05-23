@@ -1,8 +1,6 @@
 #include <fstream>
 #include <boost/endian/conversion.hpp>
-#include "MpeggRecord.h"
 #include "Utils.h"
-#include <seqan/bam_io.h>
 using namespace seqan;
 
 /*! \file FileManager.h */

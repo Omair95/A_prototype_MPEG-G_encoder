@@ -1,24 +1,25 @@
 var searchData=
 [
   ['insertaccessunit',['insertAccessUnit',['../classUtils.html#a20d62b8e6495536108e7bfe1b955355a',1,'Utils']]],
+  ['insertclipsdescriptor',['insertClipsDescriptor',['../classFileManager.html#a5a4dba449ff5fb6df09487bee0d815da',1,'FileManager']]],
   ['insertflagsdescriptor',['insertFlagsDescriptor',['../classAccessUnit.html#a1589b7fe14421a211e3a94ee3992cd9f',1,'AccessUnit']]],
   ['insertflagsvalue',['insertFlagsValue',['../classFileManager.html#a749517da172c0374f668121a090e1046',1,'FileManager']]],
   ['insertmmposdescriptor',['insertMmposDescriptor',['../classAccessUnit__I.html#a761754f1229fe7cf78833281a90005ae',1,'AccessUnit_I::insertMmposDescriptor()'],['../classAccessUnit__M.html#a074b4eca49640cda1acbe38990301d88',1,'AccessUnit_M::insertMmposDescriptor()'],['../classAccessUnit__N.html#a918c5b6975525ce3eb505ef87349deb5',1,'AccessUnit_N::insertMmposDescriptor()']]],
+  ['insertmmposvalue',['insertMmposValue',['../classFileManager.html#a14f31a6e0aacfbcd0c9f6d9de76294bd',1,'FileManager']]],
   ['insertmmtypedescriptor',['insertMmtypeDescriptor',['../classAccessUnit__I.html#a322a02df826320da868ad848eded885b',1,'AccessUnit_I::insertMmtypeDescriptor()'],['../classAccessUnit__M.html#aeb5f2421173c1e0305daff2e46568a89',1,'AccessUnit_M::insertMmtypeDescriptor()'],['../classFileManager.html#af204ff60c18d99de4e45453598dae332',1,'FileManager::insertmmtypeDescriptor()']]],
-  ['insertpairdescriptor',['insertPairDescriptor',['../classAccessUnit__HM.html#a81641868d00425d0bcb14aacc6659087',1,'AccessUnit_HM::insertPairDescriptor()'],['../classAccessUnit__I.html#a3ce9bf4a7f73e16a515613ff6436c13e',1,'AccessUnit_I::insertPairDescriptor()'],['../classAccessUnit__M.html#a80d5b01b9c871c446e5ce0b3d0d93c26',1,'AccessUnit_M::insertPairDescriptor()'],['../classAccessUnit__N.html#a31a63e0104f3bfc89a0f263b7e132bde',1,'AccessUnit_N::insertPairDescriptor()'],['../classAccessUnit__P.html#a802d79daa367e0cc75b1ff6dfeb6fc30',1,'AccessUnit_P::insertPairDescriptor()']]],
+  ['insertpairdescriptor',['insertPairDescriptor',['../classAccessUnit.html#a8e625d1876728e38f5c7535dc100239f',1,'AccessUnit']]],
   ['insertpairvalue',['insertPairValue',['../classFileManager.html#a16ce87dfa783bb7c87edab979dc2f5d4',1,'FileManager']]],
   ['insertposdescriptor',['insertPosdescriptor',['../classAccessUnit.html#a13f75d409e785845547246c6b84594e5',1,'AccessUnit']]],
   ['insertposvalue',['insertPosValue',['../classFileManager.html#ae4e12983c4d731b8efd5a475b9704572',1,'FileManager']]],
   ['insertrcompdescriptor',['insertRcompDescriptor',['../classAccessUnit.html#af27eac59031139a98db67eee56b0ebff',1,'AccessUnit']]],
   ['insertrcompvalue',['insertRcompValue',['../classFileManager.html#aa30a3c3bf2c33ec92b48df524d46cb0b',1,'FileManager']]],
   ['insertread',['insertRead',['../classUtils.html#aa2bffe3dfec78617ebdf207ff0fa0820',1,'Utils']]],
-  ['insertrlendescriptor',['insertRlenDescriptor',['../classAccessUnit__HM.html#a017359acfd3f1d60b0093003974e79a8',1,'AccessUnit_HM::insertRlenDescriptor()'],['../classAccessUnit__I.html#ac9a266b81b386b1f14db2225a8e6b46a',1,'AccessUnit_I::insertRlenDescriptor()'],['../classAccessUnit__M.html#aac1413547a1c7f694e5b3eae94ee3c81',1,'AccessUnit_M::insertRlenDescriptor()'],['../classAccessUnit__N.html#a109eb45c448f1bd89a501f1831133a9a',1,'AccessUnit_N::insertRlenDescriptor()'],['../classAccessUnit__P.html#a3affdaa96f453f81f951f6c21b2fd3f0',1,'AccessUnit_P::insertRlenDescriptor()'],['../classAccessUnit__U.html#a4ba596eaa4ea2f34c2051bde4618801c',1,'AccessUnit_U::insertRlenDescriptor()']]],
+  ['insertrlendescriptor',['insertRlenDescriptor',['../classAccessUnit.html#a8223db6ac2c800f8e2c5cde07813e47f',1,'AccessUnit']]],
   ['insertrlenvalue',['insertRlenValue',['../classFileManager.html#a72a9c467af917d1f9ad0d066d1058104',1,'FileManager']]],
+  ['insertsclipsdescriptor',['insertSclipsDescriptor',['../classAccessUnit__I.html#aa52235996105994359fccb6218566b6b',1,'AccessUnit_I']]],
   ['insertvalue',['insertValue',['../classAccessUnitBlock.html#aaa3754f0b79b3cef201b96c2f0b99c31',1,'AccessUnitBlock']]],
-  ['isclasshm',['isClassHM',['../classUtils.html#abf817f51550147aa6f7265e45c357f14',1,'Utils']]],
   ['isclassi',['isClassI',['../classUtils.html#a4e19b89b708e23964398b1e561686423',1,'Utils']]],
   ['isclassm',['isClassM',['../classUtils.html#a2ab4c3d1059e841aaa81bf6eb7650c46',1,'Utils']]],
   ['isclassn',['isClassN',['../classUtils.html#a68dc1efdf9895d4c63a0a78a09d407d4',1,'Utils']]],
-  ['isclassp',['isClassP',['../classUtils.html#ab384d430e1cc5e0cc1ce1913eeab7e82',1,'Utils']]],
-  ['isclassu',['isClassU',['../classUtils.html#a19d7def56cdd52bfca9e4f2a3f6ac535',1,'Utils']]]
+  ['isclassp',['isClassP',['../classUtils.html#ab384d430e1cc5e0cc1ce1913eeab7e82',1,'Utils']]]
 ];

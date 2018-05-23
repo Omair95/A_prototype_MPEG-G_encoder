@@ -1,4 +1,3 @@
-#include "Utils.h"
 #include "AccessUnit_P.h"
 #include "AccessUnit_N.h"
 #include "AccessUnit_M.h"
@@ -151,6 +150,7 @@ void dispatcher() {
                 u.insertAccessUnit(*AU_P);
                 AU_P = new AccessUnit_P(++au_id);
                 AU_P->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
+                AU_P->setSequenceID(tagsReads_it->second.first.seq_Id);
                 firstP = true;
             }
 
@@ -166,6 +166,7 @@ void dispatcher() {
                 u.insertAccessUnit(*AU_N);
                 AU_N = new AccessUnit_N(++au_id);
                 AU_N->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
+                AU_N->setSequenceID(tagsReads_it->second.first.seq_Id);
                 firstN = true;
             }
 
@@ -234,6 +235,7 @@ void dispatcher() {
                 u.insertAccessUnit(*AU_M);
                 AU_M = new AccessUnit_M(++au_id);
                 AU_M->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
+                AU_M->setSequenceID(tagsReads_it->second.first.seq_Id);
                 firstM = true;
             }
 
@@ -309,6 +311,7 @@ void dispatcher() {
                 u.insertAccessUnit(*AU_I);
                 AU_I = new AccessUnit_I(++au_id);
                 AU_I->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
+                AU_I->setSequenceID(tagsReads_it->second.first.seq_Id);
                 firstI = true;
             }
 

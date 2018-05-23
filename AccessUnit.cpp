@@ -1,8 +1,8 @@
 #include "AccessUnit.h"
 
-AccessUnit::AccessUnit() { }
+AccessUnit::AccessUnit() = default;
 
-AccessUnit::~AccessUnit() { }
+AccessUnit::~AccessUnit() = default;
 
 uint8_t AccessUnit::getType() {
     return AU_type;

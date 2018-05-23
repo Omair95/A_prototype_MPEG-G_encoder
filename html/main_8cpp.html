@@ -66,9 +66,12 @@ $(function() {
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Utils_8h_source.html">Utils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AccessUnit_8h_source.html">AccessUnit.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="AccessUnit__P_8h_source.html">AccessUnit_P.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AccessUnit__N_8h_source.html">AccessUnit_N.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AccessUnit__M_8h_source.html">AccessUnit_M.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AccessUnit__I_8h_source.html">AccessUnit_I.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="FileManager_8h_source.html">FileManager.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
@@ -90,14 +93,21 @@ Include dependency graph for main.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a14bc7a6afe06ff323a5a7afaae566511"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a14bc7a6afe06ff323a5a7afaae566511">ACCESS_UNIT_SIZE</a>&#160;&#160;&#160;1000000</td></tr>
+<tr class="memitem:a14bc7a6afe06ff323a5a7afaae566511"><td class="memItemLeft" align="right" valign="top"><a id="a14bc7a6afe06ff323a5a7afaae566511"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ACCESS_UNIT_SIZE</b>&#160;&#160;&#160;1000000</td></tr>
 <tr class="separator:a14bc7a6afe06ff323a5a7afaae566511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af069b537362d4cd928303b086fe1f7ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af069b537362d4cd928303b086fe1f7ed">generateByteStream</a> ()</td></tr>
-<tr class="memdesc:af069b537362d4cd928303b086fe1f7ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main function of the program. It detects the type of data class that a read belongs to and generates all the associated descriptors.  <a href="#af069b537362d4cd928303b086fe1f7ed">More...</a><br /></td></tr>
-<tr class="separator:af069b537362d4cd928303b086fe1f7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcff46937a8a6314884f71d222076a39"><td class="memItemLeft" align="right" valign="top"><a id="adcff46937a8a6314884f71d222076a39"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>insertTagsToReads</b> (std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;positions)</td></tr>
+<tr class="separator:adcff46937a8a6314884f71d222076a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e6491f068afad42c01e93cbb9ee51c"><td class="memItemLeft" align="right" valign="top"><a id="ad5e6491f068afad42c01e93cbb9ee51c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mergeTags</b> (std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;useCase1, std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;useCase2, std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;result)</td></tr>
+<tr class="separator:ad5e6491f068afad42c01e93cbb9ee51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3aa48cb265e09ae327e98a9fe2e31b"><td class="memItemLeft" align="right" valign="top"><a id="a9f3aa48cb265e09ae327e98a9fe2e31b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>dispatcher</b> ()</td></tr>
+<tr class="separator:a9f3aa48cb265e09ae327e98a9fe2e31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,74 +120,19 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>au_id</b> = -1</td></t
 <tr class="memitem:ac81f9269c8d57eed4d5b56f054fc84de"><td class="memItemLeft" align="right" valign="top"><a id="ac81f9269c8d57eed4d5b56f054fc84de"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>fileName</b> = &quot;9827_2#49&quot;</td></tr>
 <tr class="separator:ac81f9269c8d57eed4d5b56f054fc84de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa72073560cce2b1a4cfbe31a0715110"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFileManager.html">FileManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afa72073560cce2b1a4cfbe31a0715110">f</a> (fileName)</td></tr>
+<tr class="memitem:afa72073560cce2b1a4cfbe31a0715110"><td class="memItemLeft" align="right" valign="top"><a id="afa72073560cce2b1a4cfbe31a0715110"></a>
+<a class="el" href="classFileManager.html">FileManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>f</b> (fileName)</td></tr>
 <tr class="separator:afa72073560cce2b1a4cfbe31a0715110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a19ae27e56b494e2c1a90b5cc6ce79"><td class="memItemLeft" align="right" valign="top"><a id="aa9a19ae27e56b494e2c1a90b5cc6ce79"></a>
-std::map&lt; int, std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>references</b></td></tr>
-<tr class="separator:aa9a19ae27e56b494e2c1a90b5cc6ce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ccf772c847c5389e8b1e0fb607cf12"><td class="memItemLeft" align="right" valign="top"><a id="af4ccf772c847c5389e8b1e0fb607cf12"></a>
 <a class="el" href="classUtils.html">Utils</a>&#160;</td><td class="memItemRight" valign="bottom"><b>u</b></td></tr>
 <tr class="separator:af4ccf772c847c5389e8b1e0fb607cf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a19ae27e56b494e2c1a90b5cc6ce79"><td class="memItemLeft" align="right" valign="top"><a id="aa9a19ae27e56b494e2c1a90b5cc6ce79"></a>
+std::map&lt; int, std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>references</b></td></tr>
+<tr class="separator:aa9a19ae27e56b494e2c1a90b5cc6ce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a369f1a36c1db7a0cdd7d5ee68c8bb"><td class="memItemLeft" align="right" valign="top"><a id="a58a369f1a36c1db7a0cdd7d5ee68c8bb"></a>
+std::multimap&lt; int, std::pair&lt; <a class="el" href="structMpeggRecord.html">MpeggRecord</a>, std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>tags_read</b></td></tr>
+<tr class="separator:a58a369f1a36c1db7a0cdd7d5ee68c8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a14bc7a6afe06ff323a5a7afaae566511"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14bc7a6afe06ff323a5a7afaae566511">&#9670;&nbsp;</a></span>ACCESS_UNIT_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ACCESS_UNIT_SIZE&#160;&#160;&#160;1000000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Size of each access unit </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="af069b537362d4cd928303b086fe1f7ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af069b537362d4cd928303b086fe1f7ed">&#9670;&nbsp;</a></span>generateByteStream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void generateByteStream </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is the main function of the program. It detects the type of data class that a read belongs to and generates all the associated descriptors. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="afa72073560cce2b1a4cfbe31a0715110"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa72073560cce2b1a4cfbe31a0715110">&#9670;&nbsp;</a></span>f</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classFileManager.html">FileManager</a> f(fileName)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Auxiliary class to be used that allows to create and write into files </p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

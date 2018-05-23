@@ -26,10 +26,6 @@ bool \hyperlink{classUtils_a2ab4c3d1059e841aaa81bf6eb7650c46}{is\+ClassM} (Bam\+
 \begin{DoxyCompactList}\small\item\em To determine if the read belongs to class M, reads contanining at least one substitution, optionally unknown bases and no insertion, deletions and clipped bases. \end{DoxyCompactList}\item 
 bool \hyperlink{classUtils_a4e19b89b708e23964398b1e561686423}{is\+ClassI} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em To determine if the read belongs to class I, reads contanining at least one insertion, deletion or clippled base, and optionally unknown bases or substitution. \end{DoxyCompactList}\item 
-bool \hyperlink{classUtils_abf817f51550147aa6f7265e45c357f14}{is\+Class\+HM} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em To determine if the read belongs to class HM, reads where only one read is mapped. \end{DoxyCompactList}\item 
-bool \hyperlink{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}{is\+ClassU} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em To determine if the read belongs to class U, unmapped reads only. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{classUtils_a75b0e41bc884a3fcebb4f55c45855d82}{get\+Class\+Type} (Bam\+Alignment\+Record \&record)
 \begin{DoxyCompactList}\small\item\em To determine the data class where a read belongs to. \end{DoxyCompactList}\item 
 int \hyperlink{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}{get\+N\+Mtag} (Bam\+Alignment\+Record \&record)
@@ -60,6 +56,9 @@ static std\+::string \hyperlink{classUtils_a58dcdc1dd071936078799ee35d5f2502}{ge
 \begin{DoxyCompactList}\small\item\em Extracts the value of the MD tag from the read. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classUtils_a2051c7e16daa8b646bfb69fc9a7ff9e0}\label{classUtils_a2051c7e16daa8b646bfb69fc9a7ff9e0}} 
 static bool {\bfseries is\+Paired} (Bam\+Alignment\+Record first, Bam\+Alignment\+Record second)
+\item 
+\mbox{\Hypertarget{classUtils_a40949f3bf1253166d2ed7933e9448e20}\label{classUtils_a40949f3bf1253166d2ed7933e9448e20}} 
+static uint8\+\_\+t {\bfseries get\+Sequence\+Length} (Bam\+Alignment\+Record \&record)
 \end{DoxyCompactItemize}
 
 
@@ -334,24 +333,6 @@ Inserts a new read pair to the list of paired reads.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classUtils_abf817f51550147aa6f7265e45c357f14}\label{classUtils_abf817f51550147aa6f7265e45c357f14}} 
-\index{Utils@{Utils}!is\+Class\+HM@{is\+Class\+HM}}
-\index{is\+Class\+HM@{is\+Class\+HM}!Utils@{Utils}}
-\subsubsection{\texorpdfstring{is\+Class\+H\+M()}{isClassHM()}}
-{\footnotesize\ttfamily bool Utils\+::is\+Class\+HM (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
-
-
-
-To determine if the read belongs to class HM, reads where only one read is mapped. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & is the first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-bool indicating if the read belongs to class HM 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classUtils_a4e19b89b708e23964398b1e561686423}\label{classUtils_a4e19b89b708e23964398b1e561686423}} 
 \index{Utils@{Utils}!is\+ClassI@{is\+ClassI}}
 \index{is\+ClassI@{is\+ClassI}!Utils@{Utils}}
@@ -423,24 +404,6 @@ To determine if the read belongs to class P, reads perfectly matching the refere
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 bool indicating if the read belongs to class P 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}\label{classUtils_a19d7def56cdd52bfca9e4f2a3f6ac535}} 
-\index{Utils@{Utils}!is\+ClassU@{is\+ClassU}}
-\index{is\+ClassU@{is\+ClassU}!Utils@{Utils}}
-\subsubsection{\texorpdfstring{is\+Class\+U()}{isClassU()}}
-{\footnotesize\ttfamily bool Utils\+::is\+ClassU (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
-
-
-
-To determine if the read belongs to class U, unmapped reads only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em record} & is the first read from the pair \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-bool indicating if the read belongs to class U 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classUtils_abddd37adce88799fc8a66f7779c407bb}\label{classUtils_abddd37adce88799fc8a66f7779c407bb}} 
 \index{Utils@{Utils}!remove\+First\+Read@{remove\+First\+Read}}
