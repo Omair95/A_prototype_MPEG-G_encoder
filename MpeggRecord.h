@@ -1,18 +1,14 @@
 #include <iostream>
 #include <vector>
 
-/*! \file MpeggRecord.h */
-
 /**
- * \struct MpeggRecord
- * \brief Format of the mpegg record
- *
- * \author Omair Iqbal
- *
- * \date 04/2018
- *
- * Contact: Omair95@protonmail.com
- * */
+ * @file MpeggRecord.h
+ * @Author Omair Iqbal
+ * @date 04/2018
+ * @struct MpeggRecord
+ * @brief Format of the output mpegg record
+ * @contact Omair95@protonmail.com
+*/
 
 #ifndef A_PROTOTYPE_MPEG_G_ENCODER_MPEGG_RECORD_H
 #define A_PROTOTYPE_MPEG_G_ENCODER_MPEGG_RECORD_H
@@ -36,6 +32,5 @@ struct MpeggRecord {
     std::vector < std::vector<std::string> > ecigar_string;   /// the extended cigar of the read
     std::vector < std::vector<uint8_t> > reverse_comp;        /// flag associated to each alignmnent in the Genomic Record signaling if the alignment is on forward or reverse strand
 };
-
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_MPEGG_RECORD_H

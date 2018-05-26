@@ -5,8 +5,17 @@
 #include "FileManager.h"
 #include <algorithm>
 
-/*! \file main.cpp */
+/**
+ * @file main.cpp
+ * @Author Omair Iqbal
+ * @date 04/2018
+ * @class main
+ * @brief main class
+ * @contact Omair95@protonmail.com
+*/
 
+/** Access Unit identifier
+ * */
 int au_id = -1;
 
 // Bam file to read
@@ -18,31 +27,36 @@ FileManager f(fileName);
 // Auxiliary functions
 Utils u;
 
-/* Number of references sequences with their start and end positions
+/** Number of references sequences with their start and end positions
  * */
 std::map<int, std::pair<int, int> > references;
 
 // Size of each access unit
 #define ACCESS_UNIT_SIZE 1000000 // 13716
 
+/** List of reads with their asociated tags
+ * */
 std::multimap<int, std::pair<MpeggRecord, std::vector<std::string> > > tags_read;
 
+/** @brief Inserts the asociated tags to the reads according to the positions
+ * @param positions positions in the reference sequences delimitating the tags
+ * */
 void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& positions) {
     std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
     u.getAllreads(reads);
 
-    for (auto it = reads.begin(); it != reads.end(); ++it) {
+    for (auto &read : reads) {
         MpeggRecord record;
-        u.convertToMpeggRecord(record, it->second.first);
+        u.convertToMpeggRecord(record, read.second.first);
         f.writeMpeggToFile(record);
         bool found = false;
         auto position = positions[record.seq_Id].begin();
 
         while (not found and position != positions[record.seq_Id].end()) {
-            if (it->first < position->first) {
+            if (read.first < position->first) {
                 std::vector<std::string> tags;
                 tags.push_back(position->second[0]);
-                tags_read.insert(std::make_pair(it->first, std::make_pair(record, tags)));
+                tags_read.insert(std::make_pair(read.first, std::make_pair(record, tags)));
                 found = true;
             } else {
                 ++position;
@@ -51,11 +65,16 @@ void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& p
         if (not found) {
             std::vector<std::string> tags;
             tags.emplace_back("Public");
-            tags_read.insert(std::make_pair(it->first, std::make_pair(record, tags)));
+            tags_read.insert(std::make_pair(read.first, std::make_pair(record, tags)));
         }
     }
 }
 
+/** @brief Merge the tags from the use case 1 and use case 2
+ *  @param useCase1 matrix containing the positions for each reference sequence for the use case 1
+ *  @param useCase2 matrix containing the positions for each reference sequence for the use case 2
+ *  @param result the resulted matrix which contains the merged positions for the both use cases
+ **/
 void mergeTags(std::vector<std::map<int, std::vector<std::string> > >& useCase1, std::vector<std::map<int, std::vector<std::string> > >& useCase2, std::vector<std::map<int, std::vector<std::string> > >& result) {
     for (int i = 0; i < useCase1.size(); ++i) {
         useCase1[i].insert(useCase2[i].begin(), useCase2[i].end());
@@ -78,6 +97,8 @@ void mergeTags(std::vector<std::map<int, std::vector<std::string> > >& useCase1,
     result = useCase1;
 }
 
+/** @brief Writes the especified regions of the reference sequence to the corresponding access units which are written into files
+ **/
 void dispatcher() {
     AccessUnit *AU_P, *AU_N, *AU_M, *AU_I;
     AU_P = new AccessUnit_P(++au_id);
@@ -407,15 +428,17 @@ void dispatcher() {
 }
 
 int main () {
+    // full path of the file to be read
     std::string filePath = "../../TestFiles/" + fileName + ".bam";
     BamFileIn bamFileIn(toCString(filePath));
     BamHeader header;
     readHeader(header, bamFileIn);
 
-    int count = 1;
     BamAlignmentRecord record;
     std::cout << "Pairing reads ... " << std::endl;
-    while (!atEnd(bamFileIn) and count <= 10000) { // 8559058 total reads encoded
+
+    // loop that reads the file and pairs the mate reads
+    while (!atEnd(bamFileIn)) {
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -436,17 +459,15 @@ int main () {
         } else {
             u.updateRecord(record, record.pNext);
         }
-        ++count;
     }
 
-    // 0 10000 249240518
-    // 1 10267 237429082
-
+    // reference sequence found with their start and end positions
     for (auto it = references.begin(); it != references.end(); it++) {
         std::cout << "Reference ID = " << it->first << " " << "Start : " << it->second.first << " " << "End : " << it->second.second << std::endl;
     }
     std::cout << std::endl;
 
+    // Use cases are shown
     std::cout << "PROTECTION    : 1 " << std::endl;
     std::cout << "RANDOM ACCESS : 2 " << std::endl;
     std::cout << "NONE          : 3 " << std::endl;
@@ -458,6 +479,8 @@ int main () {
     while (std::cin >> useCase and useCase != 3) {
 
         if (useCase == 1) {
+
+            // for each reference sequence write the end position and name of the tag
             for (auto &reference : references) {
                 std::cout << "Use case : Protection " << std::endl;
                 std::cout << "Enter positions and tags for reference sequence" << " : " << reference.first << " (" << reference.second.first << " - " << reference.second.second << ")" << std::endl;
@@ -477,6 +500,7 @@ int main () {
             std::cout << "Use case: Random access " << std::endl;
             std::cout << "Insert Tags (insert END to finish) : " << std::endl;
 
+            // write the list of tags
             std::string tag;
             std::vector<std::string> tags;
             while (std::cin >> tag and tag != "END") {
@@ -499,7 +523,10 @@ int main () {
             }
             useCase2 = true;
             std::cout << std::endl;
-        } else if (useCase == 3) break;
+        } else if (useCase == 3) {
+            // end the use cases loop
+            break;
+        }
 
         std::cout << "PROTECTION    : 1 " << std::endl;
         std::cout << "RANDOM ACCESS : 2 " << std::endl;
@@ -507,6 +534,7 @@ int main () {
         std::cout << "Enter use case : ";
     }
 
+    // if two use cases have been introduced then we have the option to merge the positions
     if (useCase1 and useCase2) {
         std::cout << "Merge use cases? Y/N ";
         char c; std::cin >> c;
@@ -536,11 +564,14 @@ int main () {
 
     std::cout << "Dispatching and encoding..." << std::endl;
 
+    // start the dispatcher
     dispatcher();
 
+    // write via command line the access units encoded without the payload
     std::cout << "List of access Units encoded" << std::endl;
     std::vector<AccessUnit> au;
     u.getAllAccessUnits(au);
+
     for (int i = 0; i < au.size(); ++i) {
         au[i].write();
     }

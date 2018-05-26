@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quality_5fvalues',['quality_values',['../structMpeggRecord.html#adf2fcaffb12b704bf578897c3334ff28',1,'MpeggRecord']]]
+  ['seq_5fid',['seq_Id',['../structMpeggRecord.html#a106b55e8432a1369b54b745c24e43780',1,'MpeggRecord']]],
+  ['sequence',['sequence',['../structMpeggRecord.html#a854030bfc3261c48679bc3d64f18bd4d',1,'MpeggRecord']]]
 ];

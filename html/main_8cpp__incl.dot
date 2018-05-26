@@ -1,0 +1,45 @@
+digraph "main.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="AccessUnit_P.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AccessUnit__P_8h.html"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AccessUnit.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AccessUnit_8h.html"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="AccessUnitBlock.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AccessUnitBlock_8h.html"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="seqan/bam_io.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="FileManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FileManager_8h.html"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="boost/endian/conversion.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Utils.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Utils_8h.html"];
+  Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="MpeggRecord.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MpeggRecord_8h.html"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="sstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ctype.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="AccessUnit_N.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AccessUnit__N_8h.html"];
+  Node14 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="AccessUnit_M.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AccessUnit__M_8h.html"];
+  Node15 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="AccessUnit_I.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AccessUnit__I_8h.html"];
+  Node16 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="algorithm",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['num_5fblocks',['num_blocks',['../classAccessUnit.html#a88f0f1df847d53c2acfa2c71e05bbe80',1,'AccessUnit']]],
-  ['number_5fof_5falignments',['number_of_alignments',['../structMpeggRecord.html#a16c50a379b687b3b479137ccc1ddf715',1,'MpeggRecord']]],
-  ['number_5fof_5fsegments',['number_of_segments',['../structMpeggRecord.html#a19769e489073d18fcac5dff57c067983',1,'MpeggRecord']]]
+  ['read1_5ffirst',['read1_first',['../structMpeggRecord.html#ad87cf3e1eb0228748270d154bde08cb1',1,'MpeggRecord']]],
+  ['read_5flen',['read_len',['../structMpeggRecord.html#a5e2e9dab677f48bdf3d2311bab7938b4',1,'MpeggRecord']]],
+  ['read_5fname',['read_name',['../structMpeggRecord.html#a5b1269ff546962bc30d7a060c1954a9c',1,'MpeggRecord']]],
+  ['reverse_5fcomp',['reverse_comp',['../structMpeggRecord.html#abbe495faacdf88320a21ccf8a95579af',1,'MpeggRecord']]]
 ];

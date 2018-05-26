@@ -32,14 +32,6 @@ FileManager::FileManager(std::string fileName) {
     clipsDescriptorClassI.open("../Files/" + fileName + ".mpegg.iclips", std::ofstream::out | std::ofstream::trunc);
     rlenDescriptorClassI.open("../Files/" + fileName + ".mpegg.irlen", std::ofstream::out | std::ofstream::trunc);
     pairDescriptorClassI.open("../Files/" + fileName + ".mpegg.ipair", std::ofstream::out | std::ofstream::trunc);
-
-    posDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmpos", std::ofstream::out | std::ofstream::trunc);
-    rcompDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmrcomp", std::ofstream::out | std::ofstream::trunc);
-    flagsDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmflags", std::ofstream::out | std::ofstream::trunc);
-    rlenDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmrlen", std::ofstream::out | std::ofstream::trunc);
-    pairDescriptorClassHM.open("../Files/" + fileName + ".mpegg.hmpair", std::ofstream::out | std::ofstream::trunc);
-
-    rlenDescriptorClassU.open("../Files/" + fileName + ".mpegg.urlen", std::ofstream::out | std::ofstream::trunc);
 }
 
 FileManager::~FileManager() = default;
@@ -54,8 +46,6 @@ void FileManager::insertPosValue(uint32_t value, uint8_t classType) {
         posDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
         posDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        posDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
@@ -139,8 +129,6 @@ uint8_t FileManager::insertFlagsValue(BamAlignmentRecord& record, uint8_t classT
         flagsDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
         flagsDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        flagsDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
     return result;
 }
@@ -157,10 +145,6 @@ uint8_t FileManager::insertRlenValue(BamAlignmentRecord& record, uint8_t classTy
         rlenDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
         rlenDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        rlenDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 6) {
-        rlenDescriptorClassU.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
     return length;
 }
@@ -169,17 +153,17 @@ uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, BamAlignmentRe
     uint16_t result;
     if (Utils::isPaired(record, record2)) {
         result = Utils::reads_distance(record);
-        write16bit(result, classType);
+        write16bitPair(result, classType);
         return result;
     }
 
     if (record.beginPos == record.pNext) {
         if (record.flag & 64) {
             result = 0x7fff;
-            write16bit(result, classType);
+            write16bitPair(result, classType);
         } else {
             result = 0x8001;
-            write16bit(result, classType);
+            write16bitPair(result, classType);
         }
         return result;
     }
@@ -188,14 +172,14 @@ uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, BamAlignmentRe
         if (record.flag & 64) {
             result = 0x7ffd;
             int32_t distance = record.pNext;
-            write16bit(result, classType);
-            write32bit(distance, classType);
+            write16bitPair(result, classType);
+            write32bitPair(distance, classType);
             return result;
         } else {
             result = 0x8003;
             int32_t distance = record.pNext;
-            write16bit(result, classType);
-            write32bit(distance, classType);
+            write16bitPair(result, classType);
+            write32bitPair(distance, classType);
             return result;
         }
     } else {
@@ -204,18 +188,18 @@ uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, BamAlignmentRe
             uint8_t referenceID = record.rNextId;
             int32_t distance = record.pNext;
 
-            write16bit(result, classType);
+            write16bitPair(result, classType);
             write8bitPair(referenceID, classType);
-            write32bit(distance, classType);
+            write32bitPair(distance, classType);
             return result;
         } else {
             result = 0x8002;
             uint8_t referenceID = record.rNextId;
             int32_t distance = record.pNext;
 
-            write16bit(result, classType);
+            write16bitPair(result, classType);
             write8bitPair(referenceID, classType);
-            write32bit(distance, classType);
+            write32bitPair(distance, classType);
             return result;
         }
     }
@@ -509,15 +493,6 @@ void FileManager::closeFiles() {
     mmtypeDescriptorClassI.close();
     pairDescriptorClassI.close();
     rlenDescriptorClassI.close();
-
-    posDescriptorClassHM.close();
-    rcompDescriptorClassHM.close();
-    flagsDescriptorClassHM.close();
-    rlenDescriptorClassHM.close();
-    pairDescriptorClassHM.close();
-
-    rlenDescriptorClassU.close();
-
 }
 
 void FileManager::write8bitRcomp(uint8_t value, uint8_t classType) {
@@ -531,8 +506,6 @@ void FileManager::write8bitRcomp(uint8_t value, uint8_t classType) {
         rcompDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
         rcompDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        rcompDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
@@ -547,12 +520,10 @@ void FileManager::write8bitPair(uint8_t value, uint8_t classType) {
         pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     } else if (classType == 4) {
         pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
     }
 }
 
-void FileManager::write16bit(uint16_t value, uint8_t classType) {
+void FileManager::write16bitPair(uint16_t value, uint8_t classType) {
     uint16_t littleEndianResult = boost::endian::native_to_little(value);
 
     if (classType == 1) {
@@ -563,12 +534,10 @@ void FileManager::write16bit(uint16_t value, uint8_t classType) {
         pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
     } else if (classType == 4) {
         pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
     }
 }
 
-void FileManager::write32bit(uint32_t value, uint8_t classType) {
+void FileManager::write32bitPair(uint32_t value, uint8_t classType) {
     uint32_t littleEndianResult = boost::endian::native_to_little(value);
 
     if (classType == 1) {
@@ -579,7 +548,5 @@ void FileManager::write32bit(uint32_t value, uint8_t classType) {
         pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
     } else if (classType == 4) {
         pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
-    } else if (classType == 5) {
-        pairDescriptorClassHM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
     }
 }
