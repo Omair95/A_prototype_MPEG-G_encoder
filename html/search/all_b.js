@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['utils',['Utils',['../classUtils.html',1,'']]],
-  ['utils_2eh',['Utils.h',['../Utils_8h.html',1,'']]]
+  ['readme',['README',['../md_README.html',1,'']]],
+  ['read1_5ffirst',['read1_first',['../structMpeggRecord.html#ad87cf3e1eb0228748270d154bde08cb1',1,'MpeggRecord']]],
+  ['read_5flen',['read_len',['../structMpeggRecord.html#a5e2e9dab677f48bdf3d2311bab7938b4',1,'MpeggRecord']]],
+  ['read_5fname',['read_name',['../structMpeggRecord.html#a5b1269ff546962bc30d7a060c1954a9c',1,'MpeggRecord']]],
+  ['reads_5fcount',['reads_count',['../classAccessUnit.html#ae3839f3390652171fad0b28622d4d8c7',1,'AccessUnit']]],
+  ['reads_5fdistance',['reads_distance',['../classUtils.html#a02d521d4d7cecbe20acab176d08b7857',1,'Utils']]],
+  ['reference_5fid',['reference_id',['../classAccessUnit.html#a2d515312cf26d6bd17783a27db6a2a43',1,'AccessUnit']]],
+  ['references',['references',['../main_8cpp.html#aa9a19ae27e56b494e2c1a90b5cc6ce79',1,'main.cpp']]],
+  ['removefirstread',['removeFirstRead',['../classUtils.html#abddd37adce88799fc8a66f7779c407bb',1,'Utils']]],
+  ['reverse_5fcomp',['reverse_comp',['../structMpeggRecord.html#abbe495faacdf88320a21ccf8a95579af',1,'MpeggRecord']]]
 ];

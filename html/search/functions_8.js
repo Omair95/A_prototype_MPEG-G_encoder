@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['write',['write',['../classAccessUnit.html#a318a8b10aafc04ce1de0f9ba503d72fd',1,'AccessUnit::write()'],['../classAccessUnitBlock.html#ac16351e7f3843e353ed19624f91f4a75',1,'AccessUnitBlock::write()']]],
-  ['writempeggtofile',['writeMpeggToFile',['../classFileManager.html#a261e820bc6f8c8d08aa52493d1a840a5',1,'FileManager']]]
+  ['setendposition',['setEndPosition',['../classAccessUnit.html#a68b44705578142db56f5365390889240',1,'AccessUnit']]],
+  ['setsequenceid',['setSequenceID',['../classAccessUnit.html#a5bbc83de63f6e176c2074f46ae1f4e50',1,'AccessUnit']]],
+  ['setstartposition',['setStartPosition',['../classAccessUnit.html#a07baa96e65a985a73efcc6b1e98ab721',1,'AccessUnit']]]
 ];

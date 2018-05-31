@@ -150,7 +150,7 @@ public:
      * \param au will contain the value of all access units
      * \return void
      * */
-    void getAllAccessUnits(std::vector<AccessUnit>& au);
+    std::vector<AccessUnit> getAllAccessUnits();
 
     /** \brief Inserts a new read pair to the list of paired reads
      * \param first first read from the pair
@@ -171,6 +171,14 @@ public:
      * \return unsigned integer representing the length of the sequence
      * */
     static uint8_t getSequenceLength(BamAlignmentRecord& record);
+
+    std::pair<uint8_t, uint8_t> getRcompDescriptor(BamAlignmentRecord& record, BamAlignmentRecord& record2);
+
+    uint8_t getFlagDescriptor(BamAlignmentRecord& record);
+
+    uint8_t getRlenDescriptor(BamAlignmentRecord& record);
+
+    std::string getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRecord& record2);
 };
 
 #endif

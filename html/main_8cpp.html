@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>A prototype MPEG-G encoder: main.cpp File Reference</title>
+<title>A prototype mpegg encoder: main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">A prototype MPEG-G encoder
+   <div id="projectname">A prototype mpegg encoder
    </div>
   </td>
  </tr>
@@ -68,7 +68,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="AccessUnit__P_8h_source.html">AccessUnit_P.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AccessUnit__N_8h_source.html">AccessUnit_N.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AccessUnit__M_8h_source.html">AccessUnit_M.h</a>&quot;</code><br />
+<code>#include &quot;AccessUnit_M.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="AccessUnit__I_8h_source.html">AccessUnit_I.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="FileManager_8h_source.html">FileManager.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -77,17 +77,15 @@ Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#main_8cpp" alt=""/></div>
 <map name="main_8cpp" id="main_8cpp">
-<area shape="rect" id="node2" href="Utils_8h.html" title="Utils.h" alt="" coords="611,155,671,181"/>
-<area shape="rect" id="node11" href="AccessUnit__P_8h.html" title="AccessUnit_P.h" alt="" coords="5,155,123,181"/>
-<area shape="rect" id="node12" href="AccessUnit__N_8h.html" title="AccessUnit_N.h" alt="" coords="154,155,273,181"/>
-<area shape="rect" id="node13" href="AccessUnit__M_8h.html" title="AccessUnit_M.h" alt="" coords="151,80,270,107"/>
-<area shape="rect" id="node14" href="AccessUnit__I_8h.html" title="AccessUnit_I.h" alt="" coords="293,80,405,107"/>
-<area shape="rect" id="node15" href="AccessUnit__HM_8h.html" title="AccessUnit_HM.h" alt="" coords="429,80,558,107"/>
-<area shape="rect" id="node16" href="AccessUnit__U_8h.html" title="AccessUnit_U.h" alt="" coords="582,80,701,107"/>
-<area shape="rect" id="node17" href="FileManager_8h.html" title="FileManager.h" alt="" coords="776,80,880,107"/>
-<area shape="rect" id="node3" href="AccessUnit_8h.html" title="AccessUnit.h" alt="" coords="361,229,463,256"/>
-<area shape="rect" id="node6" href="MpeggRecord_8h.html" title="MpeggRecord.h" alt="" coords="675,229,789,256"/>
-<area shape="rect" id="node4" href="AccessUnitBlock_8h.html" title="AccessUnitBlock.h" alt="" coords="410,304,545,331"/>
+<area shape="rect" id="node2" href="AccessUnit__P_8h.html" title="AccessUnit_P.h" alt="" coords="5,155,123,181"/>
+<area shape="rect" id="node6" href="AccessUnit__N_8h.html" title="AccessUnit_N.h" alt="" coords="146,155,265,181"/>
+<area shape="rect" id="node7" href="AccessUnit__M_8h_source.html" title="AccessUnit_M.h" alt="" coords="243,80,362,107"/>
+<area shape="rect" id="node8" href="AccessUnit__I_8h.html" title="AccessUnit_I.h" alt="" coords="385,80,497,107"/>
+<area shape="rect" id="node9" href="FileManager_8h.html" title="FileManager.h" alt="" coords="521,80,625,107"/>
+<area shape="rect" id="node3" href="AccessUnit_8h.html" title="AccessUnit.h" alt="" coords="252,229,353,256"/>
+<area shape="rect" id="node4" href="AccessUnitBlock_8h.html" title="AccessUnitBlock.h" alt="" coords="235,304,370,331"/>
+<area shape="rect" id="node12" href="Utils_8h.html" title="Utils.h" alt="" coords="694,155,754,181"/>
+<area shape="rect" id="node13" href="MpeggRecord_8h.html" title="MpeggRecord.h" alt="" coords="551,229,665,256"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -99,14 +97,15 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adcff46937a8a6314884f71d222076a39"><td class="memItemLeft" align="right" valign="top"><a id="adcff46937a8a6314884f71d222076a39"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insertTagsToReads</b> (std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;positions)</td></tr>
+<tr class="memitem:adcff46937a8a6314884f71d222076a39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adcff46937a8a6314884f71d222076a39">insertTagsToReads</a> (std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;positions)</td></tr>
+<tr class="memdesc:adcff46937a8a6314884f71d222076a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the asociated tags to the reads according to the positions.  <a href="#adcff46937a8a6314884f71d222076a39">More...</a><br /></td></tr>
 <tr class="separator:adcff46937a8a6314884f71d222076a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5e6491f068afad42c01e93cbb9ee51c"><td class="memItemLeft" align="right" valign="top"><a id="ad5e6491f068afad42c01e93cbb9ee51c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mergeTags</b> (std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;useCase1, std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;useCase2, std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;result)</td></tr>
+<tr class="memitem:ad5e6491f068afad42c01e93cbb9ee51c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad5e6491f068afad42c01e93cbb9ee51c">mergeTags</a> (std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;useCase1, std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;useCase2, std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;result)</td></tr>
+<tr class="memdesc:ad5e6491f068afad42c01e93cbb9ee51c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge the tags from the use case 1 and use case 2.  <a href="#ad5e6491f068afad42c01e93cbb9ee51c">More...</a><br /></td></tr>
 <tr class="separator:ad5e6491f068afad42c01e93cbb9ee51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f3aa48cb265e09ae327e98a9fe2e31b"><td class="memItemLeft" align="right" valign="top"><a id="a9f3aa48cb265e09ae327e98a9fe2e31b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dispatcher</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9f3aa48cb265e09ae327e98a9fe2e31b">dispatcher</a> ()</td></tr>
+<tr class="memdesc:a9f3aa48cb265e09ae327e98a9fe2e31b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the especified regions of the reference sequence to the corresponding access units which are written into files. <br /></td></tr>
 <tr class="separator:a9f3aa48cb265e09ae327e98a9fe2e31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
@@ -114,8 +113,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a4666c24ee67f79a7b835a1c36cedb643"><td class="memItemLeft" align="right" valign="top"><a id="a4666c24ee67f79a7b835a1c36cedb643"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>au_id</b> = -1</td></tr>
+<tr class="memitem:a4666c24ee67f79a7b835a1c36cedb643"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4666c24ee67f79a7b835a1c36cedb643">au_id</a> = -1</td></tr>
 <tr class="separator:a4666c24ee67f79a7b835a1c36cedb643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac81f9269c8d57eed4d5b56f054fc84de"><td class="memItemLeft" align="right" valign="top"><a id="ac81f9269c8d57eed4d5b56f054fc84de"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>fileName</b> = &quot;9827_2#49&quot;</td></tr>
@@ -126,13 +124,130 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>fileName</b> =
 <tr class="memitem:af4ccf772c847c5389e8b1e0fb607cf12"><td class="memItemLeft" align="right" valign="top"><a id="af4ccf772c847c5389e8b1e0fb607cf12"></a>
 <a class="el" href="classUtils.html">Utils</a>&#160;</td><td class="memItemRight" valign="bottom"><b>u</b></td></tr>
 <tr class="separator:af4ccf772c847c5389e8b1e0fb607cf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a19ae27e56b494e2c1a90b5cc6ce79"><td class="memItemLeft" align="right" valign="top"><a id="aa9a19ae27e56b494e2c1a90b5cc6ce79"></a>
-std::map&lt; int, std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>references</b></td></tr>
+<tr class="memitem:aa9a19ae27e56b494e2c1a90b5cc6ce79"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa9a19ae27e56b494e2c1a90b5cc6ce79">references</a></td></tr>
 <tr class="separator:aa9a19ae27e56b494e2c1a90b5cc6ce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58a369f1a36c1db7a0cdd7d5ee68c8bb"><td class="memItemLeft" align="right" valign="top"><a id="a58a369f1a36c1db7a0cdd7d5ee68c8bb"></a>
-std::multimap&lt; int, std::pair&lt; <a class="el" href="structMpeggRecord.html">MpeggRecord</a>, std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>tags_read</b></td></tr>
+<tr class="memitem:a58a369f1a36c1db7a0cdd7d5ee68c8bb"><td class="memItemLeft" align="right" valign="top">std::multimap&lt; int, std::pair&lt; <a class="el" href="structMpeggRecord.html">MpeggRecord</a>, std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a58a369f1a36c1db7a0cdd7d5ee68c8bb">tags_read</a></td></tr>
 <tr class="separator:a58a369f1a36c1db7a0cdd7d5ee68c8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Omair Iqbal </p><dl class="section date"><dt>Date</dt><dd>04/2018 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="adcff46937a8a6314884f71d222076a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcff46937a8a6314884f71d222076a39">&#9670;&nbsp;</a></span>insertTagsToReads()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insertTagsToReads </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>positions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts the asociated tags to the reads according to the positions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positions</td><td>positions in the reference sequences delimitating the tags </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5e6491f068afad42c01e93cbb9ee51c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e6491f068afad42c01e93cbb9ee51c">&#9670;&nbsp;</a></span>mergeTags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mergeTags </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>useCase1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>useCase2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::map&lt; int, std::vector&lt; std::string &gt; &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merge the tags from the use case 1 and use case 2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">useCase1</td><td>matrix containing the positions for each reference sequence for the use case 1 </td></tr>
+    <tr><td class="paramname">useCase2</td><td>matrix containing the positions for each reference sequence for the use case 2 </td></tr>
+    <tr><td class="paramname">result</td><td>the resulted matrix which contains the merged positions for the both use cases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a4666c24ee67f79a7b835a1c36cedb643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4666c24ee67f79a7b835a1c36cedb643">&#9670;&nbsp;</a></span>au_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int au_id = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Access Unit identifier </p>
+
+</div>
+</div>
+<a id="aa9a19ae27e56b494e2c1a90b5cc6ce79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a19ae27e56b494e2c1a90b5cc6ce79">&#9670;&nbsp;</a></span>references</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;int, std::pair&lt;int, int&gt; &gt; references</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of references sequences with their start and end positions </p>
+
+</div>
+</div>
+<a id="a58a369f1a36c1db7a0cdd7d5ee68c8bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a369f1a36c1db7a0cdd7d5ee68c8bb">&#9670;&nbsp;</a></span>tags_read</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::multimap&lt;int, std::pair&lt;<a class="el" href="structMpeggRecord.html">MpeggRecord</a>, std::vector&lt;std::string&gt; &gt; &gt; tags_read</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>List of reads with their asociated tags </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

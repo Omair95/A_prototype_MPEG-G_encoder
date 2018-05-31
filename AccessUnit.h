@@ -96,37 +96,37 @@ public:
      * @param distance represents the distance of the read pairs
     * @return void
     * */
-    void insertPairDescriptor(uint16_t type, uint8_t referenceID, uint32_t distance);
+    void insertPairDescriptor(std::string value);
 
     /** @brief Gets all the values of the pos descriptor in the access unit
     * @param void
     * @return void
     * */
-    void getPosDescriptorValues();
+    std::vector<std::string> getPosDescriptorValues();
 
     /** @brief Gets all the values of the rcomp descriptor in the access unit
     * @param void
     * @return void
     * */
-    void getRcompDescriptorValues();
+    std::vector<std::string> getRcompDescriptorValues();
 
     /** @brief Gets all the value of the flags descriptor in the access unit
     * @param void
     * @return void
     * */
-    void getFlagsDescriptorValues();
+    std::vector<std::string> getFlagsDescriptorValues();
 
     /** @brief Get all the values of the rlen descriptor in the access unit
     * @param void
     * @return void
     * */
-    void getRLenDescriptorValues();
+    std::vector<std::string> getRLenDescriptorValues();
 
     /** @brief Gets all the values of the pair descriptor in the access unit
     * @param void
     * @return void
     * */
-    void getPairDescriptorValues();
+    std::vector<std::string> getPairDescriptorValues();
 
     /** @brief Updates the numbers of reads stored in the access unit
     * @param void

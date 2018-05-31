@@ -23,23 +23,20 @@ Include dependency graph for main.\+cpp\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{main_8cpp_adcff46937a8a6314884f71d222076a39}\label{main_8cpp_adcff46937a8a6314884f71d222076a39}} 
-void {\bfseries insert\+Tags\+To\+Reads} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&positions)
-\item 
-\mbox{\Hypertarget{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}\label{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}} 
-void {\bfseries merge\+Tags} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case1, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case2, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&result)
-\item 
+void \hyperlink{main_8cpp_adcff46937a8a6314884f71d222076a39}{insert\+Tags\+To\+Reads} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&positions)
+\begin{DoxyCompactList}\small\item\em Inserts the asociated tags to the reads according to the positions. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}{merge\+Tags} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case1, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case2, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&result)
+\begin{DoxyCompactList}\small\item\em Merge the tags from the use case 1 and use case 2. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}\label{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}} 
-void {\bfseries dispatcher} ()
-\item 
+void \hyperlink{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}{dispatcher} ()
+\begin{DoxyCompactList}\small\item\em Writes the especified regions of the reference sequence to the corresponding access units which are written into files. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 int {\bfseries main} ()
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}\label{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}} 
-int {\bfseries au\+\_\+id} = -\/1
+int \hyperlink{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}{au\+\_\+id} = -\/1
 \item 
 \mbox{\Hypertarget{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}\label{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}} 
 std\+::string {\bfseries file\+Name} = \char`\"{}9827\+\_\+2\#49\char`\"{}
@@ -50,9 +47,72 @@ std\+::string {\bfseries file\+Name} = \char`\"{}9827\+\_\+2\#49\char`\"{}
 \mbox{\Hypertarget{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}\label{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}} 
 \hyperlink{classUtils}{Utils} {\bfseries u}
 \item 
-\mbox{\Hypertarget{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}\label{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}} 
-std\+::map$<$ int, std\+::pair$<$ int, int $>$ $>$ {\bfseries references}
+std\+::map$<$ int, std\+::pair$<$ int, int $>$ $>$ \hyperlink{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}{references}
 \item 
-\mbox{\Hypertarget{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}\label{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}} 
-std\+::multimap$<$ int, std\+::pair$<$ \hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$ std\+::string $>$ $>$ $>$ {\bfseries tags\+\_\+read}
+std\+::multimap$<$ int, std\+::pair$<$ \hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$ std\+::string $>$ $>$ $>$ \hyperlink{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}{tags\+\_\+read}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Omair Iqbal \begin{DoxyDate}{Date}
+04/2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_adcff46937a8a6314884f71d222076a39}\label{main_8cpp_adcff46937a8a6314884f71d222076a39}} 
+\index{main.\+cpp@{main.\+cpp}!insert\+Tags\+To\+Reads@{insert\+Tags\+To\+Reads}}
+\index{insert\+Tags\+To\+Reads@{insert\+Tags\+To\+Reads}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{insert\+Tags\+To\+Reads()}{insertTagsToReads()}}
+{\footnotesize\ttfamily void insert\+Tags\+To\+Reads (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&}]{positions }\end{DoxyParamCaption})}
+
+
+
+Inserts the asociated tags to the reads according to the positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & positions in the reference sequences delimitating the tags \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}\label{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}} 
+\index{main.\+cpp@{main.\+cpp}!merge\+Tags@{merge\+Tags}}
+\index{merge\+Tags@{merge\+Tags}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{merge\+Tags()}{mergeTags()}}
+{\footnotesize\ttfamily void merge\+Tags (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&}]{use\+Case1,  }\item[{std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&}]{use\+Case2,  }\item[{std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&}]{result }\end{DoxyParamCaption})}
+
+
+
+Merge the tags from the use case 1 and use case 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em use\+Case1} & matrix containing the positions for each reference sequence for the use case 1 \\
+\hline
+{\em use\+Case2} & matrix containing the positions for each reference sequence for the use case 2 \\
+\hline
+{\em result} & the resulted matrix which contains the merged positions for the both use cases \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}\label{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}} 
+\index{main.\+cpp@{main.\+cpp}!au\+\_\+id@{au\+\_\+id}}
+\index{au\+\_\+id@{au\+\_\+id}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{au\+\_\+id}{au\_id}}
+{\footnotesize\ttfamily int au\+\_\+id = -\/1}
+
+Access Unit identifier \mbox{\Hypertarget{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}\label{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}} 
+\index{main.\+cpp@{main.\+cpp}!references@{references}}
+\index{references@{references}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{references}{references}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::pair$<$int, int$>$ $>$ references}
+
+Number of references sequences with their start and end positions \mbox{\Hypertarget{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}\label{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}} 
+\index{main.\+cpp@{main.\+cpp}!tags\+\_\+read@{tags\+\_\+read}}
+\index{tags\+\_\+read@{tags\+\_\+read}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{tags\+\_\+read}{tags\_read}}
+{\footnotesize\ttfamily std\+::multimap$<$int, std\+::pair$<$\hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$std\+::string$>$ $>$ $>$ tags\+\_\+read}
+
+List of reads with their asociated tags 

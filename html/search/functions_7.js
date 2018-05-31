@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['updatereads',['updateReads',['../classAccessUnit.html#a11ae1270d7bbc62cec47bfb9c6738764',1,'AccessUnit']]],
-  ['updaterecord',['updateRecord',['../classUtils.html#a6e24ee791d9ce74a9e8991c8bf7cecdf',1,'Utils']]],
-  ['utils',['Utils',['../classUtils.html#a452e78692c87ed5c7c993b6c6ac4981a',1,'Utils']]]
+  ['reads_5fdistance',['reads_distance',['../classUtils.html#a02d521d4d7cecbe20acab176d08b7857',1,'Utils']]],
+  ['removefirstread',['removeFirstRead',['../classUtils.html#abddd37adce88799fc8a66f7779c407bb',1,'Utils']]]
 ];

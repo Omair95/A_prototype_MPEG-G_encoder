@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>A prototype MPEG-G encoder: Class Members</title>
+<title>A prototype mpegg encoder: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">A prototype MPEG-G encoder
+   <div id="projectname">A prototype mpegg encoder
    </div>
   </td>
  </tr>
@@ -61,6 +61,9 @@ $(function() {
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3><a id="index_a"></a>- a -</h3><ul>
+<li>AccessUnit()
+: <a class="el" href="classAccessUnit.html#a5cef01ba22a669b5bd478ac4262c06ee">AccessUnit</a>
+</li>
 <li>AccessUnit_I()
 : <a class="el" href="classAccessUnit__I.html#aecbf3a858199028c7087dc574d563297">AccessUnit_I</a>
 </li>
@@ -76,6 +79,15 @@ $(function() {
 <li>AccessUnitBlock()
 : <a class="el" href="classAccessUnitBlock.html#addf588e7a14ec0342873a51335c256ec">AccessUnitBlock</a>
 </li>
+<li>AU_end_position
+: <a class="el" href="classAccessUnit.html#a238f89a4320054297d5db8f73582080b">AccessUnit</a>
+</li>
+<li>AU_start_position
+: <a class="el" href="classAccessUnit.html#a87446578b699ed62962102dd00255dd4">AccessUnit</a>
+</li>
+<li>AU_type
+: <a class="el" href="classAccessUnit.html#af1f7750576bc9a7a5932776435c11194">AccessUnit</a>
+</li>
 </ul>
 
 
@@ -85,6 +97,19 @@ $(function() {
 </li>
 <li>class_type
 : <a class="el" href="structMpeggRecord.html#a10424a46b2cc32c3061c94ef1a71a3e0">MpeggRecord</a>
+</li>
+<li>closeFiles()
+: <a class="el" href="classFileManager.html#ad0173ee2705241fbbd6b7f1928863256">FileManager</a>
+</li>
+<li>convertToMpeggRecord()
+: <a class="el" href="classUtils.html#a5a62399a8bb675cc0d41846a2e38cfc5">Utils</a>
+</li>
+</ul>
+
+
+<h3><a id="index_d"></a>- d -</h3><ul>
+<li>descriptors
+: <a class="el" href="classAccessUnit.html#a8b3d5bc109843bab72e3e04efaad580a">AccessUnit</a>
 </li>
 </ul>
 
@@ -97,6 +122,9 @@ $(function() {
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>FileManager()
+: <a class="el" href="classFileManager.html#a343a21742b8d4da805b11a5ed41f4b17">FileManager</a>
+</li>
 <li>flags
 : <a class="el" href="structMpeggRecord.html#a9bb5030a2b21af4cc0c3041c5db1015e">MpeggRecord</a>
 </li>
@@ -104,30 +132,141 @@ $(function() {
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>getAllAccessUnits()
+: <a class="el" href="classUtils.html#a1f13b160cd02b1fdf44e6ff8ba2c2406">Utils</a>
+</li>
+<li>getAllreads()
+: <a class="el" href="classUtils.html#a23ce2e6de05c4574f2296353f03fc9db">Utils</a>
+</li>
+<li>getCigar()
+: <a class="el" href="classUtils.html#a61182e6d5c700eedfaff392b51826af3">Utils</a>
+</li>
+<li>getClassType()
+: <a class="el" href="classUtils.html#a75b0e41bc884a3fcebb4f55c45855d82">Utils</a>
+</li>
+<li>getExtendedCigar()
+: <a class="el" href="classUtils.html#a612bb61872bc69a806c0159dcd3da28c">Utils</a>
+</li>
+<li>getFlagsDescriptorValues()
+: <a class="el" href="classAccessUnit.html#afc99a1cdfe656a307d2851e107a82cdb">AccessUnit</a>
+</li>
+<li>getMDtag()
+: <a class="el" href="classUtils.html#a58dcdc1dd071936078799ee35d5f2502">Utils</a>
+</li>
+<li>getMmposValues()
+: <a class="el" href="classUtils.html#af2edb16666facfd3fe4e72a0172ee811">Utils</a>
+</li>
+<li>getNMtag()
+: <a class="el" href="classUtils.html#a5e6b1fddcaa2740687c8c787e8d1e9cb">Utils</a>
+</li>
+<li>getPairDescriptorValues()
+: <a class="el" href="classAccessUnit.html#af5dd12b507b2c95865959ad8c5b5128a">AccessUnit</a>
+</li>
 <li>getPayload()
 : <a class="el" href="classAccessUnitBlock.html#a12784529b88ad0607c5c1bbd8331e939">AccessUnitBlock</a>
 </li>
 <li>getPayloadSize()
 : <a class="el" href="classAccessUnitBlock.html#a42e073ea494362b38750d68a4cad378c">AccessUnitBlock</a>
 </li>
+<li>getPosDescriptorValues()
+: <a class="el" href="classAccessUnit.html#a7525ca997685655cf1b2feee85e57dec">AccessUnit</a>
+</li>
+<li>getRcompDescriptorValues()
+: <a class="el" href="classAccessUnit.html#a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f">AccessUnit</a>
+</li>
+<li>getReadsCount()
+: <a class="el" href="classAccessUnit.html#aecc1cf0d2ed07a7acba1683ca087d06f">AccessUnit</a>
+</li>
+<li>getRLenDescriptorValues()
+: <a class="el" href="classAccessUnit.html#af4a02f467784330f216bafb20a7a09a8">AccessUnit</a>
+</li>
+<li>getSecondRecord()
+: <a class="el" href="classUtils.html#acba7464c0972dceade69f1f1aef4e5f4">Utils</a>
+</li>
+<li>getSequenceLength()
+: <a class="el" href="classUtils.html#a40949f3bf1253166d2ed7933e9448e20">Utils</a>
+</li>
+<li>getType()
+: <a class="el" href="classAccessUnit.html#a8eb8ccd6079bf8ce8a8fa27c8e1bee6c">AccessUnit</a>
+</li>
 </ul>
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
+<li>insertAccessUnit()
+: <a class="el" href="classUtils.html#a20d62b8e6495536108e7bfe1b955355a">Utils</a>
+</li>
+<li>insertClipsDescriptor()
+: <a class="el" href="classFileManager.html#a5a4dba449ff5fb6df09487bee0d815da">FileManager</a>
+</li>
+<li>insertFlagsDescriptor()
+: <a class="el" href="classAccessUnit.html#a1589b7fe14421a211e3a94ee3992cd9f">AccessUnit</a>
+</li>
+<li>insertFlagsValue()
+: <a class="el" href="classFileManager.html#a749517da172c0374f668121a090e1046">FileManager</a>
+</li>
 <li>insertMmposDescriptor()
 : <a class="el" href="classAccessUnit__I.html#a761754f1229fe7cf78833281a90005ae">AccessUnit_I</a>
 , <a class="el" href="classAccessUnit__M.html#a074b4eca49640cda1acbe38990301d88">AccessUnit_M</a>
 , <a class="el" href="classAccessUnit__N.html#a918c5b6975525ce3eb505ef87349deb5">AccessUnit_N</a>
 </li>
+<li>insertMmposValue()
+: <a class="el" href="classFileManager.html#a14f31a6e0aacfbcd0c9f6d9de76294bd">FileManager</a>
+</li>
 <li>insertMmtypeDescriptor()
 : <a class="el" href="classAccessUnit__I.html#a322a02df826320da868ad848eded885b">AccessUnit_I</a>
 , <a class="el" href="classAccessUnit__M.html#aeb5f2421173c1e0305daff2e46568a89">AccessUnit_M</a>
+</li>
+<li>insertmmtypeDescriptor()
+: <a class="el" href="classFileManager.html#af204ff60c18d99de4e45453598dae332">FileManager</a>
+</li>
+<li>insertPairDescriptor()
+: <a class="el" href="classAccessUnit.html#a8e625d1876728e38f5c7535dc100239f">AccessUnit</a>
+</li>
+<li>insertPairValue()
+: <a class="el" href="classFileManager.html#a16ce87dfa783bb7c87edab979dc2f5d4">FileManager</a>
+</li>
+<li>insertPosdescriptor()
+: <a class="el" href="classAccessUnit.html#a13f75d409e785845547246c6b84594e5">AccessUnit</a>
+</li>
+<li>insertPosValue()
+: <a class="el" href="classFileManager.html#ae4e12983c4d731b8efd5a475b9704572">FileManager</a>
+</li>
+<li>insertRcompDescriptor()
+: <a class="el" href="classAccessUnit.html#af27eac59031139a98db67eee56b0ebff">AccessUnit</a>
+</li>
+<li>insertRcompValue()
+: <a class="el" href="classFileManager.html#aa30a3c3bf2c33ec92b48df524d46cb0b">FileManager</a>
+</li>
+<li>insertRead()
+: <a class="el" href="classUtils.html#aa2bffe3dfec78617ebdf207ff0fa0820">Utils</a>
+</li>
+<li>insertRlenDescriptor()
+: <a class="el" href="classAccessUnit.html#a8223db6ac2c800f8e2c5cde07813e47f">AccessUnit</a>
+</li>
+<li>insertRlenValue()
+: <a class="el" href="classFileManager.html#a72a9c467af917d1f9ad0d066d1058104">FileManager</a>
 </li>
 <li>insertSclipsDescriptor()
 : <a class="el" href="classAccessUnit__I.html#aa52235996105994359fccb6218566b6b">AccessUnit_I</a>
 </li>
 <li>insertValue()
 : <a class="el" href="classAccessUnitBlock.html#aaa3754f0b79b3cef201b96c2f0b99c31">AccessUnitBlock</a>
+</li>
+<li>isClassI()
+: <a class="el" href="classUtils.html#a4e19b89b708e23964398b1e561686423">Utils</a>
+</li>
+<li>isClassM()
+: <a class="el" href="classUtils.html#a2ab4c3d1059e841aaa81bf6eb7650c46">Utils</a>
+</li>
+<li>isClassN()
+: <a class="el" href="classUtils.html#a68dc1efdf9895d4c63a0a78a09d407d4">Utils</a>
+</li>
+<li>isClassP()
+: <a class="el" href="classUtils.html#ab384d430e1cc5e0cc1ce1913eeab7e82">Utils</a>
+</li>
+<li>isPaired()
+: <a class="el" href="classUtils.html#a2051c7e16daa8b646bfb69fc9a7ff9e0">Utils</a>
 </li>
 </ul>
 
@@ -140,11 +279,21 @@ $(function() {
 
 
 <h3><a id="index_n"></a>- n -</h3><ul>
+<li>num_blocks
+: <a class="el" href="classAccessUnit.html#a88f0f1df847d53c2acfa2c71e05bbe80">AccessUnit</a>
+</li>
 <li>number_of_alignments
 : <a class="el" href="structMpeggRecord.html#a16c50a379b687b3b479137ccc1ddf715">MpeggRecord</a>
 </li>
 <li>number_of_segments
 : <a class="el" href="structMpeggRecord.html#a19769e489073d18fcac5dff57c067983">MpeggRecord</a>
+</li>
+</ul>
+
+
+<h3><a id="index_p"></a>- p -</h3><ul>
+<li>parameter_set_id
+: <a class="el" href="classAccessUnit.html#ac6b002ab87c4a26e5161738c30213422">AccessUnit</a>
 </li>
 </ul>
 
@@ -166,6 +315,18 @@ $(function() {
 <li>read_name
 : <a class="el" href="structMpeggRecord.html#a5b1269ff546962bc30d7a060c1954a9c">MpeggRecord</a>
 </li>
+<li>reads_count
+: <a class="el" href="classAccessUnit.html#ae3839f3390652171fad0b28622d4d8c7">AccessUnit</a>
+</li>
+<li>reads_distance()
+: <a class="el" href="classUtils.html#a02d521d4d7cecbe20acab176d08b7857">Utils</a>
+</li>
+<li>reference_id
+: <a class="el" href="classAccessUnit.html#a2d515312cf26d6bd17783a27db6a2a43">AccessUnit</a>
+</li>
+<li>removeFirstRead()
+: <a class="el" href="classUtils.html#abddd37adce88799fc8a66f7779c407bb">Utils</a>
+</li>
 <li>reverse_comp
 : <a class="el" href="structMpeggRecord.html#abbe495faacdf88320a21ccf8a95579af">MpeggRecord</a>
 </li>
@@ -179,17 +340,61 @@ $(function() {
 <li>sequence
 : <a class="el" href="structMpeggRecord.html#a854030bfc3261c48679bc3d64f18bd4d">MpeggRecord</a>
 </li>
+<li>sequence_id
+: <a class="el" href="classAccessUnit.html#aa1eb6c997589b9298c8d5ffc60bee236">AccessUnit</a>
+</li>
+<li>setEndPosition()
+: <a class="el" href="classAccessUnit.html#a68b44705578142db56f5365390889240">AccessUnit</a>
+</li>
+<li>setSequenceID()
+: <a class="el" href="classAccessUnit.html#a5bbc83de63f6e176c2074f46ae1f4e50">AccessUnit</a>
+</li>
+<li>setStartPosition()
+: <a class="el" href="classAccessUnit.html#a07baa96e65a985a73efcc6b1e98ab721">AccessUnit</a>
+</li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
+<li>updateReads()
+: <a class="el" href="classAccessUnit.html#a11ae1270d7bbc62cec47bfb9c6738764">AccessUnit</a>
+</li>
+<li>updateRecord()
+: <a class="el" href="classUtils.html#a6e24ee791d9ce74a9e8991c8bf7cecdf">Utils</a>
+</li>
+<li>Utils()
+: <a class="el" href="classUtils.html#a452e78692c87ed5c7c993b6c6ac4981a">Utils</a>
+</li>
 </ul>
 
 
 <h3><a id="index_w"></a>- w -</h3><ul>
 <li>write()
-: <a class="el" href="classAccessUnitBlock.html#ac16351e7f3843e353ed19624f91f4a75">AccessUnitBlock</a>
+: <a class="el" href="classAccessUnit.html#a318a8b10aafc04ce1de0f9ba503d72fd">AccessUnit</a>
+, <a class="el" href="classAccessUnitBlock.html#ac16351e7f3843e353ed19624f91f4a75">AccessUnitBlock</a>
+</li>
+<li>write16bitPair()
+: <a class="el" href="classFileManager.html#a272dbeda53d8e4a507695472865c045f">FileManager</a>
+</li>
+<li>write32bitPair()
+: <a class="el" href="classFileManager.html#a6c510e1ee3e1662e8ad6668df10fa875">FileManager</a>
+</li>
+<li>write8bitPair()
+: <a class="el" href="classFileManager.html#a649f89525da2efb00a9e841da7bf0dc4">FileManager</a>
+</li>
+<li>write8bitRcomp()
+: <a class="el" href="classFileManager.html#afea210e106a1056fd5fa8e6136e90364">FileManager</a>
+</li>
+<li>writeMpeggToFile()
+: <a class="el" href="classFileManager.html#a261e820bc6f8c8d08aa52493d1a840a5">FileManager</a>
 </li>
 </ul>
 
 
 <h3><a id="index_0x7e"></a>- ~ -</h3><ul>
+<li>~AccessUnit()
+: <a class="el" href="classAccessUnit.html#ae55b52ce6b71e43aee61b5c6e5c315c5">AccessUnit</a>
+</li>
 <li>~AccessUnit_I()
 : <a class="el" href="classAccessUnit__I.html#a2e7f3017a1ddab582512d00ae1336dac">AccessUnit_I</a>
 </li>
@@ -204,6 +409,12 @@ $(function() {
 </li>
 <li>~AccessUnitBlock()
 : <a class="el" href="classAccessUnitBlock.html#ab390571e2efa58707aa8b123ab98727f">AccessUnitBlock</a>
+</li>
+<li>~FileManager()
+: <a class="el" href="classFileManager.html#abaed33b5b0c13b8a597db9335a1aacfa">FileManager</a>
+</li>
+<li>~Utils()
+: <a class="el" href="classUtils.html#afa5e70facffc286607498e7edb639b8a">Utils</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -543,8 +543,8 @@ void Utils::insertAccessUnit(AccessUnit au) {
     accessUnits.push_back(au);
 }
 
-void Utils::getAllAccessUnits(std::vector<AccessUnit>& au) {
-    au = accessUnits;
+std::vector<AccessUnit> Utils::getAllAccessUnits() {
+    return accessUnits;
 }
 
 void Utils::insertRead(BamAlignmentRecord first, BamAlignmentRecord second) {
@@ -572,4 +572,132 @@ uint8_t Utils::getSequenceLength(BamAlignmentRecord& record) {
     std::string str(s1);
     result = str.size();
     return result;
+}
+
+std::pair<uint8_t, uint8_t> Utils::getRcompDescriptor(BamAlignmentRecord& record, BamAlignmentRecord& record2) {
+    std::pair<uint8_t, uint8_t > result;
+    if (Utils::isPaired(record, record2)) { // if 2 reads in pair are stored together
+        if (record.flag & 16) {             // read1 is reverse
+            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
+                result.first = 3;
+            } else {                        // read1 is reverse and read2 is forward
+                result.first = 1;
+            }
+        } else {                            // read1 is forward
+            if (record2.flag & 16) {        // read1 is forwand and read2 is reverse
+                result.first = 2;
+            } else {                        // read1 is forward and read2 is forward
+                result.first = 0;
+            }
+        }
+        if (record2.flag & 16) {
+            if (record.flag & 16) {
+                result.second = 3;
+            } else {
+                result.second += 1;
+            }
+        } else {
+            if (record.flag & 16) {
+                result.second = 2;
+            } else {
+                result.second = 0;
+            }
+        }
+    } else {                                // reads are stored separately
+        if (record.flag & 16) {             // read1 is reverse
+            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
+                result.first = 3;
+                result.second = -1;
+            } else {                        // read1 is reverse and read2 is forward
+                result.first = 1;
+                result.second = -1;
+            }
+        } else {                            // read1 is forward
+            if (record2.flag & 16) {        // read1 is forward and read2 is reverse
+                result.first = 2;
+                result.second = -1;
+            } else {                        // read1 is forward and read2 is forward
+                result.first = 0;
+                result.second = -1;
+            }
+        }
+    }
+
+    return result;
+}
+
+uint8_t Utils::getFlagDescriptor(BamAlignmentRecord& record) {
+    uint8_t result = 0;
+    if (record.flag & 1024) result = 1;
+    if (record.flag & 512) result += 2;
+    if (not(record.flag & 8)) result += 4;
+
+    return result;
+}
+
+uint8_t Utils::getRlenDescriptor(BamAlignmentRecord& record) {
+    return getSequenceLength(record);
+}
+
+std::string  Utils::getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRecord& record2) {
+    std::string result = "";
+    if (Utils::isPaired(record, record2)) {
+        uint16_t distance = Utils::reads_distance(record);
+        result += std::to_string(distance);
+        return result;
+    }
+
+    if (record.beginPos == record.pNext) {
+        if (record.flag & 64) {
+            std::string type ="7fff";
+            result += type;
+        } else {
+            std::string type = "8001";
+            result += type;
+        }
+        return result;
+    }
+
+    if (record.rID == record.rNextId) {
+        if (record.flag & 64) {
+            std::string type = "7ffd";
+            uint32_t distance = record.pNext;
+
+            result += type;
+            result += std::to_string(distance);
+            return result;
+        } else {
+            std::string type = "8003";
+            uint32_t distance = record.pNext;
+
+            result += type;
+            result += std::to_string(distance);
+            return result;
+        }
+    } else {
+        if (record.flag & 64) {
+            std::string type = "7ffe";
+            uint8_t referenceID = record.rNextId;
+            uint32_t distance = record.pNext;
+
+            result += type;
+            result += ":";
+            result += std::to_string(referenceID);
+            result += ":";
+            result += std::to_string(distance);
+            return result;
+        } else {
+            std::string type = "8002";
+            uint8_t referenceID = record.rNextId;
+            uint32_t distance = record.pNext;
+
+            result += type;
+            result += ":";
+            result += std::to_string(referenceID);
+            result += ":";
+            result += std::to_string(distance);
+
+            return result;
+        }
+    }
 }

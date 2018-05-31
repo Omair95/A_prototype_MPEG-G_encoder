@@ -36,175 +36,6 @@ FileManager::FileManager(std::string fileName) {
 
 FileManager::~FileManager() = default;
 
-void FileManager::insertPosValue(uint32_t value, uint8_t classType) {
-    uint32_t littleEndianValue = boost::endian::native_to_little(value);
-    if (classType == 1) {
-        posDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 2) {
-        posDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 3) {
-        posDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 4) {
-        posDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    }
-}
-
-uint8_t FileManager::insertRcompValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType) {
-    uint8_t result;
-    if (Utils::isPaired(record, record2)) { // if 2 reads in pair are stored together
-        if (record.flag & 16) {             // read1 is reverse
-            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
-                result = 3;
-                write8bitRcomp(3, classType);
-            } else {                        // read1 is reverse and read2 is forward
-                result = 1;
-                write8bitRcomp(1, classType);
-            }
-        } else {                            // read1 is forward
-            if (record2.flag & 16) {        // read1 is forwand and read2 is reverse
-                result = 2;
-                write8bitRcomp(2, classType);
-            } else {                        // read1 is forward and read2 is forward
-                result = 0;
-                write8bitRcomp(0, classType);
-            }
-        }
-        if (record2.flag & 16) {
-            if (record.flag & 16) {
-                result = result << 4;
-                result += 3;
-                write8bitRcomp(3, classType);
-            } else {
-                result = result << 4;
-                result += 1;
-                write8bitRcomp(1, classType);
-            }
-        } else {
-            if (record.flag & 16) {
-                result = result << 4;
-                result += 2;
-                write8bitRcomp(2, classType);
-            } else {
-                result = result << 4;
-                result += 0;
-                write8bitRcomp(0, classType);
-            }
-        }
-    } else {                                // reads are stored separately
-        if (record.flag & 16) {             // read1 is reverse
-            if (record2.flag & 16) {        // read1 is reverse and read2 is reverse
-                result = 3;
-                write8bitRcomp(3, classType);
-            } else {                        // read1 is reverse and read2 is forward
-                result = 1;
-                write8bitRcomp(1, classType);
-            }
-        } else {                            // read1 is forward
-            if (record2.flag & 16) {        // read1 is forward and read2 is reverse
-                result = 2;
-                write8bitRcomp(2, classType);
-            } else {                        // read1 is forward and read2 is forward
-                result = 0;
-                write8bitRcomp(0, classType);
-            }
-        }
-    }
-
-    return result;
-}
-
-uint8_t FileManager::insertFlagsValue(BamAlignmentRecord& record, uint8_t classType) {
-    uint8_t result = 0;
-    if (record.flag & 1024) result = 1;
-    if (record.flag & 512) result += 2;
-    if (not(record.flag & 8)) result += 4;
-
-    uint8_t littleEndianValue = boost::endian::native_to_little(result);
-
-    if (classType == 1) {
-        flagsDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 2) {
-        flagsDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 3) {
-        flagsDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 4) {
-        flagsDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    }
-    return result;
-}
-
-uint8_t FileManager::insertRlenValue(BamAlignmentRecord& record, uint8_t classType) {
-    uint8_t length = Utils::getSequenceLength(record);
-
-    uint8_t littleEndianValue = boost::endian::native_to_little(length);
-    if (classType == 1) {
-        rlenDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 2) {
-        rlenDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 3) {
-        rlenDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    } else if (classType == 4) {
-        rlenDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianValue), sizeof(littleEndianValue));
-    }
-    return length;
-}
-
-uint16_t FileManager::insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType) {
-    uint16_t result;
-    if (Utils::isPaired(record, record2)) {
-        result = Utils::reads_distance(record);
-        write16bitPair(result, classType);
-        return result;
-    }
-
-    if (record.beginPos == record.pNext) {
-        if (record.flag & 64) {
-            result = 0x7fff;
-            write16bitPair(result, classType);
-        } else {
-            result = 0x8001;
-            write16bitPair(result, classType);
-        }
-        return result;
-    }
-
-    if (record.rID == record.rNextId) {
-        if (record.flag & 64) {
-            result = 0x7ffd;
-            int32_t distance = record.pNext;
-            write16bitPair(result, classType);
-            write32bitPair(distance, classType);
-            return result;
-        } else {
-            result = 0x8003;
-            int32_t distance = record.pNext;
-            write16bitPair(result, classType);
-            write32bitPair(distance, classType);
-            return result;
-        }
-    } else {
-        if (record.flag & 64) {
-            result = 0x7ffe;
-            uint8_t referenceID = record.rNextId;
-            int32_t distance = record.pNext;
-
-            write16bitPair(result, classType);
-            write8bitPair(referenceID, classType);
-            write32bitPair(distance, classType);
-            return result;
-        } else {
-            result = 0x8002;
-            uint8_t referenceID = record.rNextId;
-            int32_t distance = record.pNext;
-
-            write16bitPair(result, classType);
-            write8bitPair(referenceID, classType);
-            write32bitPair(distance, classType);
-            return result;
-        }
-    }
-}
-
 void FileManager::insertMmposValue(uint16_t pos, uint8_t classType, bool lastPos) {
     uint16_t littleEndianValue = boost::endian::native_to_little(pos);
     uint16_t endPos = boost::endian::native_to_little(0x03e9);
@@ -549,4 +380,197 @@ void FileManager::write32bitPair(uint32_t value, uint8_t classType) {
     } else if (classType == 4) {
         pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
     }
+}
+
+void FileManager::writePosDescriptor(uint32_t value, uint8_t classType) {
+    uint32_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        posDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        posDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        posDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        posDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+void FileManager::writeRcompDescriptor(uint8_t value, uint8_t classType) {
+    uint8_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        rcompDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        rcompDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        rcompDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        rcompDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+void FileManager::writeFlagsDescriptor(uint8_t value, uint8_t classType) {
+    uint8_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        flagsDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        flagsDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        flagsDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        flagsDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+void FileManager::writeRlenDescriptor(uint8_t value, uint8_t classType) {
+    uint8_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        rlenDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        rlenDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        rlenDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        rlenDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+void FileManager::write8bitPairDescriptor(uint8_t value, uint8_t classType) {
+    uint8_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+void FileManager::write16bitPairDescriptor(uint16_t value, uint8_t classType) {
+    uint16_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+void FileManager::write32bitPairDescriptor(uint32_t value, uint8_t classType) {
+    uint32_t littleEndianResult = boost::endian::native_to_little(value);
+
+    if (classType == 1) {
+        pairDescriptorClassP.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 2) {
+        pairDescriptorClassN.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 3) {
+        pairDescriptorClassM.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    } else if (classType == 4) {
+        pairDescriptorClassI.write(reinterpret_cast<const char *>(&littleEndianResult), sizeof(littleEndianResult));
+    }
+}
+
+
+void FileManager::writeAccessUnits(Utils& u) {
+    std::vector<AccessUnit> allAU = u.getAllAccessUnits();
+
+    for (int i = 0; i < allAU.size(); ++i) {
+
+        // write pos descriptor to file
+        std::vector<std::string> pos = allAU[i].getPosDescriptorValues();
+        for (int j = 0; j < pos.size(); ++j) {
+            uint32_t value = static_cast<uint32_t>(atoi(pos[j].c_str()));
+            writePosDescriptor(value, allAU[i].getType());
+        }
+
+        // write rcomp descriptor to file
+        std::vector<std::string> rcomp = allAU[i].getRcompDescriptorValues();
+        for (int j = 0; j < rcomp.size(); ++j) {
+            uint8_t value = static_cast<uint8_t>(atoi(rcomp[j].c_str()));
+            writeRcompDescriptor(value, allAU[i].getType());
+        }
+
+        // write pair descriptor to file
+        std::vector<std::string> flags = allAU[i].getFlagsDescriptorValues();
+        for (int j = 0; j < flags.size(); ++j) {
+            uint8_t value = static_cast<uint8_t>(atoi(flags[j].c_str()));
+            writeFlagsDescriptor(value, allAU[i].getType());
+        }
+
+        // write rlen descriptor to file
+        std::vector<std::string> rlen = allAU[i].getRLenDescriptorValues();
+        for (int j = 0; j < rlen.size(); ++j) {
+            uint8_t value = static_cast<uint8_t>(atoi(flags[j].c_str()));
+            writeRlenDescriptor(value, allAU[i].getType());
+        }
+
+        // write pair descriptor to file
+        std::vector<std::string> pair = allAU[i].getPairDescriptorValues();
+        for (int i = 0; i < pair.size(); ++i) {
+            std::string type = pair[i].substr(0, 4);
+
+            if (type.find("7fff") != std::string::npos or type.find("8001") != std::string::npos) {
+                uint16_t value;
+                std::stringstream ss;
+                ss << std::hex << type;
+                ss >> value;
+
+                write16bitPair(value, allAU[i].getType());
+            } else if (type.find("7ffd") != std::string::npos or type.find("8003") != std::string::npos) {
+                uint16_t value1;
+                std::stringstream ss;
+                ss << std::hex << type;
+                ss >> value1;
+
+                std::string distance = pair[i].substr(4, std::string::npos);
+                uint32_t value2 = atoi(distance.c_str());
+
+                write16bitPair(value1, allAU[i].getType());
+                write32bitPair(value2, allAU[i].getType());
+            } else if (type.find("7ffe") != std::string::npos or type.find("8002") != std::string::npos) {
+                uint16_t value1;
+                std::stringstream ss;
+                ss << std::hex << type;
+                ss >> value1;
+
+                std::string referenceID = pair[i].substr(5, pair[i].rfind(":") - pair[i].find(":") - 1);
+                uint8_t value2 = atoi(referenceID.c_str());
+
+                std::string distance = pair[i].substr(pair[i].rfind(":") + 1, std::string::npos);
+                uint32_t value3 = atoi(distance.c_str());
+
+                write16bitPair(value1, allAU[i].getType());
+                write8bitPair(value2, allAU[i].getType());
+                write32bitPair(value3, allAU[i].getType());
+            } else {
+                uint16_t distance = atoi(pair[i].c_str());
+                write16bitPair(distance, allAU[i].getType());
+            }
+        }
+
+        if (allAU[i].getType() == 2) {
+            // write mmpos descriptor to file
+
+        } else if (allAU[i].getType() == 3) {
+
+            // write mmpos descriptor to file
+            // write mmtype descriptor to file
+        } else if (allAU[i].getType() == 4) {
+
+            // write mmpos descriptor to file
+            // write mmtype descriptor to file
+            // write sclips to file
+        }
+    }
+
 }

@@ -36,28 +36,28 @@ void AccessUnit::insertRlenDescriptor(uint8_t value) {
     descriptors[3].insertValue(std::to_string(value));
 }
 
-void AccessUnit::insertPairDescriptor(uint16_t type, uint8_t referenceID, uint32_t distance) {
-    descriptors[4].insertValue(std::to_string(type) + std::to_string(referenceID) + std::to_string(distance));
+void AccessUnit::insertPairDescriptor(std::string value) {
+    descriptors[4].insertValue(value);
 }
 
-void AccessUnit::getPosDescriptorValues() {
-    descriptors[0].write();
+std::vector<std::string> AccessUnit::getPosDescriptorValues() {
+    return descriptors[0].getPayload();
 }
 
-void AccessUnit::getRcompDescriptorValues() {
-    descriptors[1].write();
+std::vector<std::string> AccessUnit::getRcompDescriptorValues() {
+    return descriptors[1].getPayload();
 }
 
-void AccessUnit::getFlagsDescriptorValues() {
-    descriptors[2].write();
+std::vector<std::string> AccessUnit::getFlagsDescriptorValues() {
+    return descriptors[2].getPayload();
 }
 
-void AccessUnit::getRLenDescriptorValues() {
-    descriptors[3].write();
+std::vector<std::string> AccessUnit::getRLenDescriptorValues() {
+    return descriptors[3].getPayload();
 }
 
-void AccessUnit::getPairDescriptorValues() {
-    descriptors[4].write();
+std::vector<std::string> AccessUnit::getPairDescriptorValues() {
+    return descriptors[4].getPayload();
 }
 
 void AccessUnit::updateReads() {

@@ -105,7 +105,7 @@ public:
      *  @param classType class type
      *   @return pair descriptor value of the read pair
      * */
-    uint16_t insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType);
+    std::vector<std::string> insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType);
 
     /** @brief Writes the mmpos descriptor values to the respective file
      *         according to the class type
@@ -171,6 +171,22 @@ public:
      * @return void
      * */
     void write32bitPair(uint32_t value, uint8_t classType);
+
+    void writePosDescriptor(uint32_t value, uint8_t classType);
+
+    void writeRcompDescriptor(uint8_t value, uint8_t classType);
+
+    void writeFlagsDescriptor(uint8_t value, uint8_t classType);
+
+    void writeRlenDescriptor(uint8_t value, uint8_t classType);
+
+    void write8bitPairDescriptor(uint8_t value, uint8_t classType);
+
+    void write16bitPairDescriptor(uint16_t value, uint8_t classType);
+
+    void write32bitPairDescriptor(uint32_t value, uint8_t classType);
+
+    void writeAccessUnits(Utils& u);
 };
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_FILEMANAGER_H

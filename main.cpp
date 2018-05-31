@@ -140,28 +140,27 @@ void dispatcher() {
                 antPosP = tagsReads_it->second.first.mapping_pos[0];
                 AU_P->insertPosdescriptor(0);
                 AU_P->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
-                f.insertPosValue(0, 1);
             } else {
                 AU_P->insertPosdescriptor(tagsReads_it->second.first.mapping_pos[0] - antPosP);
-                f.insertPosValue(tagsReads_it->second.first.mapping_pos[0] - antPosP, 1);
                 antPosP = tagsReads_it->second.first.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(reads_it->second.first, reads_it->second.second, 1);
-            AU_P->insertRcompDescriptor(rcomp);
+            std::pair<uint8_t, uint8_t> rcomp = u.getRcompDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_P->insertRcompDescriptor(rcomp.first);
+            if (rcomp.second != 255) AU_P->insertRcompDescriptor(rcomp.second);
 
             // get flags descriptor
-            uint8_t flags = f.insertFlagsValue(reads_it->second.first, 1);
-            AU_P->insertFlagsDescriptor(flags);
+            uint8_t flag = u.getFlagDescriptor(reads_it->second.first);
+            AU_P->insertFlagsDescriptor(flag);
 
             // get rlen descriptor
-            uint8_t rlen = f.insertRlenValue(reads_it->second.first, 1);
-            static_cast<AccessUnit_P*> (AU_P)->insertRlenDescriptor(rlen);
+            uint8_t rlen = u.getRlenDescriptor(reads_it->second.first);
+            AU_P->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            uint16_t pair = f.insertPairValue(reads_it->second.first, reads_it->second.second, 1);
-            static_cast<AccessUnit_P*> (AU_P)->insertPairDescriptor(pair, reads_it->second.first.rID, u.reads_distance(reads_it->second.first));
+            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_P->insertPairDescriptor(pair);
 
             antTagsP = tagsReads_it->second.second;
 
@@ -180,7 +179,7 @@ void dispatcher() {
             tags_read.erase(tagsReads_it++);
             u.removeFirstRead();
 
-        }  else if (tagsReads_it->second.first.class_type == 2) {
+        }  /* else if (tagsReads_it->second.first.class_type == 2) {
             // if we found a new tag region then create new access Unit
             if (antTagsN != tagsReads_it->second.second) {
                 AU_N->setEndPosition(antPosN);
@@ -407,7 +406,7 @@ void dispatcher() {
             reads.erase(reads_it++);
             tags_read.erase(tagsReads_it++);
             u.removeFirstRead();
-        } else {
+        } */ else {
             ++reads_it;
             ++tagsReads_it;
         }
@@ -438,7 +437,8 @@ int main () {
     std::cout << "Pairing reads ... " << std::endl;
 
     // loop that reads the file and pairs the mate reads
-    while (!atEnd(bamFileIn)) {
+    int count = 1;
+    while (!atEnd(bamFileIn) and count <= 10000) {
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -459,6 +459,7 @@ int main () {
         } else {
             u.updateRecord(record, record.pNext);
         }
+        ++count;
     }
 
     // reference sequence found with their start and end positions
@@ -569,12 +570,8 @@ int main () {
 
     // write via command line the access units encoded without the payload
     std::cout << "List of access Units encoded" << std::endl;
-    std::vector<AccessUnit> au;
-    u.getAllAccessUnits(au);
 
-    for (int i = 0; i < au.size(); ++i) {
-        au[i].write();
-    }
+    f.writeAccessUnits(u);
     f.closeFiles();
 
     return 0;

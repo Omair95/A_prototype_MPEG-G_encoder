@@ -1,9 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classAccessUnit.html" title="Main data structure that contains a coded representation of information to facilitate the bit stream ..." alt="" coords="5,132,96,159"/>
-<area shape="rect" id="node2" href="$classAccessUnit__HM.html" title="Access unit of type HM: Half&#45;mapped pairs where only one read is mapped. " alt="" coords="144,5,263,32"/>
-<area shape="rect" id="node3" href="$classAccessUnit__I.html" title="Access unit of type I: reads containing at least one insertion, deletion or clipped base..." alt="" coords="153,56,254,83"/>
-<area shape="rect" id="node4" href="$classAccessUnit__M.html" title="Access unit of type M: reads containing at least one substitution, and optionally unknown bases..." alt="" coords="149,107,257,133"/>
-<area shape="rect" id="node5" href="$classAccessUnit__N.html" title="Access unit of type N: reads containing mismatches which are unknown bases only. " alt="" coords="150,157,257,184"/>
-<area shape="rect" id="node6" href="$classAccessUnit__P.html" title="Access unit of type P: reads perfectly matching to the reference sequence. " alt="" coords="150,208,257,235"/>
-<area shape="rect" id="node7" href="$classAccessUnit__U.html" title="Access unit of type U: Unmapped reads. " alt="" coords="150,259,257,285"/>
+<area shape="rect" id="node1" href="$classAccessUnit.html" title="Data structure that contains a coded representation of genomic information or related metadata to fac..." alt="" coords="5,81,96,108"/>
+<area shape="rect" id="node2" href="$classAccessUnit__I.html" title="Access unit of type I: reads containing at least one insertion, deletion or clipped base..." alt="" coords="147,5,249,32"/>
+<area shape="rect" id="node3" href="$classAccessUnit__M.html" title="Access unit of type M: reads containing at least one substitution, and optionally unknown bases..." alt="" coords="144,56,252,83"/>
+<area shape="rect" id="node4" href="$classAccessUnit__N.html" title="Access unit of type N: reads containing mismatches which are unknown bases only &#160;Omair95@protonmail.com. " alt="" coords="145,107,251,133"/>
+<area shape="rect" id="node5" href="$classAccessUnit__P.html" title="Access unit of type P: reads perfectly matching to the reference sequence. &#160;Omair95@protonmail.com. " alt="" coords="145,157,251,184"/>
 </map>
