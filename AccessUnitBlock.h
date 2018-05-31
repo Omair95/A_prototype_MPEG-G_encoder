@@ -21,7 +21,7 @@ private:
     uint8_t reserved;                      /// bits used to preserve byte alignment
     uint8_t padding;                       /// number of padding bits added at the end of the encoded payload
     uint32_t block_size;                   /// size in bytes of the payload
-    std::vector<std::string> descriptor;   /// the values of the descriptor
+    std::vector<std::pair<std::string, uint8_t> > descriptor;   /// the values of the descriptor
 
 public:
 
@@ -39,14 +39,14 @@ public:
      * @param value value to be inserted in the block
      * @return void
      * */
-    void insertValue(std::string value);
+    void insertValue(std::pair<std::string, uint8_t>& value);
 
     /** @brief Gets the payload of the block, which contains
      * all the values of the descriptor
      * @param void
      * @return vector containing all the values of the block descriptor
      * */
-    std::vector<std::string> getPayload();
+    std::vector<std::pair<std::string, uint8_t > > getPayload();
 
     /** @brief Gets the size of the payload of the block
      * @param void

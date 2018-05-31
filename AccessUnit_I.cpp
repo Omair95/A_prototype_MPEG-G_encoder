@@ -31,7 +31,7 @@ void AccessUnit_I::insertMmtypeDescriptor(uint8_t value) {
     descriptors[6].insertValue(std::to_string(value));
 }
 
-void AccessUnit_I::insertSclipsDescriptor(std::vector<std::string>& sclips) {
+void AccessUnit_I::insertSclipsDescriptor(std::vector<std::pair<std::string, int> >& sclips) {
     for (const auto &sclip : sclips) {
         descriptors[7].insertValue(sclip);
     }

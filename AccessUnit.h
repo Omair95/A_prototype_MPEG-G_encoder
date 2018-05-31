@@ -128,6 +128,10 @@ public:
     * */
     std::vector<std::string> getPairDescriptorValues();
 
+    std::vector<std::string> getMmposDescriptorValues();
+
+    std::vector<std::string> getMmtypeDescriptorValues();
+
     /** @brief Updates the numbers of reads stored in the access unit
     * @param void
     * @return void

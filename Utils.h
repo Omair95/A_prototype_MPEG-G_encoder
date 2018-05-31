@@ -179,6 +179,10 @@ public:
     uint8_t getRlenDescriptor(BamAlignmentRecord& record);
 
     std::string getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRecord& record2);
+
+    std::vector<uint8_t> getMmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos);
+
+    std::vector<std::pair<std::string, int> > getClipsDescriptor(MpeggRecord& record, uint32_t id);
 };
 
 #endif

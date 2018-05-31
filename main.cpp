@@ -97,7 +97,7 @@ void mergeTags(std::vector<std::map<int, std::vector<std::string> > >& useCase1,
     result = useCase1;
 }
 
-/** @brief Writes the especified regions of the reference sequence to the corresponding access units which are written into files
+/** @brief Writes the especified regions of the reference sequence to the corresponding access units
  **/
 void dispatcher() {
     AccessUnit *AU_P, *AU_N, *AU_M, *AU_I;
@@ -179,7 +179,7 @@ void dispatcher() {
             tags_read.erase(tagsReads_it++);
             u.removeFirstRead();
 
-        }  /* else if (tagsReads_it->second.first.class_type == 2) {
+        }  else if (tagsReads_it->second.first.class_type == 2) {
             // if we found a new tag region then create new access Unit
             if (antTagsN != tagsReads_it->second.second) {
                 AU_N->setEndPosition(antPosN);
@@ -199,35 +199,32 @@ void dispatcher() {
                 antPosN = tagsReads_it->second.first.mapping_pos[0];
                 AU_N->insertPosdescriptor(0);
                 AU_N->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
-                f.insertPosValue(0, 2);
             } else {
                 AU_N->insertPosdescriptor(tagsReads_it->second.first.mapping_pos[0] - antPosN);
-                f.insertPosValue(tagsReads_it->second.first.mapping_pos[0] - antPosN, 2);
                 antPosN = tagsReads_it->second.first.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(reads_it->second.first, reads_it->second.second, 2);
-            AU_N->insertRcompDescriptor(rcomp);
+            std::pair<uint8_t, uint8_t> rcomp = u.getRcompDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_N->insertRcompDescriptor(rcomp.first);
+            if (rcomp.second != 255) AU_N->insertRcompDescriptor(rcomp.second);
 
             // get flags descriptor
-            uint8_t flags = f.insertFlagsValue(reads_it->second.first, 2);
-            AU_N->insertFlagsDescriptor(flags);
+            uint8_t flag = u.getFlagDescriptor(reads_it->second.first);
+            AU_N->insertFlagsDescriptor(flag);
 
             // get rlen descriptor
-            uint8_t rlen = f.insertRlenValue(reads_it->second.first, 2);
-            static_cast<AccessUnit_N*> (AU_N)->insertRlenDescriptor(rlen);
+            uint8_t rlen = u.getRlenDescriptor(reads_it->second.first);
+            AU_N->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            uint16_t pair = f.insertPairValue(reads_it->second.first, reads_it->second.second, 2);
-            static_cast<AccessUnit_N*> (AU_N)->insertPairDescriptor(pair, reads_it->second.first.rID, u.reads_distance(reads_it->second.first));
+            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_N->insertPairDescriptor(pair);
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(reads_it->second.first);
             for (int i = 0; i < mmpos.size(); ++i) {
                 static_cast<AccessUnit_N*> (AU_N)->insertMmposDescriptor(mmpos[i].first);
-                if (i != (mmpos.size() - 1)) f.insertMmposValue(mmpos[i].first, 2, false);
-                else f.insertMmposValue(mmpos[i].first, 2, true);
             }
 
             antTagsN = tagsReads_it->second.second;
@@ -268,42 +265,35 @@ void dispatcher() {
                 antPosM = tagsReads_it->second.first.mapping_pos[0];
                 AU_M->insertPosdescriptor(0);
                 AU_M->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
-                f.insertPosValue(0, 3);
             } else {
                 AU_M->insertPosdescriptor(tagsReads_it->second.first.mapping_pos[0] - antPosM);
-                f.insertPosValue(tagsReads_it->second.first.mapping_pos[0] - antPosM, 3);
                 antPosM = tagsReads_it->second.first.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(reads_it->second.first, reads_it->second.second, 3);
-            AU_M->insertRcompDescriptor(rcomp);
+            std::pair<uint8_t, uint8_t> rcomp = u.getRcompDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_M->insertRcompDescriptor(rcomp.first);
+            if (rcomp.second != 255) AU_M->insertRcompDescriptor(rcomp.second);
 
             // get flags descriptor
-            uint8_t flags = f.insertFlagsValue(reads_it->second.first, 3);
-            AU_M->insertFlagsDescriptor(flags);
+            uint8_t flag = u.getFlagDescriptor(reads_it->second.first);
+            AU_M->insertFlagsDescriptor(flag);
+
+            // get rlen descriptor
+            uint8_t rlen = u.getRlenDescriptor(reads_it->second.first);
+            AU_M->insertRlenDescriptor(rlen);
+
+            // get pair descriptor
+            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_M->insertPairDescriptor(pair);
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(reads_it->second.first);
-            for (int i = 0; i < mmpos.size(); ++i) {
-                static_cast<AccessUnit_M*> (AU_M)->insertMmposDescriptor(mmpos[i].first);
-                if (i != (mmpos.size() - 1)) f.insertMmposValue(mmpos[i].first, 3, false);
-                else f.insertMmposValue(mmpos[i].first, 3, true);
-
-            }
+            for (int i = 0; i < mmpos.size(); ++i) static_cast<AccessUnit_M*> (AU_M)->insertMmposDescriptor(mmpos[i].first);
 
             // get mmtype descriptor
-            std::vector<uint8_t> mmtype = f.insertmmtypeDescriptor(mmpos, 3);
-
+            std::vector<uint8_t> mmtype = u.getMmtypeDescriptor(mmpos);
             for (int i = 0; i < mmtype.size(); ++i) static_cast<AccessUnit_M*> (AU_M)->insertMmtypeDescriptor(mmtype[i]);
-
-            // get rlen descriptor
-            uint8_t rlen = f.insertRlenValue(reads_it->second.first, 3);
-            static_cast<AccessUnit_M*> (AU_M)->insertRlenDescriptor(rlen);
-
-            // get pair descriptor
-            uint16_t pair = f.insertPairValue(reads_it->second.first, reads_it->second.second, 3);
-            static_cast<AccessUnit_M*> (AU_M)->insertPairDescriptor(pair, reads_it->second.first.rID, u.reads_distance(reads_it->second.first));
 
             antTagsM = tagsReads_it->second.second;
 
@@ -322,8 +312,7 @@ void dispatcher() {
             tags_read.erase(tagsReads_it++);
             u.removeFirstRead();
 
-        }
-        else if (tagsReads_it->second.first.class_type == 4) {
+        } else if (tagsReads_it->second.first.class_type == 4) {
 
             // if we found a new tag region then create new access Unit
             if (antTagsI != tagsReads_it->second.second) {
@@ -344,49 +333,42 @@ void dispatcher() {
                 antPosI = tagsReads_it->second.first.mapping_pos[0];
                 AU_I->insertPosdescriptor(0);
                 AU_I->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
-                f.insertPosValue(0, 4);
             } else {
                 AU_I->insertPosdescriptor(tagsReads_it->second.first.mapping_pos[0] - antPosI);
-                f.insertPosValue(tagsReads_it->second.first.mapping_pos[0] - antPosI, 4);
                 antPosI = tagsReads_it->second.first.mapping_pos[0];
             }
 
             // get rcomp descriptor
-            uint8_t rcomp = f.insertRcompValue(reads_it->second.first, reads_it->second.second, 4);
-            AU_I->insertRcompDescriptor(rcomp);
+            std::pair<uint8_t, uint8_t> rcomp = u.getRcompDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_I->insertRcompDescriptor(rcomp.first);
+            if (rcomp.second != 255) AU_I->insertRcompDescriptor(rcomp.second);
 
             // get flags descriptor
-            uint8_t flags = f.insertFlagsValue(reads_it->second.first, 4);
-            AU_I->insertFlagsDescriptor(flags);
+            uint8_t flag = u.getFlagDescriptor(reads_it->second.first);
+            AU_I->insertFlagsDescriptor(flag);
+
+            // get rlen descriptor
+            uint8_t rlen = u.getRlenDescriptor(reads_it->second.first);
+            AU_I->insertRlenDescriptor(rlen);
+
+            // get pair descriptor
+            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+            AU_I->insertPairDescriptor(pair);
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(reads_it->second.first);
-
-            for (int i = 0; i < mmpos.size(); ++i) {
-                static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(mmpos[i].first);
-                if (i != (mmpos.size() - 1)) f.insertMmposValue(mmpos[i].first, 4, false);
-                else f.insertMmposValue(mmpos[i].first, 4, true);
-            }
+            for (int i = 0; i < mmpos.size(); ++i) static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(mmpos[i].first);
 
             // get mmtype descriptor
-            std::vector<uint8_t> mmtype = f.insertmmtypeDescriptor(mmpos, 4);
-
+            std::vector<uint8_t> mmtype = u.getMmtypeDescriptor(mmpos);
             for (int i = 0; i < mmtype.size(); ++i) static_cast<AccessUnit_I*> (AU_I)->insertMmtypeDescriptor(mmtype[i]);
-
-            // get rlen descriptor
-            uint8_t rlen = f.insertRlenValue(reads_it->second.first, 4);
-            static_cast<AccessUnit_I*> (AU_I)->insertRlenDescriptor(rlen);
-
-            // get pair descriptor
-            uint16_t pair = f.insertPairValue(reads_it->second.first, reads_it->second.second, 4);
-            static_cast<AccessUnit_I*> (AU_I)->insertPairDescriptor(pair, reads_it->second.first.rID, u.reads_distance(reads_it->second.first));
 
             // get clips descriptor
             std::string read1_cigar = u.getCigar(reads_it->second.first.cigar);
             std::string read2_cigar = u.getCigar(reads_it->second.second.cigar);
 
             if (read1_cigar.find('S') != std::string::npos or read2_cigar.find('S') != std::string::npos) {
-                std::vector<std::string> clips = f.insertClipsDescriptor(tagsReads_it->second.first, AU_I->getReadsCount() - 1);
+                std::vector<std::pair<std::string, int> > clips = u.getClipsDescriptor(tagsReads_it->second.first, AU_I->getReadsCount() - 1);
                 static_cast<AccessUnit_I*> (AU_I)->insertSclipsDescriptor(clips);
             }
 
@@ -406,7 +388,7 @@ void dispatcher() {
             reads.erase(reads_it++);
             tags_read.erase(tagsReads_it++);
             u.removeFirstRead();
-        } */ else {
+        }  else {
             ++reads_it;
             ++tagsReads_it;
         }
@@ -438,7 +420,7 @@ int main () {
 
     // loop that reads the file and pairs the mate reads
     int count = 1;
-    while (!atEnd(bamFileIn) and count <= 10000) {
+    while (!atEnd(bamFileIn) and count <= 5000) {
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {

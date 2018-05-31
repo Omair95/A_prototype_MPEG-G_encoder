@@ -44,7 +44,7 @@ public:
     * @param sclips vector containing all values of the soft clips descriptor of the read
     * @return void
     * */
-    void insertSclipsDescriptor(std::vector<std::string>& sclips);
+    void insertSclipsDescriptor(std::vector<std::pair<std::string, int> >& sclips);
 };
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_ACCESSUNIT_I_H

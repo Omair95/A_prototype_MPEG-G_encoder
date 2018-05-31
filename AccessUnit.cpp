@@ -60,6 +60,14 @@ std::vector<std::string> AccessUnit::getPairDescriptorValues() {
     return descriptors[4].getPayload();
 }
 
+std::vector<std::string> AccessUnit::getMmposDescriptorValues() {
+    return descriptors[5].getPayload();
+}
+
+std::vector<std::string> AccessUnit::getMmtypeDescriptorValues() {
+    return descriptors[6].getPayload();
+}
+
 void AccessUnit::updateReads() {
     ++reads_count;
 }

@@ -701,3 +701,199 @@ std::string  Utils::getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRe
         }
     }
 }
+
+std::vector<uint8_t> Utils::getMmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos) {
+    std::vector<uint8_t > result;
+    for (int i = 0; i < mmpos.size(); ++i) {
+        if (mmpos[i].second[0] == 'I') {
+            if (mmpos[i].second[1] == 'A') result.push_back(6);
+            else if (mmpos[i].second[1] == 'C') result.push_back(7);
+            else if (mmpos[i].second[1] == 'G') result.push_back(8);
+            else if (mmpos[i].second[1] == 'T') result.push_back(9);
+        }
+        else if (mmpos[i].second[0] == 'D') result.push_back(5);
+        else if (mmpos[i].second[0] == 'A') result.push_back(0);
+        else if (mmpos[i].second[0] == 'C') result.push_back(1);
+        else if (mmpos[i].second[0] == 'G') result.push_back(2);
+        else if (mmpos[i].second[0] == 'T') result.push_back(3);
+    }
+    return result;
+}
+
+std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord& record, uint32_t id) {
+    std::vector <std::pair<std::string, int> > clips_descriptor;
+    std::string read1_cigar = record.ecigar_string[0][1], read2_cigar;
+    std::string read1_sequence = record.sequence[0], read2_sequence;
+    auto n = std::count(read1_cigar.begin(), read1_cigar.end(), '(');
+
+    for (int i = 0; i < n; ++i) {
+        std::string result;
+
+        // get and write id to file
+        uint32_t idclip = id;
+        uint32_t littleEndianID = boost::endian::native_to_little(idclip);
+        clips_descriptor.emplace_back(idclip, 32);
+
+        // get and write pos of the soft clip
+        uint8_t flagPos;
+        int pos;
+        if (i == 0) {
+            pos = read1_cigar.find('(');
+            if (pos == 0) flagPos = 0x00;
+            else {
+                flagPos = 0x01;
+                pos = read1_cigar.rfind('(');
+            }
+        } else {
+            flagPos = 0x01;
+            pos = read1_cigar.rfind('(');
+        }
+        uint8_t littleEndianFlagPos = boost::endian::native_to_little(flagPos);
+        clips_descriptor.emplace_back(flagPos, 8);
+
+        // get and write base sequences
+        if (flagPos == 0x00) {
+            int a = 0, b = 0, f;
+
+            if (isdigit(read1_cigar[pos + 1]) and
+                isdigit(read1_cigar[pos + 2])) {
+                a = read1_cigar[pos+1] - '0';
+                b = read1_cigar[pos+2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read1_cigar[pos + 1])) {
+                a = read1_cigar[pos+1] - '0';
+                f = a;
+            }
+
+            for (int i = 0; i < f; ++i) {
+                uint8_t c = read1_sequence[i];
+                clips_descriptor.emplace_back(c, 8);
+            }
+
+            if (n > 1) {
+                uint8_t terminator = 0xfe;
+                uint8_t littleEndianTerminator = boost::endian::native_to_little(terminator);
+                clips_descriptor.emplace_back(terminator, 8);
+            }
+        } else if (flagPos == 0x01) {
+            int a = 0, b = 0, f = 0;
+
+            if (isdigit(read1_cigar[pos + 1]) and
+                isdigit(read1_cigar[pos + 2])) {
+                a = read1_cigar[pos + 1] - '0';
+                b = read1_cigar[pos + 2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read1_cigar[pos + 1])) {
+                a = read1_cigar[pos + 1] - '0';
+                f = a;
+            }
+
+            for (int i = read1_sequence.size() - 1 - f; i < read1_sequence.size() - 1; ++i) {
+                uint8_t c = read1_sequence[i];
+                clips_descriptor.emplace_back(c, 8);
+            }
+            result += read1_sequence.substr(read1_sequence.size() - f, read1_sequence.size() - 1);
+        }
+    }
+
+    if (record.number_of_segments == 1) {
+        uint8_t terminator = 0xff;
+        uint8_t littleEndianTerminator = boost::endian::native_to_little(terminator);
+        clips_descriptor.emplace_back(terminator, 8);
+        return clips_descriptor;
+    }
+
+
+    read2_cigar = record.ecigar_string[1][1];
+    read2_sequence = record.sequence[1];
+
+    auto k = std::count(read2_cigar.begin(), read2_cigar.end(), '(');
+
+    if (k == 0) {
+        uint8_t terminator = 0xff;
+        clips_descriptor.emplace_back(terminator, 8);
+        return clips_descriptor;
+    } else if (n != 0) {
+        uint8_t terminator = 0xfe;
+        clips_descriptor.emplace_back(terminator, 8);
+    }
+
+    for (int i = 0; i < k; ++i) {
+        std::string result;
+
+        // get and write id to file
+        uint32_t idclip = id;
+        uint32_t littleEndianID = boost::endian::native_to_little(idclip);
+        clips_descriptor.emplace_back(idclip, 8);
+
+        // get and write pos of the soft clip
+        uint8_t flagPos;
+        int pos;
+        if (i == 0) {
+            pos = read2_cigar.find('(');
+            if (pos == 0) flagPos = 0x02;
+            else {
+                flagPos = 0x03;
+                pos = read2_cigar.rfind('(');
+            }
+        } else {
+            flagPos = 0x03;
+            pos = read2_cigar.rfind('(');
+        }
+        uint8_t littleEndianFlagPos = boost::endian::native_to_little(flagPos);
+        clips_descriptor.emplace_back(flagPos, 8);
+
+        // get and write base sequences
+        if (flagPos == 0x02) {
+            int a = 0, b = 0, f;
+            if (isdigit(read2_cigar[pos + 1]) and
+                isdigit(read2_cigar[pos + 2])) {
+                a = read2_cigar[pos + 1] - '0';
+                b = read2_cigar[pos + 2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read2_cigar[pos + 1])) {
+                a = read2_cigar[pos + 1] - '0';
+                f = a;
+            }
+
+            for (int i = 0; i < f; ++i) {
+                uint8_t c = read2_sequence[i];
+                clips_descriptor.emplace_back(c, 8);
+            }
+            result += read2_sequence.substr(0, f);  // M bases
+            uint8_t terminator;
+
+            if (k > 1) terminator = 0xfe;
+            else terminator = 0xff;
+            clips_descriptor.emplace_back(terminator, 8);
+
+        } else if (flagPos == 0x03) {
+            int a = 0, b = 0, f;
+
+            if (isdigit(read2_cigar[pos + 1]) and isdigit(read2_cigar[pos + 2])) {
+                a = read2_cigar[pos + 1] - '0';
+                b = read2_cigar[pos + 2] - '0';
+                f = a * 10 + b;
+            }
+            else if (isdigit(read2_cigar[pos + 1])) {
+                a = read2_cigar[pos + 1] - '0';
+                f = a;
+            }
+
+            for (int i = read2_sequence.size() - f; i < read2_sequence.size(); ++i) {
+                uint8_t c = read2_sequence[i];
+                clips_descriptor.emplace_back(c, 8);
+            }
+            result += read2_sequence.substr(read2_sequence.size() - f, read2_sequence.size() - 1);
+
+            uint8_t terminator = 0xff;
+            clips_descriptor.emplace_back(terminator, 8);
+            result += std::to_string(terminator);
+        }
+    }
+
+    return  clips_descriptor;
+}

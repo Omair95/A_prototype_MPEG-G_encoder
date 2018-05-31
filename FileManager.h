@@ -186,6 +186,10 @@ public:
 
     void write32bitPairDescriptor(uint32_t value, uint8_t classType);
 
+    void writeMmposDescriptorValue(uint16_t value, uint8_t classType, bool lastPos);
+
+    void writeMmtypeDescriptor(uint8_t value, uint8_t classType);
+
     void writeAccessUnits(Utils& u);
 };
 
