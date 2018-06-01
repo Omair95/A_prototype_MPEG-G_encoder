@@ -27,24 +27,6 @@ public:
     * @return void
     * */
     ~AccessUnit_I();
-
-    /** @brief Insert a single mmpos descriptor value inside the corresponding block in the access unit's payload
-    * @param value unsigned integer representing the value of the mmpos descriptor
-    * @return void
-    * */
-    void insertMmposDescriptor(uint16_t value);
-
-    /** @brief Insert the mmtype descriptor value inside the corresponding block in the access unit's payload
-    * @param value unsigned integer representing the value of the mmtype descriptor
-    * @return void
-    * */
-    void insertMmtypeDescriptor(uint8_t value);
-    
-    /** @brief Insert the sclips descriptor value inside the corresponding block in the access unit's payload
-    * @param sclips vector containing all values of the soft clips descriptor of the read
-    * @return void
-    * */
-    void insertSclipsDescriptor(std::vector<std::pair<std::string, int> >& sclips);
 };
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_ACCESSUNIT_I_H

@@ -53,12 +53,6 @@ public:
      * @return an unsigned 32-bit integer representing the size of the payload
      * */
     uint32_t getPayloadSize();
-
-    /** @brief Writes via to the commnad line the content of the payload
-     * @param void
-     * @return void
-     * */
-    void write();
 };
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_ACCESSUNITBLOCK_H

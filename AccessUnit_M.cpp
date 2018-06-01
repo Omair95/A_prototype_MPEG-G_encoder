@@ -23,12 +23,3 @@ AccessUnit_M::AccessUnit_M(uint32_t id) {
 }
 
 AccessUnit_M::~AccessUnit_M() = default;
-
-void AccessUnit_M::insertMmposDescriptor(uint16_t value) {
-    descriptors[5].insertValue(std::to_string(value));
-    ++mm_threshold;
-}
-
-void AccessUnit_M::insertMmtypeDescriptor(uint8_t value) {
-    descriptors[6].insertValue(std::to_string(value));
-}

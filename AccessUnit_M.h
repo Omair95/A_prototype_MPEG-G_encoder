@@ -31,18 +31,6 @@ public:
     * @return void
     * */
     ~AccessUnit_M();
-
-    /** @brief Insert a single mmpos descriptor value inside the corresponding block in the access unit's payload
-    * @param value unsigned integer representing the value of the mmpos descriptor
-    * @return void
-    * */
-    void insertMmposDescriptor(uint16_t value);
-
-    /** @brief Insert the mmtype descriptor value inside the corresponding block in the access unit's payload
-    * @param value unsigned integer representing the value of the mmtype descriptor
-    * @return void
-    * */
-    void insertMmtypeDescriptor(uint8_t value);
 };
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_ACCESSUNIT_M_H

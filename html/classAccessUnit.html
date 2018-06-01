@@ -115,24 +115,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8223db6ac2c800f8e2c5cde07813e47f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a8223db6ac2c800f8e2c5cde07813e47f">insertRlenDescriptor</a> (uint8_t value)</td></tr>
 <tr class="memdesc:a8223db6ac2c800f8e2c5cde07813e47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert rlen descriptor value inside the corresponding block in the access unit's payload.  <a href="#a8223db6ac2c800f8e2c5cde07813e47f">More...</a><br /></td></tr>
 <tr class="separator:a8223db6ac2c800f8e2c5cde07813e47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e625d1876728e38f5c7535dc100239f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a8e625d1876728e38f5c7535dc100239f">insertPairDescriptor</a> (uint16_t type, uint8_t referenceID, uint32_t distance)</td></tr>
-<tr class="memdesc:a8e625d1876728e38f5c7535dc100239f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts pair descriptor value inside the corresponding block in the access unit's payload.  <a href="#a8e625d1876728e38f5c7535dc100239f">More...</a><br /></td></tr>
-<tr class="separator:a8e625d1876728e38f5c7535dc100239f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7525ca997685655cf1b2feee85e57dec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a7525ca997685655cf1b2feee85e57dec">getPosDescriptorValues</a> ()</td></tr>
-<tr class="memdesc:a7525ca997685655cf1b2feee85e57dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the pos descriptor in the access unit.  <a href="#a7525ca997685655cf1b2feee85e57dec">More...</a><br /></td></tr>
-<tr class="separator:a7525ca997685655cf1b2feee85e57dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f">getRcompDescriptorValues</a> ()</td></tr>
-<tr class="memdesc:a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the rcomp descriptor in the access unit.  <a href="#a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f">More...</a><br /></td></tr>
-<tr class="separator:a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc99a1cdfe656a307d2851e107a82cdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#afc99a1cdfe656a307d2851e107a82cdb">getFlagsDescriptorValues</a> ()</td></tr>
-<tr class="memdesc:afc99a1cdfe656a307d2851e107a82cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the value of the flags descriptor in the access unit.  <a href="#afc99a1cdfe656a307d2851e107a82cdb">More...</a><br /></td></tr>
-<tr class="separator:afc99a1cdfe656a307d2851e107a82cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4a02f467784330f216bafb20a7a09a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#af4a02f467784330f216bafb20a7a09a8">getRLenDescriptorValues</a> ()</td></tr>
-<tr class="memdesc:af4a02f467784330f216bafb20a7a09a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the values of the rlen descriptor in the access unit.  <a href="#af4a02f467784330f216bafb20a7a09a8">More...</a><br /></td></tr>
-<tr class="separator:af4a02f467784330f216bafb20a7a09a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5dd12b507b2c95865959ad8c5b5128a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#af5dd12b507b2c95865959ad8c5b5128a">getPairDescriptorValues</a> ()</td></tr>
-<tr class="memdesc:af5dd12b507b2c95865959ad8c5b5128a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the pair descriptor in the access unit.  <a href="#af5dd12b507b2c95865959ad8c5b5128a">More...</a><br /></td></tr>
-<tr class="separator:af5dd12b507b2c95865959ad8c5b5128a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff5022abde9e201884c265613023d20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a4ff5022abde9e201884c265613023d20">insertPairDescriptor</a> (std::string value, uint8_t size)</td></tr>
+<tr class="memdesc:a4ff5022abde9e201884c265613023d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts pair descriptor value inside the corresponding block in the access unit's payload.  <a href="#a4ff5022abde9e201884c265613023d20">More...</a><br /></td></tr>
+<tr class="separator:a4ff5022abde9e201884c265613023d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c17cef60e90856f3e9127918bba8ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#ab3c17cef60e90856f3e9127918bba8ac">insertMmposDescriptor</a> (std::string value)</td></tr>
+<tr class="memdesc:ab3c17cef60e90856f3e9127918bba8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert mmpos descriptor value inside the corresponding block in the access unit's payload.  <a href="#ab3c17cef60e90856f3e9127918bba8ac">More...</a><br /></td></tr>
+<tr class="separator:ab3c17cef60e90856f3e9127918bba8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c009353f31a4588a8e775c68ce25e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a79c009353f31a4588a8e775c68ce25e2">insertMmtypeDescriptor</a> (std::string value)</td></tr>
+<tr class="memdesc:a79c009353f31a4588a8e775c68ce25e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert mmtype descriptor value inside the corresponding block in the access unit's payload.  <a href="#a79c009353f31a4588a8e775c68ce25e2">More...</a><br /></td></tr>
+<tr class="separator:a79c009353f31a4588a8e775c68ce25e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ce8def181b640cf82de90aade64a1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#aa4ce8def181b640cf82de90aade64a1f">insertSclipsDescriptor</a> (std::string value, uint8_t size)</td></tr>
+<tr class="memdesc:aa4ce8def181b640cf82de90aade64a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts soft clips descriptor value inside the corresponding block in the access unit's payload.  <a href="#aa4ce8def181b640cf82de90aade64a1f">More...</a><br /></td></tr>
+<tr class="separator:aa4ce8def181b640cf82de90aade64a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3f26de452ff7e03661a242b20e71e1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#aee3f26de452ff7e03661a242b20e71e1">getPosDescriptorValues</a> ()</td></tr>
+<tr class="memdesc:aee3f26de452ff7e03661a242b20e71e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the pos descriptor in the access unit.  <a href="#aee3f26de452ff7e03661a242b20e71e1">More...</a><br /></td></tr>
+<tr class="separator:aee3f26de452ff7e03661a242b20e71e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15b63061e3d3581f1856962938a6ce6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#af15b63061e3d3581f1856962938a6ce6">getRcompDescriptorValues</a> ()</td></tr>
+<tr class="memdesc:af15b63061e3d3581f1856962938a6ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the rcomp descriptor in the access unit.  <a href="#af15b63061e3d3581f1856962938a6ce6">More...</a><br /></td></tr>
+<tr class="separator:af15b63061e3d3581f1856962938a6ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7927c7d5ca0f930429196c30919dcd59"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a7927c7d5ca0f930429196c30919dcd59">getFlagsDescriptorValues</a> ()</td></tr>
+<tr class="memdesc:a7927c7d5ca0f930429196c30919dcd59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the value of the flags descriptor in the access unit.  <a href="#a7927c7d5ca0f930429196c30919dcd59">More...</a><br /></td></tr>
+<tr class="separator:a7927c7d5ca0f930429196c30919dcd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad581f4336862d572835c369301f9089f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#ad581f4336862d572835c369301f9089f">getRLenDescriptorValues</a> ()</td></tr>
+<tr class="memdesc:ad581f4336862d572835c369301f9089f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the values of the rlen descriptor in the access unit.  <a href="#ad581f4336862d572835c369301f9089f">More...</a><br /></td></tr>
+<tr class="separator:ad581f4336862d572835c369301f9089f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018bee895accb5bb2022ce1b44739a34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a018bee895accb5bb2022ce1b44739a34">getPairDescriptorValues</a> ()</td></tr>
+<tr class="memdesc:a018bee895accb5bb2022ce1b44739a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the pair descriptor in the access unit.  <a href="#a018bee895accb5bb2022ce1b44739a34">More...</a><br /></td></tr>
+<tr class="separator:a018bee895accb5bb2022ce1b44739a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b1117cf7a869c33731e1850cbeba4d6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a6b1117cf7a869c33731e1850cbeba4d6">getMmposDescriptorValues</a> ()</td></tr>
+<tr class="memdesc:a6b1117cf7a869c33731e1850cbeba4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the mmpos descriptor in the access unit.  <a href="#a6b1117cf7a869c33731e1850cbeba4d6">More...</a><br /></td></tr>
+<tr class="separator:a6b1117cf7a869c33731e1850cbeba4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b23f8e9b794d7853e7dae9bd5846a99"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a3b23f8e9b794d7853e7dae9bd5846a99">getMmtypeDescriptorValues</a> ()</td></tr>
+<tr class="memdesc:a3b23f8e9b794d7853e7dae9bd5846a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the values of the mmtype descriptor in the access unit.  <a href="#a3b23f8e9b794d7853e7dae9bd5846a99">More...</a><br /></td></tr>
+<tr class="separator:a3b23f8e9b794d7853e7dae9bd5846a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11ae1270d7bbc62cec47bfb9c6738764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAccessUnit.html#a11ae1270d7bbc62cec47bfb9c6738764">updateReads</a> ()</td></tr>
 <tr class="memdesc:a11ae1270d7bbc62cec47bfb9c6738764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the numbers of reads stored in the access unit.  <a href="#a11ae1270d7bbc62cec47bfb9c6738764">More...</a><br /></td></tr>
 <tr class="separator:a11ae1270d7bbc62cec47bfb9c6738764"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,14 +272,14 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afc99a1cdfe656a307d2851e107a82cdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc99a1cdfe656a307d2851e107a82cdb">&#9670;&nbsp;</a></span>getFlagsDescriptorValues()</h2>
+<a id="a7927c7d5ca0f930429196c30919dcd59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7927c7d5ca0f930429196c30919dcd59">&#9670;&nbsp;</a></span>getFlagsDescriptorValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AccessUnit::getFlagsDescriptorValues </td>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt; AccessUnit::getFlagsDescriptorValues </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -283,14 +298,66 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 
 </div>
 </div>
-<a id="af5dd12b507b2c95865959ad8c5b5128a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5dd12b507b2c95865959ad8c5b5128a">&#9670;&nbsp;</a></span>getPairDescriptorValues()</h2>
+<a id="a6b1117cf7a869c33731e1850cbeba4d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b1117cf7a869c33731e1850cbeba4d6">&#9670;&nbsp;</a></span>getMmposDescriptorValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AccessUnit::getPairDescriptorValues </td>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt; AccessUnit::getMmposDescriptorValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all the values of the mmpos descriptor in the access unit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a3b23f8e9b794d7853e7dae9bd5846a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b23f8e9b794d7853e7dae9bd5846a99">&#9670;&nbsp;</a></span>getMmtypeDescriptorValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt; AccessUnit::getMmtypeDescriptorValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all the values of the mmtype descriptor in the access unit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a018bee895accb5bb2022ce1b44739a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018bee895accb5bb2022ce1b44739a34">&#9670;&nbsp;</a></span>getPairDescriptorValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt; AccessUnit::getPairDescriptorValues </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -309,14 +376,14 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 
 </div>
 </div>
-<a id="a7525ca997685655cf1b2feee85e57dec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7525ca997685655cf1b2feee85e57dec">&#9670;&nbsp;</a></span>getPosDescriptorValues()</h2>
+<a id="aee3f26de452ff7e03661a242b20e71e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee3f26de452ff7e03661a242b20e71e1">&#9670;&nbsp;</a></span>getPosDescriptorValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AccessUnit::getPosDescriptorValues </td>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt; AccessUnit::getPosDescriptorValues </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -335,14 +402,14 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 
 </div>
 </div>
-<a id="a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b9e9c9aa6adf1b8c1c8fc440fc8fc0f">&#9670;&nbsp;</a></span>getRcompDescriptorValues()</h2>
+<a id="af15b63061e3d3581f1856962938a6ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15b63061e3d3581f1856962938a6ce6">&#9670;&nbsp;</a></span>getRcompDescriptorValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AccessUnit::getRcompDescriptorValues </td>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt; AccessUnit::getRcompDescriptorValues </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -387,14 +454,14 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 
 </div>
 </div>
-<a id="af4a02f467784330f216bafb20a7a09a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4a02f467784330f216bafb20a7a09a8">&#9670;&nbsp;</a></span>getRLenDescriptorValues()</h2>
+<a id="ad581f4336862d572835c369301f9089f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad581f4336862d572835c369301f9089f">&#9670;&nbsp;</a></span>getRLenDescriptorValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AccessUnit::getRLenDescriptorValues </td>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, uint8_t &gt; &gt; AccessUnit::getRLenDescriptorValues </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -466,8 +533,62 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 
 </div>
 </div>
-<a id="a8e625d1876728e38f5c7535dc100239f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e625d1876728e38f5c7535dc100239f">&#9670;&nbsp;</a></span>insertPairDescriptor()</h2>
+<a id="ab3c17cef60e90856f3e9127918bba8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c17cef60e90856f3e9127918bba8ac">&#9670;&nbsp;</a></span>insertMmposDescriptor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AccessUnit::insertMmposDescriptor </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert mmpos descriptor value inside the corresponding block in the access unit's payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>string representing the value of the mmpos descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a79c009353f31a4588a8e775c68ce25e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79c009353f31a4588a8e775c68ce25e2">&#9670;&nbsp;</a></span>insertMmtypeDescriptor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AccessUnit::insertMmtypeDescriptor </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert mmtype descriptor value inside the corresponding block in the access unit's payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>string representing the value of the mmtype descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a4ff5022abde9e201884c265613023d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff5022abde9e201884c265613023d20">&#9670;&nbsp;</a></span>insertPairDescriptor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,20 +596,14 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
         <tr>
           <td class="memname">void AccessUnit::insertPairDescriptor </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>referenceID</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>distance</em>&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -501,9 +616,8 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 <p>Inserts pair descriptor value inside the corresponding block in the access unit's payload. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>represents the type of pair descriptor value </td></tr>
-    <tr><td class="paramname">referenceID</td><td>represents the id of the reference sequence </td></tr>
-    <tr><td class="paramname">distance</td><td>represents the distance of the read pairs </td></tr>
+    <tr><td class="paramname">value</td><td>string representing the value of the pair descriptor </td></tr>
+    <tr><td class="paramname">size</td><td>uinsigned integer representing the size of the value of the pair descriptor </td></tr>
   </table>
   </dd>
 </dl>
@@ -585,6 +699,44 @@ std::vector&lt; <a class="el" href="classAccessUnitBlock.html">AccessUnitBlock</
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>unsigned int representing the value of the rlen descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="aa4ce8def181b640cf82de90aade64a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ce8def181b640cf82de90aade64a1f">&#9670;&nbsp;</a></span>insertSclipsDescriptor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AccessUnit::insertSclipsDescriptor </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts soft clips descriptor value inside the corresponding block in the access unit's payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>string representing the value of the sclips descriptor </td></tr>
+    <tr><td class="paramname">size</td><td>uinsigned integer representing the size of the value of the pair descriptor </td></tr>
   </table>
   </dd>
 </dl>

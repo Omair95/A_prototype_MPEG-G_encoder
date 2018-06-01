@@ -22,17 +22,3 @@ AccessUnit_I::AccessUnit_I(uint32_t id) {
 }
 
 AccessUnit_I::~AccessUnit_I() = default;
-
-void AccessUnit_I::insertMmposDescriptor(uint16_t value) {
-    descriptors[5].insertValue(std::to_string(value));
-}
-
-void AccessUnit_I::insertMmtypeDescriptor(uint8_t value) {
-    descriptors[6].insertValue(std::to_string(value));
-}
-
-void AccessUnit_I::insertSclipsDescriptor(std::vector<std::pair<std::string, int> >& sclips) {
-    for (const auto &sclip : sclips) {
-        descriptors[7].insertValue(sclip);
-    }
-}

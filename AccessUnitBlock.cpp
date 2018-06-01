@@ -12,7 +12,10 @@ AccessUnitBlock::~AccessUnitBlock() { }
 
 void AccessUnitBlock::insertValue(std::pair<std::string, uint8_t>& value) {
     descriptor.emplace_back(value);
-    block_size += sizeof(int);
+    if (value.second == 8) block_size += sizeof(uint8_t);
+    else if (value.second == 16) block_size += sizeof(uint16_t);
+    else if (value.second == 32) block_size += sizeof(uint32_t);
+    else if (value.second == 64) block_size += sizeof(uint16_t);
 }
 
 std::vector<std::pair<std::string, uint8_t > > AccessUnitBlock::getPayload() {
@@ -21,10 +24,4 @@ std::vector<std::pair<std::string, uint8_t > > AccessUnitBlock::getPayload() {
 
 uint32_t AccessUnitBlock::getPayloadSize() {
     return block_size;
-}
-
-void AccessUnitBlock::write() {
-    for (int i = 0; i < descriptor.size(); ++i) {
-        std::cout << descriptor[i].first << std::endl;
-    }
 }

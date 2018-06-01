@@ -159,8 +159,11 @@ void dispatcher() {
             AU_P->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
-            AU_P->insertPairDescriptor(pair);
+            std::vector<std::pair<std::string, uint8_t> > pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+
+            for (int i = 0; i < pair.size(); ++i) {
+                AU_P->insertPairDescriptor(pair[i].first, pair[i].second);
+            }
 
             antTagsP = tagsReads_it->second.second;
 
@@ -218,13 +221,16 @@ void dispatcher() {
             AU_N->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
-            AU_N->insertPairDescriptor(pair);
+            std::vector<std::pair<std::string, uint8_t> > pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+
+            for (int i = 0; i < pair.size(); ++i) {
+                AU_N->insertPairDescriptor(pair[i].first, pair[i].second);
+            }
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(reads_it->second.first);
             for (int i = 0; i < mmpos.size(); ++i) {
-                static_cast<AccessUnit_N*> (AU_N)->insertMmposDescriptor(mmpos[i].first);
+                AU_N->insertMmposDescriptor(std::to_string(mmpos[i].first));
             }
 
             antTagsN = tagsReads_it->second.second;
@@ -284,16 +290,19 @@ void dispatcher() {
             AU_M->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
-            AU_M->insertPairDescriptor(pair);
+            std::vector<std::pair<std::string, uint8_t> > pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+
+            for (int i = 0; i < pair.size(); ++i) {
+                AU_M->insertPairDescriptor(pair[i].first, pair[i].second);
+            }
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(reads_it->second.first);
-            for (int i = 0; i < mmpos.size(); ++i) static_cast<AccessUnit_M*> (AU_M)->insertMmposDescriptor(mmpos[i].first);
+            for (int i = 0; i < mmpos.size(); ++i) AU_M->insertMmposDescriptor(std::to_string(mmpos[i].first));
 
             // get mmtype descriptor
             std::vector<uint8_t> mmtype = u.getMmtypeDescriptor(mmpos);
-            for (int i = 0; i < mmtype.size(); ++i) static_cast<AccessUnit_M*> (AU_M)->insertMmtypeDescriptor(mmtype[i]);
+            for (int i = 0; i < mmtype.size(); ++i) AU_M->insertMmtypeDescriptor(std::to_string(mmtype[i]));
 
             antTagsM = tagsReads_it->second.second;
 
@@ -352,24 +361,29 @@ void dispatcher() {
             AU_I->insertRlenDescriptor(rlen);
 
             // get pair descriptor
-            std::string pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
-            AU_I->insertPairDescriptor(pair);
+            std::vector<std::pair<std::string, uint8_t> > pair = u.getPairDescriptor(reads_it->second.first, reads_it->second.second);
+
+            for (int i = 0; i < pair.size(); ++i) {
+                AU_I->insertPairDescriptor(pair[i].first, pair[i].second);
+            }
 
             // get mmpos descriptor
             std::vector<std::pair<uint16_t, std::string> > mmpos = u.getMmposValues(reads_it->second.first);
-            for (int i = 0; i < mmpos.size(); ++i) static_cast<AccessUnit_I*> (AU_I)->insertMmposDescriptor(mmpos[i].first);
+            for (int i = 0; i < mmpos.size(); ++i) AU_I->insertMmposDescriptor(std::to_string(mmpos[i].first));
 
             // get mmtype descriptor
             std::vector<uint8_t> mmtype = u.getMmtypeDescriptor(mmpos);
-            for (int i = 0; i < mmtype.size(); ++i) static_cast<AccessUnit_I*> (AU_I)->insertMmtypeDescriptor(mmtype[i]);
+            for (int i = 0; i < mmtype.size(); ++i) AU_I->insertMmtypeDescriptor(std::to_string(mmtype[i]));
 
             // get clips descriptor
             std::string read1_cigar = u.getCigar(reads_it->second.first.cigar);
             std::string read2_cigar = u.getCigar(reads_it->second.second.cigar);
 
             if (read1_cigar.find('S') != std::string::npos or read2_cigar.find('S') != std::string::npos) {
-                std::vector<std::pair<std::string, int> > clips = u.getClipsDescriptor(tagsReads_it->second.first, AU_I->getReadsCount() - 1);
-                static_cast<AccessUnit_I*> (AU_I)->insertSclipsDescriptor(clips);
+                std::vector<std::pair<std::string, uint8_t> > clips = u.getClipsDescriptor(tagsReads_it->second.first, AU_I->getReadsCount() - 1);
+                for (int i = 0; i < clips.size(); ++i) {
+                    AU_I->insertSclipsDescriptor(clips[i].first, clips[i].second);
+                }
             }
 
             antTagsI = tagsReads_it->second.second;
@@ -420,7 +434,7 @@ int main () {
 
     // loop that reads the file and pairs the mate reads
     int count = 1;
-    while (!atEnd(bamFileIn) and count <= 5000) {
+    while (!atEnd(bamFileIn) and count <= 50000) {
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -453,7 +467,7 @@ int main () {
     // Use cases are shown
     std::cout << "PROTECTION    : 1 " << std::endl;
     std::cout << "RANDOM ACCESS : 2 " << std::endl;
-    std::cout << "NONE          : 3 " << std::endl;
+    std::cout << "ENCODE        : 3 " << std::endl;
     std::cout << "Enter use case : ";
 
     int useCase;
@@ -508,12 +522,14 @@ int main () {
             std::cout << std::endl;
         } else if (useCase == 3) {
             // end the use cases loop
+            if (not useCase1 and not useCase2) std::cout << "Dispatching and encoding..." << std::endl;
+
             break;
         }
 
         std::cout << "PROTECTION    : 1 " << std::endl;
         std::cout << "RANDOM ACCESS : 2 " << std::endl;
-        std::cout << "NONE          : 3 " << std::endl;
+        std::cout << "ENCODE        : 3 " << std::endl;
         std::cout << "Enter use case : ";
     }
 

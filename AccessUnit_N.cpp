@@ -22,8 +22,3 @@ AccessUnit_N::AccessUnit_N(uint32_t id) {
 }
 
 AccessUnit_N::~AccessUnit_N() = default;
-
-void AccessUnit_N::insertMmposDescriptor(uint16_t value) {
-    descriptors[5].insertValue(std::to_string(value));
-    ++mm_threshold;
-}

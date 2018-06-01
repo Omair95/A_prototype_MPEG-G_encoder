@@ -639,21 +639,21 @@ uint8_t Utils::getRlenDescriptor(BamAlignmentRecord& record) {
     return getSequenceLength(record);
 }
 
-std::string  Utils::getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRecord& record2) {
-    std::string result = "";
+std::vector<std::pair<std::string, uint8_t> > Utils::getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRecord& record2) {
+    std::vector<std::pair<std::string, uint8_t > > result;
     if (Utils::isPaired(record, record2)) {
         uint16_t distance = Utils::reads_distance(record);
-        result += std::to_string(distance);
+        result.emplace_back(std::to_string(distance), 64);
         return result;
     }
 
     if (record.beginPos == record.pNext) {
         if (record.flag & 64) {
             std::string type ="7fff";
-            result += type;
+            result.emplace_back(type, 16);
         } else {
             std::string type = "8001";
-            result += type;
+            result.emplace_back(type, 16);
         }
         return result;
     }
@@ -663,15 +663,15 @@ std::string  Utils::getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRe
             std::string type = "7ffd";
             uint32_t distance = record.pNext;
 
-            result += type;
-            result += std::to_string(distance);
+            result.emplace_back(type, 16);
+            result.emplace_back(std::to_string(distance), 32);
             return result;
         } else {
             std::string type = "8003";
             uint32_t distance = record.pNext;
 
-            result += type;
-            result += std::to_string(distance);
+            result.emplace_back(type, 16);
+            result.emplace_back(std::to_string(distance), 32);
             return result;
         }
     } else {
@@ -680,22 +680,19 @@ std::string  Utils::getPairDescriptor(BamAlignmentRecord& record, BamAlignmentRe
             uint8_t referenceID = record.rNextId;
             uint32_t distance = record.pNext;
 
-            result += type;
-            result += ":";
-            result += std::to_string(referenceID);
-            result += ":";
-            result += std::to_string(distance);
+            result.emplace_back(type, 16);
+            result.emplace_back(std::to_string(referenceID), 8);
+            result.emplace_back(std::to_string(distance), 32);
+
             return result;
         } else {
             std::string type = "8002";
             uint8_t referenceID = record.rNextId;
             uint32_t distance = record.pNext;
 
-            result += type;
-            result += ":";
-            result += std::to_string(referenceID);
-            result += ":";
-            result += std::to_string(distance);
+            result.emplace_back(type, 16);
+            result.emplace_back(std::to_string(referenceID), 8);
+            result.emplace_back(std::to_string(distance), 32);
 
             return result;
         }
@@ -720,8 +717,8 @@ std::vector<uint8_t> Utils::getMmtypeDescriptor(std::vector<std::pair<uint16_t, 
     return result;
 }
 
-std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord& record, uint32_t id) {
-    std::vector <std::pair<std::string, int> > clips_descriptor;
+std::vector<std::pair<std::string, uint8_t> > Utils::getClipsDescriptor(MpeggRecord& record, uint32_t id) {
+    std::vector <std::pair<std::string, uint8_t> > clips_descriptor;
     std::string read1_cigar = record.ecigar_string[0][1], read2_cigar;
     std::string read1_sequence = record.sequence[0], read2_sequence;
     auto n = std::count(read1_cigar.begin(), read1_cigar.end(), '(');
@@ -732,7 +729,7 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
         // get and write id to file
         uint32_t idclip = id;
         uint32_t littleEndianID = boost::endian::native_to_little(idclip);
-        clips_descriptor.emplace_back(idclip, 32);
+        clips_descriptor.emplace_back(std::to_string(idclip), 32);
 
         // get and write pos of the soft clip
         uint8_t flagPos;
@@ -749,7 +746,7 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
             pos = read1_cigar.rfind('(');
         }
         uint8_t littleEndianFlagPos = boost::endian::native_to_little(flagPos);
-        clips_descriptor.emplace_back(flagPos, 8);
+        clips_descriptor.emplace_back(std::to_string(flagPos), 8);
 
         // get and write base sequences
         if (flagPos == 0x00) {
@@ -768,13 +765,13 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
 
             for (int i = 0; i < f; ++i) {
                 uint8_t c = read1_sequence[i];
-                clips_descriptor.emplace_back(c, 8);
+                clips_descriptor.emplace_back(std::to_string(c), 8);
             }
 
             if (n > 1) {
                 uint8_t terminator = 0xfe;
                 uint8_t littleEndianTerminator = boost::endian::native_to_little(terminator);
-                clips_descriptor.emplace_back(terminator, 8);
+                clips_descriptor.emplace_back(std::to_string(terminator), 8);
             }
         } else if (flagPos == 0x01) {
             int a = 0, b = 0, f = 0;
@@ -792,7 +789,7 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
 
             for (int i = read1_sequence.size() - 1 - f; i < read1_sequence.size() - 1; ++i) {
                 uint8_t c = read1_sequence[i];
-                clips_descriptor.emplace_back(c, 8);
+                clips_descriptor.emplace_back(std::to_string(c), 8);
             }
             result += read1_sequence.substr(read1_sequence.size() - f, read1_sequence.size() - 1);
         }
@@ -801,7 +798,7 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
     if (record.number_of_segments == 1) {
         uint8_t terminator = 0xff;
         uint8_t littleEndianTerminator = boost::endian::native_to_little(terminator);
-        clips_descriptor.emplace_back(terminator, 8);
+        clips_descriptor.emplace_back(std::to_string(terminator), 8);
         return clips_descriptor;
     }
 
@@ -813,20 +810,18 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
 
     if (k == 0) {
         uint8_t terminator = 0xff;
-        clips_descriptor.emplace_back(terminator, 8);
+        clips_descriptor.emplace_back(std::to_string(terminator), 8);
         return clips_descriptor;
     } else if (n != 0) {
         uint8_t terminator = 0xfe;
-        clips_descriptor.emplace_back(terminator, 8);
+        clips_descriptor.emplace_back(std::to_string(terminator), 8);
     }
 
     for (int i = 0; i < k; ++i) {
-        std::string result;
-
         // get and write id to file
         uint32_t idclip = id;
         uint32_t littleEndianID = boost::endian::native_to_little(idclip);
-        clips_descriptor.emplace_back(idclip, 8);
+        clips_descriptor.emplace_back(std::to_string(idclip), 32);
 
         // get and write pos of the soft clip
         uint8_t flagPos;
@@ -843,7 +838,7 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
             pos = read2_cigar.rfind('(');
         }
         uint8_t littleEndianFlagPos = boost::endian::native_to_little(flagPos);
-        clips_descriptor.emplace_back(flagPos, 8);
+        clips_descriptor.emplace_back(std::to_string(flagPos), 8);
 
         // get and write base sequences
         if (flagPos == 0x02) {
@@ -861,14 +856,13 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
 
             for (int i = 0; i < f; ++i) {
                 uint8_t c = read2_sequence[i];
-                clips_descriptor.emplace_back(c, 8);
+                clips_descriptor.emplace_back(std::to_string(c), 8);
             }
-            result += read2_sequence.substr(0, f);  // M bases
             uint8_t terminator;
 
             if (k > 1) terminator = 0xfe;
             else terminator = 0xff;
-            clips_descriptor.emplace_back(terminator, 8);
+            clips_descriptor.emplace_back(std::to_string(terminator), 8);
 
         } else if (flagPos == 0x03) {
             int a = 0, b = 0, f;
@@ -885,13 +879,11 @@ std::vector<std::pair<std::string, int> > Utils::getClipsDescriptor(MpeggRecord&
 
             for (int i = read2_sequence.size() - f; i < read2_sequence.size(); ++i) {
                 uint8_t c = read2_sequence[i];
-                clips_descriptor.emplace_back(c, 8);
+                clips_descriptor.emplace_back(std::to_string(c), 8);
             }
-            result += read2_sequence.substr(read2_sequence.size() - f, read2_sequence.size() - 1);
 
             uint8_t terminator = 0xff;
-            clips_descriptor.emplace_back(terminator, 8);
-            result += std::to_string(terminator);
+            clips_descriptor.emplace_back(std::to_string(terminator), 8);
         }
     }
 

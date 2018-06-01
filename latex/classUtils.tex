@@ -15,52 +15,64 @@ Auxiliary class that contains useful methods from the main class  \href{mailto:O
 \hyperlink{classUtils_a452e78692c87ed5c7c993b6c6ac4981a}{Utils} ()
 \begin{DoxyCompactList}\small\item\em identifier of the genomic record in the output mpegg format \end{DoxyCompactList}\item 
 \hyperlink{classUtils_afa5e70facffc286607498e7edb639b8a}{$\sim$\+Utils} ()
-\begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
+\item 
 std\+::string \hyperlink{classUtils_a612bb61872bc69a806c0159dcd3da28c}{get\+Extended\+Cigar} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Get extended cigar of the read. \end{DoxyCompactList}\item 
+\item 
 Bam\+Alignment\+Record \hyperlink{classUtils_acba7464c0972dceade69f1f1aef4e5f4}{get\+Second\+Record} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Get the second read for the read pair. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classUtils_a6e24ee791d9ce74a9e8991c8bf7cecdf}{update\+Record} (Bam\+Alignment\+Record \&record, int \&pos)
-\begin{DoxyCompactList}\small\item\em Update the second read from the pair with a new value. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classUtils_ab384d430e1cc5e0cc1ce1913eeab7e82}{is\+ClassP} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Determine if the read belongs to the class P, reads perfectly matching the reference sequence. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classUtils_a68dc1efdf9895d4c63a0a78a09d407d4}{is\+ClassN} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Determine if the read belongs to class N, reads containing mismatches which are unknonwn bases only. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classUtils_a2ab4c3d1059e841aaa81bf6eb7650c46}{is\+ClassM} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Determine if the read belongs to class M, reads contanining at least one substitution, optionally unknown bases and no insertion, deletions and clipped bases. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classUtils_a4e19b89b708e23964398b1e561686423}{is\+ClassI} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Determine if the read belongs to class I, reads contanining at least one insertion, deletion or clippled base, and optionally unknown bases or substitution. \end{DoxyCompactList}\item 
+\item 
 uint8\+\_\+t \hyperlink{classUtils_a75b0e41bc884a3fcebb4f55c45855d82}{get\+Class\+Type} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Determine the data class where a read belongs to. \end{DoxyCompactList}\item 
+\item 
 int \hyperlink{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}{get\+N\+Mtag} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Extract the value of the NM tag from the read. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classUtils_a5a62399a8bb675cc0d41846a2e38cfc5}{convert\+To\+Mpegg\+Record} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&result, Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Converts the read or paired read to the mpegg output format. \end{DoxyCompactList}\item 
+\item 
 std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \hyperlink{classUtils_af2edb16666facfd3fe4e72a0172ee811}{get\+Mmpos\+Values} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Return and writes the mmpos descriptor values to the respective file according to the class type. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classUtils_abddd37adce88799fc8a66f7779c407bb}{remove\+First\+Read} ()
-\begin{DoxyCompactList}\small\item\em Remove the first read from the list of paired reads. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classUtils_a23ce2e6de05c4574f2296353f03fc9db}{get\+Allreads} (std\+::multimap$<$ int, std\+::pair$<$ Bam\+Alignment\+Record, Bam\+Alignment\+Record $>$ $>$ \&all\+Reads)
-\begin{DoxyCompactList}\small\item\em Get all the paired reads. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classUtils_a20d62b8e6495536108e7bfe1b955355a}{insert\+Access\+Unit} (\hyperlink{classAccessUnit}{Access\+Unit} au)
-\begin{DoxyCompactList}\small\item\em Inserts a new access unit to the list of access units. \end{DoxyCompactList}\item 
-void \hyperlink{classUtils_a1f13b160cd02b1fdf44e6ff8ba2c2406}{get\+All\+Access\+Units} (std\+::vector$<$ \hyperlink{classAccessUnit}{Access\+Unit} $>$ \&au)
-\begin{DoxyCompactList}\small\item\em Get all the access units stored. \end{DoxyCompactList}\item 
+\item 
+std\+::vector$<$ \hyperlink{classAccessUnit}{Access\+Unit} $>$ \hyperlink{classUtils_a06509b7256bb23ab83d1d9b05824d171}{get\+All\+Access\+Units} ()
+\item 
 void \hyperlink{classUtils_aa2bffe3dfec78617ebdf207ff0fa0820}{insert\+Read} (Bam\+Alignment\+Record first, Bam\+Alignment\+Record second)
-\begin{DoxyCompactList}\small\item\em Inserts a new read pair to the list of paired reads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+std\+::pair$<$ uint8\+\_\+t, uint8\+\_\+t $>$ \hyperlink{classUtils_ac01e102c41f01dac5fa7b444e8f58144}{get\+Rcomp\+Descriptor} (Bam\+Alignment\+Record \&record, Bam\+Alignment\+Record \&record2)
+\item 
+uint8\+\_\+t \hyperlink{classUtils_a6f019bd3209c61dc69a44aabf96224ff}{get\+Flag\+Descriptor} (Bam\+Alignment\+Record \&record)
+\item 
+uint8\+\_\+t \hyperlink{classUtils_a208c512bbb56f81188acb4ed443356fa}{get\+Rlen\+Descriptor} (Bam\+Alignment\+Record \&record)
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, uint8\+\_\+t $>$ $>$ \hyperlink{classUtils_af1a1bd5a323ae5c3b06a0670dcdfdda2}{get\+Pair\+Descriptor} (Bam\+Alignment\+Record \&record, Bam\+Alignment\+Record \&record2)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \hyperlink{classUtils_a7111fc62aa94af561f7c8413b3de4742}{get\+Mmtype\+Descriptor} (std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&mmpos)
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, uint8\+\_\+t $>$ $>$ \hyperlink{classUtils_ab2e599e7cb325c8cf68840530cabe077}{get\+Clips\+Descriptor} (\hyperlink{structMpeggRecord}{Mpegg\+Record} \&record, uint32\+\_\+t id)
+\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static std\+::string \hyperlink{classUtils_a61182e6d5c700eedfaff392b51826af3}{get\+Cigar} (String$<$ Cigar\+Element$<$$>$ $>$ \&r\+Cigar)
-\begin{DoxyCompactList}\small\item\em Convert from a string$<$cigar\+Element$>$ to a std\+::string. \end{DoxyCompactList}\item 
+\item 
 static uint16\+\_\+t \hyperlink{classUtils_a02d521d4d7cecbe20acab176d08b7857}{reads\+\_\+distance} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Get the distance between two read pairs. \end{DoxyCompactList}\item 
+\item 
 static std\+::string \hyperlink{classUtils_a58dcdc1dd071936078799ee35d5f2502}{get\+M\+Dtag} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em Extract the value of the MD tag from the read. \end{DoxyCompactList}\item 
+\item 
 static bool \hyperlink{classUtils_a2051c7e16daa8b646bfb69fc9a7ff9e0}{is\+Paired} (Bam\+Alignment\+Record first, Bam\+Alignment\+Record second)
-\begin{DoxyCompactList}\small\item\em Check if a read is paired or not. \end{DoxyCompactList}\item 
+\item 
 static uint8\+\_\+t \hyperlink{classUtils_a40949f3bf1253166d2ed7933e9448e20}{get\+Sequence\+Length} (Bam\+Alignment\+Record \&record)
-\begin{DoxyCompactList}\small\item\em get the sequence length of the read \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -91,11 +103,7 @@ void
 \subsubsection{\texorpdfstring{$\sim$\+Utils()}{~Utils()}}
 {\footnotesize\ttfamily Utils\+::$\sim$\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Destructor method. 
-
-
+Destructor method 
 \begin{DoxyParams}{Parameters}
 {\em void} & \\
 \hline
@@ -112,11 +120,7 @@ void
 \subsubsection{\texorpdfstring{convert\+To\+Mpegg\+Record()}{convertToMpeggRecord()}}
 {\footnotesize\ttfamily void Utils\+::convert\+To\+Mpegg\+Record (\begin{DoxyParamCaption}\item[{\hyperlink{structMpeggRecord}{Mpegg\+Record} \&}]{result,  }\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Converts the read or paired read to the mpegg output format. 
-
-
+Converts the read or paired read to the mpegg output format 
 \begin{DoxyParams}{Parameters}
 {\em record} & first read from the pair \\
 \hline
@@ -124,17 +128,13 @@ Converts the read or paired read to the mpegg output format.
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classUtils_a1f13b160cd02b1fdf44e6ff8ba2c2406}\label{classUtils_a1f13b160cd02b1fdf44e6ff8ba2c2406}} 
+\mbox{\Hypertarget{classUtils_a06509b7256bb23ab83d1d9b05824d171}\label{classUtils_a06509b7256bb23ab83d1d9b05824d171}} 
 \index{Utils@{Utils}!get\+All\+Access\+Units@{get\+All\+Access\+Units}}
 \index{get\+All\+Access\+Units@{get\+All\+Access\+Units}!Utils@{Utils}}
 \subsubsection{\texorpdfstring{get\+All\+Access\+Units()}{getAllAccessUnits()}}
-{\footnotesize\ttfamily void Utils\+::get\+All\+Access\+Units (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{classAccessUnit}{Access\+Unit} $>$ \&}]{au }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classAccessUnit}{Access\+Unit} $>$ Utils\+::get\+All\+Access\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Get all the access units stored. 
-
-
+Get all the access units stored 
 \begin{DoxyParams}{Parameters}
 {\em au} & will contain the value of all access units \\
 \hline
@@ -148,11 +148,7 @@ void
 \subsubsection{\texorpdfstring{get\+Allreads()}{getAllreads()}}
 {\footnotesize\ttfamily void Utils\+::get\+Allreads (\begin{DoxyParamCaption}\item[{std\+::multimap$<$ int, std\+::pair$<$ Bam\+Alignment\+Record, Bam\+Alignment\+Record $>$ $>$ \&}]{all\+Reads }\end{DoxyParamCaption})}
 
-
-
-Get all the paired reads. 
-
-
+Get all the paired reads 
 \begin{DoxyParams}{Parameters}
 {\em all\+Reads} & will contain the value of the paired readss \\
 \hline
@@ -166,11 +162,7 @@ void
 \subsubsection{\texorpdfstring{get\+Cigar()}{getCigar()}}
 {\footnotesize\ttfamily std\+::string Utils\+::get\+Cigar (\begin{DoxyParamCaption}\item[{String$<$ Cigar\+Element$<$$>$ $>$ \&}]{r\+Cigar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Convert from a string$<$cigar\+Element$>$ to a std\+::string. 
-
-
+Convert from a string$<$cigar\+Element$>$ to a std\+::string 
 \begin{DoxyParams}{Parameters}
 {\em r\+Cigar} & value to be converted \\
 \hline
@@ -184,11 +176,7 @@ converted value to string
 \subsubsection{\texorpdfstring{get\+Class\+Type()}{getClassType()}}
 {\footnotesize\ttfamily uint8\+\_\+t Utils\+::get\+Class\+Type (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Determine the data class where a read belongs to. 
-
-
+Determine the data class where a read belongs to 
 \begin{DoxyParams}{Parameters}
 {\em record} & is the first read from the pair \\
 \hline
@@ -196,17 +184,29 @@ Determine the data class where a read belongs to.
 \begin{DoxyReturn}{Returns}
 integer indicating the type of data class of the read 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_ab2e599e7cb325c8cf68840530cabe077}\label{classUtils_ab2e599e7cb325c8cf68840530cabe077}} 
+\index{Utils@{Utils}!get\+Clips\+Descriptor@{get\+Clips\+Descriptor}}
+\index{get\+Clips\+Descriptor@{get\+Clips\+Descriptor}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{get\+Clips\+Descriptor()}{getClipsDescriptor()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ std\+::string, uint8\+\_\+t $>$ $>$ Utils\+::get\+Clips\+Descriptor (\begin{DoxyParamCaption}\item[{\hyperlink{structMpeggRecord}{Mpegg\+Record} \&}]{record,  }\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+get soft clip descriptor value of the mpegg record 
+\begin{DoxyParams}{Parameters}
+{\em record} & mpegg record \\
+\hline
+{\em id} & represents the number of reads stored in the access unit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector representing the values of the soft clips descriptor 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classUtils_a612bb61872bc69a806c0159dcd3da28c}\label{classUtils_a612bb61872bc69a806c0159dcd3da28c}} 
 \index{Utils@{Utils}!get\+Extended\+Cigar@{get\+Extended\+Cigar}}
 \index{get\+Extended\+Cigar@{get\+Extended\+Cigar}!Utils@{Utils}}
 \subsubsection{\texorpdfstring{get\+Extended\+Cigar()}{getExtendedCigar()}}
 {\footnotesize\ttfamily std\+::string Utils\+::get\+Extended\+Cigar (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Get extended cigar of the read. 
-
-
+Get extended cigar of the read 
 \begin{DoxyParams}{Parameters}
 {\em record} & read to be treated \\
 \hline
@@ -214,17 +214,27 @@ Get extended cigar of the read.
 \begin{DoxyReturn}{Returns}
 Extended cigar of the read 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a6f019bd3209c61dc69a44aabf96224ff}\label{classUtils_a6f019bd3209c61dc69a44aabf96224ff}} 
+\index{Utils@{Utils}!get\+Flag\+Descriptor@{get\+Flag\+Descriptor}}
+\index{get\+Flag\+Descriptor@{get\+Flag\+Descriptor}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{get\+Flag\+Descriptor()}{getFlagDescriptor()}}
+{\footnotesize\ttfamily uint8\+\_\+t Utils\+::get\+Flag\+Descriptor (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
+get flags descriptor of the read 
+\begin{DoxyParams}{Parameters}
+{\em record} & read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair representing the first and second value of the rcomp descriptor 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classUtils_a58dcdc1dd071936078799ee35d5f2502}\label{classUtils_a58dcdc1dd071936078799ee35d5f2502}} 
 \index{Utils@{Utils}!get\+M\+Dtag@{get\+M\+Dtag}}
 \index{get\+M\+Dtag@{get\+M\+Dtag}!Utils@{Utils}}
 \subsubsection{\texorpdfstring{get\+M\+Dtag()}{getMDtag()}}
 {\footnotesize\ttfamily std\+::string Utils\+::get\+M\+Dtag (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Extract the value of the MD tag from the read. 
-
-
+Extract the value of the MD tag from the read 
 \begin{DoxyParams}{Parameters}
 {\em record} & read to be treated \\
 \hline
@@ -238,11 +248,7 @@ string containing the value of the MD tag
 \subsubsection{\texorpdfstring{get\+Mmpos\+Values()}{getMmposValues()}}
 {\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ Utils\+::get\+Mmpos\+Values (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Return and writes the mmpos descriptor values to the respective file according to the class type. 
-
-
+Return and writes the mmpos descriptor values to the respective file according to the class type 
 \begin{DoxyParams}{Parameters}
 {\em record} & first read from the read pair \\
 \hline
@@ -250,17 +256,27 @@ Return and writes the mmpos descriptor values to the respective file according t
 \begin{DoxyReturn}{Returns}
 a vector containing the positions and type of mismatches of the read or read pair 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a7111fc62aa94af561f7c8413b3de4742}\label{classUtils_a7111fc62aa94af561f7c8413b3de4742}} 
+\index{Utils@{Utils}!get\+Mmtype\+Descriptor@{get\+Mmtype\+Descriptor}}
+\index{get\+Mmtype\+Descriptor@{get\+Mmtype\+Descriptor}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{get\+Mmtype\+Descriptor()}{getMmtypeDescriptor()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Utils\+::get\+Mmtype\+Descriptor (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ uint16\+\_\+t, std\+::string $>$ $>$ \&}]{mmpos }\end{DoxyParamCaption})}
+
+get mmtype descriptor values for the read pair 
+\begin{DoxyParams}{Parameters}
+{\em mmpos} & vector representing the mismatmatch positions and the type of mistmatch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector representing the type of mismatches 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}\label{classUtils_a5e6b1fddcaa2740687c8c787e8d1e9cb}} 
 \index{Utils@{Utils}!get\+N\+Mtag@{get\+N\+Mtag}}
 \index{get\+N\+Mtag@{get\+N\+Mtag}!Utils@{Utils}}
 \subsubsection{\texorpdfstring{get\+N\+Mtag()}{getNMtag()}}
 {\footnotesize\ttfamily int Utils\+::get\+N\+Mtag (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Extract the value of the NM tag from the read. 
-
-
+Extract the value of the NM tag from the read 
 \begin{DoxyParams}{Parameters}
 {\em record} & read to be treated \\
 \hline
@@ -268,17 +284,59 @@ Extract the value of the NM tag from the read.
 \begin{DoxyReturn}{Returns}
 integer containing the value of the NM tag 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_af1a1bd5a323ae5c3b06a0670dcdfdda2}\label{classUtils_af1a1bd5a323ae5c3b06a0670dcdfdda2}} 
+\index{Utils@{Utils}!get\+Pair\+Descriptor@{get\+Pair\+Descriptor}}
+\index{get\+Pair\+Descriptor@{get\+Pair\+Descriptor}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{get\+Pair\+Descriptor()}{getPairDescriptor()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ std\+::string, uint8\+\_\+t $>$ $>$ Utils\+::get\+Pair\+Descriptor (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record,  }\item[{Bam\+Alignment\+Record \&}]{record2 }\end{DoxyParamCaption})}
+
+get pair descriptor values of the read pair 
+\begin{DoxyParams}{Parameters}
+{\em record} & first read from the read pair \\
+\hline
+{\em record2} & second read from the read pair \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector representing the values of the pair descriptor for the read pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_ac01e102c41f01dac5fa7b444e8f58144}\label{classUtils_ac01e102c41f01dac5fa7b444e8f58144}} 
+\index{Utils@{Utils}!get\+Rcomp\+Descriptor@{get\+Rcomp\+Descriptor}}
+\index{get\+Rcomp\+Descriptor@{get\+Rcomp\+Descriptor}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{get\+Rcomp\+Descriptor()}{getRcompDescriptor()}}
+{\footnotesize\ttfamily std\+::pair$<$ uint8\+\_\+t, uint8\+\_\+t $>$ Utils\+::get\+Rcomp\+Descriptor (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record,  }\item[{Bam\+Alignment\+Record \&}]{record2 }\end{DoxyParamCaption})}
+
+get rcomp descriptor value of the read pair 
+\begin{DoxyParams}{Parameters}
+{\em first} & first read from the pair \\
+\hline
+{\em second} & second read from the pair \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair representing the first and second value of the rcomp descriptor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtils_a208c512bbb56f81188acb4ed443356fa}\label{classUtils_a208c512bbb56f81188acb4ed443356fa}} 
+\index{Utils@{Utils}!get\+Rlen\+Descriptor@{get\+Rlen\+Descriptor}}
+\index{get\+Rlen\+Descriptor@{get\+Rlen\+Descriptor}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{get\+Rlen\+Descriptor()}{getRlenDescriptor()}}
+{\footnotesize\ttfamily uint8\+\_\+t Utils\+::get\+Rlen\+Descriptor (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
+
+get rlen value of the read pair 
+\begin{DoxyParams}{Parameters}
+{\em record} & read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uinsigned integer representing the value of the rlen descriptor 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classUtils_acba7464c0972dceade69f1f1aef4e5f4}\label{classUtils_acba7464c0972dceade69f1f1aef4e5f4}} 
 \index{Utils@{Utils}!get\+Second\+Record@{get\+Second\+Record}}
 \index{get\+Second\+Record@{get\+Second\+Record}!Utils@{Utils}}
 \subsubsection{\texorpdfstring{get\+Second\+Record()}{getSecondRecord()}}
 {\footnotesize\ttfamily Bam\+Alignment\+Record Utils\+::get\+Second\+Record (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Get the second read for the read pair. 
-
-
+Get the second read for the read pair 
 \begin{DoxyParams}{Parameters}
 {\em record} & first read from the the pair \\
 \hline
@@ -292,11 +350,7 @@ second read of the pair
 \subsubsection{\texorpdfstring{get\+Sequence\+Length()}{getSequenceLength()}}
 {\footnotesize\ttfamily uint8\+\_\+t Utils\+::get\+Sequence\+Length (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
 get the sequence length of the read 
-
-
 \begin{DoxyParams}{Parameters}
 {\em record} & read record \\
 \hline
@@ -310,11 +364,7 @@ unsigned integer representing the length of the sequence
 \subsubsection{\texorpdfstring{insert\+Access\+Unit()}{insertAccessUnit()}}
 {\footnotesize\ttfamily void Utils\+::insert\+Access\+Unit (\begin{DoxyParamCaption}\item[{\hyperlink{classAccessUnit}{Access\+Unit}}]{au }\end{DoxyParamCaption})}
 
-
-
-Inserts a new access unit to the list of access units. 
-
-
+Inserts a new access unit to the list of access units 
 \begin{DoxyParams}{Parameters}
 {\em au} & access unit to be inserted \\
 \hline
@@ -328,11 +378,7 @@ void
 \subsubsection{\texorpdfstring{insert\+Read()}{insertRead()}}
 {\footnotesize\ttfamily void Utils\+::insert\+Read (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record}]{first,  }\item[{Bam\+Alignment\+Record}]{second }\end{DoxyParamCaption})}
 
-
-
-Inserts a new read pair to the list of paired reads. 
-
-
+Inserts a new read pair to the list of paired reads 
 \begin{DoxyParams}{Parameters}
 {\em first} & first read from the pair \\
 \hline
@@ -348,11 +394,7 @@ void
 \subsubsection{\texorpdfstring{is\+Class\+I()}{isClassI()}}
 {\footnotesize\ttfamily bool Utils\+::is\+ClassI (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Determine if the read belongs to class I, reads contanining at least one insertion, deletion or clippled base, and optionally unknown bases or substitution. 
-
-
+Determine if the read belongs to class I, reads contanining at least one insertion, deletion or clippled base, and optionally unknown bases or substitution 
 \begin{DoxyParams}{Parameters}
 {\em record} & is the first read from the pair \\
 \hline
@@ -366,11 +408,7 @@ bool indicating if the read belongs to class I
 \subsubsection{\texorpdfstring{is\+Class\+M()}{isClassM()}}
 {\footnotesize\ttfamily bool Utils\+::is\+ClassM (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Determine if the read belongs to class M, reads contanining at least one substitution, optionally unknown bases and no insertion, deletions and clipped bases. 
-
-
+Determine if the read belongs to class M, reads contanining at least one substitution, optionally unknown bases and no insertion, deletions and clipped bases 
 \begin{DoxyParams}{Parameters}
 {\em record} & first read from the pair \\
 \hline
@@ -384,11 +422,7 @@ bool indicating if the read belongs to class M
 \subsubsection{\texorpdfstring{is\+Class\+N()}{isClassN()}}
 {\footnotesize\ttfamily bool Utils\+::is\+ClassN (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Determine if the read belongs to class N, reads containing mismatches which are unknonwn bases only. 
-
-
+Determine if the read belongs to class N, reads containing mismatches which are unknonwn bases only 
 \begin{DoxyParams}{Parameters}
 {\em record} & first read from the pair \\
 \hline
@@ -402,11 +436,7 @@ bool indicating if the read belongs to class N
 \subsubsection{\texorpdfstring{is\+Class\+P()}{isClassP()}}
 {\footnotesize\ttfamily bool Utils\+::is\+ClassP (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})}
 
-
-
-Determine if the read belongs to the class P, reads perfectly matching the reference sequence. 
-
-
+Determine if the read belongs to the class P, reads perfectly matching the reference sequence 
 \begin{DoxyParams}{Parameters}
 {\em record} & first read of the pair \\
 \hline
@@ -420,11 +450,7 @@ bool indicating if the read belongs to class P
 \subsubsection{\texorpdfstring{is\+Paired()}{isPaired()}}
 {\footnotesize\ttfamily bool Utils\+::is\+Paired (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record}]{first,  }\item[{Bam\+Alignment\+Record}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Check if a read is paired or not. 
-
-
+Check if a read is paired or not 
 \begin{DoxyParams}{Parameters}
 {\em first} & first read from the pair \\
 \hline
@@ -440,11 +466,7 @@ void
 \subsubsection{\texorpdfstring{reads\+\_\+distance()}{reads\_distance()}}
 {\footnotesize\ttfamily uint16\+\_\+t Utils\+::reads\+\_\+distance (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Get the distance between two read pairs. 
-
-
+Get the distance between two read pairs 
 \begin{DoxyParams}{Parameters}
 {\em record} & is the first read from the pair \\
 \hline
@@ -458,11 +480,7 @@ integer representing the distance of the read pair
 \subsubsection{\texorpdfstring{remove\+First\+Read()}{removeFirstRead()}}
 {\footnotesize\ttfamily void Utils\+::remove\+First\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Remove the first read from the list of paired reads. 
-
-
+Remove the first read from the list of paired reads 
 \begin{DoxyParams}{Parameters}
 {\em void} & \\
 \hline
@@ -476,11 +494,7 @@ void
 \subsubsection{\texorpdfstring{update\+Record()}{updateRecord()}}
 {\footnotesize\ttfamily void Utils\+::update\+Record (\begin{DoxyParamCaption}\item[{Bam\+Alignment\+Record \&}]{record,  }\item[{int \&}]{pos }\end{DoxyParamCaption})}
 
-
-
-Update the second read from the pair with a new value. 
-
-
+Update the second read from the pair with a new value 
 \begin{DoxyParams}{Parameters}
 {\em record} & new value of the second pair \\
 \hline

@@ -21,50 +21,70 @@ void AccessUnit::setSequenceID(uint8_t id) {
 }
 
 void AccessUnit::insertPosdescriptor(uint32_t value) {
-    descriptors[0].insertValue(std::to_string(value));
+    std::pair<std::string, uint8_t> valor(std::to_string(value), 32);
+    descriptors[0].insertValue(valor);
 }
 
 void AccessUnit::insertRcompDescriptor(uint8_t value) {
-    descriptors[1].insertValue(std::to_string(value));
+    std::pair<std::string, uint8_t> valor(std::to_string(value), 8);
+    descriptors[1].insertValue(valor);
 }
 
 void AccessUnit::insertFlagsDescriptor(uint8_t value) {
-    descriptors[2].insertValue(std::to_string(value));
+    std::pair<std::string, uint8_t> valor(std::to_string(value), 8);
+    descriptors[2].insertValue(valor);
 }
 
 void AccessUnit::insertRlenDescriptor(uint8_t value) {
-    descriptors[3].insertValue(std::to_string(value));
+    std::pair<std::string, uint8_t> valor(std::to_string(value), 8);
+    descriptors[3].insertValue(valor);
 }
 
-void AccessUnit::insertPairDescriptor(std::string value) {
-    descriptors[4].insertValue(value);
+void AccessUnit::insertPairDescriptor(std::string value, uint8_t size) {
+    std::pair<std::string, uint8_t> valor(value, size);
+    descriptors[4].insertValue(valor);
 }
 
-std::vector<std::string> AccessUnit::getPosDescriptorValues() {
+void AccessUnit::insertMmposDescriptor(std::string value) {
+    std::pair<std::string, uint8_t> valor(value, 16);
+    descriptors[5].insertValue(valor);
+}
+
+void AccessUnit::insertMmtypeDescriptor(std::string value) {
+    std::pair<std::string, uint8_t> valor(value, 8);
+    descriptors[6].insertValue(valor);
+}
+
+void AccessUnit::insertSclipsDescriptor(std::string value, uint8_t size) {
+    std::pair<std::string, uint8_t> valor(value, size);
+    descriptors[7].insertValue(valor);
+}
+
+std::vector<std::pair<std::string, uint8_t > > AccessUnit::getPosDescriptorValues() {
     return descriptors[0].getPayload();
 }
 
-std::vector<std::string> AccessUnit::getRcompDescriptorValues() {
+std::vector<std::pair<std::string, uint8_t > > AccessUnit::getRcompDescriptorValues() {
     return descriptors[1].getPayload();
 }
 
-std::vector<std::string> AccessUnit::getFlagsDescriptorValues() {
+std::vector<std::pair<std::string, uint8_t > > AccessUnit::getFlagsDescriptorValues() {
     return descriptors[2].getPayload();
 }
 
-std::vector<std::string> AccessUnit::getRLenDescriptorValues() {
+std::vector<std::pair<std::string, uint8_t > > AccessUnit::getRLenDescriptorValues() {
     return descriptors[3].getPayload();
 }
 
-std::vector<std::string> AccessUnit::getPairDescriptorValues() {
+std::vector<std::pair<std::string, uint8_t > > AccessUnit::getPairDescriptorValues() {
     return descriptors[4].getPayload();
 }
 
-std::vector<std::string> AccessUnit::getMmposDescriptorValues() {
+std::vector<std::pair<std::string, uint8_t > >  AccessUnit::getMmposDescriptorValues() {
     return descriptors[5].getPayload();
 }
 
-std::vector<std::string> AccessUnit::getMmtypeDescriptorValues() {
+std::vector<std::pair<std::string, uint8_t > > AccessUnit::getMmtypeDescriptorValues() {
     return descriptors[6].getPayload();
 }
 

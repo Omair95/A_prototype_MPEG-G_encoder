@@ -91,46 +91,72 @@ public:
     void insertRlenDescriptor(uint8_t value);
 
     /** @brief Inserts pair descriptor value inside the corresponding block in the access unit's payload
-    * @param type represents the type of pair descriptor value
-     * @param referenceID represents the id of the reference sequence
-     * @param distance represents the distance of the read pairs
+    * @param value string representing the value of the pair descriptor
+     * @param size uinsigned integer representing the size of the value of the pair descriptor
     * @return void
     * */
-    void insertPairDescriptor(std::string value);
+    void insertPairDescriptor(std::string value, uint8_t size);
+
+    /** @brief Insert mmpos descriptor value inside the corresponding block in the access unit's payload
+    * @param value string representing the value of the mmpos descriptor
+    * @return void
+    * */
+    void insertMmposDescriptor(std::string value);
+
+    /** @brief Insert mmtype descriptor value inside the corresponding block in the access unit's payload
+    * @param value string representing the value of the mmtype descriptor
+    * @return void
+    * */
+    void insertMmtypeDescriptor(std::string value);
+
+    /** @brief Inserts soft clips descriptor value inside the corresponding block in the access unit's payload
+    * @param value string representing the value of the sclips descriptor
+     * @param size uinsigned integer representing the size of the value of the pair descriptor
+    * @return void
+    * */
+    void insertSclipsDescriptor(std::string value, uint8_t size);
 
     /** @brief Gets all the values of the pos descriptor in the access unit
     * @param void
     * @return void
     * */
-    std::vector<std::string> getPosDescriptorValues();
+    std::vector<std::pair<std::string, uint8_t > > getPosDescriptorValues();
 
     /** @brief Gets all the values of the rcomp descriptor in the access unit
     * @param void
     * @return void
     * */
-    std::vector<std::string> getRcompDescriptorValues();
+    std::vector<std::pair<std::string, uint8_t > > getRcompDescriptorValues();
 
     /** @brief Gets all the value of the flags descriptor in the access unit
     * @param void
     * @return void
     * */
-    std::vector<std::string> getFlagsDescriptorValues();
+    std::vector<std::pair<std::string, uint8_t > > getFlagsDescriptorValues();
 
     /** @brief Get all the values of the rlen descriptor in the access unit
     * @param void
     * @return void
     * */
-    std::vector<std::string> getRLenDescriptorValues();
+    std::vector<std::pair<std::string, uint8_t > > getRLenDescriptorValues();
 
     /** @brief Gets all the values of the pair descriptor in the access unit
     * @param void
     * @return void
     * */
-    std::vector<std::string> getPairDescriptorValues();
+    std::vector<std::pair<std::string, uint8_t > > getPairDescriptorValues();
 
-    std::vector<std::string> getMmposDescriptorValues();
+    /** @brief Gets all the values of the mmpos descriptor in the access unit
+    * @param void
+    * @return void
+    * */
+    std::vector<std::pair<std::string, uint8_t > > getMmposDescriptorValues();
 
-    std::vector<std::string> getMmtypeDescriptorValues();
+    /** @brief Gets all the values of the mmtype descriptor in the access unit
+    * @param void
+    * @return void
+    * */
+    std::vector<std::pair<std::string, uint8_t > > getMmtypeDescriptorValues();
 
     /** @brief Updates the numbers of reads stored in the access unit
     * @param void

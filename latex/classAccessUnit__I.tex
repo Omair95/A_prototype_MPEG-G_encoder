@@ -11,8 +11,7 @@ Access unit of type I\+: reads containing at least one insertion, deletion or cl
 
 
 
-Inheritance diagram for Access\+Unit\+\_\+I\+:
-\nopagebreak
+Inheritance diagram for Access\+Unit\+\_\+I\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Access\+Unit\+\_\+I\+:
 \end{figure}
 
 
-Collaboration diagram for Access\+Unit\+\_\+I\+:
-\nopagebreak
+Collaboration diagram for Access\+Unit\+\_\+I\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,13 +33,7 @@ Collaboration diagram for Access\+Unit\+\_\+I\+:
 \hyperlink{classAccessUnit__I_aecbf3a858199028c7087dc574d563297}{Access\+Unit\+\_\+I} (uint32\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Constructor method. \end{DoxyCompactList}\item 
 \hyperlink{classAccessUnit__I_a2e7f3017a1ddab582512d00ae1336dac}{$\sim$\+Access\+Unit\+\_\+I} ()
-\begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\item 
-void \hyperlink{classAccessUnit__I_a761754f1229fe7cf78833281a90005ae}{insert\+Mmpos\+Descriptor} (uint16\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Insert a single mmpos descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
-void \hyperlink{classAccessUnit__I_a322a02df826320da868ad848eded885b}{insert\+Mmtype\+Descriptor} (uint8\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Insert the mmtype descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\item 
-void \hyperlink{classAccessUnit__I_aa52235996105994359fccb6218566b6b}{insert\+Sclips\+Descriptor} (std\+::vector$<$ std\+::string $>$ \&sclips)
-\begin{DoxyCompactList}\small\item\em Insert the sclips descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -80,63 +72,6 @@ Destructor method.
 
 \begin{DoxyParams}{Parameters}
 {\em void} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
-
-
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{classAccessUnit__I_a761754f1229fe7cf78833281a90005ae}\label{classAccessUnit__I_a761754f1229fe7cf78833281a90005ae}} 
-\index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!insert\+Mmpos\+Descriptor@{insert\+Mmpos\+Descriptor}}
-\index{insert\+Mmpos\+Descriptor@{insert\+Mmpos\+Descriptor}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
-\subsubsection{\texorpdfstring{insert\+Mmpos\+Descriptor()}{insertMmposDescriptor()}}
-{\footnotesize\ttfamily void Access\+Unit\+\_\+\+I\+::insert\+Mmpos\+Descriptor (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
-
-
-
-Insert a single mmpos descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em value} & unsigned integer representing the value of the mmpos descriptor \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classAccessUnit__I_a322a02df826320da868ad848eded885b}\label{classAccessUnit__I_a322a02df826320da868ad848eded885b}} 
-\index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!insert\+Mmtype\+Descriptor@{insert\+Mmtype\+Descriptor}}
-\index{insert\+Mmtype\+Descriptor@{insert\+Mmtype\+Descriptor}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
-\subsubsection{\texorpdfstring{insert\+Mmtype\+Descriptor()}{insertMmtypeDescriptor()}}
-{\footnotesize\ttfamily void Access\+Unit\+\_\+\+I\+::insert\+Mmtype\+Descriptor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
-
-
-
-Insert the mmtype descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em value} & unsigned integer representing the value of the mmtype descriptor \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classAccessUnit__I_aa52235996105994359fccb6218566b6b}\label{classAccessUnit__I_aa52235996105994359fccb6218566b6b}} 
-\index{Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}!insert\+Sclips\+Descriptor@{insert\+Sclips\+Descriptor}}
-\index{insert\+Sclips\+Descriptor@{insert\+Sclips\+Descriptor}!Access\+Unit\+\_\+I@{Access\+Unit\+\_\+I}}
-\subsubsection{\texorpdfstring{insert\+Sclips\+Descriptor()}{insertSclipsDescriptor()}}
-{\footnotesize\ttfamily void Access\+Unit\+\_\+\+I\+::insert\+Sclips\+Descriptor (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{sclips }\end{DoxyParamCaption})}
-
-
-
-Insert the sclips descriptor value inside the corresponding block in the access unit\textquotesingle{}s payload. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sclips} & vector containing all values of the soft clips descriptor of the read \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

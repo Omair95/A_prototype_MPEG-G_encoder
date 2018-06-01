@@ -65,73 +65,6 @@ public:
      * */
     ~FileManager();
 
-    /** @brief Writes the pos descriptor value to the respective file
-     *         according to the class type
-     *  @param value unsigned integer representing the value of the pos descriptor
-     *  @param classType class type
-     *   @return void
-     * */
-    void insertPosValue(uint32_t value, uint8_t classType);
-
-    /** @brief calculates, returns and writes the rcomp descriptor value of the read
-     *          to the respective file according to the class type
-     *  @param reocord first read from the read pair
-     *  @param second second read from the read pair
-     *  @param classType classType of the read pair
-     *  @return Rcomp descriptor value of the read
-     * */
-    uint8_t insertRcompValue(BamAlignmentRecord& record, BamAlignmentRecord& second, uint8_t classType);
-
-    /** @brief Return and writes the flags descriptor value to the respective file
-     *         according to the class type of the read
-     *  @param record read from the read pair
-     *  @param classType class type
-     *   @return Flags descriptor value of the read
-     * */
-    uint8_t insertFlagsValue(BamAlignmentRecord& record, uint8_t classType);
-
-    /** @brief Returns and writes the rlen descriptor value to the respective file
-     *         according to the class type
-     *  @param record read from the read pair
-     *  @param classType class type
-     *   @return Rlen descriptor value of the read
-     * */
-    uint8_t insertRlenValue(BamAlignmentRecord& record, uint8_t classType);
-    
-    /** @brief Returns and writes the pair descriptor value to the respective file
-     *         according to the class type
-     *  @param record first read from the read pair
-     *  @param record2 second read from the read pair
-     *  @param classType class type
-     *   @return pair descriptor value of the read pair
-     * */
-    std::vector<std::string> insertPairValue(BamAlignmentRecord& record, BamAlignmentRecord& record2, uint8_t classType);
-
-    /** @brief Writes the mmpos descriptor values to the respective file
-     *         according to the class type
-     *  @param pos position of the mismatch
-     *  @param classType class type
-     *  @param lastPos check if its the last position of the mismatch
-     *   @return void
-     * */
-    void insertMmposValue(uint16_t pos, uint8_t classType, bool lastPos);
-
-    /** @brief Returns and writes the mmtype descriptor value to the respective file
-     *         according to the class type
-     *  @param mmpos all mismatches of the read 
-     *  @param classType class type
-     *   @return a vector containing the type of mismatches according to the alphabet 1
-     * */
-    std::vector<uint8_t> insertmmtypeDescriptor(std::vector<std::pair<uint16_t, std::string> >& mmpos, uint8_t classType);
-
-    /** @brief Returns and writes the sclips descriptor value to the respective file
-     *         according to the class type
-     *  @param record the genomic record of the read
-     *  @param id identifier of the record
-     *   @return a vector containing all the soft clips descriptor values
-     * */
-    std::vector<std::string> insertClipsDescriptor(MpeggRecord& record, uint32_t id);
-
     /** @brief Writes the mpegg record of the respective read to a file
      *  @param result mpegg record format of the read
      *  @return void
@@ -144,52 +77,98 @@ public:
      * */
     void closeFiles();
 
-    /** @brief Write an unsigned 8 bit integer rcomp descriptor value to the respective file according to the class type 
-     * @param value unsigned integer value to write
-     * @param classType class type of the read
-     * @return void
+    /** @brief Write pos descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
      * */
-    void write8bitRcomp(uint8_t value, uint8_t classType);
-
-    /** @brief Write an unsigned 8 bit integer pair descriptor value to the respective file according to the class type 
-     * @param value unsigned integer value to write
-     * @param classType class type of the read
-     * @return void
-     * */
-    void write8bitPair(uint8_t value, uint8_t classType);
-
-    /** @brief Write an unsigned 16 bit integer pair descriptor value to the respective file according to the class type 
-     * @param value unsigned integer value to write
-     * @param classType class type of the read
-     * @return void
-     * */
-    void write16bitPair(uint16_t value, uint8_t classType);
-
-    /** @brief Write an unsigned 32 bit integer pair descriptor value to the respective file according to the class type 
-     * @param value unsigned integer value to write
-     * @param classType class type of the read
-     * @return void
-     * */
-    void write32bitPair(uint32_t value, uint8_t classType);
-
     void writePosDescriptor(uint32_t value, uint8_t classType);
 
+    /** @brief Write rcomp descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the rcomp descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void writeRcompDescriptor(uint8_t value, uint8_t classType);
 
+    /** @brief Write flags descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the flags descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void writeFlagsDescriptor(uint8_t value, uint8_t classType);
 
+    /** @brief Write rlen descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the rlen descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void writeRlenDescriptor(uint8_t value, uint8_t classType);
 
+    /** @brief Write 8 bit pair descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void write8bitPairDescriptor(uint8_t value, uint8_t classType);
 
+    /** @brief Write 16 bit pair descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void write16bitPairDescriptor(uint16_t value, uint8_t classType);
 
+    /** @brief Write 32 bit pair descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void write32bitPairDescriptor(uint32_t value, uint8_t classType);
 
+    /** @brief Write mmpos descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void writeMmposDescriptorValue(uint16_t value, uint8_t classType, bool lastPos);
 
+    /** @brief Write mmtype descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
+     * */
     void writeMmtypeDescriptor(uint8_t value, uint8_t classType);
 
+    /** @brief Write 8 bit soft clip descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
+     * */
+    void write8bitSoftclipDescriptor(uint8_t value, uint8_t classType);
+
+    /** @brief Write 32 bit soft clip descriptor value to the respective file
+     *         according to the class type
+     *  @param value unsigned integer representing the value of the pos descriptor
+     *  @param classType class type
+     *   @return void
+     * */
+    void write32bitSoftclipDescriptor(uint32_t value, uint8_t classType);
+
+    /** @brief Write access units descriptors to files
+     *  @param u utils class that containts all the access units to be written
+     *   @return void
+     * */
     void writeAccessUnits(Utils& u);
 };
 
