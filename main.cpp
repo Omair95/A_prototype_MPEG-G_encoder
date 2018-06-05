@@ -19,7 +19,7 @@
 int au_id = -1;
 
 // Bam file to read
-std::string fileName = "9827_2#49";
+std::string fileName;
 
 // Auxiliary class to be used that allows to create and write into files
 FileManager f(fileName);
@@ -32,7 +32,8 @@ Utils u;
 std::map<int, std::pair<int, int> > references;
 
 // Size of each access unit
-#define ACCESS_UNIT_SIZE 1000000 // 13716
+int sizeAU = 0;
+#define ACCESS_UNIT_SIZE sizeAU // 13716
 
 /** List of reads with their asociated tags
  * */
@@ -422,19 +423,41 @@ void dispatcher() {
     u.insertAccessUnit(*AU_I);
 }
 
-int main () {
+/** @brief Print usage message
+ * */
+void usage_message() {
+    std::cout << "A prototype MPEG-G encoder "  << "(https://github.com/Omair95/A_prototype_MPEG-G_encoder)" << std::endl;
+    std::cout << "Usage: " << "A_prototype_MPEG_G_encoder " "FILE_PATH" << " " << "ACCESS_UNIT_SIZE" << std::endl;
+    std::cout << "FILE_PATH:" << std::endl;
+    std::cout << "Full path of the file to be processed" << std::endl;
+    std::cout << "ACCESS_UNIT_SIZE: " << std::endl;
+    std::cout << "Size of each access unit " << std::endl;
+}
+
+int main (int argc, char** argv) {
+
+    if (argc != 3) {
+        usage_message();
+        return 1;
+    }
+
+    std::string filePath = argv[1];
+    fileName = filePath.substr(filePath.rfind("/") + 1, std::string::npos);
+
+    std::string au = argv[2];
+    sizeAU = atoi(au.c_str());
+
     // full path of the file to be read
-    std::string filePath = "../../TestFiles/" + fileName + ".bam";
     BamFileIn bamFileIn(toCString(filePath));
     BamHeader header;
     readHeader(header, bamFileIn);
 
     BamAlignmentRecord record;
-    std::cout << "Pairing reads ... " << std::endl;
+    std::cout << "Pairing reads ..." << std::endl;
 
     // loop that reads the file and pairs the mate reads
     int count = 1;
-    while (!atEnd(bamFileIn) and count <= 50000) {
+    while (!atEnd(bamFileIn) and count <= 100000) {
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -460,28 +483,27 @@ int main () {
 
     // reference sequence found with their start and end positions
     for (auto it = references.begin(); it != references.end(); it++) {
-        std::cout << "Reference ID = " << it->first << " " << "Start : " << it->second.first << " " << "End : " << it->second.second << std::endl;
+        std::cout << "Reference ID = " << it->first << " " << "Start: " << it->second.first << " " << "End: " << it->second.second << std::endl;
     }
     std::cout << std::endl;
 
     // Use cases are shown
-    std::cout << "PROTECTION    : 1 " << std::endl;
-    std::cout << "RANDOM ACCESS : 2 " << std::endl;
-    std::cout << "ENCODE        : 3 " << std::endl;
+    std::cout << "PROTECTION     : 1 " << std::endl;
+    std::cout << "RANDOM ACCESS  : 2 " << std::endl;
+    std::cout << "ENCODE         : 3 " << std::endl;
     std::cout << "Enter use case : ";
 
     int useCase;
     std::vector<std::map<int, std::vector<std::string> > > useCase1Positions(references.size()), useCase2Positions(references.size());
     bool useCase1 = false, useCase2 = false;
-    while (std::cin >> useCase and useCase != 3) {
+    while (std::cin >> useCase) {
 
         if (useCase == 1) {
 
             // for each reference sequence write the end position and name of the tag
             for (auto &reference : references) {
                 std::cout << "Use case : Protection " << std::endl;
-                std::cout << "Enter positions and tags for reference sequence" << " : " << reference.first << " (" << reference.second.first << " - " << reference.second.second << ")" << std::endl;
-                std::cout << "Insert 0 and END to finish" << std::endl;
+                std::cout << "Enter positions and tags for reference sequence (Insert 0 and END to finish)" << " : " << reference.first << " (" << reference.second.first << " - " << reference.second.second << ")" << std::endl;
                 int pos = -1;
                 std::string tag;
                 while (std::cin >> pos >> tag and pos != 0 and tag != "END") {
@@ -504,8 +526,6 @@ int main () {
                 tags.emplace_back(tag);
             }
 
-            std::cout << "Calculating positions ... " << std::endl;
-
             int j = 0;
             for (auto &reference : references) {
                 for (int i = reference.second.first; i < reference.second.second; ++i) {
@@ -527,16 +547,25 @@ int main () {
             break;
         }
 
-        std::cout << "PROTECTION    : 1 " << std::endl;
-        std::cout << "RANDOM ACCESS : 2 " << std::endl;
-        std::cout << "ENCODE        : 3 " << std::endl;
-        std::cout << "Enter use case : ";
+        if (not useCase1 or not useCase2) {
+            std::cout << "Add more use cases? (Y/N)" << std::endl;
+            char c; std::cin >> c;
+            std::cout << std::endl;
+            if (c == 'Y') {
+                std::cout << "PROTECTION    : 1 " << std::endl;
+                std::cout << "RANDOM ACCESS : 2 " << std::endl;
+                std::cout << "ENCODE        : 3 " << std::endl;
+                std::cout << "Enter use case : ";
+            }
+        }
+        else break;
     }
 
     // if two use cases have been introduced then we have the option to merge the positions
     if (useCase1 and useCase2) {
-        std::cout << "Merge use cases? Y/N ";
+        std::cout << "Merge use cases? (Y/N) ";
         char c; std::cin >> c;
+        std::cout << std::endl;
         if (c == 'Y') {
             std::cout << "Merging tags ..." << std::endl;
             std::vector<std::map<int, std::vector<std::string> > > result(references.size());
@@ -561,16 +590,15 @@ int main () {
         }
     }
 
-    std::cout << "Dispatching and encoding..." << std::endl;
+    if (useCase1 or useCase2) std::cout << "Dispatching and encoding..." << std::endl;
 
     // start the dispatcher
     dispatcher();
 
     // write via command line the access units encoded without the payload
-    std::cout << "List of access Units encoded" << std::endl;
+    std::cout << "List of Access Units encoded" << std::endl;
 
     f.writeAccessUnits(u);
     f.closeFiles();
-
     return 0;
 }
