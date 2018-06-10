@@ -19,16 +19,68 @@
   <component name="ChangeListManager">
     <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.flags" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.iclips" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.iflags" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.immpos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.immtype" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.ipair" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.ipos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.ircomp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.irlen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mflags" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mmmpos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mmmtype" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mpair" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mpos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mrcomp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mrlen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nflags" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nmmpos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.npair" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.npos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nrcomp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nrlen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.pair" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.pos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.rcomp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/.mpegg.rlen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iflags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immtype" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.immtype" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ipos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ircomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.ircomp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.irlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.irlen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mflags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmtype" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mmmtype" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrcomp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.mrlen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nflags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nflags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nmmpos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nmmpos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.npos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrcomp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.nrlen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/classI_rcomp_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classI_rcomp_compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/classM_rcomp_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classM_rcomp_compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/classP_pos_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classP_pos_compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnitBlock.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_I.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_M.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_N.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/AccessUnit_P.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/Utils.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -45,16 +97,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="518" column="51" lean-forward="true" selection-start-line="518" selection-start-column="51" selection-end-line="518" selection-end-column="51" />
+            <state relative-caret-position="428">
+              <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#867#2104#0" />
-                <element signature="e#2106#3317#0" />
-                <element signature="e#3319#17384#0" />
+                <element signature="e#2090#3301#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManager.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FileManager.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FileManager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+              <folding>
+                <element signature="e#3234#4441#0" />
+                <element signature="e#4443#5370#0" />
+                <element signature="e#5372#6117#0" />
+                <element signature="e#6119#6872#0" />
+                <element signature="e#6874#7627#0" />
+                <element signature="e#7629#8377#0" />
+                <element signature="e#8379#9131#0" />
+                <element signature="e#9133#9888#0" />
+                <element signature="e#9890#10645#0" />
+                <element signature="e#10647#11646#0" />
+                <element signature="e#11648#12102#0" />
+                <element signature="e#12104#12411#0" />
+                <element signature="e#12413#12723#0" />
               </folding>
             </state>
           </provider>
@@ -64,8 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>write16bit</find>
-      <find>insertpair</find>
       <find>insertrlen</find>
       <find>reads_distance</find>
       <find>write8bi</find>
@@ -94,6 +178,8 @@
       <find>\param</find>
       <find>getPosDescriptorValues</find>
       <find>\return</find>
+      <find>boost</find>
+      <find>inserttags</find>
     </findStrings>
     <replaceStrings>
       <replace>@brief</replace>
@@ -116,7 +202,6 @@
         <option value="$PROJECT_DIR$/AccessUnit_U.cpp" />
         <option value="$PROJECT_DIR$/AccessUnit_P.cpp" />
         <option value="$PROJECT_DIR$/test.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/AccessUnit_P.h" />
         <option value="$PROJECT_DIR$/MpeggRecord.h" />
         <option value="$PROJECT_DIR$/AccessUnit_I.cpp" />
@@ -124,16 +209,17 @@
         <option value="$PROJECT_DIR$/AccessUnit_N.cpp" />
         <option value="$PROJECT_DIR$/AccessUnit_M.cpp" />
         <option value="$PROJECT_DIR$/Utils.cpp" />
-        <option value="$PROJECT_DIR$/FileManager.cpp" />
         <option value="$PROJECT_DIR$/AccessUnit.h" />
         <option value="$PROJECT_DIR$/AccessUnit_I.h" />
         <option value="$PROJECT_DIR$/AccessUnit_M.h" />
         <option value="$PROJECT_DIR$/AccessUnit_N.h" />
         <option value="$PROJECT_DIR$/AccessUnitBlock.h" />
         <option value="$PROJECT_DIR$/AccessUnitBlock.cpp" />
-        <option value="$PROJECT_DIR$/FileManager.h" />
         <option value="$PROJECT_DIR$/Utils.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/FileManager.cpp" />
+        <option value="$PROJECT_DIR$/FileManager.h" />
       </list>
     </option>
   </component>
@@ -372,12 +458,15 @@
       <workItem from="1527794288645" duration="6070000" />
       <workItem from="1527878266338" duration="8742000" />
       <workItem from="1528189385689" duration="2889000" />
-      <workItem from="1528194012751" duration="5883000" />
+      <workItem from="1528194012751" duration="6029000" />
+      <workItem from="1528389096667" duration="622000" />
+      <workItem from="1528560805691" duration="5166000" />
+      <workItem from="1528637472073" duration="3949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="590626000" />
+    <option name="totallyTimeSpent" value="600509000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,14 +484,14 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910053" visible="true" weight="0.13653535" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.31687897" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.5089947" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.30095038" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.3005291" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5089947" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5089947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289256" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.47089946" />
       <window_info id="Favorites" order="2" sideWeight="0.5089947" side_tool="true" weight="0.13653535" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47089946" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -487,9 +576,7 @@
           <caret line="460" column="9" selection-start-line="460" selection-start-column="9" selection-end-line="460" selection-end-column="9" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#867#2104#0" />
-            <element signature="e#2106#3317#0" />
-            <element signature="e#3319#17384#0" />
+            <element signature="e#2090#3301#0" />
           </folding>
         </state>
       </provider>
@@ -613,13 +700,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.cpp" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -711,12 +791,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="209" column="74" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="641" column="128" selection-start-line="641" selection-start-column="128" selection-end-line="641" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AccessUnit.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#2090#3301#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="238" column="45" selection-start-line="238" selection-start-column="45" selection-end-line="238" selection-end-column="45" />
+        <state relative-caret-position="30">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
           <folding>
-            <element signature="e#26#3192#0" />
             <element signature="e#3234#4441#0" />
             <element signature="e#4443#5370#0" />
             <element signature="e#5372#6117#0" />
@@ -730,120 +855,16 @@
             <element signature="e#11648#12102#0" />
             <element signature="e#12104#12411#0" />
             <element signature="e#12413#12723#0" />
-            <element signature="e#12725#18136#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="167" column="54" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
+        <state relative-caret-position="645">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="209" column="74" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="641" column="128" selection-start-line="641" selection-start-column="128" selection-end-line="641" selection-end-column="128" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#59#96#0" />
-            <element signature="e#98#118#0" />
-            <element signature="e#120#487#0" />
-            <element signature="e#489#4742#0" />
-            <element signature="e#4744#5204#0" />
-            <element signature="e#5206#5816#0" />
-            <element signature="e#5818#7129#0" />
-            <element signature="e#7131#8195#0" />
-            <element signature="e#8197#9250#0" />
-            <element signature="e#9252#9731#0" />
-            <element signature="e#9733#9951#0" />
-            <element signature="e#9953#10311#0" />
-            <element signature="e#10313#10673#0" />
-            <element signature="e#10675#11061#0" />
-            <element signature="e#11063#13274#0" />
-            <element signature="e#13276#18995#0" />
-            <element signature="e#18997#19082#0" />
-            <element signature="e#19084#19215#0" />
-            <element signature="e#19217#19295#0" />
-            <element signature="e#19297#19375#0" />
-            <element signature="e#19377#19537#0" />
-            <element signature="e#19539#20155#0" />
-            <element signature="e#20157#20379#0" />
-            <element signature="e#20381#22494#0" />
-            <element signature="e#22496#22727#0" />
-            <element signature="e#22729#22831#0" />
-            <element signature="e#22833#24795#0" />
-            <element signature="e#24797#25654#0" />
-            <element signature="e#25656#31745#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccessUnit.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="e#100#153#0" />
-            <element signature="e#155#239#0" />
-            <element signature="e#241#323#0" />
-            <element signature="e#325#393#0" />
-            <element signature="e#395#560#0" />
-            <element signature="e#562#727#0" />
-            <element signature="e#729#894#0" />
-            <element signature="e#896#1060#0" />
-            <element signature="e#1062#1231#0" />
-            <element signature="e#1233#1387#0" />
-            <element signature="e#1389#1543#0" />
-            <element signature="e#1545#1716#0" />
-            <element signature="e#1718#1845#0" />
-            <element signature="e#1847#1976#0" />
-            <element signature="e#1978#2107#0" />
-            <element signature="e#2109#2237#0" />
-            <element signature="e#2239#2367#0" />
-            <element signature="e#2369#2499#0" />
-            <element signature="e#2501#2631#0" />
-            <element signature="e#2633#2686#0" />
-            <element signature="e#2688#2752#0" />
-            <element signature="e#2754#3140#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="518" column="51" lean-forward="true" selection-start-line="518" selection-start-column="51" selection-end-line="518" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#867#2104#0" />
-            <element signature="e#2106#3317#0" />
-            <element signature="e#3319#17384#0" />
           </folding>
         </state>
       </provider>

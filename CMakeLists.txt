@@ -57,4 +57,4 @@ target_link_libraries (A_prototype_MPEG_G_encoder ${SEQAN_LIBRARIES})
 message("SEQAN_LIBRARIES = ${SEQAN_LIBRARIES}")
 
 # Add CXX flags found by find_package (SeqAn).
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SEQAN_CXX_FLAGS} -pthread")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SEQAN_CXX_FLAGS} -pthread ")

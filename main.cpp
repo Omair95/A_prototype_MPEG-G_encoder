@@ -14,15 +14,11 @@
  * @contact Omair95@protonmail.com
 */
 
-/** Access Unit identifier
- * */
+/// Access Unit identifier
 int au_id = -1;
 
 // Bam file to read
 std::string fileName;
-
-// Auxiliary class to be used that allows to create and write into files
-FileManager f(fileName);
 
 // Auxiliary functions
 Utils u;
@@ -42,7 +38,7 @@ std::multimap<int, std::pair<MpeggRecord, std::vector<std::string> > > tags_read
 /** @brief Inserts the asociated tags to the reads according to the positions
  * @param positions positions in the reference sequences delimitating the tags
  * */
-void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& positions) {
+void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& positions, FileManager& f) {
     std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
     u.getAllreads(reads);
 
@@ -442,7 +438,10 @@ int main (int argc, char** argv) {
     }
 
     std::string filePath = argv[1];
-    fileName = filePath.substr(filePath.rfind("/") + 1, std::string::npos);
+    fileName = filePath.substr(filePath.rfind("/") + 1, filePath.rfind(".") - filePath.rfind("/") - 1);
+
+    // Auxiliary class to be used that allows to create and write into files
+    FileManager f(fileName);
 
     std::string au = argv[2];
     sizeAU = atoi(au.c_str());
@@ -556,7 +555,7 @@ int main (int argc, char** argv) {
                 std::cout << "RANDOM ACCESS : 2 " << std::endl;
                 std::cout << "ENCODE        : 3 " << std::endl;
                 std::cout << "Enter use case : ";
-            }
+            } else break;
         }
         else break;
     }
@@ -572,21 +571,21 @@ int main (int argc, char** argv) {
             mergeTags(useCase1Positions, useCase2Positions, result);
 
             std::cout << "Inserting tags ..." << std::endl;
-            insertTagsToReads(result);
+            insertTagsToReads(result, f);
         } else if (c == 'N') {
             std::cout << "Encode use case 1 or 2? ";
             int useCase; std::cin >> useCase;
             std::cout << "Inserting tags ..." << std::endl;
-            if (useCase == 1) insertTagsToReads(useCase1Positions);
-            else if (useCase == 2) insertTagsToReads(useCase2Positions);
+            if (useCase == 1) insertTagsToReads(useCase1Positions, f);
+            else if (useCase == 2) insertTagsToReads(useCase2Positions, f);
         }
     } else {
         if (useCase1 or useCase2) std::cout << "Inserting tags ..." << std::endl;
         if (useCase1) {
-            insertTagsToReads(useCase1Positions);
+            insertTagsToReads(useCase1Positions, f);
         }
         else {
-            insertTagsToReads(useCase2Positions);
+            insertTagsToReads(useCase2Positions, f);
         }
     }
 

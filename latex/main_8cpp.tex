@@ -17,36 +17,40 @@ Include dependency graph for main.\+cpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{main_8cpp_a14bc7a6afe06ff323a5a7afaae566511}\label{main_8cpp_a14bc7a6afe06ff323a5a7afaae566511}} 
-\#define {\bfseries A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE}~1000000
+\#define {\bfseries A\+C\+C\+E\+S\+S\+\_\+\+U\+N\+I\+T\+\_\+\+S\+I\+ZE}~size\+AU
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{main_8cpp_adcff46937a8a6314884f71d222076a39}{insert\+Tags\+To\+Reads} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&positions)
+void \hyperlink{main_8cpp_a39110755e2b5a91dcb8c88f137192c70}{insert\+Tags\+To\+Reads} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&positions, \hyperlink{classFileManager}{File\+Manager} \&f)
 \begin{DoxyCompactList}\small\item\em Inserts the asociated tags to the reads according to the positions. \end{DoxyCompactList}\item 
 void \hyperlink{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}{merge\+Tags} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case1, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case2, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&result)
 \begin{DoxyCompactList}\small\item\em Merge the tags from the use case 1 and use case 2. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}\label{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}} 
 void \hyperlink{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}{dispatcher} ()
 \begin{DoxyCompactList}\small\item\em Writes the especified regions of the reference sequence to the corresponding access units. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
-int {\bfseries main} ()
+\mbox{\Hypertarget{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}\label{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}} 
+void \hyperlink{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}{usage\+\_\+message} ()
+\begin{DoxyCompactList}\small\item\em Print usage message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}\label{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}} 
 int \hyperlink{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}{au\+\_\+id} = -\/1
-\item 
+\begin{DoxyCompactList}\small\item\em Access Unit identifier. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}\label{main_8cpp_ac81f9269c8d57eed4d5b56f054fc84de}} 
-std\+::string {\bfseries file\+Name} = \char`\"{}9827\+\_\+2\#49\char`\"{}
-\item 
-\mbox{\Hypertarget{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}\label{main_8cpp_afa72073560cce2b1a4cfbe31a0715110}} 
-\hyperlink{classFileManager}{File\+Manager} {\bfseries f} (file\+Name)
+std\+::string {\bfseries file\+Name}
 \item 
 \mbox{\Hypertarget{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}\label{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}} 
 \hyperlink{classUtils}{Utils} {\bfseries u}
 \item 
 std\+::map$<$ int, std\+::pair$<$ int, int $>$ $>$ \hyperlink{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}{references}
+\item 
+\mbox{\Hypertarget{main_8cpp_a279961013ab0ee5554d07504343a57b0}\label{main_8cpp_a279961013ab0ee5554d07504343a57b0}} 
+int {\bfseries size\+AU} = 0
 \item 
 std\+::multimap$<$ int, std\+::pair$<$ \hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$ std\+::string $>$ $>$ $>$ \hyperlink{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}{tags\+\_\+read}
 \end{DoxyCompactItemize}
@@ -59,11 +63,11 @@ Omair Iqbal \begin{DoxyDate}{Date}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{main_8cpp_adcff46937a8a6314884f71d222076a39}\label{main_8cpp_adcff46937a8a6314884f71d222076a39}} 
+\mbox{\Hypertarget{main_8cpp_a39110755e2b5a91dcb8c88f137192c70}\label{main_8cpp_a39110755e2b5a91dcb8c88f137192c70}} 
 \index{main.\+cpp@{main.\+cpp}!insert\+Tags\+To\+Reads@{insert\+Tags\+To\+Reads}}
 \index{insert\+Tags\+To\+Reads@{insert\+Tags\+To\+Reads}!main.\+cpp@{main.\+cpp}}
 \subsubsection{\texorpdfstring{insert\+Tags\+To\+Reads()}{insertTagsToReads()}}
-{\footnotesize\ttfamily void insert\+Tags\+To\+Reads (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&}]{positions }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void insert\+Tags\+To\+Reads (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&}]{positions,  }\item[{\hyperlink{classFileManager}{File\+Manager} \&}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -96,13 +100,7 @@ Merge the tags from the use case 1 and use case 2.
 
 
 \subsection{Variable Documentation}
-\mbox{\Hypertarget{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}\label{main_8cpp_a4666c24ee67f79a7b835a1c36cedb643}} 
-\index{main.\+cpp@{main.\+cpp}!au\+\_\+id@{au\+\_\+id}}
-\index{au\+\_\+id@{au\+\_\+id}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{au\+\_\+id}{au\_id}}
-{\footnotesize\ttfamily int au\+\_\+id = -\/1}
-
-Access Unit identifier \mbox{\Hypertarget{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}\label{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}} 
+\mbox{\Hypertarget{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}\label{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}} 
 \index{main.\+cpp@{main.\+cpp}!references@{references}}
 \index{references@{references}!main.\+cpp@{main.\+cpp}}
 \subsubsection{\texorpdfstring{references}{references}}
