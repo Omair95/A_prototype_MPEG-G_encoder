@@ -4,6 +4,6 @@ This has made sequencing become a tool commonly used in medicine which has led t
 This genetic information is contained in the base sequence of the nucleotides that make up the DNA, and can be used for different purposes: research, genetic analysis, precision medicine, family search, forensic, etc. Therefore, it must also be properly stored, transferred and, above all, protected, which has become a general problem and has led to the development of specific compression tools for genomic data.
 
 Different formats are used today to store genomic information (FASTQ, SAM, BAM, etc), each one with different compression ratios and different areas of use, but the new demands have made the standardization committee
-MPEG (ISO / IEC JTC1 SC29 / WG11) to develop a new standard for the safe compression of genomic data, which compared to the previous formats will offer greater compression, better metadata support and a better integration of security practices. \bigskip
+MPEG (ISO / IEC JTC1 SC29 / WG11) to develop a new standard for the safe compression of genomic data, which compared to the previous formats will offer greater compression, better metadata support and a better integration of security practices.
 
 The objective of this project is to implement a first version of this standard for internal use of the UPC and propose improvements for future development.
