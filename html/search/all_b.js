@@ -7,7 +7,6 @@ var searchData=
   ['reads_5fcount',['reads_count',['../classAccessUnit.html#ae3839f3390652171fad0b28622d4d8c7',1,'AccessUnit']]],
   ['reads_5fdistance',['reads_distance',['../classUtils.html#a02d521d4d7cecbe20acab176d08b7857',1,'Utils']]],
   ['reference_5fid',['reference_id',['../classAccessUnit.html#a2d515312cf26d6bd17783a27db6a2a43',1,'AccessUnit']]],
-  ['references',['references',['../main_8cpp.html#aa9a19ae27e56b494e2c1a90b5cc6ce79',1,'main.cpp']]],
   ['removefirstread',['removeFirstRead',['../classUtils.html#abddd37adce88799fc8a66f7779c407bb',1,'Utils']]],
   ['reverse_5fcomp',['reverse_comp',['../structMpeggRecord.html#abbe495faacdf88320a21ccf8a95579af',1,'MpeggRecord']]]
 ];

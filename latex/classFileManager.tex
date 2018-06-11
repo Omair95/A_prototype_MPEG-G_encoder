@@ -42,8 +42,8 @@ void \hyperlink{classFileManager_ae3ca08688b06ce0202d1f3bcebaf59d5}{write8bit\+S
 \begin{DoxyCompactList}\small\item\em Write 8 bit soft clip descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
 void \hyperlink{classFileManager_aa720de82768ead492a81c63bdd53133a}{write32bit\+Softclip\+Descriptor} (uint32\+\_\+t value, uint8\+\_\+t class\+Type)
 \begin{DoxyCompactList}\small\item\em Write 32 bit soft clip descriptor value to the respective file according to the class type. \end{DoxyCompactList}\item 
-void \hyperlink{classFileManager_aa571283d8e76c9bc13ef5ea5f977be67}{write\+Access\+Units} (\hyperlink{classUtils}{Utils} \&u)
-\begin{DoxyCompactList}\small\item\em Write access units descriptors to files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classFileManager_af81cc6acb11b368ef571de623bceab10}{write\+Access\+Unit} (\hyperlink{classAccessUnit}{Access\+Unit} au)
+\begin{DoxyCompactList}\small\item\em Write access unit and its descriptors to files. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -207,19 +207,19 @@ Write 8 bit soft clip descriptor value to the respective file according to the c
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classFileManager_aa571283d8e76c9bc13ef5ea5f977be67}\label{classFileManager_aa571283d8e76c9bc13ef5ea5f977be67}} 
-\index{File\+Manager@{File\+Manager}!write\+Access\+Units@{write\+Access\+Units}}
-\index{write\+Access\+Units@{write\+Access\+Units}!File\+Manager@{File\+Manager}}
-\subsubsection{\texorpdfstring{write\+Access\+Units()}{writeAccessUnits()}}
-{\footnotesize\ttfamily void File\+Manager\+::write\+Access\+Units (\begin{DoxyParamCaption}\item[{\hyperlink{classUtils}{Utils} \&}]{u }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classFileManager_af81cc6acb11b368ef571de623bceab10}\label{classFileManager_af81cc6acb11b368ef571de623bceab10}} 
+\index{File\+Manager@{File\+Manager}!write\+Access\+Unit@{write\+Access\+Unit}}
+\index{write\+Access\+Unit@{write\+Access\+Unit}!File\+Manager@{File\+Manager}}
+\subsubsection{\texorpdfstring{write\+Access\+Unit()}{writeAccessUnit()}}
+{\footnotesize\ttfamily void File\+Manager\+::write\+Access\+Unit (\begin{DoxyParamCaption}\item[{\hyperlink{classAccessUnit}{Access\+Unit}}]{au }\end{DoxyParamCaption})}
 
 
 
-Write access units descriptors to files. 
+Write access unit and its descriptors to files. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em u} & utils class that containts all the access units to be written \\
+{\em au} & is the access unit to be written \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

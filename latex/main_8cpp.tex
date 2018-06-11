@@ -23,18 +23,15 @@ Include dependency graph for main.\+cpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{main_8cpp_a39110755e2b5a91dcb8c88f137192c70}{insert\+Tags\+To\+Reads} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&positions, \hyperlink{classFileManager}{File\+Manager} \&f)
-\begin{DoxyCompactList}\small\item\em Inserts the asociated tags to the reads according to the positions. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the associated tags to the reads according to the positions. \end{DoxyCompactList}\item 
 void \hyperlink{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}{merge\+Tags} (std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case1, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&use\+Case2, std\+::vector$<$ std\+::map$<$ int, std\+::vector$<$ std\+::string $>$ $>$ $>$ \&result)
 \begin{DoxyCompactList}\small\item\em Merge the tags from the use case 1 and use case 2. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}\label{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}} 
-void \hyperlink{main_8cpp_a9f3aa48cb265e09ae327e98a9fe2e31b}{dispatcher} ()
+void \hyperlink{main_8cpp_a48d7b6cc329264d5e072a847ab04cbac}{dispatcher} (\hyperlink{classFileManager}{File\+Manager} \&f)
 \begin{DoxyCompactList}\small\item\em Writes the especified regions of the reference sequence to the corresponding access units. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}\label{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}} 
 void \hyperlink{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}{usage\+\_\+message} ()
 \begin{DoxyCompactList}\small\item\em Print usage message. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
-int {\bfseries main} (int argc, char $\ast$$\ast$argv)
-\end{DoxyCompactItemize}
+int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,12 +44,14 @@ std\+::string {\bfseries file\+Name}
 \mbox{\Hypertarget{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}\label{main_8cpp_af4ccf772c847c5389e8b1e0fb607cf12}} 
 \hyperlink{classUtils}{Utils} {\bfseries u}
 \item 
-std\+::map$<$ int, std\+::pair$<$ int, int $>$ $>$ \hyperlink{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}{references}
+\mbox{\Hypertarget{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}\label{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}} 
+std\+::map$<$ int, std\+::pair$<$ int, int $>$ $>$ {\bfseries references}
 \item 
 \mbox{\Hypertarget{main_8cpp_a279961013ab0ee5554d07504343a57b0}\label{main_8cpp_a279961013ab0ee5554d07504343a57b0}} 
 int {\bfseries size\+AU} = 0
 \item 
-std\+::multimap$<$ int, std\+::pair$<$ \hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$ std\+::string $>$ $>$ $>$ \hyperlink{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}{tags\+\_\+read}
+\mbox{\Hypertarget{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}\label{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}} 
+std\+::multimap$<$ int, std\+::pair$<$ \hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$ std\+::string $>$ $>$ $>$ {\bfseries tags\+\_\+read}
 \end{DoxyCompactItemize}
 
 
@@ -63,6 +62,24 @@ Omair Iqbal \begin{DoxyDate}{Date}
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a48d7b6cc329264d5e072a847ab04cbac}\label{main_8cpp_a48d7b6cc329264d5e072a847ab04cbac}} 
+\index{main.\+cpp@{main.\+cpp}!dispatcher@{dispatcher}}
+\index{dispatcher@{dispatcher}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{dispatcher()}{dispatcher()}}
+{\footnotesize\ttfamily void dispatcher (\begin{DoxyParamCaption}\item[{\hyperlink{classFileManager}{File\+Manager} \&}]{f }\end{DoxyParamCaption})}
+
+
+
+Writes the especified regions of the reference sequence to the corresponding access units. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & file manager that allow to write the encoded Access Units into files \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{main_8cpp_a39110755e2b5a91dcb8c88f137192c70}\label{main_8cpp_a39110755e2b5a91dcb8c88f137192c70}} 
 \index{main.\+cpp@{main.\+cpp}!insert\+Tags\+To\+Reads@{insert\+Tags\+To\+Reads}}
 \index{insert\+Tags\+To\+Reads@{insert\+Tags\+To\+Reads}!main.\+cpp@{main.\+cpp}}
@@ -71,13 +88,35 @@ Omair Iqbal \begin{DoxyDate}{Date}
 
 
 
-Inserts the asociated tags to the reads according to the positions. 
+Inserts the associated tags to the reads according to the positions. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em positions} & positions in the reference sequences delimitating the tags \\
 \hline
+{\em f} & file manager that allows to write te mpegg record into files \\
+\hline
 \end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int \hyperlink{classmain}{main} (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Main function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & number of parameters \\
+\hline
+{\em argv} & parameter passed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int represents the state of the program 
+\end{DoxyReturn}
 \mbox{\Hypertarget{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}\label{main_8cpp_ad5e6491f068afad42c01e93cbb9ee51c}} 
 \index{main.\+cpp@{main.\+cpp}!merge\+Tags@{merge\+Tags}}
 \index{merge\+Tags@{merge\+Tags}!main.\+cpp@{main.\+cpp}}
@@ -97,19 +136,24 @@ Merge the tags from the use case 1 and use case 2.
 {\em result} & the resulted matrix which contains the merged positions for the both use cases \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}\label{main_8cpp_ae60ceb0e3e26e16f204c6ebb575c12f9}} 
+\index{main.\+cpp@{main.\+cpp}!usage\+\_\+message@{usage\+\_\+message}}
+\index{usage\+\_\+message@{usage\+\_\+message}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{usage\+\_\+message()}{usage\_message()}}
+{\footnotesize\ttfamily void usage\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}\label{main_8cpp_aa9a19ae27e56b494e2c1a90b5cc6ce79}} 
-\index{main.\+cpp@{main.\+cpp}!references@{references}}
-\index{references@{references}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{references}{references}}
-{\footnotesize\ttfamily std\+::map$<$int, std\+::pair$<$int, int$>$ $>$ references}
 
-Number of references sequences with their start and end positions \mbox{\Hypertarget{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}\label{main_8cpp_a58a369f1a36c1db7a0cdd7d5ee68c8bb}} 
-\index{main.\+cpp@{main.\+cpp}!tags\+\_\+read@{tags\+\_\+read}}
-\index{tags\+\_\+read@{tags\+\_\+read}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{tags\+\_\+read}{tags\_read}}
-{\footnotesize\ttfamily std\+::multimap$<$int, std\+::pair$<$\hyperlink{structMpeggRecord}{Mpegg\+Record}, std\+::vector$<$std\+::string$>$ $>$ $>$ tags\+\_\+read}
+Print usage message. 
 
-List of reads with their asociated tags 
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

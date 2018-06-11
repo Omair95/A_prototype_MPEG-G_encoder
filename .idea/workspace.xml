@@ -19,34 +19,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3924f0f1-93a2-4386-945c-df7b90a68511" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.flags" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.iclips" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.iflags" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.immpos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.immtype" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.ipair" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.ipos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.ircomp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.irlen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mflags" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mmmpos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mmmtype" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mpair" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mpos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mrcomp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.mrlen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nflags" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nmmpos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.npair" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.npos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nrcomp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.nrlen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.pair" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.pos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.rcomp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/.mpegg.rlen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.flags" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.iclips" afterDir="false" />
@@ -74,13 +48,31 @@
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.pos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rcomp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" beforeDir="false" afterPath="$PROJECT_DIR$/Files/9827_2#49.mpegg.rlen" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/classI_rcomp_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classI_rcomp_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/classM_rcomp_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classM_rcomp_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/classP_pos_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/classP_pos_compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A_prototype_MPEG_G_encoder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/FileManager.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A_prototype_MPEG_G_encoder.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/FileManager_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/FileManager_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classFileManager-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classFileManager-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/classFileManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/classFileManager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/functions_func.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/functions_func.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/globals.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/globals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/globals_func.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/globals_func.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/globals_vars.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/globals_vars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_8cpp.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/main_8cpp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_b.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_b.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_d.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_d.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_e.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_e.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/all_f.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/all_f.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/functions_a.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/functions_a.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/searchdata.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/searchdata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search/variables_9.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search/variables_9.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/classFileManager.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/classFileManager.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latex/main_8cpp.tex" beforeDir="false" afterPath="$PROJECT_DIR$/latex/main_8cpp.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -97,24 +89,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+            <state relative-caret-position="126">
+              <caret line="478" column="56" selection-start-line="478" selection-start-column="56" selection-end-line="478" selection-end-column="56" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#2090#3301#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileManager.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MpeggRecord.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="810">
+              <caret line="890" column="1" selection-start-line="890" selection-start-column="1" selection-end-line="890" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-220">
+              <caret line="146" column="21" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManager.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FileManager.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+            <state relative-caret-position="2565">
+              <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -125,9 +143,10 @@
       <file leaf-file-name="FileManager.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FileManager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+            <state relative-caret-position="480">
+              <caret line="354" column="1" selection-start-line="354" selection-start-column="1" selection-end-line="354" selection-end-column="1" />
               <folding>
+                <element signature="e#26#3192#0" />
                 <element signature="e#3234#4441#0" />
                 <element signature="e#4443#5370#0" />
                 <element signature="e#5372#6117#0" />
@@ -141,7 +160,44 @@
                 <element signature="e#11648#12102#0" />
                 <element signature="e#12104#12411#0" />
                 <element signature="e#12413#12723#0" />
+                <element signature="e#12725#17458#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessUnit_P.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AccessUnit_P.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessUnit_P.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AccessUnit_P.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessUnitBlock.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AccessUnitBlock.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessUnitBlock.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AccessUnitBlock.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="755">
+              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -150,7 +206,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>insertrlen</find>
       <find>reads_distance</find>
       <find>write8bi</find>
       <find>reads_dis</find>
@@ -180,6 +235,7 @@
       <find>\return</find>
       <find>boost</find>
       <find>inserttags</find>
+      <find>insertaccess</find>
     </findStrings>
     <replaceStrings>
       <replace>@brief</replace>
@@ -217,9 +273,9 @@
         <option value="$PROJECT_DIR$/AccessUnitBlock.cpp" />
         <option value="$PROJECT_DIR$/Utils.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/FileManager.cpp" />
         <option value="$PROJECT_DIR$/FileManager.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -251,6 +307,10 @@
               <item name="A_prototype_MPEG_G_encoder" type="b2602c69:ProjectViewProjectNode" />
               <item name="A_prototype_MPEG-G_encoder" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="A_prototype_MPEG_G_encoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -259,7 +319,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/CLionProjects/Test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -277,7 +337,7 @@
   </component>
   <component name="RunManager" selected="Application.Build All">
     <configuration name="A_prototype_MPEG_G_encoder" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="A_prototype_MPEG_G_encoder" TARGET_NAME="A_prototype_MPEG_G_encoder" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A_prototype_MPEG_G_encoder" RUN_TARGET_NAME="A_prototype_MPEG_G_encoder" />
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/../TestFiles/9827_2#49.bam 1000000" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A_prototype_MPEG_G_encoder" RUN_TARGET_NAME="A_prototype_MPEG_G_encoder" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/../TestFiles/9827_2#49.bam 100000" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A_prototype_MPEG_G_encoder" RUN_TARGET_NAME="A_prototype_MPEG_G_encoder" EXPLICIT_BUILD_TARGET_NAME="all" />
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.A_prototype_MPEG_G_encoder" />
@@ -466,7 +526,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="600509000" />
+    <option name="totallyTimeSpent" value="607347000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -494,11 +554,21 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47089946" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910053" visible="true" weight="0.13653535" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.31687897" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289256" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.3005291" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289256" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47089946" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5089947" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32961783" />
+      <window_info id="Favorites" order="2" sideWeight="0.5089947" side_tool="true" weight="0.13653535" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +582,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="232" />
+      <option name="time" value="237" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -576,7 +646,6 @@
           <caret line="460" column="9" selection-start-line="460" selection-start-column="9" selection-end-line="460" selection-end-column="9" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#2090#3301#0" />
           </folding>
         </state>
       </provider>
@@ -707,6 +776,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/seqan/include/seqan/basic/debug_test_system.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -714,10 +790,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AccessUnit.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-490">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AccessUnit.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="180" column="48" lean-forward="true" selection-start-line="180" selection-start-column="48" selection-end-line="180" selection-end-column="48" />
+        <state relative-caret-position="-985">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -725,6 +808,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AccessUnit_I.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -763,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AccessUnit_I.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AccessUnit_P.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -791,57 +874,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="209" column="74" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="641" column="128" selection-start-line="641" selection-start-column="128" selection-end-line="641" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccessUnit.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#2090#3301#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        <state relative-caret-position="480">
+          <caret line="354" column="1" selection-start-line="354" selection-start-column="1" selection-end-line="354" selection-end-column="1" />
           <folding>
+            <element signature="e#26#3192#0" />
             <element signature="e#3234#4441#0" />
             <element signature="e#4443#5370#0" />
             <element signature="e#5372#6117#0" />
@@ -855,16 +893,48 @@
             <element signature="e#11648#12102#0" />
             <element signature="e#12104#12411#0" />
             <element signature="e#12413#12723#0" />
+            <element signature="e#12725#17458#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FileManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+        <state relative-caret-position="2565">
+          <caret line="171" column="40" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MpeggRecord.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="890" column="1" selection-start-line="890" selection-start-column="1" selection-end-line="890" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="146" column="21" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="478" column="56" selection-start-line="478" selection-start-column="56" selection-end-line="478" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

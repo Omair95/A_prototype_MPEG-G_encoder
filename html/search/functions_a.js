@@ -6,7 +6,7 @@ var searchData=
   ['write32bitsoftclipdescriptor',['write32bitSoftclipDescriptor',['../classFileManager.html#aa720de82768ead492a81c63bdd53133a',1,'FileManager']]],
   ['write8bitpairdescriptor',['write8bitPairDescriptor',['../classFileManager.html#a6ab3b5c56fc7d0a5b9b5c46ba316645b',1,'FileManager']]],
   ['write8bitsoftclipdescriptor',['write8bitSoftclipDescriptor',['../classFileManager.html#ae3ca08688b06ce0202d1f3bcebaf59d5',1,'FileManager']]],
-  ['writeaccessunits',['writeAccessUnits',['../classFileManager.html#aa571283d8e76c9bc13ef5ea5f977be67',1,'FileManager']]],
+  ['writeaccessunit',['writeAccessUnit',['../classFileManager.html#af81cc6acb11b368ef571de623bceab10',1,'FileManager']]],
   ['writeflagsdescriptor',['writeFlagsDescriptor',['../classFileManager.html#aeea509ced540397a4e1269bcc115b161',1,'FileManager']]],
   ['writemmposdescriptorvalue',['writeMmposDescriptorValue',['../classFileManager.html#a7721cb6575680e73afab303f8c1699fe',1,'FileManager']]],
   ['writemmtypedescriptor',['writeMmtypeDescriptor',['../classFileManager.html#a392816c38f3f2feff2a8303dda7cb2db',1,'FileManager']]],

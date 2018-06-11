@@ -165,11 +165,11 @@ public:
      * */
     void write32bitSoftclipDescriptor(uint32_t value, uint8_t classType);
 
-    /** @brief Write access units descriptors to files
-     *  @param u utils class that containts all the access units to be written
+    /** @brief Write access unit and its descriptors to files
+     *  @param au is the access unit to be written
      *   @return void
      * */
-    void writeAccessUnits(Utils& u);
+    void writeAccessUnit(AccessUnit au);
 };
 
 #endif //A_PROTOTYPE_MPEG_G_ENCODER_FILEMANAGER_H

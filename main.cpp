@@ -23,20 +23,19 @@ std::string fileName;
 // Auxiliary functions
 Utils u;
 
-/** Number of references sequences with their start and end positions
- * */
+// Number of references sequences with their start and end positions
 std::map<int, std::pair<int, int> > references;
 
 // Size of each access unit
 int sizeAU = 0;
-#define ACCESS_UNIT_SIZE sizeAU // 13716
+#define ACCESS_UNIT_SIZE sizeAU
 
-/** List of reads with their asociated tags
- * */
+// Reads in mpegg record format with their asociated tags
 std::multimap<int, std::pair<MpeggRecord, std::vector<std::string> > > tags_read;
 
-/** @brief Inserts the asociated tags to the reads according to the positions
+/** @brief Inserts the associated tags to the reads according to the positions
  * @param positions positions in the reference sequences delimitating the tags
+ * @param f file manager that allows to write te mpegg record into files
  * */
 void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& positions, FileManager& f) {
     std::multimap<int, std::pair<BamAlignmentRecord, BamAlignmentRecord> > reads;
@@ -52,7 +51,7 @@ void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& p
         while (not found and position != positions[record.seq_Id].end()) {
             if (read.first < position->first) {
                 std::vector<std::string> tags;
-                tags.push_back(position->second[0]);
+                for(int i = 0; i < position->second.size(); ++i) tags.push_back(position->second[i]);
                 tags_read.insert(std::make_pair(read.first, std::make_pair(record, tags)));
                 found = true;
             } else {
@@ -71,6 +70,7 @@ void insertTagsToReads(std::vector<std::map<int, std::vector<std::string> > >& p
  *  @param useCase1 matrix containing the positions for each reference sequence for the use case 1
  *  @param useCase2 matrix containing the positions for each reference sequence for the use case 2
  *  @param result the resulted matrix which contains the merged positions for the both use cases
+ *  @return void
  **/
 void mergeTags(std::vector<std::map<int, std::vector<std::string> > >& useCase1, std::vector<std::map<int, std::vector<std::string> > >& useCase2, std::vector<std::map<int, std::vector<std::string> > >& result) {
     for (int i = 0; i < useCase1.size(); ++i) {
@@ -95,8 +95,10 @@ void mergeTags(std::vector<std::map<int, std::vector<std::string> > >& useCase1,
 }
 
 /** @brief Writes the especified regions of the reference sequence to the corresponding access units
+ *  @param f file manager that allow to write the encoded Access Units into files
+ *  @return void
  **/
-void dispatcher() {
+void dispatcher(FileManager& f) {
     AccessUnit *AU_P, *AU_N, *AU_M, *AU_I;
     AU_P = new AccessUnit_P(++au_id);
     AU_N = new AccessUnit_N(++au_id);
@@ -123,6 +125,7 @@ void dispatcher() {
                 AU_P->setEndPosition(antPosP);
                 AU_P->setSequenceID(tagsReads_it->second.first.seq_Id);
                 u.insertAccessUnit(*AU_P);
+                f.writeAccessUnit(*AU_P);
                 AU_P = new AccessUnit_P(++au_id);
                 AU_P->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 firstP = true;
@@ -168,6 +171,7 @@ void dispatcher() {
             if (AU_P->getReadsCount() == ACCESS_UNIT_SIZE) {
                 AU_P->setEndPosition(tagsReads_it->second.first.mapping_pos[0]);
                 u.insertAccessUnit(*AU_P);
+                f.writeAccessUnit(*AU_P);
                 AU_P = new AccessUnit_P(++au_id);
                 AU_P->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 AU_P->setSequenceID(tagsReads_it->second.first.seq_Id);
@@ -184,6 +188,7 @@ void dispatcher() {
             if (antTagsN != tagsReads_it->second.second) {
                 AU_N->setEndPosition(antPosN);
                 u.insertAccessUnit(*AU_N);
+                f.writeAccessUnit(*AU_N);
                 AU_N = new AccessUnit_N(++au_id);
                 AU_N->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 AU_N->setSequenceID(tagsReads_it->second.first.seq_Id);
@@ -237,6 +242,7 @@ void dispatcher() {
                 // create a new accessUnit
                 AU_N->setEndPosition(tagsReads_it->second.first.mapping_pos[0]);
                 u.insertAccessUnit(*AU_N);
+                f.writeAccessUnit(*AU_N);
                 AU_N = new AccessUnit_N(++au_id);
                 AU_N->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 firstN = true;
@@ -253,6 +259,7 @@ void dispatcher() {
             if (antTagsM != tagsReads_it->second.second) {
                 AU_M->setEndPosition(antPosM);
                 u.insertAccessUnit(*AU_M);
+                f.writeAccessUnit(*AU_M);
                 AU_M = new AccessUnit_M(++au_id);
                 AU_M->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 AU_M->setSequenceID(tagsReads_it->second.first.seq_Id);
@@ -308,6 +315,7 @@ void dispatcher() {
                 // create a new accessUnit
                 AU_M->setEndPosition(tagsReads_it->second.first.mapping_pos[0]);
                 u.insertAccessUnit(*AU_M);
+                f.writeAccessUnit(*AU_M);
                 AU_M = new AccessUnit_M(++au_id);
                 AU_M->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 firstM = true;
@@ -324,6 +332,7 @@ void dispatcher() {
             if (antTagsI != tagsReads_it->second.second) {
                 AU_I->setEndPosition(antPosI);
                 u.insertAccessUnit(*AU_I);
+                f.writeAccessUnit(*AU_I);
                 AU_I = new AccessUnit_I(++au_id);
                 AU_I->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 AU_I->setSequenceID(tagsReads_it->second.first.seq_Id);
@@ -390,6 +399,7 @@ void dispatcher() {
                 // create a new accessUnit
                 AU_I->setEndPosition(tagsReads_it->second.first.mapping_pos[0]);
                 u.insertAccessUnit(*AU_I);
+                f.writeAccessUnit(*AU_I);
                 AU_I = new AccessUnit_I(++au_id);
                 AU_I->setStartPosition(tagsReads_it->second.first.mapping_pos[0]);
                 firstI = true;
@@ -408,18 +418,24 @@ void dispatcher() {
     // add all incomplete access units
     AU_P->setEndPosition(antPosP);
     u.insertAccessUnit(*AU_P);
+    f.writeAccessUnit(*AU_P);
 
     AU_N->setEndPosition(antPosN);
     u.insertAccessUnit(*AU_N);
+    f.writeAccessUnit(*AU_N);
 
     AU_M->setEndPosition(antPosM);
     u.insertAccessUnit(*AU_M);
+    f.writeAccessUnit(*AU_M);
 
     AU_I->setEndPosition(antPosI);
     u.insertAccessUnit(*AU_I);
+    f.writeAccessUnit(*AU_I);
 }
 
 /** @brief Print usage message
+ * @param void
+ * @return void
  * */
 void usage_message() {
     std::cout << "A prototype MPEG-G encoder "  << "(https://github.com/Omair95/A_prototype_MPEG-G_encoder)" << std::endl;
@@ -428,8 +444,14 @@ void usage_message() {
     std::cout << "Full path of the file to be processed" << std::endl;
     std::cout << "ACCESS_UNIT_SIZE: " << std::endl;
     std::cout << "Size of each access unit " << std::endl;
+    std::cout << "Contact: Omair95@protonmail.com" << std::endl;
 }
 
+/** @brief Main function
+ * @param argc number of parameters
+ * @param argv parameter passed
+ * @return int represents the state of the program
+ * */
 int main (int argc, char** argv) {
 
     if (argc != 3) {
@@ -455,8 +477,7 @@ int main (int argc, char** argv) {
     std::cout << "Pairing reads ..." << std::endl;
 
     // loop that reads the file and pairs the mate reads
-    int count = 1;
-    while (!atEnd(bamFileIn) and count <= 100000) {
+    while (!atEnd(bamFileIn)) {
         readRecord(record, bamFileIn);
 
         if (references.find(record.rID) == references.end()) {
@@ -540,24 +561,65 @@ int main (int argc, char** argv) {
             useCase2 = true;
             std::cout << std::endl;
         } else if (useCase == 3) {
-            // end the use cases loop
+            // Default use case
             if (not useCase1 and not useCase2) std::cout << "Dispatching and encoding..." << std::endl;
 
             break;
         }
 
-        if (not useCase1 or not useCase2) {
-            std::cout << "Add more use cases? (Y/N)" << std::endl;
+        if (useCase1) {
+            std::cout << "Add use case 2? (Y/N)" << std::endl;
             char c; std::cin >> c;
             std::cout << std::endl;
             if (c == 'Y') {
-                std::cout << "PROTECTION    : 1 " << std::endl;
-                std::cout << "RANDOM ACCESS : 2 " << std::endl;
-                std::cout << "ENCODE        : 3 " << std::endl;
-                std::cout << "Enter use case : ";
+                std::cout << "Use case: Random access " << std::endl;
+                std::cout << "Insert Tags (insert END to finish) : " << std::endl;
+
+                // write the list of tags
+                std::string tag;
+                std::vector<std::string> tags;
+                while (std::cin >> tag and tag != "END") {
+                    tags.emplace_back(tag);
+                }
+
+                int j = 0;
+                for (auto &reference : references) {
+                    for (int i = reference.second.first; i < reference.second.second; ++i) {
+                        if (i == (((reference.second.second - reference.second.first) / tags.size()) * (j+1)) +
+                                 reference.second.first){
+                            std::vector<std::string> singleTag;
+                            singleTag.emplace_back(tags[j]);
+                            useCase2Positions[reference.first].insert(std::make_pair(i, singleTag));
+                            ++j;
+                        }
+                    }
+                }
+                useCase2 = true;
+                std::cout << std::endl;
+                break;
             } else break;
-        }
-        else break;
+        } else if (useCase2) {
+            std::cout << "Add use case 1? (Y/N)" << std::endl;
+            char c; std::cin >> c;
+            if (c == 'Y') {
+                // for each reference sequence write the end position and name of the tag
+                for (auto &reference : references) {
+                    std::cout << "Use case : Protection " << std::endl;
+                    std::cout << "Enter positions and tags for reference sequence (Insert 0 and END to finish)" << " : " << reference.first << " (" << reference.second.first << " - " << reference.second.second << ")" << std::endl;
+                    int pos = -1;
+                    std::string tag;
+                    while (std::cin >> pos >> tag and pos != 0 and tag != "END") {
+                        if (tag == "END") std::cout << "Calculating positions ... " << std::endl;
+                        std::vector<std::string> tags;
+                        tags.emplace_back(tag);
+                        useCase1Positions[reference.first].insert(std::make_pair(pos, tags));
+                    }
+                }
+                useCase1 = true;
+                std::cout << std::endl;
+                break;
+            } else break;
+        } else break;
     }
 
     // if two use cases have been introduced then we have the option to merge the positions
@@ -592,12 +654,9 @@ int main (int argc, char** argv) {
     if (useCase1 or useCase2) std::cout << "Dispatching and encoding..." << std::endl;
 
     // start the dispatcher
-    dispatcher();
+    dispatcher(f);
 
-    // write via command line the access units encoded without the payload
-    std::cout << "List of Access Units encoded" << std::endl;
-
-    f.writeAccessUnits(u);
+    // close opened files
     f.closeFiles();
     return 0;
 }

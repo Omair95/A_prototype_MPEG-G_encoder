@@ -236,125 +236,120 @@ void FileManager::write32bitSoftclipDescriptor(uint32_t value, uint8_t classType
     }
 }
 
-void FileManager::writeAccessUnits(Utils& u) {
-    std::vector<AccessUnit> allAU = u.getAllAccessUnits();
+void FileManager::writeAccessUnit(AccessUnit au) {
 
-    for (int i = 0; i < allAU.size(); ++i) {
+    au.write();
 
-        allAU[i].write();
+    // write pos descriptor to file
+    std::vector<std::pair<std::string, uint8_t > > pos = au.getPosDescriptorValues();
+    for (int j = 0; j < pos.size(); ++j) {
+        uint32_t value = static_cast<uint32_t>(atoi(pos[j].first.c_str()));
+        writePosDescriptor(value, au.getType());
+    }
 
-        // write pos descriptor to file
-        std::vector<std::pair<std::string, uint8_t > > pos = allAU[i].getPosDescriptorValues();
-        for (int j = 0; j < pos.size(); ++j) {
-            uint32_t value = static_cast<uint32_t>(atoi(pos[j].first.c_str()));
-            writePosDescriptor(value, allAU[i].getType());
-        }
+    // write rcomp descriptor to file
+    std::vector<std::pair<std::string, uint8_t > > rcomp = au.getRcompDescriptorValues();
+    for (int j = 0; j < rcomp.size(); ++j) {
+        uint8_t value = static_cast<uint8_t>(atoi(rcomp[j].first.c_str()));
+        writeRcompDescriptor(value, au.getType());
+    }
 
-        // write rcomp descriptor to file
-        std::vector<std::pair<std::string, uint8_t > > rcomp = allAU[i].getRcompDescriptorValues();
-        for (int j = 0; j < rcomp.size(); ++j) {
-            uint8_t value = static_cast<uint8_t>(atoi(rcomp[j].first.c_str()));
-            writeRcompDescriptor(value, allAU[i].getType());
-        }
+    // write pair descriptor to file
+    std::vector<std::pair<std::string, uint8_t > > flags = au.getFlagsDescriptorValues();
+    for (int j = 0; j < flags.size(); ++j) {
+        uint8_t value = static_cast<uint8_t>(atoi(flags[j].first.c_str()));
+        writeFlagsDescriptor(value, au.getType());
+    }
 
-        // write pair descriptor to file
-        std::vector<std::pair<std::string, uint8_t > > flags = allAU[i].getFlagsDescriptorValues();
-        for (int j = 0; j < flags.size(); ++j) {
-            uint8_t value = static_cast<uint8_t>(atoi(flags[j].first.c_str()));
-            writeFlagsDescriptor(value, allAU[i].getType());
-        }
+    // write rlen descriptor to file
+    std::vector<std::pair<std::string, uint8_t > > rlen = au.getRLenDescriptorValues();
+    for (int j = 0; j < rlen.size(); ++j) {
+        uint8_t value = static_cast<uint8_t>(atoi(flags[j].first.c_str()));
+        writeRlenDescriptor(value, au.getType());
+    }
 
-        // write rlen descriptor to file
-        std::vector<std::pair<std::string, uint8_t > > rlen = allAU[i].getRLenDescriptorValues();
-        for (int j = 0; j < rlen.size(); ++j) {
-            uint8_t value = static_cast<uint8_t>(atoi(flags[j].first.c_str()));
-            writeRlenDescriptor(value, allAU[i].getType());
-        }
+    // write pair descriptor to file
+    std::vector<std::pair<std::string, uint8_t > > pair = au.getPairDescriptorValues();
+    for (int j = 0; j < pair.size(); ++j) {
+        if (pair[j].second == 8) {
+            uint8_t value = atoi(pair[j].first.c_str());
+            write8bitPairDescriptor(value, au.getType());
 
-        // write pair descriptor to file
-        std::vector<std::pair<std::string, uint8_t > > pair = allAU[i].getPairDescriptorValues();
-        for (int j = 0; j < pair.size(); ++j) {
-            if (pair[j].second == 8) {
-                uint8_t value = atoi(pair[j].first.c_str());
-                write8bitPairDescriptor(value, allAU[i].getType());
+        } else if (pair[j].second == 16) {
+            uint16_t value;
+            std::stringstream ss;
+            ss << std::hex << pair[j].first;
+            ss >> value;
+            write16bitPairDescriptor(value, au.getType());
 
-            } else if (pair[j].second == 16) {
-                uint16_t value;
-                std::stringstream ss;
-                ss << std::hex << pair[j].first;
-                ss >> value;
-                write16bitPairDescriptor(value, allAU[i].getType());
+        } else if (pair[j].second == 32) {
+            uint32_t value = atoi(pair[j].first.c_str());
+            write32bitPairDescriptor(value, au.getType());
 
-            } else if (pair[j].second == 32) {
-                uint32_t value = atoi(pair[j].first.c_str());
-                write32bitPairDescriptor(value, allAU[i].getType());
-
-            } else if (pair[j].second == 64) {
-                uint16_t value = atoi(pair[j].first.c_str());
-                write16bitPairDescriptor(value, allAU[i].getType());
-            }
-        }
-
-        if (allAU[i].getType() == 2) {
-            // write mmpos descriptor to file
-            std::vector<std::pair<std::string, uint8_t > > mmpos = allAU[i].getMmposDescriptorValues();
-
-            for (int j = 0; j < mmpos.size(); ++j) {
-                uint16_t value = atoi(mmpos[j].first.c_str());
-                if (j != (mmpos.size() - 1)) writeMmposDescriptorValue(value, allAU[i].getType(), false);
-                else writeMmposDescriptorValue(value, allAU[i].getType(), true);
-            }
-
-        } else if (allAU[i].getType() == 3) {
-            // write mmpos descriptor to file
-            std::vector<std::pair<std::string, uint8_t > > mmpos = allAU[i].getMmposDescriptorValues();
-
-            for (int j = 0; j < mmpos.size(); ++j) {
-                uint16_t value = atoi(mmpos[j].first.c_str());
-                if (j != (mmpos.size() - 1)) writeMmposDescriptorValue(value, allAU[i].getType(), false);
-                else writeMmposDescriptorValue(value, allAU[i].getType(), true);
-            }
-
-            // write mmtype descriptor to file
-            std::vector<std::pair<std::string, uint8_t > > mmtype = allAU[i].getMmtypeDescriptorValues();
-            for(int j = 0; j < mmtype.size(); ++j) {
-                uint8_t value = atoi(mmtype[i].first.c_str());
-
-                writeMmtypeDescriptor(value, allAU[i].getType());
-            }
-        } else if (allAU[i].getType() == 4) {
-            // write mmpos descriptor to file
-            std::vector<std::pair<std::string, uint8_t> > mmpos = allAU[i].getMmposDescriptorValues();
-
-            for (int j = 0; j < mmpos.size(); ++j) {
-                uint16_t value = atoi(mmpos[j].first.c_str());
-                if (j != (mmpos.size() - 1)) writeMmposDescriptorValue(value, allAU[i].getType(), false);
-                else writeMmposDescriptorValue(value, allAU[i].getType(), true);
-            }
-
-            // write mmtype descriptor to file
-            std::vector<std::pair<std::string, uint8_t > > mmtype = allAU[i].getMmtypeDescriptorValues();
-            for(int j = 0; j < mmtype.size(); ++j) {
-                uint8_t value = atoi(mmtype[i].first.c_str());
-
-                writeMmtypeDescriptor(value, allAU[i].getType());
-            }
-
-            // write sclips to file
-            std::vector<std::pair<std::string, uint8_t> > sclips = allAU[i].getMmtypeDescriptorValues();
-
-            for (int j = 0; j < sclips.size(); ++j) {
-                if (sclips[j].second == 8) {
-                    uint8_t value = atoi(sclips[j].first.c_str());
-                    write8bitSoftclipDescriptor(value, allAU[i].getType());
-
-                } else if (sclips[j].second == 32) {
-                    uint32_t value = atoi(sclips[j].first.c_str());
-                    write32bitSoftclipDescriptor(value, allAU[i].getType());
-                }
-            }
-
+        } else if (pair[j].second == 64) {
+            uint16_t value = atoi(pair[j].first.c_str());
+            write16bitPairDescriptor(value, au.getType());
         }
     }
 
+    if (au.getType() == 2) {
+        // write mmpos descriptor to file
+        std::vector<std::pair<std::string, uint8_t > > mmpos = au.getMmposDescriptorValues();
+
+        for (int j = 0; j < mmpos.size(); ++j) {
+            uint16_t value = atoi(mmpos[j].first.c_str());
+            if (j != (mmpos.size() - 1)) writeMmposDescriptorValue(value, au.getType(), false);
+            else writeMmposDescriptorValue(value, au.getType(), true);
+        }
+
+    } else if (au.getType() == 3) {
+        // write mmpos descriptor to file
+        std::vector<std::pair<std::string, uint8_t > > mmpos = au.getMmposDescriptorValues();
+
+        for (int j = 0; j < mmpos.size(); ++j) {
+            uint16_t value = atoi(mmpos[j].first.c_str());
+            if (j != (mmpos.size() - 1)) writeMmposDescriptorValue(value, au.getType(), false);
+            else writeMmposDescriptorValue(value, au.getType(), true);
+        }
+
+        // write mmtype descriptor to file
+        std::vector<std::pair<std::string, uint8_t > > mmtype = au.getMmtypeDescriptorValues();
+        for(int j = 0; j < mmtype.size(); ++j) {
+            uint8_t value = atoi(mmtype[j].first.c_str());
+
+            writeMmtypeDescriptor(value, au.getType());
+        }
+    } else if (au.getType() == 4) {
+        // write mmpos descriptor to file
+        std::vector<std::pair<std::string, uint8_t> > mmpos = au.getMmposDescriptorValues();
+
+        for (int j = 0; j < mmpos.size(); ++j) {
+            uint16_t value = atoi(mmpos[j].first.c_str());
+            if (j != (mmpos.size() - 1)) writeMmposDescriptorValue(value, au.getType(), false);
+            else writeMmposDescriptorValue(value, au.getType(), true);
+        }
+
+        // write mmtype descriptor to file
+        std::vector<std::pair<std::string, uint8_t > > mmtype = au.getMmtypeDescriptorValues();
+        for(int j = 0; j < mmtype.size(); ++j) {
+            uint8_t value = atoi(mmtype[j].first.c_str());
+
+            writeMmtypeDescriptor(value, au.getType());
+        }
+
+        // write sclips to file
+        std::vector<std::pair<std::string, uint8_t> > sclips = au.getMmtypeDescriptorValues();
+
+        for (int j = 0; j < sclips.size(); ++j) {
+            if (sclips[j].second == 8) {
+                uint8_t value = atoi(sclips[j].first.c_str());
+                write8bitSoftclipDescriptor(value, au.getType());
+
+            } else if (sclips[j].second == 32) {
+                uint32_t value = atoi(sclips[j].first.c_str());
+                write32bitSoftclipDescriptor(value, au.getType());
+            }
+        }
+
+    }
 }

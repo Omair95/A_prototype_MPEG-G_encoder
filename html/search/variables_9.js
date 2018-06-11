@@ -5,6 +5,5 @@ var searchData=
   ['read_5fname',['read_name',['../structMpeggRecord.html#a5b1269ff546962bc30d7a060c1954a9c',1,'MpeggRecord']]],
   ['reads_5fcount',['reads_count',['../classAccessUnit.html#ae3839f3390652171fad0b28622d4d8c7',1,'AccessUnit']]],
   ['reference_5fid',['reference_id',['../classAccessUnit.html#a2d515312cf26d6bd17783a27db6a2a43',1,'AccessUnit']]],
-  ['references',['references',['../main_8cpp.html#aa9a19ae27e56b494e2c1a90b5cc6ce79',1,'main.cpp']]],
   ['reverse_5fcomp',['reverse_comp',['../structMpeggRecord.html#abbe495faacdf88320a21ccf8a95579af',1,'MpeggRecord']]]
 ];

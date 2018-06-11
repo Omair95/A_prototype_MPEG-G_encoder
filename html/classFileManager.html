@@ -118,9 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa720de82768ead492a81c63bdd53133a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#aa720de82768ead492a81c63bdd53133a">write32bitSoftclipDescriptor</a> (uint32_t value, uint8_t classType)</td></tr>
 <tr class="memdesc:aa720de82768ead492a81c63bdd53133a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 32 bit soft clip descriptor value to the respective file according to the class type.  <a href="#aa720de82768ead492a81c63bdd53133a">More...</a><br /></td></tr>
 <tr class="separator:aa720de82768ead492a81c63bdd53133a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa571283d8e76c9bc13ef5ea5f977be67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#aa571283d8e76c9bc13ef5ea5f977be67">writeAccessUnits</a> (<a class="el" href="classUtils.html">Utils</a> &amp;u)</td></tr>
-<tr class="memdesc:aa571283d8e76c9bc13ef5ea5f977be67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write access units descriptors to files.  <a href="#aa571283d8e76c9bc13ef5ea5f977be67">More...</a><br /></td></tr>
-<tr class="separator:aa571283d8e76c9bc13ef5ea5f977be67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81cc6acb11b368ef571de623bceab10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileManager.html#af81cc6acb11b368ef571de623bceab10">writeAccessUnit</a> (<a class="el" href="classAccessUnit.html">AccessUnit</a> au)</td></tr>
+<tr class="memdesc:af81cc6acb11b368ef571de623bceab10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write access unit and its descriptors to files.  <a href="#af81cc6acb11b368ef571de623bceab10">More...</a><br /></td></tr>
+<tr class="separator:af81cc6acb11b368ef571de623bceab10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to be used to create and write files that contain the output Mpegg format and all the associated descriptors  <a href="#" onclick="location.href='mai'+'lto:'+'Oma'+'ir'+'95@'+'pr'+'oto'+'nm'+'ail'+'.c'+'om'; return false;">Omair<span style="display: none;">.nosp@m.</span>95@p<span style="display: none;">.nosp@m.</span>roton<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>. </p>
@@ -411,26 +411,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa571283d8e76c9bc13ef5ea5f977be67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa571283d8e76c9bc13ef5ea5f977be67">&#9670;&nbsp;</a></span>writeAccessUnits()</h2>
+<a id="af81cc6acb11b368ef571de623bceab10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81cc6acb11b368ef571de623bceab10">&#9670;&nbsp;</a></span>writeAccessUnit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void FileManager::writeAccessUnits </td>
+          <td class="memname">void FileManager::writeAccessUnit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classUtils.html">Utils</a> &amp;&#160;</td>
-          <td class="paramname"><em>u</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classAccessUnit.html">AccessUnit</a>&#160;</td>
+          <td class="paramname"><em>au</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write access units descriptors to files. </p>
+<p>Write access unit and its descriptors to files. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u</td><td>utils class that containts all the access units to be written </td></tr>
+    <tr><td class="paramname">au</td><td>is the access unit to be written </td></tr>
   </table>
   </dd>
 </dl>
