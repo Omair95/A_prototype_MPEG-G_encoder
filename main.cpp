@@ -476,7 +476,7 @@ int main (int argc, char** argv) {
     BamAlignmentRecord record;
     std::cout << "Pairing reads ..." << std::endl;
 
-    // loop that reads the file and pairs the mate reads
+    // loop that reads the file and the pairing of the reads
     while (!atEnd(bamFileIn)) {
         readRecord(record, bamFileIn);
 
